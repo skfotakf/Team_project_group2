@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in with IMDB</title>
+    <title>Sign in with JMKY</title>
     <link rel="stylesheet" href="css/signin.css">
 </head>
 
 <body>
     <header id="header">
-        <div class="imdbheader">
+        <div class="JMKYheader">
 
-            <h1><a href="" class="logo">IMDb</a></h1>
+            <h1><a href="" class="logo">JMKY</a></h1>
 
             <ul id="menu">
                 <a href="">
@@ -23,11 +23,11 @@
                 </a>
             </ul>
             <div id="serach_container">
-                <input type="text" placeholder="Search IMDb">
+                <input type="text" placeholder="Search JMKY">
             </div>
             <ul class="top_nav">
                 <a href="">
-                    <li>IMDbPro </li>
+                    <li>JMKYPro </li>
                 </a>
                 <a href="">
                     <li><i class="far fa-plus-square"></i> Watchlist</li>
@@ -63,7 +63,7 @@
                         <button type="button">회원가입</button>
                     </div>
                     <p class="text-center">
-                        <small>By signing in, you agree to IMDb's
+                        <small>By signing in, you agree to JMKY's
                             <a href="">Conditions of Use</a>
                              and 
                             <a href="">Privacy Policy</a> 
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div id="sign_in_perks">
-                <h1>Benefits of your free IMDb account</h1>
+                <h1>Benefits of your free JMKY account</h1>
                 <p>
                     <strong>Personalized Recommendations</strong><br>
                     Discover shows you'll love.
@@ -87,7 +87,7 @@
                     Rate and remember everything you've seen.
                 </p>
                 <p>
-                    <strong>Contribute to IMDb</strong><br>
+                    <strong>Contribute to JMKY</strong><br>
                     Add data that will be seen by millons of people and get cool<br>
                     badges.
                 </p>
@@ -118,30 +118,30 @@
         <div id="link_box">
             <div class="link_content_box">
                 <ul>
-                    <li><a href="">Get the IMDb App<i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Help<i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Site Index<i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">IMDbPro<i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Box Office Mojo<i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">IMDb Developer<i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Get the JMKY App <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Help <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Site Index <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">JMKYPro <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Box Office Mojo <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">JMKY Developer <i class="fas fa-external-link-alt"></i></a></li>
                 </ul>
             </div>
             <div class="link_content_box">
                 <ul>
-                    <li><a href="">Press Room<i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Advertising<i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Jobs<i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Conditions of Use<i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Privacy Policy<i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Interest-Based Ads<i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Press Room <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Advertising <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Jobs <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Conditions of Use <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Privacy Policy <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Interest-Based Ads <i class="fas fa-external-link-alt"></i></a></li>
                 </ul>
             </div>
         </div>
-        <div>
-            
+        <div id="JMKY_footer_logo">
+            <p>an amazon company</p>
         </div>
-        <div>
-            
+        <div id="JMKY_footer_copy">
+            <p>&copy; 1990-2021 by JMKY.com, Inc.</p>
         </div>
 
     </footer>
