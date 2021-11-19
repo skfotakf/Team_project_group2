@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,7 +46,38 @@
       <div class="wrapper">
         <div class="pagecontent">
           <div class="content-2-wide">
-            <div class="main"></div>
+            <div class="main">
+              <h1 class="title-topBo">Top Box Office</h1>
+
+              <hr />
+              <div class="desc">Weekend of November 12 - 14, 2021</div>
+              <table class="list">
+                <thead class="list-header">
+                  <tr>
+                    <th class="list-poster"></th>
+                    <th class="list-title"><br />Title</th>
+                    <th class="list-rating list-rating-title">
+                      IMDb <br />Rating
+                    </th>
+                    <th class="list-date">Date</th>
+                    <th class="list-count">count</th>
+                    <th class="list-like">like</th>
+                  </tr>
+                </thead>
+                <tbody class="list-main">
+                  <tr>
+                    <th class="list-poster">
+                      <img src="image/eternals.jpg" />
+                    </th>
+                    <th class="list-title">Eternals</th>
+                    <th class="list-rating">8.6</th>
+                    <th class="list-date">11/19</th>
+                    <th class="list-count">42</th>
+                    <th class="list-like">like</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <div class="sidebar">
               <div class="sidebar-top"></div>
               <div class="sidebar-widget">
