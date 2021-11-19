@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in with JMKY</title>
-    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="/css/signin.css">
 </head>
 
 <body>
@@ -48,19 +48,30 @@
                 <div id="sign_in_box">
                     <h1>Sign in</h1>
                     <div>
-                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="  Email">
                     </div>
                     <div>
-                        <input type="password" placeholder="password">
+                        <input type="password" placeholder="  password">
                     </div>
-                    <div>
-                        <button type="button">Î°úÍ∑∏Ïù∏</button>
+                    <div id="login_btns">
+                        <div>
+                            <button type="button">∑Œ±◊¿Œ</button>
+                        </div>
+                        <div>
+                        	<button type="button" onclick="location.href='/oauth2/authorization/google'"><a><i class="fab fa-google"></i>  ±∏±€ ∑Œ±◊¿Œ</a></button>
+                        </div>
+                        <div>
+                            <button type="button" onclick="location.href='/oauth2/authorization/facebook'"><a><i class="fab fa-facebook-square"></i>  ∆‰¿ÃΩ∫∫œ ∑Œ±◊¿Œ</a></button>
+                        </div>
+                        <div>
+                            <button type="button" onclick="location.href='/oauth2/authorization/naver'"><a>≥◊¿Ãπˆ ∑Œ±◊¿Œ</a></button>
+                        </div>
                     </div>
                     <div class="hr-sect">
                         <span>&nbsp;or&nbsp;</span>
                     </div>
                     <div>
-                        <button type="button">ÌöåÏõêÍ∞ÄÏûÖ</button>
+                        <button type="button" id="sign_up_btn" onclick="location.href='/auth/signup'">»∏ø¯∞°¿‘</button>
                     </div>
                     <p class="text-center">
                         <small>By signing in, you agree to JMKY's
@@ -107,11 +118,11 @@
     <footer class="footer">
         <div id="icon_box">
             <ul>
-                <li><a href=""><i class="fab fa-facebook-square fa-2x"></i></a></li>
-                <li><a href=""><i class="fab fa-instagram fa-2x"></i></a></li>
-                <li><a href=""><i class="fab fa-twitch fa-2x"></i></a></li>
-                <li><a href=""><i class="fab fa-twitter fa-2x"></i></a></li>
-                <li><a href=""><i class="fab fa-youtube fa-2x"></i></a></li>
+                <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                <li><a href=""><i class="fab fa-twitch"></i></a></li>
+                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href=""><i class="fab fa-youtube"></i></a></li>
                 
             </ul>
         </div>
