@@ -13,15 +13,15 @@ import lombok.NoArgsConstructor;
 @Data
 public class User {
 
-	private int id;
-	private String username;
+	private int number;
+	private String id;
 	private String password;
 	private String email;
 	private String name;
 	private String nickname;
 	private String phoneNum;
 	private String role;
-	private String provide;
+	private String provider;
 	private Date createdate;
 	private Date updatedate;
 }

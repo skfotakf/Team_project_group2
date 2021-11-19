@@ -18,9 +18,9 @@ public class AuthServiceImpl implements AuthService{
 	@Override // 회원가입 
 	public int signup(SignupDto signUpDto) {
 		User user = signUpDto.toEntity();
-		int usernameCheckResult = userRepository.usernameCheck(user); // 중복검사
+		int usernameCheckResult = userRepository.useridCheck(user); // 중복검사
 		if(usernameCheckResult == 1) {
-			// 이미 존재하는 username
+			// 이미 존재하는 id
 			return 2;
 		} else {
 			// 회원가입 가능

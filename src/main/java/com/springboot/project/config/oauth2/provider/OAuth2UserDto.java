@@ -1,30 +1,22 @@
-package com.springboot.project.web.dto.auth;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+package com.springboot.project.config.oauth2.provider;
 
 import com.springboot.project.domain.user.User;
 
 import lombok.Builder;
 import lombok.Data;
 
-// 데이터 Transfer 장소
+@Builder
 @Data
-public class SignupDto {
-	
-	@Size(min = 2, max = 20)
-	@NotBlank
+public class OAuth2UserDto {
+
 	private String id;
-	@NotBlank
 	private String password;
-	@NotBlank
 	private String email;
-	@NotBlank
-	private String name;	
-	@NotBlank
+	private String name;
 	private String nickname;
-	@NotBlank
 	private String phoneNum;
+	private String role;
+	private String provider;
 	
 	public User toEntity() {
 		return User.builder()
@@ -34,7 +26,11 @@ public class SignupDto {
 				.name(name)
 				.nickname(nickname)
 				.phoneNum(phoneNum)
+				.role(role)
+				.provider(provider)
 				.build();
-				
 	}
+	
+	
+	
 }

@@ -7,12 +7,16 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.springboot.project.config.oauth2.PrincipalOauth2UserService;
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
+	
+	private final PrincipalOauth2UserService principalOauth2UserService;
 	
 	@Bean
 	public BCryptPasswordEncoder encoder() {
@@ -41,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				 * 2. 에세스토큰(권한)
 				 * 3. 사용자프로필 정보를 가져온다.
 				 */
-				.userService(null); // 가져온 프로필 후처리(사용되어질 서비스 필요)
+				.userService(principalOauth2UserService); // 가져온 프로필 후처리(사용되어질 서비스 필요)
 			
 		}
 
