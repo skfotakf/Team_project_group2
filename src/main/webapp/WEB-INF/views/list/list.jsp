@@ -55,7 +55,7 @@
                 <thead class="list-header">
                   <tr>
                     <th class="list-poster"></th>
-                    <th class="list-title"><br />Title</th>
+                    <th class="list-title">Title</th>
                     <th class="list-rating list-rating-title">
                       IMDb <br />Rating
                     </th>
@@ -77,6 +77,11 @@
                   </tr>
                 </tbody>
               </table>
+              <div class="text-smaller">
+                Reported by
+                <a href="https://www.boxofficemojo.com/">Box Office Mojo</a> ©
+                2021
+              </div>
             </div>
             <div class="sidebar">
               <div class="sidebar-top"></div>
