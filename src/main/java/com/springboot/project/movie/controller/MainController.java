@@ -2,6 +2,7 @@ package com.springboot.project.movie.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.springboot.project.movie.commons.paging.Criteria;
+import com.springboot.project.movie.commons.paging.PageMaker;
 import com.springboot.project.movie.domain.MovieVO;
 import com.springboot.project.movie.service.MovieService;
 
@@ -18,6 +21,7 @@ public class MainController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
+	@Autowired
 	private MovieService movieService;
 	
 	// 등록 페이지 이동
@@ -41,11 +45,13 @@ public class MainController {
 		
 		return "redirect:/movie/list";
 	}
+	
 	// 메인 페이지 보여주기(list) - 기본 페이지 R
 	@GetMapping("list")
 	public String mainListGet(Model model) throws Exception {
 		
 		logger.info("open movie List...");
+		
 		model.addAttribute("movieList", movieService.listAll());
 		
 		return "/movie/list";

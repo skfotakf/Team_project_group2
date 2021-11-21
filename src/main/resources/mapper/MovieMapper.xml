@@ -5,7 +5,7 @@
   
   <mapper namespace="com.springboot.project.movie.mapper.MovieListDAO">
   	
-  	<insert id="create">
+  	<insert id="create"> <!-- admin 영화 리뷰 페이지 write -->
   		insert into
   			movie_mst
   		values(
@@ -17,8 +17,17 @@
   		)
   	</insert>
   	
-  	<select id="read">
-  	
+  	<select id="read" > <!-- 영화 목록 list read -->
+  		select
+  			movie_no,
+  			title,
+  			content,
+  			movie_date,
+  			viewcnt
+  		from
+  			movie_mst
+  		where
+  			movie_no = #{movie_no}
   	</select>
   	
   	<update id="update">
@@ -28,6 +37,32 @@
   	<delete id="delete">
   	
   	</delete>
+  	
+  	<!-- 쿼리문 사용시 특수문자를 쓰기위해 CDATA -->
+  	<select id="listAll" resultType="MovieVO">
+  		<![CDATA[
+  			select
+  				movie_no,
+  				title,
+  				content,
+  				movie_date,
+  				viewcnt
+  			from
+  				movie_mst
+  			where
+  				movie_no > 0
+  			order by
+  				movie_no desc
+  		]]>
+  	</select>
+  	
+  	<resultMap id="MovieResultMap" type="MovieVO">
+  		<id property="movie_no" column="movie_no"/>
+  		<result property="title" column="title"/>
+  		<result property="content" column="content"/>
+  		<result property="movie_date" column="movie_date"/>
+  		<result property="viewcnt" column="viewcnt"/>
+  	</resultMap>
   	
 
   </mapper>

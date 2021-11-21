@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.springboot.project.movie.commons.paging.Criteria;
 import com.springboot.project.movie.domain.MovieVO;
 import com.springboot.project.movie.mapper.MovieListDAO;
 
@@ -39,6 +40,15 @@ public class MovieServiceImpl implements MovieService{
 		return movieListDAO.listAll();
 	}
 	
+	@Override
+	public List<MovieVO> listCriteria(Criteria criteria) throws Exception {
+		return movieListDAO.listCriteria(criteria);
+	}
+	
+	@Override
+	public List<MovieVO> countMovie(Criteria criteria) throws Exception {
+		return movieListDAO.countMovie(criteria);
+	}
 	
 
 }

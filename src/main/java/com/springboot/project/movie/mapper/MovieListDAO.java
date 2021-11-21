@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.springboot.project.movie.commons.paging.Criteria;
 import com.springboot.project.movie.domain.MovieVO;
 
 @Mapper
@@ -20,4 +21,7 @@ public interface MovieListDAO {
 	// 전체 게시글 보기
 	List<MovieVO> listAll() throws Exception;
 	// 페이징 처리
+	List<MovieVO> listCriteria(Criteria criteria) throws Exception;
+	
+	List<MovieVO> countMovie(Criteria criteria) throws Exception;
 }
