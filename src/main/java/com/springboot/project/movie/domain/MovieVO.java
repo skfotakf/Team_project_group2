@@ -9,6 +9,7 @@ public class MovieVO {
 	private String content; // 디테일 내용?? 페이지 이동이라 내용이 더 필요한지 모르겠음
 	private String movie_date; // 개봉일자
 	private int viewcnt; // 조회수
+	private int likecnt; //좋아요 수
 	
 	public int getMovie_no() {
 		return movie_no;
@@ -40,15 +41,23 @@ public class MovieVO {
 	public void setViewcnt(int viewcnt) {
 		this.viewcnt = viewcnt;
 	}
-	
+	public int getLikecnt() {
+		return likecnt;
+	}
+	public void setLikecnt(int likecnt) {
+		this.likecnt = likecnt;
+	}
 	@Override
 	public String toString() {
 		return "MovieVO [movie_no=" + movie_no 
 					+ ", title=" + title 
 					+ ", content=" + content 
 					+ ", movie_date=" + movie_date 
-					+ ", viewcnt=" + viewcnt + "]";
+					+ ", viewcnt=" + viewcnt 
+					+ ", likecnt=" + likecnt + "]";
 	}
+	
+	
 	
 	
 }

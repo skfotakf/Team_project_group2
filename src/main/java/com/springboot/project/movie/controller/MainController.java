@@ -57,25 +57,6 @@ public class MainController {
 		return "/movie/list";
 	}
 	
-	// 메인 페이지에서 image 클릭시 디테일 요청
-	@GetMapping("detail")
-	public String imageDetailGet() {
-		
-		logger.info("image click... open detail");
-		
-		return "/movie/detail";
-		
-	}
-	
-	// 메인 페이지에서 title 클릭시 디테일 요청
-	@GetMapping("detail")
-	public String titleDetailGet() {
-		
-		logger.info("image click... open detail");
-		
-		return "/movie/detail";
-		
-	}
 	
 	
 	

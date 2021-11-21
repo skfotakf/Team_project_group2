@@ -1,5 +1,6 @@
 package com.springboot.project.movie.commons.paging;
 
+// 한 페이지에 보여줄 게시글 수 
 public class Criteria { 
 	
 	private int page; // 보여줄 페이지

@@ -3,6 +3,7 @@ package com.springboot.project.movie.commons.paging;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+// 게시글 하단 번호처리
 public class PageMaker {
 	
 	private int totalCount; // 전체 게시글 수 
