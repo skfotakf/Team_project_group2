@@ -70,20 +70,18 @@
                         <div id="login_btns">
                             <div>
                                 <button type="button">로그인</button>
-	                        </div>
-	                        <div>
-	                        	<button type="button" onclick="location.href='/oauth2/authorization/google'"><a><i class="fab fa-google"></i>구글 로그인</a></button>
-	                        </div>
-	                        <div>
-	                            <button type="button" onclick="location.href='/oauth2/authorization/facebook'"><a><i class="fab fa-facebook-square"></i>페이스북 로그인</a></button>
-	                        </div>
-	                        <div>
-	                            <button type="button" onclick="location.href='/oauth2/authorization/naver'"><a>네이버 로그인</a></button>
-	                        </div>
-	                    </div>
+                            </div>
+                            <div>
+                                <button type="button"><a><i class="fab fa-google"></i>  구글 로그인</a></button>
+                            </div>
+                            <div>
+                                <button type="button"><a><i class="fab fa-facebook-square"></i>  페이스북 로그인</a></button>
+                            </div>
+                            <div>
+                                <button type="button"><a>네이버 로그인</a></button>
+                            </div>
+                        </div>
                     </form>
-=======
-                            
                     <div class="hr-sect">
                         <span>&nbsp;or&nbsp;</span>
                     </div>
