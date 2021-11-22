@@ -37,10 +37,35 @@ hr {
   margin: 10px 0;
 }
 
+a {
+  text-decoration: none;
+}
 /*========================*/
 .list {
   border-collapse: collapse;
+  position: relative;
 }
+.alert {
+  margin: 0 0 20px;
+  padding: 12px 12px 12px 64px;
+  border-radius: 6px;
+  background: #f3eeaf
+    url(https://m.media-amazon.com/images/S/sash/wIHh7bD9IjRZLFx.png) 12px 12px
+    no-repeat;
+}
+
+.alert-message {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 13px;
+  line-height: 140%;
+  margin: 0.2em 0 0;
+  padding: 0;
+}
+
 .list-header {
   font-family: Verdana, sans-serif;
   margin: 10px 0px 0px;
@@ -81,7 +106,46 @@ hr {
 }
 .list-rating-title {
   font-size: 10px;
+  text-align: left;
 }
+/*=======seen-widget===========================================================*/
+.seen-widget {
+  display: inline-block;
+  white-space: nowrap;
+  width: 55px;
+  height: 20px;
+  vertical-align: middle;
+  position: relative;
+}
+.boundary-left {
+  position: relative;
+  width: 315px;
+  left: -360px;
+  height: 20px;
+  top: -10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+.popover {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  height: 24px;
+  width: 240px;
+  white-space: nowrap;
+  padding-top: 5px;
+  position: absolute;
+  top: 5px;
+}
+#mystar {
+  position: relative;
+  cursor: pointer;
+}
+.myrating {
+  position: relative;
+  display: none;
+}
+/*===========================================*/
 .list-date {
   width: 65px;
   padding-right: 10px;

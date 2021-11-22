@@ -47,6 +47,29 @@
         <div class="pagecontent">
           <div class="content-2-wide">
             <div class="main">
+              <span class="ab-widget">
+                <div class="covid-message">
+                  <div class="alert">
+                    <p class="alert-message">
+                      While theaters are closed, some data on this page may be
+                      delayed or unavailable. In the meantime, check out
+                      <a href="https://www.imdb.com/whats-on-tv/?ref_=im_2020"
+                        >What's on TV and Streaming »</a
+                      >
+                    </p>
+                    <p class="alert-message">
+                      If you’re going out to the movies (or going out anywhere),
+                      please stay safe! Check out the
+                      <a
+                        href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/q-a-on-covid-19-and-masks"
+                        >World Health Organization’s guidance on the use of
+                        masks</a
+                      >
+                      to prevent the spread of COVID-19.
+                    </p>
+                  </div>
+                </div>
+              </span>
               <h1 class="title-topBo">Top Box Office</h1>
 
               <hr />
@@ -60,20 +83,42 @@
                       IMDb <br />Rating
                     </th>
                     <th class="list-date">Date</th>
-                    <th class="list-count">count</th>
-                    <th class="list-like">like</th>
+                    <th class="list-count">Count</th>
+                    <th class="list-like">Like</th>
                   </tr>
                 </thead>
                 <tbody class="list-main">
                   <tr>
-                    <th class="list-poster">
+                    <td class="list-poster">
                       <img src="image/eternals.jpg" />
-                    </th>
-                    <th class="list-title">Eternals</th>
-                    <th class="list-rating">8.6</th>
-                    <th class="list-date">11/19</th>
-                    <th class="list-count">42</th>
-                    <th class="list-like">like</th>
+                    </td>
+                    <td class="list-title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list-rating">
+                      <div class="seen-widget">
+                        <div class="boundary-left">
+                          <div class="popover"></div>
+                        </div>
+                        
+                        <i class="fas fa-star" style="color: orange"></i
+                        >&nbsp;8.6<br />
+                        <i
+                          class="fas fa-star"
+                          style="color: darkgray"
+                          id="mystar"
+                        ></i>
+                        <span class="myrating" style="font-size: 13px"
+                          >seen</span
+                        >
+                      </div>
+                    </td>
+                    <td class="list-date">11/19</td>
+                    <td class="list-count">42</td>
+                    <td class="list-like">like</td>
                   </tr>
                 </tbody>
               </table>
@@ -145,5 +190,11 @@
       </div>
       <div id="imdbFooter"></div>
     </div>
+    <script type="text/javascript" src="js/list.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/a04df2c0ca.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
