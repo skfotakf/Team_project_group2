@@ -26,20 +26,20 @@ spring:
       client:
         registration:
           google:
-            client-id: 43889814256-38l534v8bf6qs0eba4o9njf23e0o961n.apps.googleusercontent.com
-            client-secret: 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
+            client-id: 296942560434-n4evelrfh2qft4uk68otetk5krfpnejb.apps.googleusercontent.com
+            client-secret: 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
             scope:
             - email
             - profile
           facebook:
-            client-id: 954183248511214
-            client-secret: c9af41360382ce338761c54d8f7dd86d
+            client-id: 611789176901817
+            client-secret: 762d3b30170998212e8734cee6e77b8f
             scope:
             - email
             - public_profile
           naver:
-            client-id: v6386Tz11IY0OYYCDePd
-            client-secret: ELmqWj0i9m
+            client-id: 6t0QJkD3VADsJ11Dz1DO
+            client-secret: 6nseh4a8Dr
             scope:
             - email
             - name
@@ -56,10 +56,6 @@ spring:
 mybatis:
   mapper-locations:
   - /mappers/*.xml
-
-
-#준일이 작업한 내용
-#레오가 작업한 내용
 
 
 

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in with JMKY</title>
-    <link rel="stylesheet" href="/signin.css">
+    <link rel="stylesheet" href="/css/signin.css">
 </head>
 
 <body>
@@ -55,23 +55,23 @@
                     </div>
                     <div id="login_btns">
                         <div>
-                            <button type="button">로그인</button>
+                            <button type="button">�α���</button>
                         </div>
                         <div>
-                            <button type="button"><a><i class="fab fa-google"></i>  구글 로그인</a></button>
+                        	<button type="button" onclick="location.href='/oauth2/authorization/google'"><a><i class="fab fa-google"></i>  ���� �α���</a></button>
                         </div>
                         <div>
-                            <button type="button"><a><i class="fab fa-facebook-square"></i>  페이스북 로그인</a></button>
+                            <button type="button" onclick="location.href='/oauth2/authorization/facebook'"><a><i class="fab fa-facebook-square"></i>  ���̽��� �α���</a></button>
                         </div>
                         <div>
-                            <button type="button"><a>네이버 로그인</a></button>
+                            <button type="button" onclick="location.href='/oauth2/authorization/naver'"><a>���̹� �α���</a></button>
                         </div>
                     </div>
                     <div class="hr-sect">
                         <span>&nbsp;or&nbsp;</span>
                     </div>
                     <div>
-                        <button type="button" id="sign_up_btn">회원가입</button>
+                        <button type="button" id="sign_up_btn" onclick="location.href='/auth/signup'">ȸ������</button>
                     </div>
                     <p class="text-center">
                         <small>By signing in, you agree to JMKY's
