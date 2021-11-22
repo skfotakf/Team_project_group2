@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in with IMDB</title>
+    <title>Sign in with JMKY</title>
     <link rel="stylesheet" href="/css/signin.css">
 </head>
 
@@ -62,6 +62,7 @@
                     <h1>Sign in</h1>
                     <form action="signin" method="post">
                         <div>
+<<<<<<< HEAD
                             <input type="text" placeholder="ID">
                         </div>
                         <div>
@@ -82,11 +83,25 @@
                             </div>
                         </div>
                     </form>
+=======
+                            <button type="button">�α���</button>
+                        </div>
+                        <div>
+                        	<button type="button" onclick="location.href='/oauth2/authorization/google'"><a><i class="fab fa-google"></i>  ���� �α���</a></button>
+                        </div>
+                        <div>
+                            <button type="button" onclick="location.href='/oauth2/authorization/facebook'"><a><i class="fab fa-facebook-square"></i>  ���̽��� �α���</a></button>
+                        </div>
+                        <div>
+                            <button type="button" onclick="location.href='/oauth2/authorization/naver'"><a>���̹� �α���</a></button>
+                        </div>
+                    </div>
+>>>>>>> 01ab9a755650c739d13b40fd41bf9d7bd3203393
                     <div class="hr-sect">
                         <span>&nbsp;or&nbsp;</span>
                     </div>
                     <div>
-                        <button type="button" id="sign_up_btn">회원가입</button>
+                        <button type="button" id="sign_up_btn" onclick="location.href='/auth/signup'">ȸ������</button>
                     </div>
                     <p class="text-center">
                         <small>By signing in, you agree to IMDb's

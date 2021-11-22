@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		protected void configure(HttpSecurity http) throws Exception {
 			http.csrf().disable(); // csrf 비활성화
 			http.authorizeRequests()  // 권한 요청
-				.antMatchers("/", "index", "/user/**") // 이 메소드에 권한을 줌
+				.antMatchers("/", "index", "/user/**","/login") // 이 메소드에 권한을 줌
 				.authenticated() // 인증이 필요
 				.anyRequest() // antMatchers 외에 모든 요청
 				.permitAll() // 요청이 없어도 된다 (모든 권한을 부여한다.)
