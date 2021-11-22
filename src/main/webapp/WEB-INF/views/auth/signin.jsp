@@ -55,23 +55,23 @@
                     </div>
                     <div id="login_btns">
                         <div>
-                            <button type="button">ï¿½Î±ï¿½ï¿½ï¿½</button>
+                            <button type="button">·Î±×ÀÎ</button>
                         </div>
                         <div>
-                        	<button type="button" onclick="location.href='/oauth2/authorization/google'"><a><i class="fab fa-google"></i>  ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½</a></button>
+                        	<button type="button" onclick="location.href='/oauth2/authorization/google'"><a><i class="fab fa-google"></i>±¸±Û ·Î±×ÀÎ</a></button>
                         </div>
                         <div>
-                            <button type="button" onclick="location.href='/oauth2/authorization/facebook'"><a><i class="fab fa-facebook-square"></i>  ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½</a></button>
+                            <button type="button" onclick="location.href='/oauth2/authorization/facebook'"><a><i class="fab fa-facebook-square"></i>ÆäÀÌ½ººÏ ·Î±×ÀÎ</a></button>
                         </div>
                         <div>
-                            <button type="button" onclick="location.href='/oauth2/authorization/naver'"><a>ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Î±ï¿½ï¿½ï¿½</a></button>
+                            <button type="button" onclick="location.href='/oauth2/authorization/naver'"><a>³×ÀÌ¹ö ·Î±×ÀÎ</a></button>
                         </div>
                     </div>
                     <div class="hr-sect">
                         <span>&nbsp;or&nbsp;</span>
                     </div>
                     <div>
-                        <button type="button" id="sign_up_btn" onclick="location.href='/auth/signup'">È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</button>
+                        <button type="button" id="sign_up_btn" onclick="location.href='/auth/signup'">È¸¿ø°¡ÀÔ</button>
                     </div>
                     <p class="text-center">
                         <small>By signing in, you agree to JMKY's
