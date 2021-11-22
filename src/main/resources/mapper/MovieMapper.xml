@@ -30,8 +30,13 @@
   			movie_no = #{movie_no}
   	</select>
   	
-  	<update id="update">
-  	
+  	<update id="contentLike"><!-- 게시글 좋아요 쿼리 -->
+  		update
+  			movie_mst
+  		set
+  			contentLike = contentLike+1
+  		where
+  			movie_no = #{movie_no}
   	</update>
   	
   	<delete id="delete">

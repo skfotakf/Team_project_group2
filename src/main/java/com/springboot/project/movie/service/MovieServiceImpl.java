@@ -50,5 +50,9 @@ public class MovieServiceImpl implements MovieService{
 		return movieListDAO.countMovie(criteria);
 	}
 	
+	@Override
+	public void contentLike(int movie_no) throws Exception {
+		movieListDAO.contentLike(movie_no);
+	}
 
 }

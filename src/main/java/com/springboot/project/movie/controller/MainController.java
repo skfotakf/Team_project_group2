@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.springboot.project.movie.commons.paging.Criteria;
@@ -55,6 +56,18 @@ public class MainController {
 		model.addAttribute("movieList", movieService.listAll());
 		
 		return "/movie/list";
+	}
+	
+	@RequestMapping("movie/contentLike.do")
+	public String contentLike(@RequestParam int movie_no, RedirectAttributes redirectAttributes) throws Exception {
+		
+		logger.info("cilck like button...");
+		
+		movieService.contentLike(movie_no);
+		
+		// 페이지값을 그대로 넘겨받기 우해 포워딩을 사용 -> 컨트롤러로 리턴
+		return "forward:/movie/list";
+		
 	}
 	
 	
