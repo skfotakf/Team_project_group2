@@ -24,6 +24,5 @@ public interface MovieListDAO {
 	List<MovieVO> listCriteria(Criteria criteria) throws Exception;
 	
 	List<MovieVO> countMovie(Criteria criteria) throws Exception;
-	//게시글 좋아요
-	void contentLike(int movie_no) throws Exception;
+	
 }

@@ -1,6 +1,12 @@
 package com.springboot.project.movie.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@ToString
 public class MovieVO {
 
 	//movie_mst
@@ -10,54 +16,6 @@ public class MovieVO {
 	private String movie_date; // 개봉일자
 	private int viewcnt; // 조회수
 	private int contentLike; //좋아요 수
-	
-	public int getMovie_no() {
-		return movie_no;
-	}
-	public void setMovie_no(int movie_no) {
-		this.movie_no = movie_no;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public String getMovie_date() {
-		return movie_date;
-	}
-	public void setMovie_date(String movie_date) {
-		this.movie_date = movie_date;
-	}
-	public int getViewcnt() {
-		return viewcnt;
-	}
-	public void setViewcnt(int viewcnt) {
-		this.viewcnt = viewcnt;
-	}
-	public int getcontentLike() {
-		return contentLike;
-	}
-	public void setcontentLike(int contentLike) {
-		this.contentLike = contentLike;
-	}
-	@Override
-	public String toString() {
-		return "MovieVO [movie_no=" + movie_no 
-					+ ", title=" + title 
-					+ ", content=" + content 
-					+ ", movie_date=" + movie_date 
-					+ ", viewcnt=" + viewcnt 
-					+ ", contentLike=" + contentLike + "]";
-	}
-	
-	
-	
+
 	
 }
