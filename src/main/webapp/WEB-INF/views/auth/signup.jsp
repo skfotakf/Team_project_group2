@@ -17,7 +17,7 @@
         <div id="inner_box">
             <h1>Create account</h1>
             <div>
-                <label for="">Your name</label>
+                <label for="">ID</label>
                 <input type="text">
             </div>
             <div>
@@ -31,6 +31,18 @@
             <div></div>
             <div>
                 <label for="">Re-enter password</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Your name</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Your telephone</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">NickName</label>
                 <input type="text">
             </div>
             <button>Create your JMKY account</button>
