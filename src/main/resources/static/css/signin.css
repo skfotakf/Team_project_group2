@@ -17,8 +17,8 @@ body{
     background-color: black;
 }
 
-.JMKYheader{
-    width: 1024px;
+.imdbheader{
+    width: 1280px;
     height: 56px;
     display: flex;
     align-items: center;
@@ -26,12 +26,12 @@ body{
 
 
 
-.JMKYheader h1{
+.imdbheader h1{
     width: 59.67px;
     font-size: 25px;
 }
 
-.JMKYheader ul li{
+.imdbheader ul li{
     color: #fff;
     float: left;
     font-size:14px;
@@ -39,10 +39,39 @@ body{
 }
 
 #menu{
+    width: 90px;
     margin: 0;
     padding: 0;
 }
+#serach_container{
+    display: flex;
+    width: 650px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: #fff;
+    
+}
+#serach_container select{
+    width: 50px;
+    text-align: center;
+}
 
+#serach_container input{
+    width: 100%;
+    height: 31.25px;
+    padding: 5.25px 0 6px 8px;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+    border: 0px;
+}
+#serach_container button{
+    cursor: pointer;
+    background: #fff;
+}
+.top_nav{
+    margin: 0;
+    padding: 0;
+}
 .top_nav li{
     padding: 0 16px;
 }
@@ -79,7 +108,9 @@ body{
 }
 
 #sign_in_box input{
+    box-sizing: border-box;
     width: 100%;
+    padding: 10px 5px;
     height: 34px;
     background-color: rgb(223, 222, 222);
     margin-bottom: 10px;
