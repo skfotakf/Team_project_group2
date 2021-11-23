@@ -5,54 +5,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.project.movie.commons.paging.Criteria;
-import com.springboot.project.movie.domain.MovieVO;
-import com.springboot.project.movie.mapper.MovieListDAO;
+import com.springboot.project.movie.mapper.MainListDAO;
+import com.springboot.project.movie.model.dto.MainListDto;
 
 @Service
 public class MovieServiceImpl implements MovieService{
 	
 	@Autowired
-	private MovieListDAO movieListDAO;
-
-	@Override
-	public void create(MovieVO movieVO) throws Exception {
-		movieListDAO.create(movieVO);
-	}
-
-	@Override
-	public MovieVO read(int movie_no) throws Exception {
-		return movieListDAO.read(movie_no);
-	}
-
-	@Override
-	public void update(MovieVO movieVO) throws Exception {
-		movieListDAO.update(movieVO);
-	}
-
-	@Override
-	public void delete(MovieVO movieVO) throws Exception {
-		movieListDAO.delete(movieVO);
-	}
-
-	@Override
-	public List<MovieVO> listAll() throws Exception {
+	private MainListDAO movieListDAO;
+	
+	@Override // 메인 list
+	public List<MainListDto> listAll() {
 		return movieListDAO.listAll();
 	}
-	
-	@Override
-	public List<MovieVO> listCriteria(Criteria criteria) throws Exception {
-		return movieListDAO.listCriteria(criteria);
-	}
-	
-	@Override
-	public List<MovieVO> countMovie(Criteria criteria) throws Exception {
-		return movieListDAO.countMovie(criteria);
-	}
-	
-	@Override
-	public void contentLike(int movie_no) throws Exception {
-		movieListDAO.contentLike(movie_no);
+
+	@Override // 조회수 증가
+	public int plusMovieListCnt(String mov_idn) {
+		return movieListDAO.plusMovieListCnt(Integer.parseInt(mov_idn));
 	}
 
 }

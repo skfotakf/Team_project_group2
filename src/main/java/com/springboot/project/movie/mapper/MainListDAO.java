@@ -1,17 +1,17 @@
-package com.springboot.project.movie.service;
+package com.springboot.project.movie.mapper;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import org.apache.ibatis.annotations.Mapper;
 
 import com.springboot.project.movie.model.dto.MainListDto;
 
-@Service
-public interface MovieService {
+@Mapper
+public interface MainListDAO {
 	
 	// 모든 영화 리스트 불러오기
 	public List<MainListDto> listAll();
 	// 조회수 증가
-	public int plusMovieListCnt(String mov_idn);
-
+	public int plusMovieListCnt(int mov_idn);
+	
 }
