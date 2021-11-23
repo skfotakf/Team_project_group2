@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class PageController {
+public class ListController {
 	
-	@GetMapping({"/", "/index"})
+	@GetMapping("/list/list")
 	public String index() {
-		return "index";
+		return "list/list";
 	}
 }

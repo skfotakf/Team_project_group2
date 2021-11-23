@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.formLogin() // 로그인 페이지 커스텀
 				.loginPage("/auth/signin") //get 해준다
 				.loginProcessingUrl("/auth/signin") //post controller를 따로 만들필요 없음(security가 자동으로 처리)
-				.defaultSuccessUrl("/auth/signin")  // 로그인 성공시 이동할 URL
+				.defaultSuccessUrl("/list/list")  // 로그인 성공시 이동할 URL
 			.and()
 			.oauth2Login()
 				.loginPage("/auth/signin")
