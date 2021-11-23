@@ -5,9 +5,7 @@
     border: 0;
     margin:  0 auto;
 }
-a{
-    color: #fff;
-}
+
 body{
     background-color: rgb(187, 187, 187);
 }
@@ -17,7 +15,11 @@ body{
     background-color: black;
 }
 
-.imdbheader{
+#header a{
+    color: #fff;
+}
+
+.JMKYheader{
     width: 1280px;
     height: 56px;
     display: flex;
@@ -26,12 +28,12 @@ body{
 
 
 
-.imdbheader h1{
+.JMKYheader h1{
     width: 59.67px;
     font-size: 25px;
 }
 
-.imdbheader ul li{
+.JMKYheader ul li{
     color: #fff;
     float: left;
     font-size:14px;
@@ -39,7 +41,7 @@ body{
 }
 
 #menu{
-    width: 90px;
+    min-width: 90px;
     margin: 0;
     padding: 0;
 }
@@ -52,8 +54,10 @@ body{
     
 }
 #serach_container select{
-    width: 50px;
+    min-width: 30px;
     text-align: center;
+    border-radius: 5px;
+    outline: none;
 }
 
 #serach_container input{
@@ -62,23 +66,42 @@ body{
     padding: 5.25px 0 6px 8px;
     font-size: 0.875rem;
     box-sizing: border-box;
-    border: 0px;
+    border: none;
+    border-radius: 5px;
+}
+#serach_container input:focus{
+    outline: none;
 }
 #serach_container button{
+    margin-right: 10px;
     cursor: pointer;
     background: #fff;
 }
+
 .top_nav{
+    display: flex;
     margin: 0;
     padding: 0;
-}
-.top_nav li{
-    padding: 0 16px;
+    height: 31.25px;
+    line-height: 31.25px;
 }
 
-.top_nav li:first-child{
+
+.top_nav li{
+    font-size: 14px;
+    padding: 0 16px;
+    
+}
+.top_nav li:hover{
+    
+    background: rgb(53, 51, 51);
+}
+
+.top_nav #JMKYPro{
     border-right:2px solid gray;
 }
+
+
 
 
 /*main*/
@@ -117,6 +140,21 @@ body{
     border-radius: 5px;
     
 }
+.item_msg {
+	font-size: 12px;
+	color: red;
+	font-weight: 600;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.item_msg .emailErrorMsg {
+	display: none;
+}
+
+.item_msg .passwordErrorMsg {
+	display: none;
+}
 
 #sign_in_box button{
     width: 100%;
@@ -136,8 +174,6 @@ body{
 #login_btns a{
     color: black;
 }
-
-
 
 
 
@@ -224,6 +260,9 @@ body{
     background-color: black;
     padding:16px 0;
 }
+.footer a{
+    color: #fff;
+}
 
 #icon_box{
     width: 1024px;
@@ -265,3 +304,7 @@ body{
     display: flex;
     line-height: 20px;
 }
+
+
+
+

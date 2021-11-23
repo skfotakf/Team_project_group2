@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    
+    <body>
 	<jsp:include page="include/index_include/index_header.jsp"></jsp:include>
     <div id="root">
         <div class="content1">
@@ -20,15 +20,22 @@
                 <div id="sign_in_box">
                     <h1>Sign in</h1>
                     <form action="signin" method="post">
+                    <input type="hidden" id="flag" value="${empty flag ? 3 : flag }">
                         <div>
-                            <input type="text" placeholder="ID">
+                            <input type="text" class="item_ip"  placeholder="ID">
+                        </div>
+                        <div class="item_msg">
+                            <span class="emailErrorMsg"></span>
                         </div>
                         <div>
-                            <input type="password" placeholder="Password">
+                            <input type="password" class="item_ip" placeholder="Password">
+                        </div>
+                        <div class="item_msg">
+                            <span class="passwordErrorMsg"></span>
                         </div>
                         <div id="login_btns">
                             <div>
-                                <button type="button">로그인</button>
+                                <button type="button" class="item_btn btn_login">로그인</button>
                             </div>
                             <div>
                                 <button type="button"><a><i class="fab fa-google"></i>  구글 로그인</a></button>
@@ -91,5 +98,6 @@
 	<jsp:include page="include/index_include/index_footer"></jsp:include>
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
+<script src="/js/signin.js"></script>
 
 </html>
