@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in with JMKY</title>
     <link rel="stylesheet" href="/css/signin.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
@@ -60,7 +61,7 @@
             <div id="sign_in_option">
                 <div id="sign_in_box">
                     <h1>Sign in</h1>
-                    <form action="signin" method="post">
+                    <form action="/auth/signin" method="post">
                         <div>
                             <input type="text" placeholder="ID">
                         </div>
@@ -69,24 +70,24 @@
                         </div>
                         <div id="login_btns">
                             <div>
-                                <button type="button">로그인</button>
-                            </div>
-                            <div>
-                                <button type="button"><a><i class="fab fa-google"></i>  구글 로그인</a></button>
-                            </div>
-                            <div>
-                                <button type="button"><a><i class="fab fa-facebook-square"></i>  페이스북 로그인</a></button>
-                            </div>
-                            <div>
-                                <button type="button"><a>네이버 로그인</a></button>
-                            </div>
-                        </div>
+                                <button type="submit">로그인</button>
+	                        </div>
+	                        <div>
+	                        	<button type="button" onclick="location.href='/oauth2/authorization/google'"><a><i class="fab fa-google"></i>구글 로그인</a></button>
+	                        </div>
+	                        <div>
+	                            <button type="button" onclick="location.href='/oauth2/authorization/facebook'"><a><i class="fab fa-facebook-square"></i>페이스북 로그인</a></button>
+	                        </div>
+	                        <div>
+	                            <button type="button" onclick="location.href='/oauth2/authorization/naver'"><a>네이버 로그인</a></button>
+	                        </div>
+	                    </div>
                     </form>
                     <div class="hr-sect">
                         <span>&nbsp;or&nbsp;</span>
                     </div>
                     <div>
-                        <button type="button" id="sign_up_btn" onclick="location.href='/auth/signup'">회원가입</button>
+                        <button type="button" id="sign_up_btn" onclick="location.href = '/auth/signup'">회원가입</button>
                     </div>
                     <p class="text-center">
                         <small>By signing in, you agree to IMDb's

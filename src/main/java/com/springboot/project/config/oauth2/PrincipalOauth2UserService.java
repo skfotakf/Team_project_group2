@@ -49,7 +49,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 		String id = provider + "_" + providerId;
 		
 		User userEntity = userRepository.getUser(id);	
-		
+		System.out.println(userEntity);
 		
 		if(userEntity == null) {
 			// 처음 사이트 로그인
@@ -58,10 +58,13 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 										.password(new BCryptPasswordEncoder().encode(UUID.randomUUID().toString()))
 										.email((String)attributes.get("email"))
 										.name((String) attributes.get("name"))
+										.nickname((String)attributes.get("nickname"))
+										.telephone((String)attributes.get("telephone"))
 										.role("ROLE_USER")
 										.provider(provider)
 										.build();
 			userEntity = oAuth2UserDto.toEntity();
+			System.out.println(userEntity);
 			userRepository.signup(userEntity);
 		}
 		return new PrincipalDetails(userEntity, attributes);

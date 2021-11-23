@@ -24,7 +24,7 @@ public class SignupDto {
 	@NotBlank
 	private String nickname;
 	@NotBlank
-	private String phoneNum;
+	private String telephone;
 	
 	public User toEntity() {
 		return User.builder()
@@ -33,7 +33,7 @@ public class SignupDto {
 				.email(email)
 				.name(name)
 				.nickname(nickname)
-				.phoneNum(phoneNum)
+				.telephone(telephone)
 				.build();
 				
 	}

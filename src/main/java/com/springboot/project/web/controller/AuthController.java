@@ -29,13 +29,13 @@ public class AuthController {
 		return "auth/signin";
 	}
 	
-	@GetMapping("/auth/singup")
+	@GetMapping("/auth/signup")
 	public String signupForm() {
 		return "auth/signup";
 	}
 	
 	@ResponseBody
-	@PostMapping("auth/signup")	 // JSON 형태로 반환해주기 위해 Object 객체를 사용					
+	@PostMapping("/auth/signup")	 // JSON 형태로 반환해주기 위해 Object 객체를 사용					
 	public Object signup(@Valid SignupDto signupDto, BindingResult bindingResult) {
 		// 오류 발견시
 		if(bindingResult.hasErrors()) {

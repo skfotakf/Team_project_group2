@@ -14,7 +14,7 @@ public class OAuth2UserDto {
 	private String email;
 	private String name;
 	private String nickname;
-	private String phoneNum;
+	private String telephone;
 	private String role;
 	private String provider;
 	
@@ -25,7 +25,7 @@ public class OAuth2UserDto {
 				.email(email)
 				.name(name)
 				.nickname(nickname)
-				.phoneNum(phoneNum)
+				.telephone(telephone)
 				.role(role)
 				.provider(provider)
 				.build();

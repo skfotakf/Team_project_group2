@@ -19,7 +19,7 @@ public class User {
 	private String email;
 	private String name;
 	private String nickname;
-	private String phoneNum;
+	private String telephone;
 	private String role;
 	private String provider;
 	private Date createdate;
