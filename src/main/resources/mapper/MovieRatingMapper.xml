@@ -5,8 +5,24 @@
   
   <mapper namespace="com.springboot.project.movie.mapper.MovieRatingDAO">
   
-  <select id="">
-  
-  </select>
-  
+  <!-- 영화 리스트를 보고있는 회원 넘버와 현재 회원넘버가 일치하는지? -->
+  	<select id="getMovieList">
+  		SELECT
+			*
+		FROM
+			movie_mst mm
+			LEFT OUTER JOIN user_mst um ON(um.number = mm.number)
+		ORDER BY
+			mm.mov_idn
+  	</select>
+  	
+  	<select id="ratingCheck">
+  		SELECT
+			mov_rat_cnt
+		FROM
+			movie_mst
+		WHERE
+			mov_idn = #{mov_idn} AND movie_mst.number = #{number};
+  			
+  	</select>
   </mapper>

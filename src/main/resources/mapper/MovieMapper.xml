@@ -7,16 +7,11 @@
   	
   	<select id="listAll" > <!-- 영화 목록 list read -->
   		select
-  			mov_idn,
-  			mov_title,
-  			mov_release,
-  			mov_viewCnt,
-  			mov_lik_idn,
-  			mov_rat_idn
+  			*
   		from
   			movie_mst
   		order by
-  			mov_idn desc
+  			mov_idn
   	</select>
   	
   	<update id="plusMovieListCnt"> <!--  조회수 증가 -->
@@ -27,6 +22,10 @@
   		where
   			mov_idn = #{mov_idn}
   	</update>
+  	
+  	<select id=""> <!-- 별점 쿼리 -->
+  	
+  	</select>
  
   	
   </mapper>

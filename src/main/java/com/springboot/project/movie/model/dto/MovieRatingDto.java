@@ -9,8 +9,10 @@ import lombok.ToString;
 @ToString
 public class MovieRatingDto {
 	
-	private int mov_rat_idn; // 영화 별점 아이디
+	// movie_rating
+	private int mov_idn; // 영화 아이디
 	private int number; // 회원 아이디
-	private int mov_rat_cilck; // 별점 클릭시
+	private char mov_rat_cilck; // 별점 클릭시
 
 }
+	
