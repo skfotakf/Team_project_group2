@@ -1,63 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="css/signin.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/mainNav.css" />
     <link rel="stylesheet" href="css/list.css" />
   </head>
   <body>
     <div class="container">
-      <header>
-        <div class="imdb_header">
-          <div class="page-content-container">
-            <a class="imdb-header_logo-link">
-              <img class="img_imdb" src="image/imdb1.png" />
-            </a>
-            <label class="imdb_menu">Menu</label>
-            <div class="search-container">
-              <form class="nav-search-form">
-                <div class="search-category-selector">
-                  <label class="categories" role="button">All</label>
-                </div>
-                <div class="search-input-container">
-                  <input type="text" class="search-input" />
-                </div>
-                <button id="suggestion-search-button">검색</button>
-              </form>
-            </div>
+      <header id="header">
+        <div class="imdbheader">
+          <h1><a href="" class="logo">IMDb</a></h1>
 
-            <div class="navbar_user">
-              <a
-                class="IMDbPro"
-                href="https://pro.imdb.com/login/ap?u=/login/lwa&imdbPageAction=signUp&rf=cons_nb_hm&ref_=cons_nb_hm"
-                >IMDbPro</a
-              >
-              <div class="navbar_bar"></div>
-              <a class="watchlist">Watchlist</a>
-              <a class="signin-text">Sign In</a>
-            </div>
+          <ul id="menu">
+            <a href="">
+              <li class="icon"><i class="fas fa-list"></i> Menu</li>
+            </a>
+          </ul>
+          <div id="serach_container">
+            <select name="serach_navbar" id="serach_navbar">
+              <div>
+                <option value="all">All</option>
+                <option value="Titles">Titles</option>
+                <option value="TV Episodes">TV Episodes</option>
+                <option value="Celebs">Celebs</option>
+                <option value="Companies">Companies</option>
+                <option value="Keywords">Keywords</option>
+                <option value="Advanced Search">Advanced Search</option>
+              </div>
+            </select>
+            <input type="text" placeholder="Search IMDb" />
+            <button><i class="fas fa-search"></i></button>
           </div>
+          <ul class="top_nav">
+            <a href="">
+              <li>IMDbPro</li>
+            </a>
+            <a href="">
+              <li><i class="far fa-plus-square"></i> Watchlist</li>
+            </a>
+            <a href="">
+              <li>Sign In</li>
+            </a>
+          </ul>
         </div>
       </header>
       <div class="wrapper">
         <div class="pagecontent">
-          <div class="content-2-wide">
+          <div class="content_2_wide">
             <div class="main">
-              <span class="ab-widget">
-                <div class="covid-message">
+              <span class="ab_widget">
+                <div class="covid_message">
                   <div class="alert">
-                    <p class="alert-message">
+                    <p class="alert_message">
                       While theaters are closed, some data on this page may be
                       delayed or unavailable. In the meantime, check out
                       <a href="https://www.imdb.com/whats-on-tv/?ref_=im_2020"
                         >What's on TV and Streaming »</a
                       >
                     </p>
-                    <p class="alert-message">
+                    <p class="alert_message">
                       If you’re going out to the movies (or going out anywhere),
                       please stay safe! Check out the
                       <a
@@ -70,81 +78,1099 @@
                   </div>
                 </div>
               </span>
-              <h1 class="title-topBo">Top Box Office</h1>
+              <h1 class="title_topBo">Top Box Office</h1>
 
               <hr />
               <div class="desc">Weekend of November 12 - 14, 2021</div>
               <table class="list">
-                <thead class="list-header">
+                <thead class="list_header">
                   <tr>
-                    <th class="list-poster"></th>
-                    <th class="list-title">Title</th>
-                    <th class="list-rating list-rating-title">
+                    <th class="list_poster"></th>
+                    <th class="list_title">Title</th>
+                    <th class="list_rating list_rating_title">
                       IMDb <br />Rating
                     </th>
-                    <th class="list-date">Date</th>
-                    <th class="list-count">Count</th>
-                    <th class="list-like">Like</th>
+                    <th class="list_date">Date</th>
+                    <th class="list_count">Count</th>
+                    <th class="list_like">Like</th>
                   </tr>
                 </thead>
-                <tbody class="list-main">
+                <tbody class="list_main">
                   <tr>
-                    <td class="list-poster">
+                    <td class="list_poster">
                       <img src="image/eternals.jpg" />
                     </td>
-                    <td class="list-title">
+                    <td class="list_title">
                       <a
                         href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
                         >Eternals</a
                       >
                     </td>
-                    <td class="list-rating">
-                      <div class="seen-widget">
-                        <div class="boundary-left">
-                          <div class="popover"></div>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
                         </div>
-                        
-                        <i class="fas fa-star" style="color: orange"></i
-                        >&nbsp;8.6<br />
-                        <i
-                          class="fas fa-star"
-                          style="color: darkgray"
-                          id="mystar"
-                        ></i>
-                        <span class="myrating" style="font-size: 13px"
-                          >seen</span
-                        >
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star1"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star2"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star3"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star4"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star5"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star6"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star7"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star8"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star9"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star10"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
                       </div>
                     </td>
-                    <td class="list-date">11/19</td>
-                    <td class="list-count">42</td>
-                    <td class="list-like">like</td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">like</td>
+                  </tr>
+                  <tr>
+                    <td class="list_poster">
+                      <img src="image/eternals.jpg" />
+                    </td>
+                    <td class="list_title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
+                        </div>
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star11"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star12"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star13"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star14"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star15"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star16"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star17"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star18"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star19"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star20"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">like</td>
+                  </tr>
+                  <tr>
+                    <td class="list_poster">
+                      <img src="image/eternals.jpg" />
+                    </td>
+                    <td class="list_title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
+                        </div>
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star1"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star2"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star3"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star4"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star5"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star6"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star7"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star8"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star9"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star10"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">like</td>
+                  </tr>
+                  <tr>
+                    <td class="list_poster">
+                      <img src="image/eternals.jpg" />
+                    </td>
+                    <td class="list_title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
+                        </div>
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star1"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star2"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star3"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star4"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star5"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star6"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star7"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star8"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star9"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star10"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">like</td>
+                  </tr>
+                  <tr>
+                    <td class="list_poster">
+                      <img src="image/eternals.jpg" />
+                    </td>
+                    <td class="list_title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
+                        </div>
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star1"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star2"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star3"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star4"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star5"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star6"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star7"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star8"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star9"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star10"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">like</td>
+                  </tr>
+                  <tr>
+                    <td class="list_poster">
+                      <img src="image/eternals.jpg" />
+                    </td>
+                    <td class="list_title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
+                        </div>
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star1"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star2"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star3"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star4"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star5"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star6"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star7"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star8"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star9"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star10"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">like</td>
+                  </tr>
+                  <tr>
+                    <td class="list_poster">
+                      <img src="image/eternals.jpg" />
+                    </td>
+                    <td class="list_title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
+                        </div>
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star1"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star2"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star3"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star4"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star5"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star6"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star7"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star8"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star9"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star10"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">like</td>
+                  </tr>
+                  <tr>
+                    <td class="list_poster">
+                      <img src="image/eternals.jpg" />
+                    </td>
+                    <td class="list_title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
+                        </div>
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star1"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star2"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star3"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star4"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star5"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star6"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star7"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star8"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star9"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star10"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">like</td>
+                  </tr>
+                  <tr>
+                    <td class="list_poster">
+                      <img src="image/eternals.jpg" />
+                    </td>
+                    <td class="list_title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
+                        </div>
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star1"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star2"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star3"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star4"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star5"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star6"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star7"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star8"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star9"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star10"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">like</td>
+                  </tr>
+                  <tr>
+                    <td class="list_poster">
+                      <img src="image/eternals.jpg" />
+                    </td>
+                    <td class="list_title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
+                        </div>
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star1"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star2"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star3"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star4"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star5"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star6"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star7"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star8"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star9"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star10"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">like</td>
                   </tr>
                 </tbody>
               </table>
-              <div class="text-smaller">
+              <div class="text_smaller">
                 Reported by
                 <a href="https://www.boxofficemojo.com/">Box Office Mojo</a> ©
                 2021
               </div>
             </div>
             <div class="sidebar">
-              <div class="sidebar-top"></div>
-              <div class="sidebar-widget">
-                <div class="sidebar-title">
-                  <h5 class="title-yhs">You Have Seen</h5>
+              <div class="sidebar_top"></div>
+              <div class="sidebar_widget">
+                <div class="sidebar_title">
+                  <h5 class="title_yhs">You Have Seen</h5>
                 </div>
-                <div class="sidebar-seen">
+                <div class="sidebar_seen">
                   <span>0&nbsp;</span>
                   <span>/250</span>
                   <span>( 0% )</span><br />
                   <div>
-                    <input class="seen-title" type="checkbox" />
-                    <label for="seen-title">Hide titles I've seen</label>
+                    <input class="seen_title" type="checkbox" />
+                    <label for="seen_title">Hide titles I've seen</label>
                   </div>
                 </div>
               </div>
-              <div class="sidebar-widget">
+              <div class="sidebar_widget">
                 <h3>YMCK Charts</h3>
 
                 <a>Box Office</a><br />
@@ -156,7 +1182,7 @@
                 <a>Top Rated Indian Movies</a><br />
                 <a>Lowest Rated Movies</a>
               </div>
-              <div class="sidebar-widget">
+              <div class="sidebar_widget">
                 <h3>YMCK Charts</h3>
 
                 <a>Action </a><br />
@@ -184,11 +1210,101 @@
             </div>
           </div>
         </div>
-        <div id="rvi-div">
-          <div class="recently-viewed"></div>
+        <div id="rvi_div">
+          <div class="recently_viewed"></div>
         </div>
       </div>
-      <div id="imdbFooter"></div>
+      <footer class="footer">
+        <div id="icon_box">
+          <ul>
+            <li>
+              <a href=""><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-twitch"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div id="link_box">
+          <div class="link_content_box">
+            <ul>
+              <li>
+                <a href=""
+                  >Get the IMDb App <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href="">Help <i class="fas fa-external-link-alt"></i></a>
+              </li>
+              <li>
+                <a href=""
+                  >Site Index <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href="">IMDbPro <i class="fas fa-external-link-alt"></i></a>
+              </li>
+              <li>
+                <a href=""
+                  >Box Office Mojo <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >IMDb Developer <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="link_content_box">
+            <ul>
+              <li>
+                <a href=""
+                  >Press Room <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >Advertising <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href="">Jobs <i class="fas fa-external-link-alt"></i></a>
+              </li>
+              <li>
+                <a href=""
+                  >Conditions of Use <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >Privacy Policy <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >Interest-Based Ads <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="JMKY_footer_logo">
+          <p>an amazon company</p>
+        </div>
+        <div id="JMKY_footer_copy">
+          <p>&copy; 1990-2021 by JMKY.com, Inc.</p>
+        </div>
+      </footer>
     </div>
     <script type="text/javascript" src="js/list.js"></script>
 
