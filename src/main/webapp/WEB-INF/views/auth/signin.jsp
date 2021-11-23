@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -12,49 +12,8 @@
 </head>
 
 <body>
-    <header id="header">
-        <div class="imdbheader">
-
-            <h1><a href="" class="logo">IMDb</a></h1>
-
-            <ul id="menu">
-                <a href="">
-                    <li class="icon"><i class="fas fa-list"></i> Menu</li>
-                </a>
-            </ul>
-            <div id="serach_container">
-                <select name="serach_navbar" id="serach_navbar">
-                    <div>
-                        <option value="all">All</option>
-                        <option value="Titles">Titles</option>
-                        <option value="TV Episodes">TV Episodes</option>
-                        <option value="Celebs">Celebs</option>
-                        <option value="Companies">Companies</option>
-                        <option value="Keywords">Keywords</option>
-                        <option value="Advanced Search">Advanced Search</option>
-                    </div>
-                </select>
-                <input type="text" placeholder="Search IMDb" >
-                <button><i class="fas fa-search"></i></button>
-                
-            </div>
-            <ul class="top_nav">
-                <a href="">
-                    <li>IMDbPro </li>
-                </a>
-                <a href="">
-                    <li><i class="far fa-plus-square"></i> Watchlist</li>
-                </a>
-                <a href="">
-                    <li>Sign In</li>
-                </a>
-            </ul>
-        </div>
-    </header>
-
-
-
-
+    
+	<jsp:include page="include/index_include/index_header.jsp"></jsp:include>
     <div id="root">
         <div class="content1">
             <div id="sign_in_option">
@@ -82,6 +41,7 @@
                             </div>
                         </div>
                     </form>
+                            
                     <div class="hr-sect">
                         <span>&nbsp;or&nbsp;</span>
                     </div>
@@ -128,51 +88,7 @@
         </div>
 
     </div>
-
-
-    <footer class="footer">
-        <div id="icon_box">
-            <ul>
-                <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
-                <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                <li><a href=""><i class="fab fa-twitch"></i></a></li>
-                <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                <li><a href=""><i class="fab fa-youtube"></i></a></li>
-                
-            </ul>
-        </div>
-        <div id="link_box">
-            <div class="link_content_box">
-                <ul>
-                    <li><a href="">Get the IMDb App <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Help <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Site Index <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">IMDbPro <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Box Office Mojo <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">IMDb Developer <i class="fas fa-external-link-alt"></i></a></li>
-                </ul>
-            </div>
-            <div class="link_content_box">
-                <ul>
-                    <li><a href="">Press Room <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Advertising <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Jobs <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Conditions of Use <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Privacy Policy <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">Interest-Based Ads <i class="fas fa-external-link-alt"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="JMKY_footer_logo">
-            <p>an amazon company</p>
-        </div>
-        <div id="JMKY_footer_copy">
-            <p>&copy; 1990-2021 by JMKY.com, Inc.</p>
-        </div>
-
-    </footer>
-
-
+	<jsp:include page="include/index_include/index_footer"></jsp:include>
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
 
