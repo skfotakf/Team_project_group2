@@ -47,7 +47,7 @@ a {
   position: relative;
 }
 .alert {
-  margin: 0 0 20px;
+  margin: 20px 0 20px;
   padding: 12px 12px 12px 64px;
   border-radius: 6px;
   background: #f3eeaf
@@ -82,7 +82,7 @@ a {
 
   background-color: #f6f6f5;
   height: 30px;
-  text-align: left;
+  text-align: center;
 }
 .list_header th {
   height: 30px;
@@ -98,17 +98,21 @@ a {
   border-left: none;
 }
 .list_title {
-  width: 290px;
-  padding-right: 10px;
+  text-align: left !important;
+}
+.list_title {
+  width: 300px;
+  padding-right: 0px;
+  text-align: left;
 }
 .list_rating {
-  width: 65px;
-  padding-right: 10px;
+  width: 75px;
+  padding-right: 0px;
   position: relative;
 }
 .list_rating_title {
   font-size: 10px;
-  text-align: left;
+  text-align: center;
 }
 /*=======seen-widget===========================================================*/
 .seen_widget {
@@ -128,6 +132,7 @@ a {
 .my_rating {
   width: 200px;
   height: 30px;
+
   position: absolute;
   left: -250px;
 }
@@ -151,7 +156,7 @@ a {
   margin: -1 5px;
   top: 4px;
   height: 22px;
-
+  left: 10px;
   cursor: pointer;
   width: 20px;
 }
@@ -176,28 +181,49 @@ a {
   position: absolute;
   cursor: pointer;
   top: 6px;
-  left: 250px;
+  left: 258px;
 }
 .my_rating {
   position: relative;
 }
 .seen {
   position: absolute;
-  left: 270px;
+  left: 277px;
   top: 3px;
   display: none;
 }
 /*===========================================*/
 .list_date {
-  width: 65px;
-  padding-right: 10px;
+  width: 75px;
+  padding-right: 0px;
 }
 .list_count {
-  width: 55px;
-  padding-right: 10px;
+  width: 65px;
+  padding-right: 0px;
 }
 .list_like {
   width: 50px;
+  position: relative;
+}
+.imdb_like {
+  height: 24px;
+}
+.people_like {
+  height: 24px;
+}
+.like_widget {
+  display: flex;
+  white-space: nowrap;
+  width: 50px;
+  height: 75px;
+  vertical-align: middle;
+  position: absolute;
+  top: 0px;
+  flex-direction: column;
+  justify-content: center;
+}
+.like_heart {
+  cursor: pointer;
 }
 .text_smaller {
   font-size: 10px;

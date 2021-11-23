@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,8 +15,8 @@
   <body>
     <div class="container">
       <header id="header">
-        <div class="imdbheader">
-          <h1><a href="" class="logo">IMDb</a></h1>
+        <div class="JMKYheader">
+          <h1><a href="" class="logo">JMKY</a></h1>
 
           <ul id="menu">
             <a href="">
@@ -35,12 +35,12 @@
                 <option value="Advanced Search">Advanced Search</option>
               </div>
             </select>
-            <input type="text" placeholder="Search IMDb" />
+            <input type="text" placeholder="Search JMKY" />
             <button><i class="fas fa-search"></i></button>
           </div>
           <ul class="top_nav">
             <a href="">
-              <li>IMDbPro</li>
+              <li>JMKYPro</li>
             </a>
             <a href="">
               <li><i class="far fa-plus-square"></i> Watchlist</li>
@@ -51,6 +51,7 @@
           </ul>
         </div>
       </header>
+
       <div class="wrapper">
         <div class="pagecontent">
           <div class="content_2_wide">
@@ -199,112 +200,21 @@
                     </td>
                     <td class="list_date">11/19</td>
                     <td class="list_count">42</td>
-                    <td class="list_like">like</td>
-                  </tr>
-                  <tr>
-                    <td class="list_poster">
-                      <img src="image/eternals.jpg" />
-                    </td>
-                    <td class="list_title">
-                      <a
-                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
-                        >Eternals</a
-                      >
-                    </td>
-                    <td class="list_rating">
-                      <div class="seen_widget">
-                        <div class="imdb_rating">
-                          <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
-                        </div>
-                        <div class="my_rating">
-                          <div class="popover" style="display: none">
-                            <span class="popover_delete"></span>
-                            <ul class="popover_rating">
-                              <li>
-                                <i
-                                  class="fas fa-star rating_stars"
-                                  id="star11"
-                                  style="color: darkgray"
-                                ></i>
-                              </li>
-                              <li>
-                                <i
-                                  class="fas fa-star rating_stars"
-                                  id="star12"
-                                  style="color: darkgray"
-                                ></i>
-                              </li>
-                              <li>
-                                <i
-                                  class="fas fa-star rating_stars"
-                                  id="star13"
-                                  style="color: darkgray"
-                                ></i>
-                              </li>
-                              <li>
-                                <i
-                                  class="fas fa-star rating_stars"
-                                  id="star14"
-                                  style="color: darkgray"
-                                ></i>
-                              </li>
-                              <li>
-                                <i
-                                  class="fas fa-star rating_stars"
-                                  id="star15"
-                                  style="color: darkgray"
-                                ></i>
-                              </li>
-                              <li>
-                                <i
-                                  class="fas fa-star rating_stars"
-                                  id="star16"
-                                  style="color: darkgray"
-                                ></i>
-                              </li>
-                              <li>
-                                <i
-                                  class="fas fa-star rating_stars"
-                                  id="star17"
-                                  style="color: darkgray"
-                                ></i>
-                              </li>
-                              <li>
-                                <i
-                                  class="fas fa-star rating_stars"
-                                  id="star18"
-                                  style="color: darkgray"
-                                ></i>
-                              </li>
-                              <li>
-                                <i
-                                  class="fas fa-star rating_stars"
-                                  id="star19"
-                                  style="color: darkgray"
-                                ></i>
-                              </li>
-                              <li>
-                                <i
-                                  class="fas fa-star rating_stars"
-                                  id="star20"
-                                  style="color: darkgray"
-                                ></i>
-                              </li>
-                            </ul>
-                          </div>
-
+                    <td class="list_like">
+                      <div class="like_widget">
+                        <div class="imdb_like">
                           <i
-                            class="fas fa-star seen_star"
+                            class="fas fa-heart like_heart"
                             style="color: darkgray"
                           ></i>
-                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                        <div class="people_like">
+                          <div style="font-size: 13px">
+                            <span>5</span> likes
+                          </div>
                         </div>
                       </div>
                     </td>
-                    <td class="list_date">11/19</td>
-                    <td class="list_count">42</td>
-                    <td class="list_like">like</td>
                   </tr>
                   <tr>
                     <td class="list_poster">
@@ -409,7 +319,21 @@
                     </td>
                     <td class="list_date">11/19</td>
                     <td class="list_count">42</td>
-                    <td class="list_like">like</td>
+                    <td class="list_like">
+                      <div class="like_widget">
+                        <div class="imdb_like">
+                          <i
+                            class="fas fa-heart like_heart"
+                            style="color: darkgray"
+                          ></i>
+                        </div>
+                        <div class="people_like">
+                          <div style="font-size: 13px">
+                            <span>5</span> likes
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td class="list_poster">
@@ -514,7 +438,21 @@
                     </td>
                     <td class="list_date">11/19</td>
                     <td class="list_count">42</td>
-                    <td class="list_like">like</td>
+                    <td class="list_like">
+                      <div class="like_widget">
+                        <div class="imdb_like">
+                          <i
+                            class="fas fa-heart like_heart"
+                            style="color: darkgray"
+                          ></i>
+                        </div>
+                        <div class="people_like">
+                          <div style="font-size: 13px">
+                            <span>5</span> likes
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td class="list_poster">
@@ -619,7 +557,21 @@
                     </td>
                     <td class="list_date">11/19</td>
                     <td class="list_count">42</td>
-                    <td class="list_like">like</td>
+                    <td class="list_like">
+                      <div class="like_widget">
+                        <div class="imdb_like">
+                          <i
+                            class="fas fa-heart like_heart"
+                            style="color: darkgray"
+                          ></i>
+                        </div>
+                        <div class="people_like">
+                          <div style="font-size: 13px">
+                            <span>5</span> likes
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td class="list_poster">
@@ -724,7 +676,21 @@
                     </td>
                     <td class="list_date">11/19</td>
                     <td class="list_count">42</td>
-                    <td class="list_like">like</td>
+                    <td class="list_like">
+                      <div class="like_widget">
+                        <div class="imdb_like">
+                          <i
+                            class="fas fa-heart like_heart"
+                            style="color: darkgray"
+                          ></i>
+                        </div>
+                        <div class="people_like">
+                          <div style="font-size: 13px">
+                            <span>5</span> likes
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td class="list_poster">
@@ -829,7 +795,21 @@
                     </td>
                     <td class="list_date">11/19</td>
                     <td class="list_count">42</td>
-                    <td class="list_like">like</td>
+                    <td class="list_like">
+                      <div class="like_widget">
+                        <div class="imdb_like">
+                          <i
+                            class="fas fa-heart like_heart"
+                            style="color: darkgray"
+                          ></i>
+                        </div>
+                        <div class="people_like">
+                          <div style="font-size: 13px">
+                            <span>5</span> likes
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td class="list_poster">
@@ -934,7 +914,21 @@
                     </td>
                     <td class="list_date">11/19</td>
                     <td class="list_count">42</td>
-                    <td class="list_like">like</td>
+                    <td class="list_like">
+                      <div class="like_widget">
+                        <div class="imdb_like">
+                          <i
+                            class="fas fa-heart like_heart"
+                            style="color: darkgray"
+                          ></i>
+                        </div>
+                        <div class="people_like">
+                          <div style="font-size: 13px">
+                            <span>5</span> likes
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td class="list_poster">
@@ -1039,7 +1033,21 @@
                     </td>
                     <td class="list_date">11/19</td>
                     <td class="list_count">42</td>
-                    <td class="list_like">like</td>
+                    <td class="list_like">
+                      <div class="like_widget">
+                        <div class="imdb_like">
+                          <i
+                            class="fas fa-heart like_heart"
+                            style="color: darkgray"
+                          ></i>
+                        </div>
+                        <div class="people_like">
+                          <div style="font-size: 13px">
+                            <span>5</span> likes
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td class="list_poster">
@@ -1144,7 +1152,140 @@
                     </td>
                     <td class="list_date">11/19</td>
                     <td class="list_count">42</td>
-                    <td class="list_like">like</td>
+                    <td class="list_like">
+                      <div class="like_widget">
+                        <div class="imdb_like">
+                          <i
+                            class="fas fa-heart like_heart"
+                            style="color: darkgray"
+                          ></i>
+                        </div>
+                        <div class="people_like">
+                          <div style="font-size: 13px">
+                            <span>5</span> likes
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="list_poster">
+                      <img src="image/eternals.jpg" />
+                    </td>
+                    <td class="list_title">
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        >Eternals</a
+                      >
+                    </td>
+                    <td class="list_rating">
+                      <div class="seen_widget">
+                        <div class="imdb_rating">
+                          <i class="fas fa-star" style="color: orange"></i
+                          >&nbsp;8.6
+                        </div>
+                        <div class="my_rating">
+                          <div class="popover" style="display: none">
+                            <span class="popover_delete"></span>
+                            <ul class="popover_rating">
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star1"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star2"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star3"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star4"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star5"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star6"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star7"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star8"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star9"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                              <li>
+                                <i
+                                  class="fas fa-star rating_stars"
+                                  id="star10"
+                                  style="color: darkgray"
+                                ></i>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <i
+                            class="fas fa-star seen_star"
+                            style="color: darkgray"
+                          ></i>
+                          <span class="seen" style="font-size: 13px"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="list_date">11/19</td>
+                    <td class="list_count">42</td>
+                    <td class="list_like">
+                      <div class="like_widget">
+                        <div class="imdb_like">
+                          <i
+                            class="fas fa-heart like_heart"
+                            style="color: darkgray"
+                          ></i>
+                        </div>
+                        <div class="people_like">
+                          <div style="font-size: 13px">
+                            <span>5</span> likes
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -1239,7 +1380,7 @@
             <ul>
               <li>
                 <a href=""
-                  >Get the IMDb App <i class="fas fa-external-link-alt"></i
+                  >Get the JMKY App <i class="fas fa-external-link-alt"></i
                 ></a>
               </li>
               <li>
@@ -1251,7 +1392,7 @@
                 ></a>
               </li>
               <li>
-                <a href="">IMDbPro <i class="fas fa-external-link-alt"></i></a>
+                <a href="">JMKYPro <i class="fas fa-external-link-alt"></i></a>
               </li>
               <li>
                 <a href=""
@@ -1260,7 +1401,7 @@
               </li>
               <li>
                 <a href=""
-                  >IMDb Developer <i class="fas fa-external-link-alt"></i
+                  >JMKY Developer <i class="fas fa-external-link-alt"></i
                 ></a>
               </li>
             </ul>
@@ -1314,3 +1455,4 @@
     ></script>
   </body>
 </html>
+    
