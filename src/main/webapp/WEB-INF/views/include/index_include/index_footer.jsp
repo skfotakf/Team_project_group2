@@ -14,12 +14,12 @@
         <div id="link_box">
             <div class="link_content_box">
                 <ul>
-                    <li><a href="">Get the IMDb App <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">Get the JMKY App <i class="fas fa-external-link-alt"></i></a></li>
                     <li><a href="">Help <i class="fas fa-external-link-alt"></i></a></li>
                     <li><a href="">Site Index <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">IMDbPro <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">JMKYPro <i class="fas fa-external-link-alt"></i></a></li>
                     <li><a href="">Box Office Mojo <i class="fas fa-external-link-alt"></i></a></li>
-                    <li><a href="">IMDb Developer <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="">JMKY Developer <i class="fas fa-external-link-alt"></i></a></li>
                 </ul>
             </div>
             <div class="link_content_box">

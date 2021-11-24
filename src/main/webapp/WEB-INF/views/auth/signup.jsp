@@ -112,5 +112,7 @@
         		}) // end ajax
         	} // end onclick
         </script>
+    </div>
+    <jsp:include page="include/signup_include/signup_footer.jsp"></jsp:include>
 </body>
 </html>
