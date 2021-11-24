@@ -39,10 +39,17 @@ public class MainListController {
 		
 		boolean result = ratingService.ratingCheck(vo, session);
 		ModelAndView mav = new ModelAndView();
-		if(result == true) { // 유저가 평가 체크 했다면
+		if(result == true) { 
+			// 유저가 평가 체크 했다면
 			mav.addObject("msg", "이미 평가 하셨습니다.");
-		} else { // 평가를 안했다면
+			// 취소 할 수 있도록
+			
+		} else { 
+			// 평가를 안했다면
 			mav.addObject("msg", "평가 해주셔서 감사합니다.");
+			// 단순 클릭시 ->seem
+			
+			// 별 점수 확인후 값 넘겨주기
 		}
 		
 		return mav;

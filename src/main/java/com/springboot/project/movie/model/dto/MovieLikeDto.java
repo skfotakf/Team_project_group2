@@ -10,4 +10,11 @@ public class MovieLikeDto {
 	private int mov_idn;
 	private int number;
 	
+	public MovieLikeDto() {
+		super();
+		this.mov_idn = mov_idn;
+		this.number = number;
+	}
+
+	
 }
