@@ -82,7 +82,7 @@
               <h1 class="title_topBo">Top Box Office</h1>
 
               <hr />
-              <div class="desc">Weekend of November 12 - 14, 2021</div>
+              <span class="desc"></span>
               <table class="list">
                 <thead class="list_header">
                   <tr>
@@ -99,7 +99,10 @@
                 <tbody class="list_main">
                   <tr>
                     <td class="list_poster">
-                      <img src="image/eternals.jpg" />
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        ><img src="image/eternals.jpg"
+                      /></a>
                     </td>
                     <td class="list_title">
                       <a
@@ -111,7 +114,7 @@
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
+                          >&nbsp;<span class="imdb_rating_number">8.6</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -210,7 +213,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span>5</span> likes
+                            <span class="like_count">5</span> likes
                           </div>
                         </div>
                       </div>
@@ -218,7 +221,10 @@
                   </tr>
                   <tr>
                     <td class="list_poster">
-                      <img src="image/eternals.jpg" />
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        ><img src="image/eternals.jpg"
+                      /></a>
                     </td>
                     <td class="list_title">
                       <a
@@ -230,7 +236,7 @@
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
+                          >&nbsp;<span class="imdb_rating_number">8.6</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -329,7 +335,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span>5</span> likes
+                            <span class="like_count">5</span> likes
                           </div>
                         </div>
                       </div>
@@ -337,7 +343,10 @@
                   </tr>
                   <tr>
                     <td class="list_poster">
-                      <img src="image/eternals.jpg" />
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        ><img src="image/eternals.jpg"
+                      /></a>
                     </td>
                     <td class="list_title">
                       <a
@@ -349,7 +358,7 @@
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
+                          >&nbsp;<span class="imdb_rating_number">8.6</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -448,7 +457,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span>5</span> likes
+                            <span class="like_count">5</span> likes
                           </div>
                         </div>
                       </div>
@@ -456,7 +465,10 @@
                   </tr>
                   <tr>
                     <td class="list_poster">
-                      <img src="image/eternals.jpg" />
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        ><img src="image/eternals.jpg"
+                      /></a>
                     </td>
                     <td class="list_title">
                       <a
@@ -468,7 +480,7 @@
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
+                          >&nbsp;<span class="imdb_rating_number">8.6</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -567,7 +579,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span>5</span> likes
+                            <span class="like_count">5</span> likes
                           </div>
                         </div>
                       </div>
@@ -575,7 +587,10 @@
                   </tr>
                   <tr>
                     <td class="list_poster">
-                      <img src="image/eternals.jpg" />
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        ><img src="image/eternals.jpg"
+                      /></a>
                     </td>
                     <td class="list_title">
                       <a
@@ -587,7 +602,7 @@
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
+                          >&nbsp;<span class="imdb_rating_number">8.6</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -686,7 +701,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span>5</span> likes
+                            <span class="like_count">5</span> likes
                           </div>
                         </div>
                       </div>
@@ -694,7 +709,10 @@
                   </tr>
                   <tr>
                     <td class="list_poster">
-                      <img src="image/eternals.jpg" />
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        ><img src="image/eternals.jpg"
+                      /></a>
                     </td>
                     <td class="list_title">
                       <a
@@ -706,7 +724,7 @@
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
+                          >&nbsp;<span class="imdb_rating_number">8.6</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -805,7 +823,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span>5</span> likes
+                            <span class="like_count">5</span> likes
                           </div>
                         </div>
                       </div>
@@ -813,7 +831,10 @@
                   </tr>
                   <tr>
                     <td class="list_poster">
-                      <img src="image/eternals.jpg" />
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        ><img src="image/eternals.jpg"
+                      /></a>
                     </td>
                     <td class="list_title">
                       <a
@@ -825,7 +846,7 @@
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
+                          >&nbsp;<span class="imdb_rating_number">8.6</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -924,7 +945,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span>5</span> likes
+                            <span class="like_count">5</span> likes
                           </div>
                         </div>
                       </div>
@@ -932,7 +953,10 @@
                   </tr>
                   <tr>
                     <td class="list_poster">
-                      <img src="image/eternals.jpg" />
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        ><img src="image/eternals.jpg"
+                      /></a>
                     </td>
                     <td class="list_title">
                       <a
@@ -944,7 +968,7 @@
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
+                          >&nbsp;<span class="imdb_rating_number">8.6</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -1043,7 +1067,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span>5</span> likes
+                            <span class="like_count">5</span> likes
                           </div>
                         </div>
                       </div>
@@ -1051,7 +1075,10 @@
                   </tr>
                   <tr>
                     <td class="list_poster">
-                      <img src="image/eternals.jpg" />
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        ><img src="image/eternals.jpg"
+                      /></a>
                     </td>
                     <td class="list_title">
                       <a
@@ -1063,7 +1090,7 @@
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
+                          >&nbsp;<span class="imdb_rating_number">8.6</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -1162,7 +1189,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span>5</span> likes
+                            <span class="like_count">5</span> likes
                           </div>
                         </div>
                       </div>
@@ -1170,7 +1197,10 @@
                   </tr>
                   <tr>
                     <td class="list_poster">
-                      <img src="image/eternals.jpg" />
+                      <a
+                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        ><img src="image/eternals.jpg"
+                      /></a>
                     </td>
                     <td class="list_title">
                       <a
@@ -1182,7 +1212,7 @@
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;8.6
+                          >&nbsp;<span class="imdb_rating_number">8.6</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -1281,7 +1311,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span>5</span> likes
+                            <span class="like_count">5</span> likes
                           </div>
                         </div>
                       </div>
@@ -1302,7 +1332,7 @@
                   <h5 class="title_yhs">You Have Seen</h5>
                 </div>
                 <div class="sidebar_seen">
-                  <span>0&nbsp;</span>
+                  <span class="sidebar_seen_movies">0&nbsp;</span>
                   <span>/250</span>
                   <span>( 0% )</span><br />
                   <div>
@@ -1312,7 +1342,7 @@
                 </div>
               </div>
               <div class="sidebar_widget">
-                <h3>YMCK Charts</h3>
+                <h3>JMKY Charts</h3>
 
                 <a>Box Office</a><br />
                 <a>Most Popular Movies</a><br />
@@ -1324,7 +1354,7 @@
                 <a>Lowest Rated Movies</a>
               </div>
               <div class="sidebar_widget">
-                <h3>YMCK Charts</h3>
+                <h3>JMKY Charts</h3>
 
                 <a>Action </a><br />
                 <a>Adventure</a><br />
