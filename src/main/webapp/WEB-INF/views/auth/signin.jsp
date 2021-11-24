@@ -63,10 +63,11 @@
                     <h1>Sign in</h1>
                     <form action="/auth/signin" method="post">
                         <div>
-                            <input type="text" placeholder="ID">
+                            <input type="text" name="id" placeholder="ID">
+                            
                         </div>
                         <div>
-                            <input type="password" placeholder="Password">
+                            <input type="password" name="password" placeholder="Password">
                         </div>
                         <div id="login_btns">
                             <div>

@@ -34,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.and()
 			.formLogin() // 로그인 페이지 커스텀
 				.loginPage("/auth/signin") //get 해준다
+				.usernameParameter("id")
 				.loginProcessingUrl("/auth/signin") //post controller를 따로 만들필요 없음(security가 자동으로 처리)
 				.defaultSuccessUrl("/list/list")  // 로그인 성공시 이동할 URL
 			.and()
@@ -45,7 +46,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				 * 2. 에세스토큰(권한)
 				 * 3. 사용자프로필 정보를 가져온다.
 				 */
-				.userService(principalOauth2UserService); // 가져온 프로필 후처리(사용되어질 서비스 필요)
+				.userService(principalOauth2UserService)
+				.and()
+				.defaultSuccessUrl("/list/list"); // 가져온 프로필 후처리(사용되어질 서비스 필요)
 			
 		}
 

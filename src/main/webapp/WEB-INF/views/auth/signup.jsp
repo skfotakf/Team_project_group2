@@ -103,7 +103,7 @@
 									'\n' + respObj.msg);
         				} else {
         					alert(respObj.msg);
-        					location.href = '/auth/signin';
+        					location.href = '/list/list';
         				}
         			},
         			error: function() {
