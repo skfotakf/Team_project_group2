@@ -1,3 +1,4 @@
+/*리스트 공통*/
 .wrapper {
   display: flex;
   /* justify-content: space-between; */
@@ -20,27 +21,49 @@
 .main {
   width: 613px;
   height: 1200px;
-  padding: 0 20px;
+  padding: 20px 20px;
   background-color: #f8f8f8;
 }
-.title_charts {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-.title_topBo {
+.title_Box {
   margin: 0;
-}
-.byline {
-  font-size: 5px;
-}
-hr {
-  margin: 10px 0;
 }
 
 a {
   text-decoration: none;
 }
+/*=리스트 공통-sidebar==================*/
+.sidebar {
+  width: 300px;
+  height: 1200px;
+  background-color: #f8f8f8;
+  padding: 0 20px;
+}
+
+.sidebar_top {
+  margin-top: 20px;
+}
+
+.sidebar_widget {
+  padding: 20px 0;
+  border-bottom: 0.5px solid gray;
+}
+.sidebar_title {
+  padding: 10px;
+  font-size: 20px;
+}
+.sidebar_title .title_yhs {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.sidebar_seen {
+  display: flex;
+}
 /*========================*/
+hr {
+  margin: 10px 0;
+}
+
 .list {
   border-collapse: collapse;
   position: relative;
@@ -227,31 +250,5 @@ a {
 .text_smaller {
   font-size: 10px;
 }
-.sidebar {
-  width: 300px;
-  height: 1200px;
-  background-color: #f8f8f8;
-  padding: 0 20px;
-}
 
-.sidebar_top {
-  margin-top: 20px;
-}
-/*======================*/
-.sidebar_widget {
-  padding: 20px 0;
-  border-bottom: 0.5px solid gray;
-}
-.sidebar_title {
-  padding: 10px;
-  font-size: 20px;
-}
-.sidebar_title .title_yhs {
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-.sidebar_seen {
-  display: flex;
-}
 /*========================*/
