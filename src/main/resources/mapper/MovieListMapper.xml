@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.springboot.project.movie.mapper.MovieListDAO">
+  	
+  	<select id="listAll" > <!-- 영화 목록 list read -->
+  		select
+  			*
+  		from
+  			movie_mst
+  		order by
+  			mov_idn desc
+  	</select>
+  	
+  	<!-- 메인 테이블과 좋아요 정보 테이블 비교후 회원코드가 null일 경우 모두 빈 하트 회원 코드가 일치할 경우 일치하는 좋아요만 채워주기 -->
+  	<select id="likeLoginCheck">
+  		SELECT
+			*
+		FROM
+			movie_mst mm 
+			LEFT OUTER JOIN movie_like ml ON (ml.mov_idn = mm.mov_idn AND ml.number=#{number})
+  			
+  	</select>
+  	
+  	<!-- 좋아요 클릭시 count 증가 쿼리 -->
+  	<update id="like_check">
+  		update
+  			movie_mst
+  		set
+  			mov_lik = mov_lik + 1.
+  			mov_lik_cnt = mov_lik_cnt + 1
+  		where
+  			number = #{number},
+  			mov_idn = #{mov_idn}
+  	</update>
+  	
+  	<update id="like_check_cancel">
+  		update
+  			movie_mst
+  		set
+  			mov_lik = 0.
+  			mov_lik_cnt = mov_lik_cnt - 1
+  		where
+  			number = #{number},
+  			mov_idn = #{mov_idn}
+  	</update>
+  	
+  	<!-- 영화 리스트를 보고있는 회원 넘버와 현재 회원넘버가 일치하는지? -->
+  	<select id="getMovieList">
+  		SELECT
+			*
+		FROM
+			movie_mst mm
+			LEFT OUTER JOIN user_mst um ON(um.number = mm.number)
+		ORDER BY
+			mm.mov_idn
+  	</select>
+  	
+  	
+  	<select id="ratingCheck">
+  		SELECT
+			mov_rat_cnt
+		FROM
+			movie_mst
+		WHERE
+			mov_idn = #{mov_idn} AND movie_mst.number = #{number};
+  			
+  	</select>
+ 
+  </mapper>
