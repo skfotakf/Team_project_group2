@@ -1,4 +1,4 @@
-package com.springboot.project.movie.service;
+package com.springboot.project.web.service;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.project.movie.mapper.MovieRatingDAO;
-import com.springboot.project.movie.model.dto.MovieRatingDto;
-import com.springboot.project.movie.model.vo.MovieVO;
+import com.springboot.project.web.mapper.MovieRatingDAO;
+import com.springboot.project.web.model.dto.MovieRatingDto;
+import com.springboot.project.web.model.vo.MovieVO;
 
 @Service
 public class MovieRatingServiceImpl implements MovieRatingService {

@@ -1,10 +1,10 @@
-package com.springboot.project.movie.mapper;
+package com.springboot.project.web.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.springboot.project.movie.model.dto.MainListDto;
+import com.springboot.project.web.model.dto.MainListDto;
 
 @Mapper
 public interface MainListDAO {

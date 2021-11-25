@@ -1,11 +1,11 @@
-package com.springboot.project.movie.service;
+package com.springboot.project.web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.project.movie.mapper.MovieLikeDAO;
-import com.springboot.project.movie.model.dto.MovieLikeDto;
-import com.springboot.project.movie.model.vo.MovieVO;
+import com.springboot.project.web.mapper.MovieLikeDAO;
+import com.springboot.project.web.model.dto.MovieLikeDto;
+import com.springboot.project.web.model.vo.MovieVO;
 
 @Service
 public class MovieLikesServiceImpl implements MovieLikesService {

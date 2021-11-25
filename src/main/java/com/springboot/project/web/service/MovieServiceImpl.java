@@ -1,12 +1,12 @@
-package com.springboot.project.movie.service;
+package com.springboot.project.web.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.project.movie.mapper.MainListDAO;
-import com.springboot.project.movie.model.dto.MainListDto;
+import com.springboot.project.web.mapper.MainListDAO;
+import com.springboot.project.web.model.dto.MainListDto;
 
 @Service
 public class MovieServiceImpl implements MovieService{

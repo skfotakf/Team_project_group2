@@ -1,4 +1,4 @@
-package com.springboot.project.movie.model.vo;
+package com.springboot.project.web.model.vo;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,11 +1,11 @@
-package com.springboot.project.movie.mapper;
+package com.springboot.project.web.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.springboot.project.movie.model.dto.MovieRatingDto;
-import com.springboot.project.movie.model.vo.MovieVO;
+import com.springboot.project.web.model.dto.MovieRatingDto;
+import com.springboot.project.web.model.vo.MovieVO;
 
 @Mapper
 public interface MovieRatingDAO {

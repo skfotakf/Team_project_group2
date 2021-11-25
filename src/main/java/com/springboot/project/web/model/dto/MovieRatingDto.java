@@ -1,4 +1,4 @@
-package com.springboot.project.movie.model.dto;
+package com.springboot.project.web.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;

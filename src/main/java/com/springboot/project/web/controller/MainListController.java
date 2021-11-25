@@ -1,4 +1,4 @@
-package com.springboot.project.movie.controller;
+package com.springboot.project.web.controller;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.springboot.project.movie.model.vo.MovieVO;
-import com.springboot.project.movie.service.MovieRatingService;
-import com.springboot.project.movie.service.MovieService;
+import com.springboot.project.web.model.vo.MovieVO;
+import com.springboot.project.web.service.MovieRatingService;
+import com.springboot.project.web.service.MovieService;
 
 @Controller
 @RequestMapping("movie")

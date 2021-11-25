@@ -1,4 +1,4 @@
-package com.springboot.project.movie.controller;
+package com.springboot.project.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.springboot.project.movie.model.vo.MovieLikeVO;
-import com.springboot.project.movie.model.vo.MovieVO;
-import com.springboot.project.movie.service.MovieLikesService;
+import com.springboot.project.web.model.vo.MovieVO;
+import com.springboot.project.web.service.MovieLikesService;
+import com.springboot.project.web.model.vo.MovieLikeVO;
 
 @Controller
 @RequestMapping("movie")
