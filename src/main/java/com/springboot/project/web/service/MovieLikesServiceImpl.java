@@ -14,19 +14,20 @@ public class MovieLikesServiceImpl implements MovieLikesService {
 	private MovieLikeDAO movieLikeDAO;
 
 	@Override
-	public void insertListLike(MovieLikeDto dto) {
-		// TODO Auto-generated method stub
+	public int insertListLike(MovieVO vo) {
+		return 1;
 		
 	}
 
 	@Override
-	public void deleteListLike(MovieLikeDto dto) {
-		// TODO Auto-generated method stub
+	public int deleteListLike(MovieVO vo) {
+		return 1;
+		
 		
 	}
 
 	@Override
-	public void readListLike(MovieLikeDto dto) {
+	public void readListLike(MovieVO vo) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -36,6 +37,13 @@ public class MovieLikesServiceImpl implements MovieLikesService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public int getListLike(MovieVO vo) {
+		// TODO Auto-generated method stub
+		return 1;
+	}
+
 
 	
 

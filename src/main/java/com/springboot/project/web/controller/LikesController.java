@@ -61,14 +61,6 @@ public class LikesController {
 
         System.out.println(heart);
 
-        if(heart >= 1) {
-            likesService.deleteListLike(vo);
-            heart=0;
-        } else {
-        	likesService.insertListLike(vo);
-            heart=1;
-        }
-
         return heart;
 
     }

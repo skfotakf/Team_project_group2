@@ -18,10 +18,10 @@ spring:
     username: elvtp7ihr01i8bw2
     password: ha09j4einb9ehlfp
     
-  security:
-    user:
-      name: test
-      password: 1234   
+  #security:
+  #  user:
+  #    name: test
+  #    password: 1234   
     
 #mybatis:
  # mapper-locations:
