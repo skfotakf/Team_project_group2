@@ -24,27 +24,31 @@
   			
   	</select>
   	
-  	<!-- 좋아요 클릭시 count 증가 쿼리 -->
-  	<update id="like_check">
+  	<!-- 좋아요 버튼 클릭시 count 증가 감소 쿼리 -->
+  	<update id="likeCheck">
   		update
   			movie_mst
   		set
-  			mov_lik = mov_lik + 1.
+  			mov_lik = mov_lik + 1,
   			mov_lik_cnt = mov_lik_cnt + 1
   		where
   			number = #{number},
   			mov_idn = #{mov_idn}
   	</update>
   	
-  	<update id="like_check_cancel">
+  	<update id="likeCheckCancel">
   		update
   			movie_mst
   		set
-  			mov_lik = 0.
+  			mov_lik = 0,
   			mov_lik_cnt = mov_lik_cnt - 1
   		where
   			number = #{number},
   			mov_idn = #{mov_idn}
+  	</update>
+  	
+  	<update id="">
+  	
   	</update>
   	
   	<!-- 영화 리스트를 보고있는 회원 넘버와 현재 회원넘버가 일치하는지? -->

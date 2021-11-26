@@ -1,16 +1,15 @@
 package com.springboot.project.movie.controller;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nimbusds.jose.shaded.json.JSONObject;
 import com.springboot.project.movie.model.dto.MovieListDto;
-import com.springboot.project.movie.model.vo.MovieVO;
 import com.springboot.project.movie.service.MovieListService;
 
 
@@ -21,6 +20,18 @@ public class MainListLikeRestController {
 	@Autowired
 	private MovieListService listService;
 	
+	
+	@GetMapping("like/like.do")
+	public String like(MovieListDto movieListDto) {  // get이 일어나면 좋아요 처리  
+		
+		
+		
+		return "";
+	}
+	
+	
+	
+	/*
 	@PutMapping("/list/like-update/{mov-idn}") // 영화 코드를 올려준다.
 	public String movieLikeData(@PathVariable int mov_idn, MovieVO vo) {
 		
@@ -36,6 +47,6 @@ public class MainListLikeRestController {
 		}
 		return "";
 	}
-    
+    */
     
 }
