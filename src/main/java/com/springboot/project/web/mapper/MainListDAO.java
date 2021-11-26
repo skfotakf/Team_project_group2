@@ -10,8 +10,8 @@ import com.springboot.project.web.model.dto.MainListDto;
 public interface MainListDAO {
 	
 	// 모든 영화 리스트 불러오기
-	public List<MainListDto> listAll();
+	public List<MainListDto> getListAll();
 	// 조회수 증가
-	public int plusMovieListCnt(int mov_idn);
+	// public int plusMovieListCnt(int mov_idn);
 	
 }

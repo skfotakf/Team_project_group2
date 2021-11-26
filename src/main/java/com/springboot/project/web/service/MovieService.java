@@ -10,8 +10,10 @@ import com.springboot.project.web.model.dto.MainListDto;
 public interface MovieService {
 	
 	// 모든 영화 리스트 불러오기
-	public List<MainListDto> listAll();
+	public List<MainListDto> getListAll();
+	
+	//public List<MainListDto> getList();
 	// 조회수 증가
-	public int plusMovieListCnt(String mov_idn);
+	/*public int plusMovieListCnt(String mov_idn);*/
 
 }

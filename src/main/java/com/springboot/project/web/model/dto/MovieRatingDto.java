@@ -1,4 +1,4 @@
-package com.springboot.project.web.model.dto;
+/*package com.springboot.project.web.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,4 +15,4 @@ public class MovieRatingDto {
 	private char mov_rat_cilck; // 별점 클릭시
 
 }
-	
+	*/

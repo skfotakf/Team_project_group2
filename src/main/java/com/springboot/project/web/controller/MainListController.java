@@ -10,29 +10,29 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.springboot.project.web.model.vo.MovieVO;
-import com.springboot.project.web.service.MovieRatingService;
+/*import com.springboot.project.web.model.vo.MovieVO;*/
+/*import com.springboot.project.web.service.MovieRatingService;*/
 import com.springboot.project.web.service.MovieService;
 
 @Controller
-@RequestMapping("movie")
+@RequestMapping("/list")
 public class MainListController {
 	
 	@Autowired
 	private MovieService movieService;
-	
+	/*
 	@Autowired
 	private MovieRatingService ratingService;
-	
+	*/
 	// 메인 페이지 보여주기(list) - 기본 페이지 R
-	@GetMapping("list")
-	public String viewMainList(Model model) throws Exception {
+	@GetMapping("/listall")
+	public String viewMainList(Model model) {
 		
-		model.addAttribute("listAll", movieService.listAll());
+		model.addAttribute("listAll", movieService.getListAll());
 		
-		return "/movie/list";
+		return "list/list";
 	}
-	
+	/*
 	// 별 평가 처리
 	@RequestMapping("ratingCheck.do")
 	public ModelAndView ratingCheck(@ModelAttribute MovieVO vo, HttpSession session) {
@@ -55,6 +55,6 @@ public class MainListController {
 		return mav;
 	}
 	
-	
+	*/
 	
 }

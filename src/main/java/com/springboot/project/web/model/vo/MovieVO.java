@@ -1,4 +1,4 @@
-package com.springboot.project.web.model.vo;
+/*package com.springboot.project.web.model.vo;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,4 +25,4 @@ public class MovieVO {
 	private int number;  // 회원 넘버
 
 	
-}
+}*/

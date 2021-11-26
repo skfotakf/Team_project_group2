@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <header id="header">
-        <div class="imdbheader">
+        <div class="JMKYheader">
 
-            <h1><a href="" class="logo">IMDb</a></h1>
+            <h1><a href="" class="logo">JMKY</a></h1>
 
             <ul id="menu">
                 <a href="">
@@ -22,13 +22,13 @@
                         <option value="Advanced Search">Advanced Search</option>
                     </div>
                 </select>
-                <input type="text" placeholder="Search IMDb" >
+                <input type="text" placeholder="Search JMKY" >
                 <button><i class="fas fa-search"></i></button>
                 
             </div>
             <ul class="top_nav">
                 <a href="">
-                    <li>IMDbPro </li>
+                    <li>JMKYPro </li>
                 </a>
                 <a href="">
                     <li><i class="far fa-plus-square"></i> Watchlist</li>

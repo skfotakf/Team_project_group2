@@ -1,4 +1,4 @@
-package com.springboot.project.web.service;
+/*package com.springboot.project.web.service;
 
 import java.util.List;
 
@@ -17,3 +17,4 @@ public interface MovieRatingService {
 	public MovieVO memberRatingCheck(MovieVO movieVO);
 	
 }
+*/

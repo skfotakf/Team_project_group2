@@ -1,4 +1,4 @@
-package com.springboot.project.web.model.dto;
+/*package com.springboot.project.web.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,4 +17,4 @@ public class MovieLikeDto {
 	}
 
 	
-}
+}*/

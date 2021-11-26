@@ -1,4 +1,4 @@
-package com.springboot.project.web.mapper;
+/*package com.springboot.project.web.mapper;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public interface MovieRatingDAO {
 		-> n?? 평가를 안했으면 할 수 있어
 		한번 클릭시 그냥 봤어
 		옆에 별을 선택하면 별 평가 완료 -> 이때 별 갯수 int 전달
-	 */
+	 
 	
 	
 	// 유저 넘버가 평가하고자 하는 영화 리스트 키값 가져오기
@@ -30,3 +30,4 @@ public interface MovieRatingDAO {
 	public MovieVO memberRatingCheck(MovieVO movieVO);
 
 }
+*/

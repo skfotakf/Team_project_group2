@@ -1,4 +1,4 @@
-package com.springboot.project.web.mapper;
+/*package com.springboot.project.web.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -17,3 +17,4 @@ public interface MovieLikeDAO {
 	// 좋아요 업데이트 
 	public void updateListLike(int mov_idn);
 }
+*/

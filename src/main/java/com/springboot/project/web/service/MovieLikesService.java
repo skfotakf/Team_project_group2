@@ -1,4 +1,4 @@
-package com.springboot.project.web.service;
+/*package com.springboot.project.web.service;
 
 import com.springboot.project.web.model.dto.MovieLikeDto;
 import com.springboot.project.web.model.vo.MovieVO;
@@ -20,3 +20,4 @@ public interface MovieLikesService {
 	public int getListLike(MovieVO vo);
 
 }
+*/

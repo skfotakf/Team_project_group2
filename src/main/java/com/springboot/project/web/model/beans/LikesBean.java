@@ -1,5 +1,6 @@
-package com.springboot.project.web.model.beans;
+/*package com.springboot.project.web.model.beans;
 
 public class LikesBean {
 
 }
+*/

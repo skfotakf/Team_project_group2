@@ -1,4 +1,4 @@
-package com.springboot.project.web.service;
+/*package com.springboot.project.web.service;
 
 import java.util.List;
 
@@ -45,3 +45,4 @@ public class MovieRatingServiceImpl implements MovieRatingService {
 	
 	
 }
+*/

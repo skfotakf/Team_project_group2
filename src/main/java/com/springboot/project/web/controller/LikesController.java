@@ -1,4 +1,4 @@
-package com.springboot.project.web.controller;
+/*package com.springboot.project.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -66,4 +66,4 @@ public class LikesController {
     }
 	
 	
-}
+}*/

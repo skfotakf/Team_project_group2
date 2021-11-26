@@ -1,4 +1,4 @@
-package com.springboot.project.web.service;
+/*package com.springboot.project.web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,3 +50,4 @@ public class MovieLikesServiceImpl implements MovieLikesService {
 
 	
 }
+*/

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+  <mapper namespace="com.springboot.project.web.mapper.MovieLikeDAO">
   
-  <mapper namespace="com.springboot.project.movie.mapper.MovieLikeDAO">
-  
-  	<!-- x번 사용자가 x번 영화에 좋아요를 눌렀다. 좋아요 정보 insert
-  		중복 발생...  처리 어떻게 할것인지?? -->
+  	 x번 사용자가 x번 영화에 좋아요를 눌렀다. 좋아요 정보 insert
+  		중복 발생...  처리 어떻게 할것인지?? 
 	<insert id="insertListLike">
      	INSERT INTO 
       		movie_like (mov_idn, number)
@@ -16,7 +16,7 @@
       	)
  	</insert>
   
-  <!-- x번 사용자가 x번 영화의 좋아요를 취소 좋아요 정보 지우기-->
+   x번 사용자가 x번 영화의 좋아요를 취소 좋아요 정보 지우기
 	<delete id="deleteListLike">
      	DELETE FROM
      		movie_like
@@ -24,7 +24,7 @@
      		mov_idn = #{mov_idn} AND number = #{number} 
  	</delete>
  	
- 	<!-- 회원이 영화를 좋아요 눌렀는지 조회 눌렀으면 1 안눌렀으면 0 -->
+ 	 회원이 영화를 좋아요 눌렀는지 조회 눌렀으면 1 안눌렀으면 0 
  	<select id="readListLike">
  		select
  			count(mov_lik)
@@ -35,7 +35,7 @@
  			
  	</select>
   
-  	<!-- 유저 정보와 영화 정보가 같다면 좋아요 업데이트 -->
+  	 유저 정보와 영화 정보가 같다면 좋아요 업데이트 
 	<update id="updateListLike">
      	UPDATE
 			movie_mst
@@ -55,3 +55,4 @@
   	</select>
   
   </mapper>
+  -->
