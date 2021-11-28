@@ -15,12 +15,6 @@ const sidebar_seen_movies = document.querySelector(".sidebar_seen_movies");
 
 const descend = document.querySelector(".descend");
 
-descend.onclick = () =>{
-	alert("바보!");
-}
-
-
-
 let seen_movies_number = sidebar_seen_movies.innerText;
 let ratingNumber = new Array(10);
 

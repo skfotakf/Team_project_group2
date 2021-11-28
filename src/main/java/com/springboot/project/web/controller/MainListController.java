@@ -25,12 +25,30 @@ public class MainListController {
 	private MovieRatingService ratingService;
 	*/
 	// 메인 페이지 보여주기(list) - 기본 페이지 R
-	@GetMapping("/listall")
+	@GetMapping("/list")
 	public String viewMainList(Model model) {
 		
 		model.addAttribute("listAll", movieService.getListAll());
 		
 		return "list/list";
+	}
+	
+	@GetMapping("/top")
+	public String viewTopList(Model model) {
+		
+		model.addAttribute("ascDesc", 0);
+		model.addAttribute("listAll", movieService.getListAll());
+		
+		return "list/top";
+	}
+	
+	@GetMapping("/top/desc")
+	public String viewMainListDesc(Model model) {
+		
+		model.addAttribute("ascDesc", 1);
+		model.addAttribute("listAll", movieService.getListAllDesc());
+		
+		return "list/top";
 	}
 	/*
 	// 별 평가 처리

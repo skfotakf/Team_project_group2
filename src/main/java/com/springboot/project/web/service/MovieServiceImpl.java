@@ -21,6 +21,11 @@ public class MovieServiceImpl implements MovieService{
 		System.out.println("되는중");
 		return mainListDAO.getListAll();
 	}
+	@Override
+	public List<MainListDto> getListAllDesc() {
+		System.out.println("반대로 되는중");
+		return mainListDAO.getListAllDesc();
+	}
 	
 /*
 	@Override

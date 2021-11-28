@@ -2,56 +2,56 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    
+    <link rel="stylesheet" href="/css/signin.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/mainNav.css" />
     <link rel="stylesheet" href="/css/list.css" />
-    <link rel="stylesheet" href="/css/signin.css" />
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="/css/top250list.css" />
+     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   </head>
   <body>
     <div class="container">
-     <jsp:include page="../include/index_include/index_header.jsp"></jsp:include>
-       
+      <jsp:include page="../include/index_include/index_header.jsp"></jsp:include>
 
       <div class="wrapper">
         <div class="pagecontent">
           <div class="content_2_wide">
             <div class="main">
-              <span class="ab_widget">
-                <div class="covid_message">
-                  <div class="alert">
-                    <p class="alert_message">
-                      While theaters are closed, some data on this page may be
-                      delayed or unavailable. In the meantime, check out
-                      <a href="https://www.imdb.com/whats-on-tv/?ref_=im_2020"
-                        >What's on TV and Streaming »</a
-                      >
-                    </p>
-                    <p class="alert_message">
-                      If you’re going out to the movies (or going out anywhere),
-                      please stay safe! Check out the
-                      <a
-                        href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/q-a-on-covid-19-and-masks"
-                        >World Health Organization’s guidance on the use of
-                        masks</a
-                      >
-                      to prevent the spread of COVID-19.
-                    </p>
-                  </div>
-                </div>
-              </span>
-              <h1 class="title_topBo">Top Box Office</h1>
-
+              JMKY Charts
+              <h1>JMKY Top 5 Movies</h1>
+              JMKY Top 5 as rated by regular JMKY voters.
               <hr />
-              <span class="desc"></span>
-              <table class="list">
+              <div class="lister">
+                <div class="nav">
+                  <div class="sortby">
+                    
+                    <select class="lister_sortby">
+                      <option value="rk:ascending" selected="selected">
+                        Ranking
+                      </option>
+                      <option value="jr:descending" selected>JMKY Ranking</option>
+                      <option value="rd:descending">Release Date</option>
+                      <option value="nr:descending">Number of Likes</option>
+                      
+                    </select>
+                    <input type="hidden" value="${ascDesc }" class="ascDesc">
+                    <span class="ascending" ></span>
+                    <span class="descending" ></span>
+                  </div>
+                  <div class="desc">Showing 250 titles</div>
+                
+                  <br>
+                  <input type="hidden" value="${nameSortby }" class="nameSortby" >
+                  <span>Sort by JMKY Ranking</span>
+                  <span>Sort by Release Date</span>
+                  <span>Sort by Number of Likes</span>
+                  <table class="list">
                 <thead class="list_header">
                   <tr>
                     <th class="list_poster"></th>
@@ -59,7 +59,7 @@
                     <th class="list_rating list_rating_title">
                       IMDb <br />Rating
                     </th>
-                    <th class="list_date">Date</th>
+                    <th class="list_date list_date_title">Date</th>
                     <th class="list_count">Count</th>
                     <th class="list_like">Like</th>
                   </tr>
@@ -197,8 +197,9 @@
                 <a href="https://www.boxofficemojo.com/">Box Office Mojo</a> ©
                 2021
               </div>
-              
-              
+              <a class="descend1" href="http://localhost:8000/list/listall/desc">전송</a>
+                </div>
+              </div>
             </div>
             <div class="sidebar">
               <div class="sidebar_top"></div>
@@ -260,11 +261,100 @@
           <div class="recently_viewed"></div>
         </div>
       </div>
-      <jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
-        
+      <footer class="footer">
+        <div id="icon_box">
+          <ul>
+            <li>
+              <a href=""><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-twitch"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div id="link_box">
+          <div class="link_content_box">
+            <ul>
+              <li>
+                <a href=""
+                  >Get the JMKY App <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href="">Help <i class="fas fa-external-link-alt"></i></a>
+              </li>
+              <li>
+                <a href=""
+                  >Site Index <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href="">JMKYPro <i class="fas fa-external-link-alt"></i></a>
+              </li>
+              <li>
+                <a href=""
+                  >Box Office Mojo <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >JMKY Developer <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="link_content_box">
+            <ul>
+              <li>
+                <a href=""
+                  >Press Room <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >Advertising <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href="">Jobs <i class="fas fa-external-link-alt"></i></a>
+              </li>
+              <li>
+                <a href=""
+                  >Conditions of Use <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >Privacy Policy <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >Interest-Based Ads <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="JMKY_footer_logo">
+          <p>an amazon company</p>
+        </div>
+        <div id="JMKY_footer_copy">
+          <p>&copy; 1990-2021 by JMKY.com, Inc.</p>
+        </div>
+      </footer>
     </div>
-    <script type="text/javascript" src="/js/list.js"></script>
-
+	<script type="text/javascript" src="/js/list.js"></script>
+	<script type="text/javascript" src="/js/top.js"></script>
     <script
       src="https://kit.fontawesome.com/a04df2c0ca.js"
       crossorigin="anonymous"

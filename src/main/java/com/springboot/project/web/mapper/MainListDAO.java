@@ -11,6 +11,7 @@ public interface MainListDAO {
 	
 	// 모든 영화 리스트 불러오기
 	public List<MainListDto> getListAll();
+	public List<MainListDto> getListAllDesc();
 	// 조회수 증가
 	// public int plusMovieListCnt(int mov_idn);
 	

@@ -217,10 +217,17 @@ hr {
   display: none;
 }
 /*===========================================*/
+
 .list_date {
   width: 75px;
   padding-right: 0px;
+  font-size: 14px;
 }
+
+.list_date_title{
+  font-size: 12px;	
+}
+
 .list_count {
   width: 55px;
   padding-right: 0px;

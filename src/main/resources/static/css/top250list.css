@@ -69,3 +69,33 @@ hr {
   border-top: 1px solid #e8e8e8;
   overflow: visible;
 }
+.sortby{
+	display: block;
+	float: right;
+	font-size: 14px;
+}
+.ascending{
+	background-image: url(https://m.media-amazon.com/images/S/sash/Lghmahow7r9CQqO.png);
+	background-position: 0 -22px;
+	background-repeat: no-repeat;
+	vertical-align: top;
+	display: none;
+	cursor: pointer;
+	height: 20px;
+	width: 22px;
+}
+.descending{
+	background-image: url(https://m.media-amazon.com/images/S/sash/Lghmahow7r9CQqO.png);
+	background-position: 0 -46px;
+	background-repeat: no-repeat;
+	vertical-align: top;
+	display: inline-block;
+	cursor: pointer;
+	height: 20px;
+	width: 22px;
+}
+.desc{
+	
+	font-size: 14px;
+}
+

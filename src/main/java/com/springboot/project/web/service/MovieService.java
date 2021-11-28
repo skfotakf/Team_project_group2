@@ -12,6 +12,8 @@ public interface MovieService {
 	// 모든 영화 리스트 불러오기
 	public List<MainListDto> getListAll();
 	
+	// 모든 영화 리스트 역배열
+	public List<MainListDto> getListAllDesc();
 	//public List<MainListDto> getList();
 	// 조회수 증가
 	/*public int plusMovieListCnt(String mov_idn);*/

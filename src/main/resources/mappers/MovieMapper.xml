@@ -27,6 +27,28 @@
   		order by
   			mov_idn
   	</select>
+  	<select id="getListAllDesc" resultType="com.springboot.project.web.model.dto.MainListDto"> <!-- 영화 목록 list read -->
+  		select
+  			mov_idn,
+  			mov_photo,
+  			mov_title,
+  			mov_release,
+  			mov_viewCnt,
+  			'0',
+  			mov_rat,
+  			'0',
+  			'0',
+  			'0',
+  			'0',
+  			'0',
+  			'0',
+  			'0'
+  			
+  		from
+  			movie_mst
+  		order by
+  			mov_idn desc
+  	</select>
   	<!-- 
   	<update id="plusMovieListCnt"> 
   		update
