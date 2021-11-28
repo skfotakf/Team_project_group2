@@ -30,27 +30,27 @@
               <div class="lister">
                 <div class="nav">
                   <div class="sortby">
-                    
+                    <form>
                     <select class="lister_sortby">
-                      <option value="rk:ascending" selected="selected">
-                        Ranking
-                      </option>
-                      <option value="jr:descending" selected>JMKY Ranking</option>
+                      
+                      <option value="jr:descending">JMKY Ranking</option>
                       <option value="rd:descending">Release Date</option>
-                      <option value="nr:descending">Number of Likes</option>
+                      <option value="nl:descending">Number of Likes</option>
                       
                     </select>
+                    <span class="submit_sortby">확인</span>
+                    </form>
                     <input type="hidden" value="${ascDesc }" class="ascDesc">
-                    <span class="ascending" ></span>
-                    <span class="descending" ></span>
+                    <span class="ascending" style="display:none"></span>
+                    <span class="descending" style="display:none"></span>
                   </div>
                   <div class="desc">Showing 250 titles</div>
                 
                   <br>
                   <input type="hidden" value="${nameSortby }" class="nameSortby" >
-                  <span>Sort by JMKY Ranking</span>
-                  <span>Sort by Release Date</span>
-                  <span>Sort by Number of Likes</span>
+                  <span class="sortbyRanking">Sort by : JMKY Ranking</span>
+                  <span class="sortbyRelease">Sort by : Release Date</span>
+                  <span class="sortbyLike">Sort by : Number of Likes</span>
                   <table class="list">
                 <thead class="list_header">
                   <tr>
@@ -183,7 +183,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span class="like_count">5</span> likes
+                            <span class="like_count">${listAll.mov_lik_cnt }</span> likes
                           </div>
                         </div>
                       </div>

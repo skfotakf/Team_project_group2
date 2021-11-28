@@ -74,28 +74,41 @@ hr {
 	float: right;
 	font-size: 14px;
 }
+.submit_sortby{
+	cursor: pointer;
+	font-size: 8px;
+	
+	background-color: #cfcfcf;
+	border-radius: 2px;
+	padding: 0 6px;
+	height: 16px;
+}
 .ascending{
+	
+	float: right;
+	margin-top: 4px;
 	background-image: url(https://m.media-amazon.com/images/S/sash/Lghmahow7r9CQqO.png);
 	background-position: 0 -22px;
 	background-repeat: no-repeat;
-	vertical-align: top;
+	
 	display: none;
 	cursor: pointer;
 	height: 20px;
 	width: 22px;
 }
 .descending{
+	float: right;
+	margin-top: 4px;
 	background-image: url(https://m.media-amazon.com/images/S/sash/Lghmahow7r9CQqO.png);
 	background-position: 0 -46px;
 	background-repeat: no-repeat;
-	vertical-align: top;
+	
 	display: inline-block;
 	cursor: pointer;
 	height: 20px;
 	width: 22px;
 }
 .desc{
-	
 	font-size: 14px;
 }
 

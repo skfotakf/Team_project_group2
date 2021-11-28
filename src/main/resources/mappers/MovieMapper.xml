@@ -16,7 +16,7 @@
   			mov_rat,
   			'0',
   			'0',
-  			'0',
+  			mov_lik_cnt,
   			'0',
   			'0',
   			'0',
@@ -38,7 +38,7 @@
   			mov_rat,
   			'0',
   			'0',
-  			'0',
+  			mov_lik_cnt,
   			'0',
   			'0',
   			'0',
@@ -48,6 +48,94 @@
   			movie_mst
   		order by
   			mov_idn desc
+  	</select>
+  	<select id="getListAllRelease" resultType="com.springboot.project.web.model.dto.MainListDto"> <!-- 영화 목록 list read -->
+  		select
+  			mov_idn,
+  			mov_photo,
+  			mov_title,
+  			mov_release,
+  			mov_viewCnt,
+  			'0',
+  			mov_rat,
+  			'0',
+  			'0',
+  			mov_lik_cnt,
+  			'0',
+  			'0',
+  			'0',
+  			'0'
+  			
+  		from
+  			movie_mst
+  		order by
+  			mov_rat
+  	</select>
+  	<select id="getListAllReleaseDesc" resultType="com.springboot.project.web.model.dto.MainListDto"> <!-- 영화 목록 list read -->
+  		select
+  			mov_idn,
+  			mov_photo,
+  			mov_title,
+  			mov_release,
+  			mov_viewCnt,
+  			'0',
+  			mov_rat,
+  			'0',
+  			'0',
+  			mov_lik_cnt,
+  			'0',
+  			'0',
+  			'0',
+  			'0'
+  			
+  		from
+  			movie_mst
+  		order by
+  			mov_rat desc
+  	</select>
+  	<select id="getListAllLike" resultType="com.springboot.project.web.model.dto.MainListDto"> <!-- 영화 목록 list read -->
+  		select
+  			mov_idn,
+  			mov_photo,
+  			mov_title,
+  			mov_release,
+  			mov_viewCnt,
+  			'0',
+  			mov_rat,
+  			'0',
+  			'0',
+  			mov_lik_cnt,
+  			'0',
+  			'0',
+  			'0',
+  			'0'
+  			
+  		from
+  			movie_mst
+  		order by
+  			mov_lik_cnt
+  	</select>
+  	<select id="getListAllLikeDesc" resultType="com.springboot.project.web.model.dto.MainListDto"> <!-- 영화 목록 list read -->
+  		select
+  			mov_idn,
+  			mov_photo,
+  			mov_title,
+  			mov_release,
+  			mov_viewCnt,
+  			'0',
+  			mov_rat,
+  			'0',
+  			'0',
+  			mov_lik_cnt,
+  			'0',
+  			'0',
+  			'0',
+  			'0'
+  			
+  		from
+  			movie_mst
+  		order by
+  			mov_lik_cnt desc
   	</select>
   	<!-- 
   	<update id="plusMovieListCnt"> 

@@ -19,7 +19,7 @@ let seen_movies_number = sidebar_seen_movies.innerText;
 let ratingNumber = new Array(10);
 
 let likeNumber = new Array(10);
-
+/*
 // 날짜
 let today = new Date();
 let year = today.getFullYear(); // 년도
@@ -102,7 +102,7 @@ for (let r = 0; r < 10; r++) {
     }
   };
 }
-
+/*
 /* 별점 매기는 일반 for문
 
 for (let i = 10; i < 20; i++) {

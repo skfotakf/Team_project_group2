@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,30 +27,62 @@ public class MainListController {
 	*/
 	// 메인 페이지 보여주기(list) - 기본 페이지 R
 	@GetMapping("/list")
-	public String viewMainList(Model model) {
+	public String viewMainList(Model model, @PathVariable int code) {
 		
-		model.addAttribute("listAll", movieService.getListAll());
+		model.addAttribute("listAll", movieService.getListAll(code));
 		
 		return "list/list";
 	}
 	
-	@GetMapping("/top")
-	public String viewTopList(Model model) {
+	@GetMapping("/top/{code}")
+	public String viewTopList(Model model, @PathVariable int code) {
 		
-		model.addAttribute("ascDesc", 0);
-		model.addAttribute("listAll", movieService.getListAll());
+		if(code == 1) {
+			model.addAttribute("nameSortby", 1);
+			model.addAttribute("ascDesc", 0);
+			model.addAttribute("listAll", movieService.getListAll(code));
+			
+			return "list/top";
+		} else if(code == 2) {
+			model.addAttribute("nameSortby", 2);
+			model.addAttribute("ascDesc", 0);
+			model.addAttribute("listAll", movieService.getListAllRelease(code));
 		
-		return "list/top";
+			return "list/top";
+		} else if(code == 3) {
+			model.addAttribute("nameSortby", 3);
+			model.addAttribute("listAll", movieService.getListAllLike(code));
+			
+			return "list/top";
+		}
+		
+		return "movie/list";
+		
 	}
-	
-	@GetMapping("/top/desc")
-	public String viewMainListDesc(Model model) {
+	/* 정배열 역배열 버튼(못넣음)
+	@GetMapping("/top/{code}/desc")
+	public String viewMainListDesc(Model model, @PathVariable int code) {
 		
-		model.addAttribute("ascDesc", 1);
-		model.addAttribute("listAll", movieService.getListAllDesc());
+		if(code == 1) {
+			model.addAttribute("ascDesc", 1);
+			model.addAttribute("listAll", movieService.getListAllDesc(code));
+			
+			return "list/top";
+		} else if(code == 2) {
+			model.addAttribute("ascDesc", 1);
+			model.addAttribute("listAll", movieService.getListAllDesc(code));
 		
-		return "list/top";
+			return "list/top";
+		} else if(code == 3) {
+			model.addAttribute("ascDesc", 1);
+			model.addAttribute("listAll", movieService.getListAllLikeDesc(code));
+			
+			return "list/top";
+		}
+		
+		return "movie/list";
 	}
+	*/
 	/*
 	// 별 평가 처리
 	@RequestMapping("ratingCheck.do")
