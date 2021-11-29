@@ -33,7 +33,8 @@ desc.innerHTML = year + "/" + month + "/" + date;
 function likeService(){
 	$.ajax({
 		type: "post",
-		url: "list-like"
+		url: "chart-like",
+		data: JSON.stringify(signUpData)
 	})
 
 }

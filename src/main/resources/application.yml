@@ -14,8 +14,8 @@ spring:
       
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/kakaoweb?serverTimezone=Asia/Seoul
-    username: root
+    url: jdbc:mysql://121.175.150.249:3306/team2?serverTimezone=Asia/Seoul
+    username: team2
     password: toor
     
 mybatis:
