@@ -22,6 +22,6 @@ public interface MainChartDao {
 	*/
 	
 	// 조회수 증가
-	// public int plusMovieListCnt(int mov_idn);
+	public int plusLikeCnt(int mov_idn);
 	
 }

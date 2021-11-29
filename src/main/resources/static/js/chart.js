@@ -1,25 +1,24 @@
 const desc = document.querySelector(".desc");
-
 const imdb_rating_number = document.querySelectorAll(".imdb_rating_number");
-
 const seen_star = document.querySelectorAll(".seen_star");
 const seen = document.querySelectorAll(".seen");
 const popover = document.querySelectorAll(".popover");
-
 const rating_stars = document.querySelectorAll(".rating_stars");
 const popover_delete = document.querySelectorAll(".popover_delete");
 const like_heart = document.querySelectorAll(".like_heart");
 const like_count = document.querySelectorAll(".like_count");
-
 const sidebar_seen_movies = document.querySelector(".sidebar_seen_movies");
-
 const descend = document.querySelector(".descend");
 
 let seen_movies_number = sidebar_seen_movies.innerText;
 let ratingNumber = new Array(10);
-
 let likeNumber = new Array(10);
-/*
+
+var ratingLikeData = {
+	user_number: '',
+	mov_idn: 0,
+	likeFlag: 0
+}
 // 날짜
 let today = new Date();
 let year = today.getFullYear(); // 년도
@@ -34,7 +33,22 @@ function likeService(){
 	$.ajax({
 		type: "post",
 		url: "chart-like",
-		data: JSON.stringify(signUpData)
+		data: JSON.stringify(ratingLikeData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			ratingLikeData = JSON.parse(data);
+			if(ratingLikeData.likeFlag == 0){
+				alert('좋아요 1 증가')
+			} else if(ratingLikeData.likeFlag == 1){
+				alert('좋아요 1 감소');
+			} else {
+				alert('likeFlag 이상한거 옴');
+			}
+		},
+		error:function(){
+			alert('좋아요 비동기 처리 실패');
+		}
 	})
 
 }
@@ -105,7 +119,7 @@ for (let r = 0; r < 10; r++) {
       likeNumber[r] = parseInt(likeNumber[r]) + 1;
       like_count[r].innerHTML = likeNumber[r];
       like_heart[r].style.color = "#E04386";
-      
+      ratingLikeData.likeFlag = 1;
       likeService();
     } else {
       likeNumber[r] = parseInt(likeNumber[r]) - 1;
@@ -114,7 +128,7 @@ for (let r = 0; r < 10; r++) {
     }
   };
 }
-*/
+
 /* 별점 매기는 일반 for문
 
 for (let i = 10; i < 20; i++) {

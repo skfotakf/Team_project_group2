@@ -8,25 +8,31 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.springboot.project.web.model.vo.MovieLikeVo;
 /*import com.springboot.project.web.model.vo.MovieVO;*/
 /*import com.springboot.project.web.service.MovieRatingService;*/
 import com.springboot.project.web.service.MovieService;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Controller
-@RequestMapping("/chart")
 public class MainChartController {
 	
-	@Autowired
-	private MovieService movieService;
+	private final MovieService movieService;
+	
 	/*
 	@Autowired
 	private MovieRatingService ratingService;
 	*/
 	// 메인 페이지 보여주기(chart) - 기본 페이지 R
-	@GetMapping("/boxoffice/{code}")
+	@GetMapping("/chart/boxoffice/{code}")
 	public String viewMainChart(Model model, @PathVariable int code) {
 		
 		model.addAttribute("chartAll", movieService.getChartAll(code));
@@ -36,7 +42,7 @@ public class MainChartController {
 		return "movie/list";
 	}
 	
-	@GetMapping("/top/{code}")
+	@GetMapping("/chart/top/{code}")
 	public String viewTopChart(Model model, @PathVariable int code) {
 		
 		if(code == 1) {
@@ -85,6 +91,13 @@ public class MainChartController {
 		return "movie/list";
 	}
 	*/
+	
+	@PostMapping("/chart/chart-like")
+	public Object plusLikeCnt(@RequestParam MovieLikeVo movieLikeVo) {
+		movieService.plusLikeCnt(movieLikeVo);
+		return movieLikeVo;
+	}
+	
 	/*
 	// 별 평가 처리
 	@RequestMapping("ratingCheck.do")

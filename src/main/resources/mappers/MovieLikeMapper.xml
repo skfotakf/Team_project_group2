@@ -1,11 +1,21 @@
-<!-- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-  <mapper namespace="com.springboot.project.web.mapper.MovieLikeDAO">
+ <mapper namespace="com.springboot.project.domain.user.UserRepository">
   
-  	 x번 사용자가 x번 영화에 좋아요를 눌렀다. 좋아요 정보 insert
+	<update id="plusLikeCnt"> 
+  		update
+  			movie_mst
+  		set
+  			mov_lik_cnt = mov_lik_cnt + 1
+  		where
+  			mov_idn = 2;
+		
+		
+  	</update>
+  	<!-- x번 사용자가 x번 영화에 좋아요를 눌렀다. 좋아요 정보 insert
   		중복 발생...  처리 어떻게 할것인지?? 
 	<insert id="insertListLike">
      	INSERT INTO 
@@ -53,6 +63,5 @@
             WHERE
             	mov_idn = #{mov_idn} AND number = #{number}
   	</select>
-  
-  </mapper>
   -->
+  </mapper>

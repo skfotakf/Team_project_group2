@@ -6,30 +6,37 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.project.web.mapper.MainChartDao;
+import com.springboot.project.domain.user.Movie;
+import com.springboot.project.domain.user.MovieRepository;
 import com.springboot.project.web.model.dto.MainChartDto;
+import com.springboot.project.web.model.vo.MovieLikeVo;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Service
 public class MovieServiceImpl implements MovieService{
 	
-	@Autowired
-	private MainChartDao mainChartDao;
+	private final MovieRepository movieRepository;
+
 	
 	private List<MainChartDto> chartAll;
+	
 	@Override // 메인 list
 	public List<MainChartDto> getChartAll(int code) {
 		System.out.println("되는중");
-		return mainChartDao.getChartAll(code);
+		return movieRepository.getChartAll(code);
 	}
 	@Override
 	public List<MainChartDto> getChartAllRelease(int code) {
 		
-		return mainChartDao.getChartAllRelease(code);
+		return movieRepository.getChartAllRelease(code);
 	}
 	@Override
 	public List<MainChartDto> getChartAllLike(int code) {
 		// TODO Auto-generated method stub
-		return mainChartDao.getChartAllLike(code);
+		// Movie movie = chartAll.get(0).toEntity();
+		return movieRepository.getChartAllLike(code);
 	}
 	
 	/* 정배열 역배열 버튼(못넣음)
@@ -49,22 +56,12 @@ public class MovieServiceImpl implements MovieService{
 		return mainChartDao.getChartAllLikeDesc(code);
 	}
 	*/
-	
-/*
-	@Override
-	public List<MainListDto> getList() {
-		System.out.println("되는중!");
-		listAll = getListAll();
-		List<MainListDto> list = new ArrayList<MainListDto>();
-		list.add(listAll.);
-		return list;
-	}
-	*/
-/*
+
 	@Override // 조회수 증가
-	public int plusMovieListCnt(String mov_idn) {
-		return mainListDAO.plusMovieListCnt(Integer.parseInt(mov_idn));
+	public int plusLikeCnt(MovieLikeVo movieLikeVo) {
+		
+		return movieRepository.plusLikeCnt(7858584);
 	}
-*/
+
 
 }

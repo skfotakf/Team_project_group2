@@ -5,8 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.springboot.project.web.model.dto.MainChartDto;
+import com.springboot.project.web.model.vo.MovieLikeVo;
 
-@Service
+
 public interface MovieService {
 	
 	// 모든 영화 리스트 불러오기
@@ -29,9 +30,7 @@ public interface MovieService {
 	public List<MainChartDto> getChartAllLikeDesc(int code);
 	*/
 	
-	
-	//public List<MainListDto> getList();
 	// 조회수 증가
-	/*public int plusMovieListCnt(String mov_idn);*/
+	public int plusLikeCnt(MovieLikeVo movieLikeVo);
 
 }

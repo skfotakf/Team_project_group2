@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="com.springboot.project.web.mapper.MainChartDao">
+  <mapper namespace="com.springboot.project.domain.user.MovieRepository">
   	
-  	<select id="getChartAll" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
+  	<select id="getChartAll" resultType="com.springboot.project.domain.user.Movie"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
@@ -27,7 +27,7 @@
   		order by
   			mov_idn
   	</select>
-  	<select id="getChartAllDesc" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
+  	<select id="getChartAllDesc" resultType="com.springboot.project.domain.user.Movie"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
@@ -49,7 +49,7 @@
   		order by
   			mov_idn desc
   	</select>
-  	<select id="getChartAllRelease" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
+  	<select id="getChartAllRelease" resultType="com.springboot.project.domain.user.Movie"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
@@ -69,7 +69,7 @@
   		from
   			movie_mst
   		order by
-  			mov_rat
+  			mov_release
   	</select>
   	<select id="getChartAllReleaseDesc" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
   		select
@@ -91,7 +91,7 @@
   		from
   			movie_mst
   		order by
-  			mov_rat desc
+  			mov_release desc
   	</select>
   	<select id="getChartAllLike" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
   		select
@@ -137,19 +137,10 @@
   		order by
   			mov_lik_cnt desc
   	</select>
-  	<!-- 
-  	<update id="plusMovieListCnt"> 
-  		update
-  			movie_mst
-  		set
-  			mov_viewCnt = mov_viewCnt + 1
-  		where
-  			mov_idn = #{mov_idn}
-  	</update>
   	
-  	<select id=""> 
   	
-  	</select>
+  	
+  	
  
- --> 	
+	
   </mapper>
