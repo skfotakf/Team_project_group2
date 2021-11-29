@@ -46,19 +46,18 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 			providerId = UUID.randomUUID().toString().replaceAll("-", "");
 		}
 		
-		String id = provider + "_" + providerId;
+		String username = provider + "_" + providerId;
 		
-		User userEntity = userRepository.getUser(id);	
+		User userEntity = userRepository.getUser(username);	
 		System.out.println(userEntity);
 		
 		if(userEntity == null) {
 			// 처음 사이트 로그인
 			OAuth2UserDto oAuth2UserDto = OAuth2UserDto.builder()
-										.id(id)
+										.username(username)
 										.password(new BCryptPasswordEncoder().encode(UUID.randomUUID().toString()))
 										.email((String)attributes.get("email"))
 										.name((String) attributes.get("name"))
-										.nickname((String)attributes.get("nickname"))
 										.telephone((String)attributes.get("telephone"))
 										.role("ROLE_USER")
 										.provider(provider)

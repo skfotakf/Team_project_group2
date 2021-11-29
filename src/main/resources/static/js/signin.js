@@ -51,7 +51,7 @@ function emptyCheck(){
 function signInSubmit(){
 	$.ajax({
 		type: "post",
-		url: "auth/signin",
+		url: "/auth/signin",
 		data: JSON.stringify(signInData),
 		contentType: "application/json;charset=UTF-8",
 		dataType: "text",

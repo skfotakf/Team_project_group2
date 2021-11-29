@@ -17,10 +17,12 @@ public class PrincipalDetailsService implements UserDetailsService{
 	private final UserRepository userRepository;
 	
 	@Override
-	public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
-		System.out.println(id);
-		User userEntity = userRepository.getUser(id);
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		System.out.println(username);
+		User userEntity = userRepository.getUser(username);
+//		User userEntity2 = userRepository.getUser("zzz1234");
 		System.out.println(userEntity);
+//		System.out.println(userEntity2);
 		if(userEntity == null) {
 			return null;
 		} else {
@@ -28,7 +30,4 @@ public class PrincipalDetailsService implements UserDetailsService{
 			return principalDetails;
 		}
 	}
-
-	
-	
 }

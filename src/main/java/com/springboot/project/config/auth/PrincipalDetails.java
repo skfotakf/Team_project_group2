@@ -15,6 +15,8 @@ import lombok.Data;
 @Data
 public class PrincipalDetails implements UserDetails, OAuth2User {
 
+	private static final long serialVersionUID = 1L;
+	
 	private User user;
 	private Map<String, Object> attributes;
 	
@@ -53,7 +55,7 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
 	@Override
 	public String getUsername() {
-		return user.getId();
+		return user.getUsername();
 	}
 
 

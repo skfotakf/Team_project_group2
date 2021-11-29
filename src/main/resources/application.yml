@@ -14,9 +14,9 @@ spring:
       
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://dcrhg4kh56j13bnu.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/i3c1ooy2meio39im?serverTimezone=Asia/Seoul
-    username: elvtp7ihr01i8bw2
-    password: ha09j4einb9ehlfp
+    url: jdbc:mariadb://121.175.150.249:3306/team2?serverTimezone=Asia/Seoul
+    username: team2
+    password: toor
     
   security:
     user:
@@ -44,7 +44,6 @@ spring:
             scope:
             - email
             - name
-            - nickname
             client-name: Naver
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:8000/login/oauth2/code/naver

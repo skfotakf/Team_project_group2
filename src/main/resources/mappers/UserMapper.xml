@@ -5,11 +5,11 @@
 <mapper namespace="com.springboot.project.domain.user.UserRepository">
 	<select id="useridCheck" parameterType="com.springboot.project.domain.user.User" resultType="Integer">
 		select
-			count(id)
+			count(username)
 		from
 			user_mst
 		where
-			id = #{id};
+			username = #{username};
 	</select>
 	
 	<insert id="signup" parameterType="com.springboot.project.domain.user.User">
@@ -17,11 +17,10 @@
 			user_mst
 		values(
 			0,
-			#{id},
+			#{username},
 			#{password},
 			#{email},
 			#{name},
-			#{nickname},
 			#{telephone},
 			#{role},
 			#{provider},
@@ -36,6 +35,6 @@
 		from
 			user_mst
 		where
-			id = #{id};
+			username = #{username};
 	</select>
 </mapper>

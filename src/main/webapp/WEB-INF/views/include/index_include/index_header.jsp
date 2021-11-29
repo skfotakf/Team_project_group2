@@ -1,9 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/> 
+</sec:authorize>
+<link rel="stylesheet" href="/css/index_include.css" />
 <header id="header">
         <div class="JMKYheader">
 
-            <h1><a href="" class="logo">JMKY</a></h1>
+            <h1><a href="/list/list" class="logo">JMKY</a></h1>
 
             <ul id="menu">
                 <a href="">
@@ -22,8 +29,8 @@
                         <option value="Advanced Search">Advanced Search</option>
                     </div>
                 </select>
-                <input type="text" placeholder="Search JMKY" >
-                <button><i class="fas fa-search"></i></button>
+                <input type="search" placeholder="Search JMKY" id="key-search">
+                <button type="submit"><i class="fas fa-search"></i></button>
                 
             </div>
             <ul class="top_nav">
@@ -33,9 +40,20 @@
                 <a href="">
                     <li><i class="far fa-plus-square"></i> Watchlist</li>
                 </a>
-                <a href="">
-                    <li>Sign In</li>
-                </a>
+                <c:choose>
+                	<c:when test="${empty principal.user }">
+		                <a href="/auth/signin"><li>Sign In </li></a>
+                	</c:when>
+                	
+                	<c:otherwise>
+                		
+	               			<a href="/auth/mypage"><li class="ellipsis">${principal.user.username } 님</li></a>
+                			<div>
+                				<a href="/logout"><li><i class="fas fa-sign-out-alt"></i></li></a>
+                			</div>
+                	</c:otherwise>
+                
+                </c:choose>
             </ul>
         </div>
 </header>

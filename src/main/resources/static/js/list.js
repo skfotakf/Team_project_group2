@@ -5,6 +5,8 @@ const popover = document.querySelectorAll(".popover");
 const rating_stars = document.querySelectorAll(".rating_stars");
 const popover_delete = document.querySelectorAll(".popover_delete");
 
+
+
 for (let p = 0; p < 10; p++) {
   seen_star[p].onclick = () => {
     if (seen_star[p].style.color == "darkgray") {
@@ -62,3 +64,7 @@ for (let i = 10; i < 20; i++) {
   };
 }
 */
+
+// 검색창 기능
+
+

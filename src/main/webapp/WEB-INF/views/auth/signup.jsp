@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMKY Registration</title>
+    <title>JMKY 회원가입</title>
     <link rel="stylesheet" href="/css/signup.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
@@ -20,7 +20,7 @@
             <h1>Create account</h1>
             <div>
                 <label for="">ID</label>
-                <input type="text" name="id">
+                <input type="text" name="username">
             </div>
             <div>
                 <label for="">Password</label>
@@ -43,26 +43,12 @@
                 <label for="">Your telephone (without "-")</label>
                 <input type="tel" name="telephone">
             </div>
-            <div>
-                <label for="">NickName</label>
-                <input type="text" name="nickname">
-            </div>
-            <button type="button" id="signup-btn">Create your JMKY account</button>
+            
+            <button type="button" id="signup-btn">JMKY 계정 만들기</button>
             
             <div id="inner_footer">계정을 가지고 계신가요?<a href="/auth/signin">로그인</a></div>
         </div>
     </form>
-        <footer>
-            <div>
-                <br>
-                <a href="">Help</a>
-                <a href="">Conditions of Use</a>
-                <a href="">Privacy Notice</a>
-            </div>
-            <div>
-                <p>&copy; 1996-2021, Amazon.com, Inc. or its affiliates</p>
-            </div>
-        </footer>
         
         
         <script type="text/javascript">
@@ -71,12 +57,11 @@
         	signupBtn.onclick = () => {
         		let formData = new FormData(signupForm);
         		let signupObj = {
-        				id : formData.get('id'),
+        				username : formData.get('username'),
         				password: formData.get('password'),
         				email: formData.get('email'),
         				name: formData.get('name'),
         				telephone: formData.get('telephone'),
-        				nickname: formData.get('nickname'),
         				role: 'ROLE_USER'
         		}
         		$.ajax({
@@ -89,13 +74,12 @@
         				if(respObj.code == 400) {
         					alert('오류코드' + respObj.code +
 									'\n오류메세지' + 
-									'\nid: ' + respObj.msg.id +
+									'\nusername: ' + respObj.msg.username +
 									'\npassword: ' + respObj.msg.password +
 									'\nrepassword: ' + respObj.msg.repassword +
 									'\nemail: ' + respObj.msg.email +
 									'\nname: ' + respObj.msg.name +
-									'\ntelephone: ' + respObj.msg.telephone +
-									'\nnickname: ' + respObj.msg.nickname);
+									'\ntelephone: ' + respObj.msg.telephone);
 									
         				}else if(respObj.code == 410 || respObj.code == 500){
         					alert("오류코드 : " + respObj.code +
@@ -103,7 +87,7 @@
 									'\n' + respObj.msg);
         				} else {
         					alert(respObj.msg);
-        					location.href = '/list/list';
+        					location.href = '/auth/signin';
         				}
         			},
         			error: function() {
@@ -113,6 +97,6 @@
         	} // end onclick
         </script>
     </div>
-    <jsp:include page="include/signup_include/signup_footer.jsp"></jsp:include>
+    <jsp:include page="../include/signup_include/signup_footer.jsp"></jsp:include>
 </body>
 </html>

@@ -14,38 +14,38 @@
 
 <body>
     <body>
-	<jsp:include page="include/index_include/index_header.jsp"></jsp:include>
+	<jsp:include page="../include/index_include/index_header.jsp"></jsp:include>
     <div id="root">
         <div class="content1">
             <div id="sign_in_option">
                 <div id="sign_in_box">
                     <h1>Sign in</h1>
-                    <form action="signin" method="post">
-                    <input type="hidden" id="flag" value="${empty flag ? 3 : flag }">
+                    <form action="/auth/signin" method="post">
+                    	<input type="hidden" id="flag" value="${empty flag ? 3 : flag }">
                         <div>
-                            <input type="text" class="item_ip"  placeholder="ID">
+                            <input type="text" class="item_ip" name="username"  placeholder="ID">
                         </div>
                         <div class="item_msg">
                             <span class="emailErrorMsg"></span>
                         </div>
                         <div>
-                            <input type="password" class="item_ip" placeholder="Password">
+                            <input type="password" class="item_ip" name="password" placeholder="Password">
                         </div>
                         <div class="item_msg">
                             <span class="passwordErrorMsg"></span>
                         </div>
                         <div id="login_btns">
                             <div>
-                                <button type="button" class="item_btn btn_login">로그인</button>
+                                <button type="submit" class="item_btn btn_login">로그인</button>
                             </div>
                             <div>
-                                <button type="button"><a><i class="fab fa-google"></i>  구글 로그인</a></button>
+                                <button type="button" onclick="location.href='/oauth2/authorization/google'"><a><i class="fab fa-google"></i> 구글 로그인</a></button>
                             </div>
                             <div>
-                                <button type="button"><a><i class="fab fa-facebook-square"></i>  페이스북 로그인</a></button>
+                                <button type="button" onclick="location.href='/oauth2/authorization/facebook'" ><a><i class="fab fa-facebook-square"></i> 페이스북 로그인</a></button>
                             </div>
                             <div>
-                                <button type="button"><a>네이버 로그인</a></button>
+                                <button type="button" onclick="location.href='/oauth2/authorization/naver'"><a> 네이버 로그인</a></button>
                             </div>
                         </div>
                     </form>
@@ -96,7 +96,7 @@
         </div>
 
     </div>
-	<jsp:include page="include/index_include/index_footer"></jsp:include>
+	<jsp:include page="../include/index_include/index_footer"></jsp:include>
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
 <script src="/js/signin.js"></script>
