@@ -2,89 +2,89 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    
+    <link rel="stylesheet" href="/css/signin.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/mainNav.css" />
-    <link rel="stylesheet" href="/css/list.css" />
-    <link rel="stylesheet" href="/css/signin.css" />
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="/css/chart.css" />
+    <link rel="stylesheet" href="/css/top250chart.css" />
+     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   </head>
   <body>
     <div class="container">
-     <jsp:include page="../include/index_include/index_header.jsp"></jsp:include>
-       
+      <jsp:include page="../include/index_include/index_header.jsp"></jsp:include>
 
       <div class="wrapper">
         <div class="pagecontent">
           <div class="content_2_wide">
             <div class="main">
-              <span class="ab_widget">
-                <div class="covid_message">
-                  <div class="alert">
-                    <p class="alert_message">
-                      While theaters are closed, some data on this page may be
-                      delayed or unavailable. In the meantime, check out
-                      <a href="https://www.imdb.com/whats-on-tv/?ref_=im_2020"
-                        >What's on TV and Streaming »</a
-                      >
-                    </p>
-                    <p class="alert_message">
-                      If you’re going out to the movies (or going out anywhere),
-                      please stay safe! Check out the
-                      <a
-                        href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/q-a-on-covid-19-and-masks"
-                        >World Health Organization’s guidance on the use of
-                        masks</a
-                      >
-                      to prevent the spread of COVID-19.
-                    </p>
-                  </div>
-                </div>
-              </span>
-              <h1 class="title_topBo">Top Box Office</h1>
-
+              JMKY Charts
+              <h1>JMKY Top 5 Movies</h1>
+              JMKY Top 5 as rated by regular JMKY voters.
               <hr />
-              <span class="desc"></span>
-              <table class="list">
-                <thead class="list_header">
+              <div class="lister">
+                <div class="nav">
+                  <div class="sortby">
+                    <form>
+                    <select class="lister_sortby">
+                      
+                      <option value="jr:descending">JMKY Ranking</option>
+                      <option value="rd:descending">Release Date</option>
+                      <option value="nl:descending">Number of Likes</option>
+                      
+                    </select>
+                    <span class="submit_sortby">확인</span>
+                    </form>
+                    <input type="hidden" value="${ascDesc }" class="ascDesc">
+                    <span class="ascending" style="display:none"></span>
+                    <span class="descending" style="display:none"></span>
+                  </div>
+                  <div class="desc">Showing 250 titles</div>
+                
+                  <br>
+                  <input type="hidden" value="${nameSortby }" class="nameSortby" >
+                  <span class="sortbyRanking">Sort by : JMKY Ranking</span>
+                  <span class="sortbyRelease">Sort by : Release Date</span>
+                  <span class="sortbyLike">Sort by : Number of Likes</span>
+                  <table class="chart">
+                <thead class="chart_header">
                   <tr>
-                    <th class="list_poster"></th>
-                    <th class="list_title">Title</th>
-                    <th class="list_rating list_rating_title">
+                    <th class="chart_poster"></th>
+                    <th class="chart_title">Title</th>
+                    <th class="chart_rating chart_rating_title">
                       IMDb <br />Rating
                     </th>
-                    <th class="list_date">Date</th>
-                    <th class="list_count">Count</th>
-                    <th class="list_like">Like</th>
+                    <th class="chart_date chart_date_title">Date</th>
+                    <th class="chart_count">Count</th>
+                    <th class="chart_like">Like</th>
                   </tr>
                 </thead>
-                <tbody class="list_main">
-                  <c:forEach var="listAll" items="${listAll }">
+                <tbody class="chart_main">
+                  <c:forEach var="chartAll" items="${chartAll }">
                   <tr>
                   
-                    <td class="list_poster">
+                    <td class="chart_poster">
                       <a
                         href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
-                        ><img src="/images/${listAll.mov_photo }"
+                        ><img src="/images/${chartAll.mov_photo }"
                       ></a>
                     </td>
-                    <td class="list_title">
+                    <td class="chart_title">
                       <a
                         href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
-                        >${listAll.mov_title }</a
+                        >${chartAll.mov_title }</a
                       >
                     </td>
-                    <td class="list_rating">
+                    <td class="chart_rating">
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: orange"></i
-                          >&nbsp;<span class="imdb_rating_number">${listAll.mov_rat }</span>
+                          >&nbsp;<span class="imdb_rating_number">${chartAll.mov_rat }</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -171,9 +171,9 @@
                         </div>
                       </div>
                     </td>
-                    <td class="list_date">${listAll.mov_release }</td>
-                    <td class="list_count"><span class="movie_count">${listAll.mov_viewCnt }</span></td>
-                    <td class="list_like">
+                    <td class="chart_date">${chartAll.mov_release }</td>
+                    <td class="chart_count"><span class="movie_count">${chartAll.mov_viewCnt }</span></td>
+                    <td class="chart_like">
                       <div class="like_widget">
                         <div class="imdb_like">
                           <i
@@ -183,7 +183,7 @@
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span class="like_count">5</span> likes
+                            <span class="like_count">${chartAll.mov_lik_cnt }</span> likes
                           </div>
                         </div>
                       </div>
@@ -198,7 +198,8 @@
                 2021
               </div>
               
-              
+                </div>
+              </div>
             </div>
             <div class="sidebar">
               <div class="sidebar_top"></div>
@@ -260,11 +261,100 @@
           <div class="recently_viewed"></div>
         </div>
       </div>
-      <jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
-        
+      <footer class="footer">
+        <div id="icon_box">
+          <ul>
+            <li>
+              <a href=""><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-twitch"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div id="link_box">
+          <div class="link_content_box">
+            <ul>
+              <li>
+                <a href=""
+                  >Get the JMKY App <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href="">Help <i class="fas fa-external-link-alt"></i></a>
+              </li>
+              <li>
+                <a href=""
+                  >Site Index <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href="">JMKYPro <i class="fas fa-external-link-alt"></i></a>
+              </li>
+              <li>
+                <a href=""
+                  >Box Office Mojo <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >JMKY Developer <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="link_content_box">
+            <ul>
+              <li>
+                <a href=""
+                  >Press Room <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >Advertising <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href="">Jobs <i class="fas fa-external-link-alt"></i></a>
+              </li>
+              <li>
+                <a href=""
+                  >Conditions of Use <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >Privacy Policy <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""
+                  >Interest-Based Ads <i class="fas fa-external-link-alt"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="JMKY_footer_logo">
+          <p>an amazon company</p>
+        </div>
+        <div id="JMKY_footer_copy">
+          <p>&copy; 1990-2021 by JMKY.com, Inc.</p>
+        </div>
+      </footer>
     </div>
-    <script type="text/javascript" src="/js/list.js"></script>
-
+	<script type="text/javascript" src="/js/chart.js"></script>
+	<script type="text/javascript" src="/js/top.js"></script>
     <script
       src="https://kit.fontawesome.com/a04df2c0ca.js"
       crossorigin="anonymous"

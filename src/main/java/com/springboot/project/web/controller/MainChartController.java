@@ -16,8 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.springboot.project.web.service.MovieService;
 
 @Controller
-@RequestMapping("/list")
-public class MainListController {
+@RequestMapping("/chart")
+public class MainChartController {
 	
 	@Autowired
 	private MovieService movieService;
@@ -25,35 +25,37 @@ public class MainListController {
 	@Autowired
 	private MovieRatingService ratingService;
 	*/
-	// 메인 페이지 보여주기(list) - 기본 페이지 R
-	@GetMapping("/list")
-	public String viewMainList(Model model, @PathVariable int code) {
+	// 메인 페이지 보여주기(chart) - 기본 페이지 R
+	@GetMapping("/boxoffice/{code}")
+	public String viewMainChart(Model model, @PathVariable int code) {
 		
-		model.addAttribute("listAll", movieService.getListAll(code));
-		
-		return "list/list";
+		model.addAttribute("chartAll", movieService.getChartAll(code));
+		if(code == 1) {
+			return "chart/boxoffice";
+		}
+		return "movie/list";
 	}
 	
 	@GetMapping("/top/{code}")
-	public String viewTopList(Model model, @PathVariable int code) {
+	public String viewTopChart(Model model, @PathVariable int code) {
 		
 		if(code == 1) {
 			model.addAttribute("nameSortby", 1);
 			model.addAttribute("ascDesc", 0);
-			model.addAttribute("listAll", movieService.getListAll(code));
+			model.addAttribute("chartAll", movieService.getChartAll(code));
 			
-			return "list/top";
+			return "chart/top";
 		} else if(code == 2) {
 			model.addAttribute("nameSortby", 2);
 			model.addAttribute("ascDesc", 0);
-			model.addAttribute("listAll", movieService.getListAllRelease(code));
+			model.addAttribute("chartAll", movieService.getChartAllRelease(code));
 		
-			return "list/top";
+			return "chart/top";
 		} else if(code == 3) {
 			model.addAttribute("nameSortby", 3);
-			model.addAttribute("listAll", movieService.getListAllLike(code));
+			model.addAttribute("chartAll", movieService.getChartAllLike(code));
 			
-			return "list/top";
+			return "chart/top";
 		}
 		
 		return "movie/list";
@@ -61,23 +63,23 @@ public class MainListController {
 	}
 	/* 정배열 역배열 버튼(못넣음)
 	@GetMapping("/top/{code}/desc")
-	public String viewMainListDesc(Model model, @PathVariable int code) {
+	public String viewMainChartDesc(Model model, @PathVariable int code) {
 		
 		if(code == 1) {
 			model.addAttribute("ascDesc", 1);
-			model.addAttribute("listAll", movieService.getListAllDesc(code));
+			model.addAttribute("chartAll", movieService.getChartAllDesc(code));
 			
-			return "list/top";
+			return "chart/top";
 		} else if(code == 2) {
 			model.addAttribute("ascDesc", 1);
-			model.addAttribute("listAll", movieService.getListAllDesc(code));
+			model.addAttribute("chartAll", movieService.getChartAllDesc(code));
 		
-			return "list/top";
+			return "chart/top";
 		} else if(code == 3) {
 			model.addAttribute("ascDesc", 1);
-			model.addAttribute("listAll", movieService.getListAllLikeDesc(code));
+			model.addAttribute("listAll", movieService.getChartAllLikeDesc(code));
 			
-			return "list/top";
+			return "chart/top";
 		}
 		
 		return "movie/list";

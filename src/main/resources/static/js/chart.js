@@ -28,6 +28,15 @@ let date = today.getDate(); // 날짜
 
 desc.innerHTML = year + "/" + month + "/" + date;
 
+
+// like 누르면 수가 1 증가
+function likeService(){
+	$.ajax({
+		type: "post",
+		url: "list-like"
+	})
+
+}
 //별 누르면 seen 나오고, sidebar 숫자 1 추가
 for (let p = 0; p < 10; p++) {
   seen_star[p].onclick = () => {
@@ -95,6 +104,8 @@ for (let r = 0; r < 10; r++) {
       likeNumber[r] = parseInt(likeNumber[r]) + 1;
       like_count[r].innerHTML = likeNumber[r];
       like_heart[r].style.color = "#E04386";
+      
+      likeService();
     } else {
       likeNumber[r] = parseInt(likeNumber[r]) - 1;
       like_count[r].innerHTML = likeNumber[r];
@@ -102,7 +113,7 @@ for (let r = 0; r < 10; r++) {
     }
   };
 }
-/*
+*/
 /* 별점 매기는 일반 for문
 
 for (let i = 10; i < 20; i++) {

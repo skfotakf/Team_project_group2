@@ -66,7 +66,7 @@ hr {
   margin: 10px 0;
 }
 
-.list {
+.chart {
   border-collapse: collapse;
   position: relative;
 }
@@ -91,14 +91,14 @@ hr {
   padding: 0;
 }
 
-.list_header {
+.chart_header {
   font-family: Verdana, sans-serif;
   margin: 10px 0px 0px;
 
   font-size: 12px;
 }
 
-.list tr {
+.chart tr {
   margin: 0px;
   padding: 0px;
   list-style: none;
@@ -108,33 +108,33 @@ hr {
   height: 30px;
   text-align: center;
 }
-.list_header th {
+.chart_header th {
   height: 30px;
   vertical-align: bottom;
 }
-.list_main tr {
+.chart_main tr {
   height: 67px;
   align-items: center;
 }
-.list_poster {
+.chart_poster {
   width: 45px;
   padding-right: 10px;
   border-left: none;
 }
-.list_title {
+.chart_title {
   text-align: left !important;
 }
-.list_title {
+.chart_title {
   width: 300px;
   padding-right: 0px;
   text-align: left;
 }
-.list_rating {
+.chart_rating {
   width: 75px;
   padding-right: 0px;
   position: relative;
 }
-.list_rating_title {
+.chart_rating_title {
   font-size: 10px;
   text-align: center;
 }
@@ -218,21 +218,21 @@ hr {
 }
 /*===========================================*/
 
-.list_date {
+.chart_date {
   width: 75px;
   padding-right: 0px;
   font-size: 14px;
 }
 
-.list_date_title{
+.chart_date_title{
   font-size: 12px;	
 }
 
-.list_count {
+.chart_count {
   width: 55px;
   padding-right: 0px;
 }
-.list_like {
+.chart_like {
   width: 60px;
   position: relative;
 }

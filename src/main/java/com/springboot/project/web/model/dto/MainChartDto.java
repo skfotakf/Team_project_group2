@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-public class MainListDto {
+public class MainChartDto {
 	
 	
 	//movie_mst
@@ -108,7 +108,7 @@ public class MainListDto {
 	}
 	@Override
 	public String toString() {
-		return "MainListDto [mov_idn=" + mov_idn + ", mov_photo=" + mov_photo + ", mov_title=" + mov_title
+		return "MainChartDto [mov_idn=" + mov_idn + ", mov_photo=" + mov_photo + ", mov_title=" + mov_title
 				+ ", mov_release=" + mov_release + ", mov_viewCnt=" + mov_viewCnt + ", mov_gnr=" + mov_gnr
 				+ ", mov_rat=" + mov_rat + ", mov_rat_cnt=" + mov_rat_cnt + ", mov_lik=" + mov_lik + ", mov_lik_cnt="
 				+ mov_lik_cnt + ", mov_gnr_idn=" + mov_gnr_idn + ", mov_cht_idn=" + mov_cht_idn + ", mov_viw_list_idn="

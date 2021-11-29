@@ -6,47 +6,47 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.project.web.mapper.MainListDAO;
-import com.springboot.project.web.model.dto.MainListDto;
+import com.springboot.project.web.mapper.MainChartDao;
+import com.springboot.project.web.model.dto.MainChartDto;
 
 @Service
 public class MovieServiceImpl implements MovieService{
 	
 	@Autowired
-	private MainListDAO mainListDAO;
+	private MainChartDao mainChartDao;
 	
-	private List<MainListDto> listAll;
+	private List<MainChartDto> chartAll;
 	@Override // 메인 list
-	public List<MainListDto> getListAll(int code) {
+	public List<MainChartDto> getChartAll(int code) {
 		System.out.println("되는중");
-		return mainListDAO.getListAll(code);
+		return mainChartDao.getChartAll(code);
 	}
 	@Override
-	public List<MainListDto> getListAllRelease(int code) {
+	public List<MainChartDto> getChartAllRelease(int code) {
 		
-		return mainListDAO.getListAllRelease(code);
+		return mainChartDao.getChartAllRelease(code);
 	}
 	@Override
-	public List<MainListDto> getListAllLike(int code) {
+	public List<MainChartDto> getChartAllLike(int code) {
 		// TODO Auto-generated method stub
-		return mainListDAO.getListAllLike(code);
+		return mainChartDao.getChartAllLike(code);
 	}
 	
 	/* 정배열 역배열 버튼(못넣음)
 	@Override
-	public List<MainListDto> getListAllDesc(int code) {
+	public List<MainChartDto> getChartAllDesc(int code) {
 		System.out.println("반대로 되는중");
-		return mainListDAO.getListAllDesc(code);
+		return mainChartDao.getChartAllDesc(code);
 	}
 	@Override
-	public List<MainListDto> getListAllReleaseDesc(int code) {
+	public List<MainChartDto> getChartAllReleaseDesc(int code) {
 		// TODO Auto-generated method stub
-		return mainListDAO.getListAllReleaseDesc(code);
+		return mainChartDao.getChartAllReleaseDesc(code);
 	}
 	@Override
-	public List<MainListDto> getListAllLikeDesc(int code) {
+	public List<MainChartDto> getChartAllLikeDesc(int code) {
 		// TODO Auto-generated method stub
-		return mainListDAO.getListAllLikeDesc(code);
+		return mainChartDao.getChartAllLikeDesc(code);
 	}
 	*/
 	

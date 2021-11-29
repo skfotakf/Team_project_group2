@@ -29,14 +29,14 @@ if(nameSortby.value == 1){
 }
 submit_sortby.onclick = () =>{
 	if(lister_sortby.value == "jr:descending"){
-	  location.href = '/list/top/1';
+	  location.href = '/chart/top/1';
 	  
 	  
 	} else if(lister_sortby.value == "rd:descending"){
-	  location.href = '/list/top/2';
+	  location.href = '/chart/top/2';
 	  
 	} else{
-	  location.href = '/list/top/3';
+	  location.href = '/chart/top/3';
 	  
 	}
 

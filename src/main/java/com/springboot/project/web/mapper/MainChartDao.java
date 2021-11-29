@@ -1,37 +1,27 @@
-package com.springboot.project.web.service;
+package com.springboot.project.web.mapper;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import org.apache.ibatis.annotations.Mapper;
 
 import com.springboot.project.web.model.dto.MainChartDto;
 
-@Service
-public interface MovieService {
+@Mapper
+public interface MainChartDao {
 	
 	// 모든 영화 리스트 불러오기
 	public List<MainChartDto> getChartAll(int code);
-	
-	// 모든 영화 리스트 개봉일순
 	public List<MainChartDto> getChartAllRelease(int code);
-	
-	// 모든 영화 리스트 좋아요순
 	public List<MainChartDto> getChartAllLike(int code);
 	
 	/* 정배열 역배열 버튼(못넣음)
-	// 모든 영화 리스트 역배열
+	 // 영화 리스트 불러오기 역배열
 	public List<MainChartDto> getChartAllDesc(int code);
-	
-	// 모든 영화 리스트 개봉일순 역배열
 	public List<MainChartDto> getChartAllReleaseDesc(int code);
-
-	// 모든 영화 리스트 개봉일순 역배열
 	public List<MainChartDto> getChartAllLikeDesc(int code);
 	*/
 	
-	
-	//public List<MainListDto> getList();
 	// 조회수 증가
-	/*public int plusMovieListCnt(String mov_idn);*/
-
+	// public int plusMovieListCnt(int mov_idn);
+	
 }
