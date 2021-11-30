@@ -88,17 +88,14 @@ body{
 
 
 .top_nav li{
+    margin: 0 3px;
+    border-radius: 5px;
     font-size: 14px;
     padding: 0 16px;
-    
 }
 .top_nav li:hover{
     
     background: rgb(53, 51, 51);
-}
-
-.top_nav #JMKYPro{
-    border-right:2px solid gray;
 }
 
 

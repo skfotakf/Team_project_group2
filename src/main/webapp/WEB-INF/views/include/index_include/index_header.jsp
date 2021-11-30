@@ -37,6 +37,7 @@
                 <a href="">
                     <li>JMKYPro </li>
                 </a>
+                <label> | </label>
                 <a href="">
                     <li><i class="far fa-plus-square"></i> Watchlist</li>
                 </a>
