@@ -21,10 +21,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jdbc</artifactId>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -52,11 +54,12 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- oauth2-client -->
+		<!-- 
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-oauth2-client</artifactId>
 		</dependency>
-		
+		-->
 		<!-- validation -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
@@ -80,12 +83,12 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
 		
-		<!-- spring-security-taglibs -->
+		<!-- 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
 		</dependency>
-		
+		 -->
 		<!-- jackson -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
