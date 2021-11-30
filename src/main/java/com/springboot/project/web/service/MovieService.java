@@ -2,10 +2,10 @@ package com.springboot.project.web.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
 
 import com.springboot.project.web.model.dto.MainChartDto;
-import com.springboot.project.web.model.vo.MovieLikeVo;
+import com.springboot.project.web.model.dto.MovieLikeDto;
+
 
 
 public interface MovieService {
@@ -30,7 +30,8 @@ public interface MovieService {
 	public List<MainChartDto> getChartAllLikeDesc(int code);
 	*/
 	
-	// 조회수 증가
-	public int plusLikeCnt(MovieLikeVo movieLikeVo);
+	// 좋아요 수 증가
+	public MainChartDto getChart(int mov_idn);
+	public Object plusLikeCnt(MovieLikeDto movieLikeDto);
 
 }

@@ -15,8 +15,8 @@ let ratingNumber = new Array(10);
 let likeNumber = new Array(10);
 
 var ratingLikeData = {
-	user_number: '',
 	mov_idn: 0,
+	user_id: '',
 	likeFlag: 0
 }
 // 날짜
@@ -38,11 +38,9 @@ function likeService(){
 		contentType: "application/json;charset=UTF-8",
 		success: function(data){
 			ratingLikeData = JSON.parse(data);
-			if(ratingLikeData.likeFlag == 0){
+			if(ratingLikeData.likeFlag == 1){
 				alert('좋아요 1 증가')
-			} else if(ratingLikeData.likeFlag == 1){
-				alert('좋아요 1 감소');
-			} else {
+			} else{
 				alert('likeFlag 이상한거 옴');
 			}
 		},
@@ -116,11 +114,14 @@ for (let r = 0; r < 10; r++) {
 
   like_heart[r].onclick = () => {
     if (like_heart[r].style.color == "darkgray") {
+    
+      ratingLikeData.likeFlag = 1;
+      likeService();
+      	
       likeNumber[r] = parseInt(likeNumber[r]) + 1;
       like_count[r].innerHTML = likeNumber[r];
       like_heart[r].style.color = "#E04386";
-      ratingLikeData.likeFlag = 1;
-      likeService();
+     
     } else {
       likeNumber[r] = parseInt(likeNumber[r]) - 1;
       like_count[r].innerHTML = likeNumber[r];

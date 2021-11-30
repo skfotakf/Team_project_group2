@@ -2,19 +2,20 @@ package com.springboot.project.web.controller;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.springboot.project.web.model.vo.MovieLikeVo;
+import com.springboot.project.web.model.dto.MainChartDto;
+import com.springboot.project.web.model.dto.MovieLikeDto;
 /*import com.springboot.project.web.model.vo.MovieVO;*/
 /*import com.springboot.project.web.service.MovieRatingService;*/
 import com.springboot.project.web.service.MovieService;
@@ -92,10 +93,15 @@ public class MainChartController {
 	}
 	*/
 	
-	@PostMapping("/chart/chart-like")
-	public Object plusLikeCnt(@RequestParam MovieLikeVo movieLikeVo) {
-		movieService.plusLikeCnt(movieLikeVo);
-		return movieLikeVo;
+	@PostMapping("/chart/top/chart-like")
+	public Object plusLikeCnt(@RequestBody MovieLikeDto movieLikeDto) {
+		movieLikeDto.setMov_idn(1);
+		movieLikeDto.setUser_id("gyu12");
+		movieService.plusLikeCnt(movieLikeDto);
+		
+		
+		System.out.println(movieLikeDto);
+		return movieLikeDto;
 	}
 	
 	/*

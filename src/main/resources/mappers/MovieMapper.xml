@@ -138,6 +138,26 @@
   			mov_lik_cnt desc
   	</select>
   	
+  	<select id="getChart" resultType="com.springboot.project.domain.user.Movie">
+  		select
+  			*
+  		from 
+  			movie_mst
+  		where
+  			movie_mst.mov_idn = #{mov_idn}
+  	</select>
+	<update id="plusLikeCnt" > 
+	update
+		movie_like
+	set
+		likeFlag = likeFlag + 1
+	where
+		mov_idn = #{mov_idn};
+
+		
+  	</update>
+  	
+  	
   	
   	
   	

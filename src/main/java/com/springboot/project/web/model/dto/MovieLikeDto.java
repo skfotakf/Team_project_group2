@@ -1,20 +1,23 @@
-/*package com.springboot.project.web.model.dto;
+package com.springboot.project.web.model.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.springboot.project.domain.user.MovieLike;
 
+import lombok.Data;
+
+@Data
 public class MovieLikeDto {
 	
-	@Getter
-	@Setter
 	private int mov_idn;
-	private int number;
+	private String user_id;
+	private int likeFlag;
 	
-	public MovieLikeDto() {
-		super();
-		this.mov_idn = mov_idn;
-		this.number = number;
+	public MovieLike toEntity() {
+		return MovieLike.builder()
+				.mov_idn(mov_idn)
+				.user_id(user_id)
+				.likeFlag(likeFlag)
+				.build();
 	}
 
 	
-}*/
+}
