@@ -14,7 +14,7 @@ public interface MovieRepository {
 	public List<MainChartDto> getChartAllRelease(int code);
 	public List<MainChartDto> getChartAllLike(int code);
 	
-	public MainChartDto getChart(int mov_idn);
+
 	public int plusLikeCnt(MovieLikeDto movieLikeDto);
 
 }

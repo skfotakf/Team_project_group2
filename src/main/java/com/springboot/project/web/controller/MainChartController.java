@@ -92,15 +92,16 @@ public class MainChartController {
 		return "movie/list";
 	}
 	*/
-	
+	@ResponseBody
 	@PostMapping("/chart/top/chart-like")
 	public Object plusLikeCnt(@RequestBody MovieLikeDto movieLikeDto) {
-		movieLikeDto.setMov_idn(1);
+		
 		movieLikeDto.setUser_id("gyu12");
 		movieService.plusLikeCnt(movieLikeDto);
 		
 		
 		System.out.println(movieLikeDto);
+		
 		return movieLikeDto;
 	}
 	

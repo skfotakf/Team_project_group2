@@ -60,11 +60,5 @@ public class MovieServiceImpl implements MovieService{
 	public Object plusLikeCnt(MovieLikeDto movieLikeDto) {
 		return movieRepository.plusLikeCnt(movieLikeDto);
 	}
-	@Override
-	public MainChartDto getChart(int mov_idn) {
-		
-		return movieRepository.getChart(mov_idn);
-	}
-
 
 }

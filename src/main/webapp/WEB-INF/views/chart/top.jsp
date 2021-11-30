@@ -66,6 +66,7 @@
                 </thead>
                 <tbody class="chart_main">
                   <c:forEach var="chartAll" items="${chartAll }">
+                  <input class="mov_idn1" type="hidden" value=${chartAll.mov_idn }>
                   <tr>
                   
                     <td class="chart_poster">

@@ -31,7 +31,8 @@ public interface MovieService {
 	*/
 	
 	// 좋아요 수 증가
-	public MainChartDto getChart(int mov_idn);
+	
 	public Object plusLikeCnt(MovieLikeDto movieLikeDto);
+	
 
 }

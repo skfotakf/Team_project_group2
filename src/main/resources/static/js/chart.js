@@ -14,10 +14,12 @@ let seen_movies_number = sidebar_seen_movies.innerText;
 let ratingNumber = new Array(10);
 let likeNumber = new Array(10);
 
+const mov_idn1 = document.querySelectorAll(".mov_idn1");
+
 var ratingLikeData = {
 	mov_idn: 0,
 	user_id: '',
-	likeFlag: 0
+	
 }
 // 날짜
 let today = new Date();
@@ -38,11 +40,9 @@ function likeService(){
 		contentType: "application/json;charset=UTF-8",
 		success: function(data){
 			ratingLikeData = JSON.parse(data);
-			if(ratingLikeData.likeFlag == 1){
-				alert('좋아요 1 증가')
-			} else{
-				alert('likeFlag 이상한거 옴');
-			}
+			
+				alert('좋아요 1 증가');
+			
 		},
 		error:function(){
 			alert('좋아요 비동기 처리 실패');
@@ -114,8 +114,8 @@ for (let r = 0; r < 10; r++) {
 
   like_heart[r].onclick = () => {
     if (like_heart[r].style.color == "darkgray") {
-    
-      ratingLikeData.likeFlag = 1;
+      ratingLikeData.mov_idn = mov_idn1[r].value;
+      
       likeService();
       	
       likeNumber[r] = parseInt(likeNumber[r]) + 1;
