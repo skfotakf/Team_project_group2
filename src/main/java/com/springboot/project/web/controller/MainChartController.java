@@ -1,5 +1,6 @@
 package com.springboot.project.web.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -92,9 +93,9 @@ public class MainChartController {
 		return "movie/list";
 	}
 	*/
-	@ResponseBody
+	
 	@PostMapping("/chart/top/chart-like")
-	public Object plusLikeCnt(@RequestBody MovieLikeDto movieLikeDto) {
+	public String plusLikeCnt(Model model, @RequestBody MovieLikeDto movieLikeDto) {
 		
 		movieLikeDto.setUser_id("gyu12");
 		movieService.plusLikeCnt(movieLikeDto);
@@ -102,7 +103,7 @@ public class MainChartController {
 		
 		System.out.println(movieLikeDto);
 		
-		return movieLikeDto;
+		return "chart/top";
 	}
 	
 	/*
