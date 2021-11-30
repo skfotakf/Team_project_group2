@@ -45,7 +45,7 @@
                         </div>
                         <div id="login_btns">
                             <div>
-                                <button type="button" class="item_btn btn_login">로그인</button>
+                                <button type="submit" class="item_btn btn_login">로그인</button>
                             </div>
                             <div>
                                 <button type="button" onclick="location.href='/oauth2/authorization/google'"><a><i class="fab fa-google"></i> 구글 로그인</a></button>
