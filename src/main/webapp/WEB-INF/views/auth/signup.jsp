@@ -49,6 +49,6 @@
             <div id="inner_footer">Already have an account?<a href=""> Sign-In</a></div>
         </div>
     </div>
-    <jsp:include page="include/signup_include/signup_footer.jsp"></jsp:include>
+    <jsp:include page="../include/signup_include/signup_footer.jsp"></jsp:include>
 </body>
 </html>

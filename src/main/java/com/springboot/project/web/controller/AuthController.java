@@ -25,6 +25,7 @@ public class AuthController {
 	private final AuthService authService;
 
 	@GetMapping("/auth/signin")
+	
 	public String signinForm() {
 		return "auth/signin";
 	}

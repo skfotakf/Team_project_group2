@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/mypage.css">
 </head>
 <body>
-    <jsp:include page="include/index_include/index_header.jsp"></jsp:include>
+    <jsp:include page="../include/index_include/index_header.jsp"></jsp:include>
 
     <!--main-->
     <div id="root">
@@ -23,7 +23,6 @@
                         <div class="input_title">Id</div>
                         <div class="input_info">
                             <label class="item_lb" for="">${login_user.id }</label><br>
-                            <input type="text" placeholder="아이디 입력">
                         </div>
                     </div>
                     <div class="input_container">
@@ -52,7 +51,7 @@
 
     </div>
 
-    <jsp:include page="include/index_include/index_footer"></jsp:include>
+    <jsp:include page="../include/index_include/index_footer"></jsp:include>
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
 </html>

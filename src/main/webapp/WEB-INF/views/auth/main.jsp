@@ -8,12 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in with JMKY</title>
-    <link rel="stylesheet" href="/index_include.css">
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/css/index_include.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
-   <jsp:include page="include/index_include/index_header.jsp"></jsp:include>
+   <jsp:include page="../include/index_include/index_header.jsp"></jsp:include>
 
     <!--main-->
     <div class="wrap">
@@ -150,7 +150,7 @@
    
 
 
-    <jsp:include page="include/index_include/index_footer"></jsp:include>
+    <jsp:include page="../include/index_include/index_footer"></jsp:include>
 
 
 </body>

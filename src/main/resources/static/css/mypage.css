@@ -35,6 +35,9 @@
     width: 100%;
     height: 80px;
 }
+.input_container:first-child{
+    height: 60px;
+}
 
 .input_title{
     font-weight: 900;

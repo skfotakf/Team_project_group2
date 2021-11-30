@@ -82,7 +82,7 @@ function signInSubmit(){
 function signInService(){
 	//ajax호출
 	if(emptyCheck() == true){
-		signInData.user_email = item_ip[0].value;
+		signInData.user_id = item_ip[0].value;
 		signInData.user_password = item_ip[1].value;
 		signInSubmit();
 	}
