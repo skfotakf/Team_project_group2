@@ -2,8 +2,8 @@ const item_ip = document.querySelectorAll('.item_ip');
 const btn_login = document.querySelector('.btn_login');
 
 var signInData = {
-	user_id: '',
-	user_password: '',
+	username: '',
+	password: '',
 	signInFlag: 0
 }
 
@@ -36,7 +36,7 @@ function messageService(msgText, msgFlag){
 
 function emptyCheck(){
 	if(item_ip[0].value.length == 0){
-		let msgText = '! 이메일을 입력해 주세요.';
+		let msgText = '! 아이디를 입력해 주세요.';
 		messageService(msgText, 0);
 		return false;
 	} else if(item_ip[1].value.length == 0){
@@ -59,7 +59,7 @@ function signInSubmit(){
 			signInData = JSON.parse(data);
 			//이메일이 존재 하지 않음
 			if(signInData.signInFlag == 0){
-				let textMsg = '! 존재하지 않는 이메일 입니다.';
+				let textMsg = '! 존재하지 않는 아이디 입니다.';
 				messageService(textMsg, 0);
 			}
 			//비밀번호 틀림
@@ -74,7 +74,7 @@ function signInSubmit(){
 			}
 		},
 		error: function(){
-			alert('비동기 처리 오류!');
+			alert('로그인 실패 다시 확인하세요');
 		}
 	})
 }
@@ -88,7 +88,6 @@ function signInService(){
 	}
 }
 
-
 item_ip[0].onkeypress = () => {
 	if(window.event.keyCode == 13){
 		window.event.preventDefault();
@@ -99,7 +98,8 @@ item_ip[0].onkeypress = () => {
 item_ip[1].onkeypress = () => {
 	if(window.event.keyCode == 13){
 		window.event.preventDefault();
-		signInService();
+		const form = document.querySelector("form");
+		form.submit();
 	}
 }
 

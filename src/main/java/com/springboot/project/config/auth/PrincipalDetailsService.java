@@ -1,5 +1,6 @@
 package com.springboot.project.config.auth;
 
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,11 +18,11 @@ public class PrincipalDetailsService implements UserDetailsService{
 	private final UserRepository userRepository;
 	
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException, InternalAuthenticationServiceException {
 		System.out.println(username);
 		User userEntity = userRepository.getUser(username);
 //		User userEntity2 = userRepository.getUser("zzz1234");
-		System.out.println(userEntity);
+		//System.out.println(userEntity);
 //		System.out.println(userEntity2);
 		if(userEntity == null) {
 			return null;

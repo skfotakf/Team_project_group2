@@ -37,4 +37,14 @@
 		where
 			username = #{username};
 	</select>
+	
+	<update id="updateUser" parameterType="com.springboot.project.domain.user.User">
+	update
+		user_mst
+	set
+		password = #{password},
+		email = #{email}
+	where
+		number = #{number};
+	</update>
 </mapper>

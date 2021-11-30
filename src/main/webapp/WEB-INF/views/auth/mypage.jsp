@@ -16,12 +16,13 @@
     <title>EditProfile</title>
     <link rel="stylesheet" href="/css/index_include.css">
     <link rel="stylesheet" href="/css/mypage.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <jsp:include page="../include/index_include/index_header.jsp"></jsp:include>
 
     <!--main-->
-    <div id="root">
+    <form id="root">
         <div class="content1">
             <div id="main">
                 <h1>Edit Profile</h1>
@@ -56,7 +57,8 @@
             <h3>Recently View</h3>
         </div>
 
-    </div>
+    </form>
+    
 	<script type="text/javascript">
 			const editInfo = document.querySelector('#edit-info');
 			
@@ -72,12 +74,8 @@
 					dataType: "text",
 					contentType: "application/json; charset=UTF-8",
 					success: function(data){
-						let respObj = JSON.parse(data);
-						if(respObj.code == 200) {
-							location.href = '/list/list';
-						} else {
-							alert("다시 작성하세요.")
-						}
+						location.href = '/list/list';
+						alert("성공적으로 변경되었습니다!");
 					},
 					error: function(){
 						alert("전송 오류!");

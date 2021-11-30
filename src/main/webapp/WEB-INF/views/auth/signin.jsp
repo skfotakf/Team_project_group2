@@ -10,6 +10,15 @@
     <title>Sign in with JMKY</title>
     <link rel="stylesheet" href="/css/signin.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+    	function onEnterLogin() {
+    		var keyCode = window.event.keyCode;
+    		
+    		if(keyCode == 13) {
+    			loginForm.submit();
+    		}
+    	}
+    </script>
 </head>
 
 <body>
@@ -36,7 +45,7 @@
                         </div>
                         <div id="login_btns">
                             <div>
-                                <button type="submit" class="item_btn btn_login">로그인</button>
+                                <button type="button" class="item_btn btn_login">로그인</button>
                             </div>
                             <div>
                                 <button type="button" onclick="location.href='/oauth2/authorization/google'"><a><i class="fab fa-google"></i> 구글 로그인</a></button>
