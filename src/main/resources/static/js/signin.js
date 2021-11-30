@@ -36,7 +36,11 @@ function messageService(msgText, msgFlag){
 
 function emptyCheck(){
 	if(item_ip[0].value.length == 0){
+<<<<<<< HEAD
 		let msgText = '! 아이디를 입력해 주세요.';
+=======
+		let msgText = '! 아이디 입력해 주세요.';
+>>>>>>> login_front
 		messageService(msgText, 0);
 		return false;
 	} else if(item_ip[1].value.length == 0){
@@ -82,7 +86,7 @@ function signInSubmit(){
 function signInService(){
 	//ajax호출
 	if(emptyCheck() == true){
-		signInData.user_email = item_ip[0].value;
+		signInData.user_id = item_ip[0].value;
 		signInData.user_password = item_ip[1].value;
 		signInSubmit();
 	}

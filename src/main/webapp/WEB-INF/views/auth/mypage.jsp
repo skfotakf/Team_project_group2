@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
@@ -7,6 +8,8 @@
 	<sec:authentication property="principal" var="principal"/> 
 </sec:authorize>
 
+=======
+>>>>>>> login_front
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,13 +19,20 @@
     <title>EditProfile</title>
     <link rel="stylesheet" href="/css/index_include.css">
     <link rel="stylesheet" href="/css/mypage.css">
+<<<<<<< HEAD
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+=======
+>>>>>>> login_front
 </head>
 <body>
     <jsp:include page="../include/index_include/index_header.jsp"></jsp:include>
 
     <!--main-->
+<<<<<<< HEAD
     <form id="root">
+=======
+    <div id="root">
+>>>>>>> login_front
         <div class="content1">
             <div id="main">
                 <h1>Edit Profile</h1>
@@ -30,13 +40,18 @@
                     <div class="input_container">
                         <div class="input_title">Id</div>
                         <div class="input_info">
+<<<<<<< HEAD
                             <label class="item_lb" for="">${principal.username }</label><br>
                             
+=======
+                            <label class="item_lb" for="">${login_user.id }</label><br>
+>>>>>>> login_front
                         </div>
                     </div>
                     <div class="input_container">
                         <div class="input_title">Password</div>
                         <div class="input_info">
+<<<<<<< HEAD
                             <input type="password" id="password" placeholder="비밀번호 입력">
                         </div>
                     </div>
@@ -47,6 +62,19 @@
                         </div>
                     </div>
                     <button type="button" id="edit-info">회원 정보 수정</button>
+=======
+                            <input type="password" placeholder="비밀번호 입력">
+                        </div>
+                    </div>
+                    <div class="input_container">
+                        <div class="input_title">NickName</div>
+                        <div class="input_info">
+                            <label class="item_lb" for="">${login_user.nickname }</label><br>
+                            <input type="text" placeholder="닉네임 입력">
+                        </div>
+                    </div>
+                    <button type="button">회원 정보 수정</button>
+>>>>>>> login_front
                 </div>
             </div>
         </div>
@@ -57,6 +85,7 @@
             <h3>Recently View</h3>
         </div>
 
+<<<<<<< HEAD
     </form>
     
 	<script type="text/javascript">
@@ -83,6 +112,10 @@
 				})
 			}
 		</script>
+=======
+    </div>
+
+>>>>>>> login_front
     <jsp:include page="../include/index_include/index_footer"></jsp:include>
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>

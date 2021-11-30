@@ -60,6 +60,9 @@ a:hover{
     border:1px solid rgb(223, 222, 222);
     box-sizing: border-box;
 }
+#inner_box input:focus{
+    outline-color:#f0c14b;
+}
 #inner_box button{
     width: 100%;
     padding: 1px 6px;
