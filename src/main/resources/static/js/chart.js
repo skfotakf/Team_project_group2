@@ -16,10 +16,16 @@ let likeNumber = new Array(10);
 
 const mov_idn1 = document.querySelectorAll(".mov_idn1");
 
-var ratingLikeData = {
+var movieLikeData = {
 	mov_idn: 0,
 	user_id: '',
 	
+}
+
+var movieRatingData = {
+	mov_idn: 0,
+	user_id: '',
+	rating: 0
 }
 // 날짜
 let today = new Date();
@@ -30,16 +36,16 @@ let date = today.getDate(); // 날짜
 desc.innerHTML = year + "/" + month + "/" + date;
 
 
-// like 누르면 수가 1 증가
+// like 누르면 수가 db에서 1 증가
 function likePlusService(){
 	$.ajax({
 		type: "post",
 		url: "chart-like/plus",
-		data: JSON.stringify(ratingLikeData),
+		data: JSON.stringify(movieLikeData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
 		success: function(data){
-			ratingLikeData = JSON.parse(data);
+			movieLikeData = JSON.parse(data);
 			
 				alert('좋아요 1 증가');
 			
@@ -51,16 +57,16 @@ function likePlusService(){
 
 }
 
-// like 누르면 수가 1 감소
+// like 누르면 수가 db에서 1 감소
 function likeMinusService(){
 	$.ajax({
 		type: "post",
 		url: "chart-like/minus",
-		data: JSON.stringify(ratingLikeData),
+		data: JSON.stringify(movieLikeData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
 		success: function(data){
-			ratingLikeData = JSON.parse(data);
+			movieLikeData = JSON.parse(data);
 			
 				alert('좋아요 1 감소');
 			
@@ -71,6 +77,28 @@ function likeMinusService(){
 	})
 
 }
+
+// 별을 누르면 수가 db에서 별점 증가
+function ratingPlusService(){
+	$.ajax({
+		type: "post",
+		url: "chart-rating/plus",
+		data: JSON.stringify(movieRatingData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			movieRatingData = JSON.parse(data);
+			
+				alert('별점 변화');
+			
+		},
+		error:function(){
+			alert('별점 비동기 처리 실패');
+		}
+	})
+
+}
+
 //별 누르면 seen 나오고, sidebar 숫자 1 추가
 for (let p = 0; p < 10; p++) {
   seen_star[p].onclick = () => {
@@ -107,8 +135,8 @@ for (let k = 0; k < 10; k++) {
   for (let i = 10 * k + 0; i < 10 * k + 10; i++) {
     rating_stars[i].onmouseover = () => {
       for (let j = 10 * k; j < i + 1; j++) {
-      
-      
+      	
+      	
         rating_stars[j].style.color = "#5285FF";
         seen[k].innerHTML = j + 1 - 10 * k;
         seen[k].style.fontSize = "16px";
@@ -123,11 +151,22 @@ for (let k = 0; k < 10; k++) {
       }
     };
     rating_stars[i].onclick = () => {
+    
+      
+      	 movieRatingData.mov_idn = mov_idn1[k].value;
+      	movieRatingData.rating = i+1- 10*k;
+      	alert(movieRatingData.rating);  
+      	ratingPlusService();
       popover[k].style.display = "none";
       seen_star[k].style.color = "#5285FF";
       ratingNumber[k] =
         (firstRatingNumber * 10 + parseInt(seen[k].innerText)) / 11;
       imdb_rating_number[k].innerHTML = ratingNumber[k].toFixed(1);
+      	
+        
+      
+      
+     
     };
   }
 }
@@ -137,7 +176,7 @@ for (let r = 0; r < 10; r++) {
 
   like_heart[r].onclick = () => {
     if (like_heart[r].style.color == "darkgray") {
-      ratingLikeData.mov_idn = mov_idn1[r].value;    
+      movieLikeData.mov_idn = mov_idn1[r].value;    
       likePlusService();
       	
       likeNumber[r] = parseInt(likeNumber[r]) + 1;
@@ -146,7 +185,7 @@ for (let r = 0; r < 10; r++) {
      
     } else {
     
-      ratingLikeData.mov_idn = mov_idn1[r].value;
+      movieLikeData.mov_idn = mov_idn1[r].value;
       likeMinusService();
       
       likeNumber[r] = parseInt(likeNumber[r]) - 1;

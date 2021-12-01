@@ -8,7 +8,7 @@ import com.springboot.project.domain.user.Movie;
 import com.springboot.project.domain.user.MovieRepository;
 import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
-import com.springboot.project.web.vo.MovieLikeVo;
+import com.springboot.project.web.dto.movie.MovieRatingDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -56,7 +56,8 @@ public class MovieServiceImpl implements MovieService{
 	}
 	*/
 
-	@Override // 조회수 증가
+	// 좋아요 증감
+	@Override
 	public Object plusLikeCnt(MovieLikeDto movieLikeDto) {
 		return movieRepository.plusLikeCnt(movieLikeDto);
 	}
@@ -64,6 +65,13 @@ public class MovieServiceImpl implements MovieService{
 	public Object minusLikeCnt(MovieLikeDto movieLikeDto) {
 		
 		return movieRepository.minusLikeCnt(movieLikeDto);
+	}
+	
+	// 별점 증감
+	@Override
+	public Object plusRatingCnt(MovieRatingDto movieRatingDto) {
+		
+		return movieRepository.plusRatingCnt(movieRatingDto);
 	}
 
 }

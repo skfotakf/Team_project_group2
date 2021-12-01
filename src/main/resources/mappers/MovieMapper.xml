@@ -12,7 +12,7 @@
   			mm.mov_title,
   			mm.mov_release,
   			mm.mov_viewCnt,
-  			'0',
+  			'',
   			mm.mov_rat,
   			'0',
   			'0',
@@ -60,7 +60,7 @@
   			mm.mov_title,
   			mm.mov_release,
   			mm.mov_viewCnt,
-  			'0',
+  			'',
   			mm.mov_rat,
   			'0',
   			'0',
@@ -85,7 +85,7 @@
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			'0',
+  			'',
   			mov_rat,
   			'0',
   			'0',
@@ -107,7 +107,7 @@
   			mm.mov_title,
   			mm.mov_release,
   			mm.mov_viewCnt,
-  			'0',
+  			'',
   			mm.mov_rat,
   			'0',
   			'0',
@@ -155,9 +155,6 @@
 		#{mov_idn},
 		#{user_id}
 	)
-
-	
-		
   	</insert>
   	
   	<delete id="minusLikeCnt" parameterType="com.springboot.project.web.dto.movie.MovieLikeDto"> 
@@ -166,13 +163,17 @@
 		movie_like
 	where
 		mov_idn = #{mov_idn} AND user_id = #{user_id};
-	
-
-	
-		
   	</delete>
   	
-  	
+  	<insert id="plusRatingCnt" parameterType="com.springboot.project.web.dto.movie.MovieRatingDto"> 
+	insert into
+		movie_rating
+	values(
+		#{mov_idn},
+		#{user_id},
+		#{rating}
+	)
+  	</insert>
   	
   	
   	

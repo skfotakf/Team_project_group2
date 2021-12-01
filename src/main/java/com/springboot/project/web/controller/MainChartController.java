@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.springboot.project.config.auth.PrincipalDetails;
 import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
+import com.springboot.project.web.dto.movie.MovieRatingDto;
 /*import com.springboot.project.web.model.vo.MovieVO;*/
 /*import com.springboot.project.web.service.MovieRatingService;*/
 import com.springboot.project.web.service.MovieService;
@@ -122,6 +123,19 @@ public class MainChartController {
 		System.out.println(movieLikeDto);
 		
 		return movieLikeDto;
+	}
+	
+	@ResponseBody
+	@PostMapping("/chart/top/chart-rating/plus")
+	public Object plusRatingCnt(@RequestBody MovieRatingDto movieRatingDto) {
+		
+		movieRatingDto.setUser_id("gyu12");
+		movieService.plusRatingCnt(movieRatingDto);
+		
+		
+		System.out.println(movieRatingDto);
+		
+		return movieRatingDto;
 	}
 
 	

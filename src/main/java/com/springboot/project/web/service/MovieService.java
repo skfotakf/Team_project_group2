@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
+import com.springboot.project.web.dto.movie.MovieRatingDto;
 
 
 
@@ -29,10 +30,12 @@ public interface MovieService {
 	public List<MainChartDto> getChartAllLikeDesc(int code);
 	*/
 	
-	// 좋아요 수 증가
-	
+	// 좋아요 수 증감
 	public Object plusLikeCnt(MovieLikeDto movieLikeDto);
 	public Object minusLikeCnt(MovieLikeDto movieLikeDto);
+	
+	// 평가 수 증감
+	public Object plusRatingCnt(MovieRatingDto movieRatingDto);
 	
 
 }
