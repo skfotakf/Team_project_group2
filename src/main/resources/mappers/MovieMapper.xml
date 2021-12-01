@@ -22,11 +22,16 @@
   			'0',
   			'0',
   			ml.mov_idn as like_mov_idn,
-  			ml.user_id as like_user_id
+  			ml.user_id as like_user_id,
+  			mr.mov_idn as rating_mov_idn,
+  			mr.user_id as rating_user_id,
+  			mr.rating as rating_rating
+  			
   			
   		from
   			movie_mst mm
 			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.user_id = 'gyu12')
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = ml.mov_idn AND ml.user_id = 'gyu12')
 		order by
 			mm.mov_idn;
   		

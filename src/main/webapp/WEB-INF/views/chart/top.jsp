@@ -96,7 +96,7 @@
                                   class="fas fa-star rating_stars"
                                   id="star1"
                                   style="color: darkgray"
-                                  value="1"
+                                  
                                 ></i>
                               </li>
                               <li>
@@ -104,7 +104,7 @@
                                   class="fas fa-star rating_stars"
                                   id="star2"
                                   style="color: darkgray"
-                                  value="2"
+                                  
                                 ></i>
                               </li>
                               <li>
@@ -112,7 +112,7 @@
                                   class="fas fa-star rating_stars"
                                   id="star3"
                                   style="color: darkgray"
-                                  value="3"
+                                 
                                 ></i>
                               </li>
                               <li>
@@ -120,7 +120,7 @@
                                   class="fas fa-star rating_stars"
                                   id="star4"
                                   style="color: darkgray"
-                                  value="4"
+                                 
                                 ></i>
                               </li>
                               <li>
@@ -128,7 +128,7 @@
                                   class="fas fa-star rating_stars"
                                   id="star5"
                                   style="color: darkgray"
-                                  value="5"
+                                 
                                 ></i>
                               </li>
                               <li>
@@ -136,7 +136,7 @@
                                   class="fas fa-star rating_stars"
                                   id="star6"
                                   style="color: darkgray"
-                                  value="6"
+                                  
                                 ></i>
                               </li>
                               <li>
@@ -144,7 +144,7 @@
                                   class="fas fa-star rating_stars"
                                   id="star7"
                                   style="color: darkgray"
-                                  value="7"
+                               
                                 ></i>
                               </li>
                               <li>
@@ -152,7 +152,7 @@
                                   class="fas fa-star rating_stars"
                                   id="star8"
                                   style="color: darkgray"
-                                  value="8"
+                                 
                                 ></i>
                               </li>
                               <li>
@@ -160,7 +160,7 @@
                                   class="fas fa-star rating_stars"
                                   id="star9"
                                   style="color: darkgray"
-                                  value="9"
+                                 
                                 ></i>
                               </li>
                               <li>
@@ -168,7 +168,7 @@
                                   class="fas fa-star rating_stars"
                                   id="star10"
                                   style="color: darkgray"
-                                  value="10"
+                                 
                                 ></i>
                               </li>
                             </ul>
@@ -176,9 +176,9 @@
 
                           <i
                             class="fas fa-star seen_star"
-                            style="color: darkgray"
+                            style="color: ${chartAll.rating_user_id eq null ? 'darkgray' : 'rgba(109,174,272,0.5)'}"
                           ></i>
-                          <span class="seen" style="font-size: 13px"></span>
+                          <span class="seen" style="font-size: 13px">${chartAll.rating_user_id eq null ? "" : "seen"}</span>
                         </div>
                       </div>
                     </td>

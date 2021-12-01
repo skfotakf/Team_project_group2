@@ -78,8 +78,8 @@ function likeMinusService(){
 
 }
 
-// 별을 누르면 수가 db에서 별점 증가
-function ratingPlusService(){
+// 별을 누르면 seen 기록이 insert
+function ratingInsertService(){
 	$.ajax({
 		type: "post",
 		url: "chart-rating/plus",
@@ -103,6 +103,11 @@ function ratingPlusService(){
 for (let p = 0; p < 10; p++) {
   seen_star[p].onclick = () => {
     if (seen_star[p].style.color == "darkgray") {
+       movieRatingData.mov_idn = mov_idn1[p].value;
+       movieRatingData.rating = 0;
+       alert(movieRatingData.mov_idn);  
+       ratingInsertService();
+   	  
       seen_star[p].style.color = "rgba(109,174,272,0.5)";
       seen[p].style.display = "inline-block";
       seen[p].innerHTML = "seen";
@@ -156,7 +161,7 @@ for (let k = 0; k < 10; k++) {
       	 movieRatingData.mov_idn = mov_idn1[k].value;
       	movieRatingData.rating = i+1- 10*k;
       	alert(movieRatingData.rating);  
-      	ratingPlusService();
+      	// ratingUpdateService();
       popover[k].style.display = "none";
       seen_star[k].style.color = "#5285FF";
       ratingNumber[k] =
