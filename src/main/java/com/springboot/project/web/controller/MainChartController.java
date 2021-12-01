@@ -99,7 +99,7 @@ public class MainChartController {
 	}
 	*/
 	@ResponseBody
-	@PostMapping("/chart/top/chart-like")
+	@PostMapping("/chart/top/chart-like/plus")
 	public Object plusLikeCnt(@RequestBody MovieLikeDto movieLikeDto) {
 		
 		movieLikeDto.setUser_id("gyu12");
@@ -110,6 +110,20 @@ public class MainChartController {
 		
 		return movieLikeDto;
 	}
+	
+	@ResponseBody
+	@PostMapping("/chart/top/chart-like/minus")
+	public Object minusLikeCnt(@RequestBody MovieLikeDto movieLikeDto) {
+		
+		movieLikeDto.setUser_id("gyu12");
+		movieService.minusLikeCnt(movieLikeDto);
+		
+		
+		System.out.println(movieLikeDto);
+		
+		return movieLikeDto;
+	}
+
 	
 	/*
 	// 별 평가 처리

@@ -161,12 +161,12 @@
   	</insert>
   	
   	<delete id="minusLikeCnt" parameterType="com.springboot.project.web.dto.movie.MovieLikeDto"> 
-	delete into
+	delete
+	from
 		movie_like
-	values(
-		#{mov_idn},
-		#{user_id}
-	)
+	where
+		mov_idn = #{mov_idn} AND user_id = #{user_id};
+	
 
 	
 		

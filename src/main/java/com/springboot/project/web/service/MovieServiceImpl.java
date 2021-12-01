@@ -60,5 +60,10 @@ public class MovieServiceImpl implements MovieService{
 	public Object plusLikeCnt(MovieLikeDto movieLikeDto) {
 		return movieRepository.plusLikeCnt(movieLikeDto);
 	}
+	@Override
+	public Object minusLikeCnt(MovieLikeDto movieLikeDto) {
+		
+		return movieRepository.minusLikeCnt(movieLikeDto);
+	}
 
 }

@@ -31,10 +31,10 @@ desc.innerHTML = year + "/" + month + "/" + date;
 
 
 // like 누르면 수가 1 증가
-function likeService(){
+function likePlusService(){
 	$.ajax({
 		type: "post",
-		url: "chart-like",
+		url: "chart-like/plus",
 		data: JSON.stringify(ratingLikeData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
@@ -42,6 +42,27 @@ function likeService(){
 			ratingLikeData = JSON.parse(data);
 			
 				alert('좋아요 1 증가');
+			
+		},
+		error:function(){
+			alert('좋아요 비동기 처리 실패');
+		}
+	})
+
+}
+
+// like 누르면 수가 1 감소
+function likeMinusService(){
+	$.ajax({
+		type: "post",
+		url: "chart-like/minus",
+		data: JSON.stringify(ratingLikeData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			ratingLikeData = JSON.parse(data);
+			
+				alert('좋아요 1 감소');
 			
 		},
 		error:function(){
@@ -86,6 +107,8 @@ for (let k = 0; k < 10; k++) {
   for (let i = 10 * k + 0; i < 10 * k + 10; i++) {
     rating_stars[i].onmouseover = () => {
       for (let j = 10 * k; j < i + 1; j++) {
+      
+      
         rating_stars[j].style.color = "#5285FF";
         seen[k].innerHTML = j + 1 - 10 * k;
         seen[k].style.fontSize = "16px";
@@ -114,15 +137,18 @@ for (let r = 0; r < 10; r++) {
 
   like_heart[r].onclick = () => {
     if (like_heart[r].style.color == "darkgray") {
-      ratingLikeData.mov_idn = mov_idn1[r].value;
-      
-      likeService();
+      ratingLikeData.mov_idn = mov_idn1[r].value;    
+      likePlusService();
       	
       likeNumber[r] = parseInt(likeNumber[r]) + 1;
       like_count[r].innerHTML = likeNumber[r];
       like_heart[r].style.color = "#E04386";
      
     } else {
+    
+      ratingLikeData.mov_idn = mov_idn1[r].value;
+      likeMinusService();
+      
       likeNumber[r] = parseInt(likeNumber[r]) - 1;
       like_count[r].innerHTML = likeNumber[r];
       like_heart[r].style.color = "darkgray";

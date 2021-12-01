@@ -16,6 +16,6 @@ public interface MovieRepository {
 	
 
 	public int plusLikeCnt(MovieLikeDto movieLikeDto);
-	
+	public int minusLikeCnt(MovieLikeDto movieLikeDto);
 
 }

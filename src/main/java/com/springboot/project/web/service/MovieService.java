@@ -32,6 +32,7 @@ public interface MovieService {
 	// 좋아요 수 증가
 	
 	public Object plusLikeCnt(MovieLikeDto movieLikeDto);
+	public Object minusLikeCnt(MovieLikeDto movieLikeDto);
 	
 
 }
