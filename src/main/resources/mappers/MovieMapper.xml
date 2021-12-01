@@ -7,25 +7,29 @@
   	
   	<select id="getChartAll" resultType="com.springboot.project.domain.user.Movie"> <!-- 영화 목록 list read -->
   		select
-  			mov_idn,
-  			mov_photo,
-  			mov_title,
-  			mov_release,
-  			mov_viewCnt,
+  			mm.mov_idn,
+  			mm.mov_photo,
+  			mm.mov_title,
+  			mm.mov_release,
+  			mm.mov_viewCnt,
   			'0',
-  			mov_rat,
-  			'0',
-  			'0',
-  			mov_lik_cnt,
+  			mm.mov_rat,
   			'0',
   			'0',
+  			mm.mov_lik_cnt,
   			'0',
-  			'0'
+  			'0',
+  			'0',
+  			'0',
+  			ml.mov_idn as like_mov_idn,
+  			ml.user_id as like_user_id
   			
   		from
-  			movie_mst
-  		order by
-  			mov_idn
+  			movie_mst mm
+			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.user_id = 'gyu12')
+		order by
+			mm.mov_idn;
+  		
   	</select>
   	<select id="getChartAllDesc" resultType="com.springboot.project.domain.user.Movie"> <!-- 영화 목록 list read -->
   		select
@@ -51,27 +55,30 @@
   	</select>
   	<select id="getChartAllRelease" resultType="com.springboot.project.domain.user.Movie"> <!-- 영화 목록 list read -->
   		select
-  			mov_idn,
-  			mov_photo,
-  			mov_title,
-  			mov_release,
-  			mov_viewCnt,
+  			mm.mov_idn,
+  			mm.mov_photo,
+  			mm.mov_title,
+  			mm.mov_release,
+  			mm.mov_viewCnt,
   			'0',
-  			mov_rat,
-  			'0',
-  			'0',
-  			mov_lik_cnt,
+  			mm.mov_rat,
   			'0',
   			'0',
+  			mm.mov_lik_cnt,
   			'0',
-  			'0'
+  			'0',
+  			'0',
+  			'0',
+  			ml.mov_idn as like_mov_idn,
+  			ml.user_id as like_user_id
   			
   		from
-  			movie_mst
+  			movie_mst mm
+			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.user_id = 'gyu12')
   		order by
-  			mov_release
+  			mm.mov_release;
   	</select>
-  	<select id="getChartAllReleaseDesc" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
+  	<select id="getChartAllReleaseDesc" resultType="com.springboot.project.web.dto.movie.MainChartDto"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
@@ -93,29 +100,32 @@
   		order by
   			mov_release desc
   	</select>
-  	<select id="getChartAllLike" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
+  	<select id="getChartAllLike" resultType="com.springboot.project.web.dto.movie.MainChartDto"> <!-- 영화 목록 list read -->
   		select
-  			mov_idn,
-  			mov_photo,
-  			mov_title,
-  			mov_release,
-  			mov_viewCnt,
+  			mm.mov_idn,
+  			mm.mov_photo,
+  			mm.mov_title,
+  			mm.mov_release,
+  			mm.mov_viewCnt,
   			'0',
-  			mov_rat,
-  			'0',
-  			'0',
-  			mov_lik_cnt,
+  			mm.mov_rat,
   			'0',
   			'0',
+  			mm.mov_lik_cnt,
   			'0',
-  			'0'
+  			'0',
+  			'0',
+  			'0',
+  			ml.mov_idn as like_mov_idn,
+  			ml.user_id as like_user_id
   			
   		from
-  			movie_mst
+  			movie_mst mm
+			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.user_id = 'gyu12')
   		order by
-  			mov_lik_cnt
+  			mm.mov_lik_cnt;
   	</select>
-  	<select id="getChartAllLikeDesc" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
+  	<select id="getChartAllLikeDesc" resultType="com.springboot.project.web.dto.movie.MainChartDto"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
@@ -138,7 +148,7 @@
   			mov_lik_cnt desc
   	</select>
   	
-	<insert id="plusLikeCnt" parameterType="com.springboot.project.web.model.dto.MovieLikeDto"> 
+	<insert id="plusLikeCnt" parameterType="com.springboot.project.web.dto.movie.MovieLikeDto"> 
 	insert into
 		movie_like
 	values(
@@ -149,6 +159,18 @@
 	
 		
   	</insert>
+  	
+  	<delete id="minusLikeCnt" parameterType="com.springboot.project.web.dto.movie.MovieLikeDto"> 
+	delete into
+		movie_like
+	values(
+		#{mov_idn},
+		#{user_id}
+	)
+
+	
+		
+  	</delete>
   	
   	
   	

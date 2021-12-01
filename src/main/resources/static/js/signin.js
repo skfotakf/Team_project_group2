@@ -36,11 +36,7 @@ function messageService(msgText, msgFlag){
 
 function emptyCheck(){
 	if(item_ip[0].value.length == 0){
-<<<<<<< HEAD
-		let msgText = '! 아이디를 입력해 주세요.';
-=======
-		let msgText = '! 아이디 입력해 주세요.';
->>>>>>> login_front
+
 		messageService(msgText, 0);
 		return false;
 	} else if(item_ip[1].value.length == 0){

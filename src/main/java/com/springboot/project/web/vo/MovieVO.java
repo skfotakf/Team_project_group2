@@ -1,3 +1,4 @@
+package com.springboot.project.web.vo;
 /*package com.springboot.project.web.model.vo;
 
 import lombok.Getter;

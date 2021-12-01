@@ -1,4 +1,4 @@
-package com.springboot.project.web.model.dto;
+package com.springboot.project.web.dto.movie;
 
 import com.springboot.project.domain.user.MovieLike;
 

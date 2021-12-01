@@ -3,6 +3,7 @@ package com.springboot.project.web.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.springboot.project.web.model.dto.MainChartDto;
-import com.springboot.project.web.model.dto.MovieLikeDto;
+import com.springboot.project.config.auth.PrincipalDetails;
+import com.springboot.project.web.dto.movie.MainChartDto;
+import com.springboot.project.web.dto.movie.MovieLikeDto;
 /*import com.springboot.project.web.model.vo.MovieVO;*/
 /*import com.springboot.project.web.service.MovieRatingService;*/
 import com.springboot.project.web.service.MovieService;
@@ -50,17 +52,20 @@ public class MainChartController {
 		if(code == 1) {
 			model.addAttribute("nameSortby", 1);
 			model.addAttribute("ascDesc", 0);
+			
 			model.addAttribute("chartAll", movieService.getChartAll(code));
 			
 			return "chart/top";
 		} else if(code == 2) {
 			model.addAttribute("nameSortby", 2);
 			model.addAttribute("ascDesc", 0);
+			
 			model.addAttribute("chartAll", movieService.getChartAllRelease(code));
 		
 			return "chart/top";
 		} else if(code == 3) {
 			model.addAttribute("nameSortby", 3);
+			
 			model.addAttribute("chartAll", movieService.getChartAllLike(code));
 			
 			return "chart/top";
@@ -93,9 +98,9 @@ public class MainChartController {
 		return "movie/list";
 	}
 	*/
-	
+	@ResponseBody
 	@PostMapping("/chart/top/chart-like")
-	public String plusLikeCnt(Model model, @RequestBody MovieLikeDto movieLikeDto) {
+	public Object plusLikeCnt(@RequestBody MovieLikeDto movieLikeDto) {
 		
 		movieLikeDto.setUser_id("gyu12");
 		movieService.plusLikeCnt(movieLikeDto);
@@ -103,7 +108,7 @@ public class MainChartController {
 		
 		System.out.println(movieLikeDto);
 		
-		return "chart/top";
+		return movieLikeDto;
 	}
 	
 	/*

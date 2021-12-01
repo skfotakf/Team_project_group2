@@ -26,4 +26,10 @@ public class Movie {
 	private int mov_cht_idn; // 영화 차트 아이디
 	private int mov_viw_list_idn; // 영화 좋아요 아이디
 	private int number; // 회원 넘버
+	
+	//movie_like
+	private int like_mov_idn;  // 좋아요 누른 영화
+	private String like_user_id;  // 좋아요 누른 사람
+
+
 }
