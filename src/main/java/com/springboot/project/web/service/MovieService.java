@@ -35,7 +35,8 @@ public interface MovieService {
 	public Object minusLikeCnt(MovieLikeDto movieLikeDto);
 	
 	// 평가 수 증감
-	public Object plusRatingCnt(MovieRatingDto movieRatingDto);
+	public Object insertRatingCnt(MovieRatingDto movieRatingDto);
+	public Object updateRatingCnt(MovieRatingDto movieRatingDto);
 	
 
 }

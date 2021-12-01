@@ -78,11 +78,32 @@ function likeMinusService(){
 
 }
 
-// 별을 누르면 seen 기록이 insert
+// 별을 누르면 본 기록이 movie_rating에 insert
 function ratingInsertService(){
 	$.ajax({
 		type: "post",
-		url: "chart-rating/plus",
+		url: "chart-rating/insert",
+		data: JSON.stringify(movieRatingData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			movieRatingData = JSON.parse(data);
+			
+				alert('별점 변화');
+			
+		},
+		error:function(){
+			alert('별점 비동기 처리 실패');
+		}
+	})
+
+}
+
+// 별점을 누르면 movie_rating의 rating이 update
+function ratingUpdateService(){
+	$.ajax({
+		type: "post",
+		url: "chart-rating/update",
 		data: JSON.stringify(movieRatingData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
@@ -161,7 +182,7 @@ for (let k = 0; k < 10; k++) {
       	 movieRatingData.mov_idn = mov_idn1[k].value;
       	movieRatingData.rating = i+1- 10*k;
       	alert(movieRatingData.rating);  
-      	// ratingUpdateService();
+      	ratingUpdateService();
       popover[k].style.display = "none";
       seen_star[k].style.color = "#5285FF";
       ratingNumber[k] =

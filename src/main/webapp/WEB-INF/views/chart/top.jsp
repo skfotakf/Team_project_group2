@@ -173,12 +173,39 @@
                               </li>
                             </ul>
                           </div>
-
-                          <i
+						  <c:choose>
+						  	<c:when test="${chartAll.rating_user_id eq null }">
+						  		<i
                             class="fas fa-star seen_star"
-                            style="color: ${chartAll.rating_user_id eq null ? 'darkgray' : 'rgba(109,174,272,0.5)'}"
+                            style="color: darkgray"
                           ></i>
-                          <span class="seen" style="font-size: 13px">${chartAll.rating_user_id eq null ? "" : "seen"}</span>
+						  	</c:when>
+                          	<c:when test="${chartAll.rating_rating eq 0 }">
+                          		<i
+                            class="fas fa-star seen_star"
+                            style="color: rgba(109,174,272,0.5)"
+                          ></i>
+                          	</c:when>
+                          	<c:when test="${chartAll.rating_rating > 0 }">
+                          		<i
+                            class="fas fa-star seen_star"
+                            style="color: #5285FF"
+                          ></i>
+                          	</c:when>
+						  
+                         
+                          </c:choose>
+                          
+                          <c:choose>
+                          	<c:when test="${empty chartAll.rating_user_id  }"><span class="seen" style="font-size: 13px"></span> </c:when>
+                          	<c:when test="${chartAll.rating_rating eq 0 }">
+                          		<span class="seen" style="font-size: 13px">seen</span>
+                          	</c:when>
+                          	<c:when test="${chartAll.rating_rating > 0 }">
+                          		<span class="seen" style="font-size: 16px;width:30px;top:1.5px;textAlign:center;">${chartAll.rating_rating }</span>
+                          	</c:when>
+                          </c:choose>
+                          
                         </div>
                       </div>
                     </td>

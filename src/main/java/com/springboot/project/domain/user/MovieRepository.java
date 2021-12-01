@@ -20,6 +20,7 @@ public interface MovieRepository {
 	public int minusLikeCnt(MovieLikeDto movieLikeDto);
 
 	// 별점 증감
-	public int plusRatingCnt(MovieRatingDto movieRatingDto);
+	public int insertRatingCnt(MovieRatingDto movieRatingDto);
+	public int updateRatingCnt(MovieRatingDto movieRatingDto);
 	
 }

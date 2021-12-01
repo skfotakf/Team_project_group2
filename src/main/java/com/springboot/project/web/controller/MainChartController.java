@@ -126,11 +126,11 @@ public class MainChartController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/chart/top/chart-rating/plus")
-	public Object plusRatingCnt(@RequestBody MovieRatingDto movieRatingDto) {
+	@PostMapping("/chart/top/chart-rating/insert")
+	public Object insertRatingCnt(@RequestBody MovieRatingDto movieRatingDto) {
 		
 		movieRatingDto.setUser_id("gyu12");
-		movieService.plusRatingCnt(movieRatingDto);
+		movieService.insertRatingCnt(movieRatingDto);
 		
 		
 		System.out.println(movieRatingDto);
@@ -138,6 +138,22 @@ public class MainChartController {
 		return movieRatingDto;
 	}
 
+	@ResponseBody
+	@PostMapping("/chart/top/chart-rating/update")
+	public Object updateRatingCnt(@RequestBody MovieRatingDto movieRatingDto) {
+		
+		movieRatingDto.setUser_id("gyu12");
+		movieService.updateRatingCnt(movieRatingDto);
+		
+		if(movieRatingDto.getRating() == 0) {
+			System.out.println("된다!");
+		} else {
+			System.out.println("안된다!");
+		}
+		System.out.println(movieRatingDto);
+		
+		return movieRatingDto;
+	}
 	
 	/*
 	// 별 평가 처리

@@ -69,9 +69,14 @@ public class MovieServiceImpl implements MovieService{
 	
 	// 별점 증감
 	@Override
-	public Object plusRatingCnt(MovieRatingDto movieRatingDto) {
+	public Object insertRatingCnt(MovieRatingDto movieRatingDto) {
 		
-		return movieRepository.plusRatingCnt(movieRatingDto);
+		return movieRepository.insertRatingCnt(movieRatingDto);
+	}
+	@Override
+	public Object updateRatingCnt(MovieRatingDto movieRatingDto) {
+		
+		return movieRepository.updateRatingCnt(movieRatingDto);
 	}
 
 }
