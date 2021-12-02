@@ -46,8 +46,11 @@ function likePlusService(){
 		contentType: "application/json;charset=UTF-8",
 		success: function(data){
 			movieLikeData = JSON.parse(data);
-			
+			if(movieLikeData.error == "auth"){
+			location.href = '/auth/signin';
+			}else{
 				alert('좋아요 1 증가');
+			}
 			
 		},
 		error:function(){
