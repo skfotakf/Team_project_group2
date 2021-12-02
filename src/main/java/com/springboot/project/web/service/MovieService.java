@@ -2,9 +2,8 @@ package com.springboot.project.web.service;
 
 import java.util.List;
 
-
-import com.springboot.project.web.model.dto.MainChartDto;
-import com.springboot.project.web.model.dto.MovieLikeDto;
+import com.springboot.project.web.dto.movie.MainChartDto;
+import com.springboot.project.web.dto.movie.MovieLikeDto;
 
 
 

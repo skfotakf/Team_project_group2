@@ -60,7 +60,7 @@
                     </div>
                     <div class="item_list">
                         <div id="movie_poster">
-                            <a href=""><img src="" alt=""></a>
+                            <a href=""><img src="/images/shawshank.jsp" alt=""></a>
                         </div>
                     
                         <div class="item_list_content">
@@ -127,7 +127,7 @@
         </div>
     </div>
 
-<jsp:include page="../include/index_include/index_footer"></jsp:include>
+<jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
 
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>

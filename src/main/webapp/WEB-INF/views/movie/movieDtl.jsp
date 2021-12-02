@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -20,11 +21,13 @@
     <div class="wrap">
         <section id="wrap_top">
             <div id="main_top">
+            
+                  
                 <div class="title_block_container">
                     <div class="title_block">
                         <h1>쇼생크 탈출</h1>
                         <div>
-                            <li>
+                             <li>
                                 <a>1994</a>
                                 ㆍ<a> 15 </a>ㆍ 2h22m
                             </li>
@@ -82,7 +85,7 @@
 
                 <div id="main_img">
                     <div id="poster">
-                        <img src="shawshank.jpg" alt="">
+                        <img src="/images/shawshank.jpg" alt="">
                     </div>
                     <div id="preview">
                         <iframe width="768px" height="420.95px" src="https://serviceapi.nmv.naver.com/flash/convertIframeTag.nhn?vid=A5E51E0DBA5AC1D27AF8566384EBF6800CF0&outKey=V12594120ff8d4d4f5a1d533404e65d6dcfcb69fb415b3faf222c533404e65d6dcfcb" frameborder="no" scrolling="no" title="NaverVideo" allow="autoplay; gyroscope; accelerometer; encrypted-media" allowfullscreen></iframe>
@@ -159,6 +162,7 @@
                 <div class="ipc_page">
                     <div class="ipc_page_innerbox">
                         <div class="ipc_title_wrapper">
+                        
                             <a href="">
                                 <h3>배우 <i class="fas fa-chevron-right"></i></h3>
                                 <div>
@@ -167,42 +171,44 @@
                             </a>
                         </div>
                         <div id="ipc_sub_grid">
-                            <div class="actor_wrap">
-                                <div>
-                                    <i class="fas fa-user-circle fa-3x"></i>
-                                </div>
-                                <div id="actor_name">
-                                    <a href="">Tim Robbins</a>
-                                    <span>as Andy Duresne</span>
-                                </div>
-                            </div>
-                            <div class="actor_wrap">
-                                <div>
-                                    <i class="fas fa-user-circle fa-3x"></i>
-                                </div>
-                                <div id="actor_name">
-                                    <a href="">Tim Robbins</a>
-                                    <span>as Andy Duresne</span>
-                                </div>
-                            </div>
-                            <div class="actor_wrap">
-                                <div>
-                                    <i class="fas fa-user-circle fa-3x"></i>
-                                </div>
-                                <div id="actor_name">
-                                    <a href="">Tim Robbins</a>
-                                    <span>as Andy Duresne</span>
-                                </div>
-                            </div>
-                            <div class="actor_wrap">
-                                <div>
-                                    <i class="fas fa-user-circle fa-3x"></i>
-                                </div>
-                                <div id="actor_name">
-                                    <a href="">Tim Robbins</a>
-                                    <span>as Andy Duresne</span>
-                                </div>
-                            </div>
+                        	<c:forEach var="actorAll" items="${actorAll }">
+	                            <div class="actor_wrap">
+	                                <div>
+	                                    <i class="fas fa-user-circle fa-3x"></i>
+	                                </div>
+	                                <div id="actor_name">
+	                                    <a href="">Tim Robbins</a>
+	                                    <span>as Andy Duresne</span>
+	                                </div>
+	                            </div>
+	                            <div class="actor_wrap">
+	                                <div>
+	                                    <i class="fas fa-user-circle fa-3x"></i>
+	                                </div>
+	                                <div id="actor_name">
+	                                    <a href="">Tim Robbins</a>
+	                                    <span>as Andy Duresne</span>
+	                                </div>
+	                            </div>
+	                            <div class="actor_wrap">
+	                                <div>
+	                                    <i class="fas fa-user-circle fa-3x"></i>
+	                                </div>
+	                                <div id="actor_name">
+	                                    <a href="">Tim Robbins</a>
+	                                    <span>as Andy Duresne</span>
+	                                </div>
+	                            </div>
+	                            <div class="actor_wrap">
+	                                <div>
+	                                    <i class="fas fa-user-circle fa-3x"></i>
+	                                </div>
+	                                <div id="actor_name">
+	                                    <a href="">Tim Robbins</a>
+	                                    <span>as Andy Duresne</span>
+	                                </div>
+	                            </div>
+                            </c:forEach>
                             
                         </div>
                         <ul class="metadata">
@@ -267,9 +273,6 @@
                         <div class="ipc_title_wrapper">
                             <a href="">
                                 <h3>유저 리뷰 <i class="fas fa-chevron-right"></i></h3>
-                                <div>
-                                    <a href=""><i class="fas fa-plus"></i> Review</a>
-                                </div>
                             </a>
                         </div>
                         <div id="user_review_container">
@@ -311,17 +314,47 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div id="right_user_review">
+                        <div class="ipc_right_wrapper">
+                            <a href="">
+                                <h3>리뷰 등록</h3>
+                            </a>
+                        </div>
+                        <form action="">
+	                       <c:if test="${principal.user.username != null}">
+	                            <div id="review_ip">
+									<textarea name="review" id="" cols="30" rows="5" placeholder="감상평을 입력해주세요."></textarea>
+	                                <button>등록</button>
+	                            </div>
+	                       </c:if>
+                       </form>
 
+                       <div id="reviews">
+                       
+                       
+                            <div class="review_list">
+                                <h5>${principal.user.username }</h5>
+                                <label for="">리뷰들</label>
+                            </div>
+                            <div class="review_list">
+                                <h5>${principal.user.username }</h5>
+                                <label for="">리뷰들</label>
+                            </div>
+                            <div class="review_list">
+                                <h5>${principal.user.username }</h5>
+                                <label for="">리뷰들</label>
+                            </div>
+                       </div>
+
+                        
                     </div>
                 </div>
 
             </div>
         </section>
-
     </div>
 
-   <jsp:include page="../include/index_include/index_footer"></jsp:include>
+   <jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
 
 
 </body>

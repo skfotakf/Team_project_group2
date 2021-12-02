@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in with JMKY</title>
     <link rel="stylesheet" href="/css/signin.css">
-<<<<<<< HEAD
+    <link rel="stylesheet" href="/css/index_include.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript">
     	function onEnterLogin() {
@@ -20,9 +20,6 @@
     		}
     	}
     </script>
-=======
-    <link rel="stylesheet" href="/css/index_include.css">
->>>>>>> login_front
 </head>
 
 <body>
@@ -109,7 +106,7 @@
         </div>
 
     </div>
-	<jsp:include page="../include/index_include/index_footer"></jsp:include>
+	<jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
 <script src="/js/signin.js"></script>

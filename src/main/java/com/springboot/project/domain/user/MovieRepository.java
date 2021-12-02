@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.springboot.project.web.model.dto.MainChartDto;
-import com.springboot.project.web.model.dto.MovieLikeDto;
+import com.springboot.project.web.dto.movie.MainChartDto;
+import com.springboot.project.web.dto.movie.MovieLikeDto;
 
 @Mapper
 public interface MovieRepository {

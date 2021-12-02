@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: rgb(187, 187, 187);
+    background-color:#ccc;
 }
 
 /* header */
@@ -92,6 +92,10 @@ body{
     border-radius: 5px;
     font-size: 14px;
     padding: 0 16px;
+}
+
+.top_nav label{
+    color: #eee;
 }
 .top_nav li:hover{
     
