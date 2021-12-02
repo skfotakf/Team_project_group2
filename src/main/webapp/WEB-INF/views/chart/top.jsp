@@ -221,9 +221,9 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a href="list.html">Box Office</a><br />
+                <a href="/chart/boxoffice/1">Box Office</a><br />
                 <a>Most Popular Movies</a><br />
-                <a>Top 250 Movies</a><br />
+                <a href="/chart/top/1">Top 250 Movies</a><br />
                 <a>Top Rated English Movies</a><br />
                 <a>Most Popular TV Shows</a><br />
                 <a>Top 250 TV Shows</a><br />

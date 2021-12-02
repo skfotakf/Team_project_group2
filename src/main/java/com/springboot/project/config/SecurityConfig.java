@@ -45,9 +45,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				 * 2. 에세스토큰(권한)
 				 * 3. 사용자프로필 정보를 가져온다.
 				 */
-				.userService(principalOauth2UserService)
-				.and()
-				.defaultSuccessUrl("/chart/boxoffice/1"); // 가져온 프로필 후처리(사용되어질 서비스 필요)
+				.userService(principalOauth2UserService);
+				//.and()
+				//.defaultSuccessUrl("/chart/boxoffice/1"); // 가져온 프로필 후처리(사용되어질 서비스 필요)
 			
 		}
 

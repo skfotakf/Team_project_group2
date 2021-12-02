@@ -9,20 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in with JMKY</title>
     <link rel="stylesheet" href="/css/signin.css">
-<<<<<<< HEAD
+
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript">
-    	function onEnterLogin() {
-    		var keyCode = window.event.keyCode;
-    		
-    		if(keyCode == 13) {
-    			loginForm.submit();
-    		}
-    	}
-    </script>
-=======
     <link rel="stylesheet" href="/css/index_include.css">
->>>>>>> login_front
 </head>
 
 <body>

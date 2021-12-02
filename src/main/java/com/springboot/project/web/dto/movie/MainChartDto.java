@@ -1,11 +1,11 @@
-package com.springboot.project.web.model.dto;
+package com.springboot.project.web.dto.movie;
 
-import com.springboot.project.domain.user.Movie;
+import java.util.Date;
 
+import com.springboot.project.domain.movie.Movie;
+
+import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 @Data
 public class MainChartDto {
@@ -17,7 +17,7 @@ public class MainChartDto {
 	private String mov_title; // 영화 제목
 	private String mov_release; // 영화 개봉 날짜
 	private int mov_viewCnt; // 영화 조회수
-	private int mov_gnr; // 영화 장르
+	private String mov_gnr; // 영화 장르
 	private float mov_rat; // 영화 평점
 	private int mov_rat_cnt; // 영화 평점 참가수
 	private int mov_lik; // 영화 좋아요
@@ -26,6 +26,7 @@ public class MainChartDto {
 	private int mov_cht_idn; // 영화 차트 아이디
 	private int mov_viw_list_idn; // 영화 좋아요 아이디
 	private int number; // 회원 넘버
+	private Date createdate;
 	
 	public Movie toEntity() {
 		return Movie.builder()
@@ -44,6 +45,13 @@ public class MainChartDto {
 				.mov_viw_list_idn(mov_viw_list_idn)
 				.number(number)
 				.build();
+	}
+	
+	public Movie watchListEntity() {
+		return Movie.builder()
+					.mov_idn(mov_idn)
+					.number(number)
+					.build();
 	}
 
 }

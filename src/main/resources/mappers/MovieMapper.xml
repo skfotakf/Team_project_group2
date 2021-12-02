@@ -3,16 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="com.springboot.project.domain.user.MovieRepository">
+  <mapper namespace="com.springboot.project.domain.movie.MovieRepository">
   	
-  	<select id="getChartAll" resultType="com.springboot.project.domain.user.Movie"> <!-- 영화 목록 list read -->
+  	<select id="getChartAll" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			'0',
+  			mov_gnr,
   			mov_rat,
   			'0',
   			'0',
@@ -27,14 +27,40 @@
   		order by
   			mov_idn
   	</select>
-  	<select id="getChartAllDesc" resultType="com.springboot.project.domain.user.Movie"> <!-- 영화 목록 list read -->
+  	
+  	<select id="getMovieDtl" parameterType="com.springboot.project.domain.movie.MovieDtl" resultType="com.springboot.project.domain.movie.MovieDtl"> <!-- 개별 영화 list read -->
+  		SELECT
+			mm.mov_idn,
+			mm.mov_photo,
+			mm.mov_title,
+			mm.mov_rat,
+			mm.mov_release,
+			mm.mov_gnr,
+			md.mov_trailer,
+			md.mov_age,
+			md.mov_runtime,
+			md.mov_story,
+			md.mov_director,
+			md.mov_actor,
+			md.mov_actorchar,
+			wl.mov_idn AS wl_mov_idn,
+			wl.number
+		FROM
+			movie_mst mm
+			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
+			LEFT OUTER JOIN watch_list wl ON(wl.mov_idn = mm.mov_idn AND wl.number = #{number})
+		WHERE
+			mm.mov_idn = #{mov_idn};
+  	</select>
+  	
+  	<select id="getChartAllDesc" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			'0',
+  			mov_gnr,
   			mov_rat,
   			'0',
   			'0',
@@ -49,14 +75,14 @@
   		order by
   			mov_idn desc
   	</select>
-  	<select id="getChartAllRelease" resultType="com.springboot.project.domain.user.Movie"> <!-- 영화 목록 list read -->
+  	<select id="getChartAllRelease" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			'0',
+  			mov_gnr,
   			mov_rat,
   			'0',
   			'0',
@@ -71,14 +97,14 @@
   		order by
   			mov_release
   	</select>
-  	<select id="getChartAllReleaseDesc" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
+  	<select id="getChartAllReleaseDesc" resultType="com.springboot.project.web.dto.movie.MainChartDto"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			'0',
+  			mov_gnr,
   			mov_rat,
   			'0',
   			'0',
@@ -93,14 +119,14 @@
   		order by
   			mov_release desc
   	</select>
-  	<select id="getChartAllLike" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
+  	<select id="getChartAllLike" resultType="com.springboot.project.web.dto.movie.MainChartDto"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			'0',
+  			mov_gnr,
   			mov_rat,
   			'0',
   			'0',
@@ -115,14 +141,14 @@
   		order by
   			mov_lik_cnt
   	</select>
-  	<select id="getChartAllLikeDesc" resultType="com.springboot.project.web.model.dto.MainChartDto"> <!-- 영화 목록 list read -->
+  	<select id="getChartAllLikeDesc" resultType="com.springboot.project.web.dto.movie.MainChartDto"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
   			mov_photo,
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			'0',
+  			mov_gnr,
   			mov_rat,
   			'0',
   			'0',
@@ -138,22 +164,26 @@
   			mov_lik_cnt desc
   	</select>
   	
-	<insert id="plusLikeCnt" parameterType="com.springboot.project.web.model.dto.MovieLikeDto"> 
+	<select id="plusLikeCnt" parameterType="com.springboot.project.web.dto.movie.MovieLikeDto"> 
 	insert into
 		movie_like
 	values(
 		#{mov_idn},
 		#{user_id}
-	)
+	)		
+  	</select>
+  	
+  	<select id="watchList" resultType="com.springboot.project.web.dto.movie.MainChartDto">
+  		select
+			mov_idn,
+			number,
+			now()
+		from
+			movie_mst mm
+			LEFT OUTER JOIN watch_list wl ON(wl.mov_idn = mm.mov_idn AND wl.number = #{number})
+		WHERE
+			mm.mov_idn = #{mov_idn};
+  		
+  	</select>
 
-	
-		
-  	</insert>
-  	
-  	
-  	
-  	
-  	
- 
-	
   </mapper>

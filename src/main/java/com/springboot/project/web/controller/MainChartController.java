@@ -1,22 +1,13 @@
 package com.springboot.project.web.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.springboot.project.web.model.dto.MainChartDto;
-import com.springboot.project.web.model.dto.MovieLikeDto;
+import com.springboot.project.web.dto.movie.MovieLikeDto;
 /*import com.springboot.project.web.model.vo.MovieVO;*/
 /*import com.springboot.project.web.service.MovieRatingService;*/
 import com.springboot.project.web.service.MovieService;
@@ -34,9 +25,13 @@ public class MainChartController {
 	private MovieRatingService ratingService;
 	*/
 	// 메인 페이지 보여주기(chart) - 기본 페이지 R
+	@GetMapping("/")
+	public String indexRedirectHandler() {
+		return "redirect:/chart/boxoffice/1";
+	}
+	
 	@GetMapping("/chart/boxoffice/{code}")
 	public String viewMainChart(Model model, @PathVariable int code) {
-		
 		model.addAttribute("chartAll", movieService.getChartAll(code));
 		if(code == 1) {
 			return "chart/boxoffice";

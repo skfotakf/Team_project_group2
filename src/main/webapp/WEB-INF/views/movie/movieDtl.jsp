@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -10,6 +11,7 @@
     <title>Movie</title>
    	<link rel="stylesheet" href="/css/index_include.css">
     <link rel="stylesheet" href="/css/main.css">
+     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
@@ -18,15 +20,16 @@
 
     <!--main-->
     <div class="wrap">
+    	
         <section id="wrap_top">
             <div id="main_top">
                 <div class="title_block_container">
                     <div class="title_block">
-                        <h1>쇼생크 탈출</h1>
+                        <h1>${movie_dtl.mov_title }</h1>
                         <div>
                             <li>
-                                <a>1994</a>
-                                ㆍ<a> 15 </a>ㆍ 2h22m
+                                <a>${movie_dtl.mov_release }</a>
+                                ㆍ<a> ${movie_dtl.mov_age } </a>ㆍ ${movie_dtl.mov_runtime }
                             </li>
                         </div>
                     </div>
@@ -37,7 +40,7 @@
                                 <div id="rating_star">
                                     <i class="fas fa-star fa-2x" id="star"></i>
                                     <div>
-                                        <span>&nbsp;9.3/10</span>
+                                        <span>&nbsp;${movie_dtl.mov_rat } /10</span>
                                         <div id="mini_txt">&nbsp;2.5M</div>
                                     </div>
                                 </div>
@@ -82,10 +85,10 @@
 
                 <div id="main_img">
                     <div id="poster">
-                        <img src="shawshank.jpg" alt="">
+                        <img src="/images/dtl-photo/${movie_dtl.mov_photo }">
                     </div>
                     <div id="preview">
-                        <iframe width="768px" height="420.95px" src="https://serviceapi.nmv.naver.com/flash/convertIframeTag.nhn?vid=A5E51E0DBA5AC1D27AF8566384EBF6800CF0&outKey=V12594120ff8d4d4f5a1d533404e65d6dcfcb69fb415b3faf222c533404e65d6dcfcb" frameborder="no" scrolling="no" title="NaverVideo" allow="autoplay; gyroscope; accelerometer; encrypted-media" allowfullscreen></iframe>
+                        <iframe width="768px" height="420.95px" src="https://www.youtube.com/embed/${movie_dtl.mov_trailer }" frameborder="no" scrolling="no" title="NaverVideo" allow="autoplay; gyroscope; accelerometer; encrypted-media" allowfullscreen></iframe>
                         
                     </div>
                 </div>
@@ -99,23 +102,16 @@
                                 <a href="">Drama</a>
                             </div>
                             <span>
-                                Two imprisoned men bond over a number of years, finding solace and eventual redemption<br>through acts of common decency.
+                                ${movie_dtl.mov_story }
                             </span>
                         </div>
                         <ul class="metadata">
-                            <li class="director"><span>Director</span>&nbsp;&nbsp;<a href="">Frank Darabont</a></li>
-                            <li class="writers">
-                                <span>Writers</span>
-                                <div>
-                                    <a href="">Stephen King</a><span>&nbsp;(based on the short novel "Rita Hayworth and the Shawshank Redemption" by)</span><br>
-                                    <a href="">Frank Darabont</a><span>&nbsp;(screenplay by)</span>
-                                </div>
-                            </li>
+                            <li class="director"><span>Director</span>&nbsp;&nbsp;<a href="">${movie_dtl.mov_director }</a></li>
+                            
                             <li id="stars">
-                                <a href="">Stars</a>
-                                <a href="">Tim Robbins</a>
-                                ㆍ<a href="">Morgan Freeman</a>
-                                ㆍ<a href="" id="bob">Bob Gunton</a>
+                                <span>Stars</span>&nbsp;
+                                <a href="">${movie_dtl.mov_actor }</a>
+                                
                             </li>
                             <li id="jmkypro">
                                 <div>
@@ -172,48 +168,15 @@
                                     <i class="fas fa-user-circle fa-3x"></i>
                                 </div>
                                 <div id="actor_name">
-                                    <a href="">Tim Robbins</a>
-                                    <span>as Andy Duresne</span>
-                                </div>
-                            </div>
-                            <div class="actor_wrap">
-                                <div>
-                                    <i class="fas fa-user-circle fa-3x"></i>
-                                </div>
-                                <div id="actor_name">
-                                    <a href="">Tim Robbins</a>
-                                    <span>as Andy Duresne</span>
-                                </div>
-                            </div>
-                            <div class="actor_wrap">
-                                <div>
-                                    <i class="fas fa-user-circle fa-3x"></i>
-                                </div>
-                                <div id="actor_name">
-                                    <a href="">Tim Robbins</a>
-                                    <span>as Andy Duresne</span>
-                                </div>
-                            </div>
-                            <div class="actor_wrap">
-                                <div>
-                                    <i class="fas fa-user-circle fa-3x"></i>
-                                </div>
-                                <div id="actor_name">
-                                    <a href="">Tim Robbins</a>
-                                    <span>as Andy Duresne</span>
+                                    <a href="">${movie_dtl.mov_actor }</a>
+                                    <span>${movie_dtl.mov_actorchar }</span>
                                 </div>
                             </div>
                             
                         </div>
                         <ul class="metadata">
-                            <li class="director"><span>Director</span>&nbsp;&nbsp;<a href="">Frank Darabont</a></li>
-                            <li class="writers">
-                                <span>Writers</span>
-                                <div>
-                                    <a href="">Stephen King</a><span>&nbsp;(based on the short novel "Rita Hayworth and the Shawshank Redemption" by)</span>ㆍ
-                                    <a href="">Frank<br> Darabont</a><span>&nbsp;(screenplay by)</span>
-                                </div>
-                            </li>
+                            <li class="director"><span>Director</span>&nbsp;&nbsp;<a href="">${movie_dtl.mov_director }</a></li>
+                            
                             <li class="metadata_list_item">
                                 <a href="">All cast & crew</a>
                                 <a href=""><i class="fas fa-chevron-right"></i></a>

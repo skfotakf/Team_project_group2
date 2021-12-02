@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.springboot.project.domain.user.Movie;
-import com.springboot.project.domain.user.MovieRepository;
-import com.springboot.project.web.model.dto.MainChartDto;
-import com.springboot.project.web.model.dto.MovieLikeDto;
-import com.springboot.project.web.model.vo.MovieLikeVo;
+import com.springboot.project.domain.movie.MovieDtl;
+import com.springboot.project.domain.movie.MovieRepository;
+import com.springboot.project.web.dto.movie.MainChartDto;
+import com.springboot.project.web.dto.movie.MainChartRespDto;
+import com.springboot.project.web.dto.movie.MovieDtlRespDto;
+import com.springboot.project.web.dto.movie.MovieLikeDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -19,20 +20,20 @@ public class MovieServiceImpl implements MovieService{
 	private final MovieRepository movieRepository;
 
 	
-	private List<MainChartDto> chartAll;
+	private List<MainChartRespDto> chartAll;
 	
 	@Override // 메인 list
-	public List<MainChartDto> getChartAll(int code) {
+	public List<MainChartRespDto> getChartAll(int code) {
 		System.out.println("되는중");
 		return movieRepository.getChartAll(code);
 	}
 	@Override
-	public List<MainChartDto> getChartAllRelease(int code) {
+	public List<MainChartRespDto> getChartAllRelease(int code) {
 		
 		return movieRepository.getChartAllRelease(code);
 	}
 	@Override
-	public List<MainChartDto> getChartAllLike(int code) {
+	public List<MainChartRespDto> getChartAllLike(int code) {
 		// TODO Auto-generated method stub
 		// Movie movie = chartAll.get(0).toEntity();
 		return movieRepository.getChartAllLike(code);
@@ -60,5 +61,16 @@ public class MovieServiceImpl implements MovieService{
 	public Object plusLikeCnt(MovieLikeDto movieLikeDto) {
 		return movieRepository.plusLikeCnt(movieLikeDto);
 	}
+	@Override
+	public MovieDtlRespDto getMovieDtl(int mov_idn, int number) {
+		MovieDtl movieDtl = new MovieDtl();
+		movieDtl.setMov_idn(mov_idn);
+		movieDtl.setNumber(number);
+		return movieRepository.getMovieDtl(movieDtl).toEntity();
+	}
+	
+	
+
+	
 
 }

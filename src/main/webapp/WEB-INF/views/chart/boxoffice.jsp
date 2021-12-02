@@ -70,7 +70,7 @@
                   
                     <td class="chart_poster">
                       <a
-                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        href="/title/1"
                         ><img src="/images/${chartAll.mov_photo }"
                       ></a>
                     </td>
@@ -219,9 +219,9 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a href="chart.html">Box Office</a><br />
+                <a href="/chart/boxoffice/1">Box Office</a><br />
                 <a>Most Popular Movies</a><br />
-                <a>Top 250 Movies</a><br />
+                <a href="/chart/top/1">Top 250 Movies</a><br />
                 <a>Top Rated English Movies</a><br />
                 <a>Most Popular TV Shows</a><br />
                 <a>Top 250 TV Shows</a><br />

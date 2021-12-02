@@ -1,4 +1,6 @@
-package com.springboot.project.domain.user;
+package com.springboot.project.domain.movie;
+
+import com.springboot.project.web.dto.movie.MainChartRespDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +19,7 @@ public class Movie {
 	private String mov_title; // 영화 제목
 	private String mov_release; // 영화 개봉 날짜
 	private int mov_viewCnt; // 영화 조회수
-	private int mov_gnr; // 영화 장르
+	private String mov_gnr; // 영화 장르
 	private float mov_rat; // 영화 평점
 	private int mov_rat_cnt; // 영화 평점 참가수
 	private int mov_lik; // 영화 좋아요
@@ -26,4 +28,34 @@ public class Movie {
 	private int mov_cht_idn; // 영화 차트 아이디
 	private int mov_viw_list_idn; // 영화 좋아요 아이디
 	private int number; // 회원 넘버
+	private int createdate;
+	
+
+	public MainChartRespDto toEntity() {
+		return MainChartRespDto.builder()
+				.mov_idn(mov_idn)
+				.mov_photo(mov_photo)
+				.mov_title(mov_title)
+				.mov_release(mov_release)
+				.mov_viewCnt(mov_viewCnt)
+				.mov_gnr(mov_gnr)
+				.mov_rat(mov_rat)
+				.mov_rat_cnt(mov_rat_cnt)
+				.mov_lik(mov_lik)
+				.mov_lik_cnt(mov_lik_cnt)
+				.mov_gnr_idn(mov_gnr_idn)
+				.mov_cht_idn(mov_cht_idn)
+				.mov_viw_list_idn(mov_viw_list_idn)
+				.number(number)
+				.build();
+	}
+	
+	public Movie WatchListEntity() {
+		return Movie.builder()
+					.mov_idn(mov_idn)
+					.number(number)
+					.build();
+	}
+
+	
 }
