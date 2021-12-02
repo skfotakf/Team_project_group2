@@ -120,6 +120,25 @@ function ratingUpdateService(){
 
 }
 
+// x를 누르면 movie_rating에 delete
+function ratingDeleteService(){
+	$.ajax({
+		type: "post",
+		url: "chart-rating/delete",
+		data: JSON.stringify(movieRatingData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			movieRatingData = JSON.parse(data);
+			
+				alert('별점 삭제');
+			
+		},
+		error:function(){
+			alert('별점 비동기 처리 실패');
+		}
+	})
+}
 //별 누르면 seen 나오고, sidebar 숫자 1 추가
 for (let p = 0; p < 10; p++) {
   seen_star[p].onclick = () => {
@@ -145,6 +164,10 @@ for (let q = 0; q < 10; q++) {
   ratingNumber[q] = imdb_rating_number[q].innerText;
   const firstRatingNumber1 = parseFloat(ratingNumber[q]);
   popover_delete[q].onclick = () => {
+  	movieRatingData.mov_idn = mov_idn1[q].value;
+  	movieRatingData.rating = 0;
+  	ratingDeleteService();
+  	
     popover[q].style.display = "none";
     seen_star[q].style.color = "darkgray";
     seen[q].innerHTML = "";

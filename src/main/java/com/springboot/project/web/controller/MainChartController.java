@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.springboot.project.config.auth.PrincipalDetails;
+import com.springboot.project.config.oauth2.provider.OAuth2UserDto;
 import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
@@ -38,9 +39,18 @@ public class MainChartController {
 	*/
 	// 메인 페이지 보여주기(chart) - 기본 페이지 R
 	@GetMapping("/chart/boxoffice/{code}")
-	public String viewMainChart(Model model, @PathVariable int code) {
-		
-		model.addAttribute("chartAll", movieService.getChartAll(code));
+	public String viewMainChart(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		String user_id="";
+		if(principalDetails == null) {
+			model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+		} else {
+			
+			user_id = principalDetails.getUser().getUsername();
+			System.out.println(user_id);
+			model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+			
+		}
+		model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
 		if(code == 1) {
 			return "chart/boxoffice";
 		}
@@ -48,26 +58,51 @@ public class MainChartController {
 	}
 	
 	@GetMapping("/chart/top/{code}")
-	public String viewTopChart(Model model, @PathVariable int code) {
+	public String viewTopChart(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		if(code == 1) {
+			String user_id="";
 			model.addAttribute("nameSortby", 1);
 			model.addAttribute("ascDesc", 0);
-			
-			model.addAttribute("chartAll", movieService.getChartAll(code));
+			if(principalDetails == null) {
+				model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+			} else {
+				
+				user_id = principalDetails.getUser().getUsername();
+				System.out.println(user_id);
+				model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+				
+			}
+			model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
 			
 			return "chart/top";
 		} else if(code == 2) {
+			String user_id="";
 			model.addAttribute("nameSortby", 2);
 			model.addAttribute("ascDesc", 0);
-			
-			model.addAttribute("chartAll", movieService.getChartAllRelease(code));
-		
+			if(principalDetails == null) {
+				model.addAttribute("chartAll", movieService.getChartAllRelease(code, user_id));
+			} else {
+				
+				user_id = principalDetails.getUser().getUsername();
+				System.out.println(user_id);
+				model.addAttribute("chartAll", movieService.getChartAllRelease(code, user_id));
+				
+			}
 			return "chart/top";
 		} else if(code == 3) {
+			String user_id = "";
 			model.addAttribute("nameSortby", 3);
-			
-			model.addAttribute("chartAll", movieService.getChartAllLike(code));
+			model.addAttribute("ascDesc", 0);
+			if(principalDetails == null) {
+				model.addAttribute("chartAll", movieService.getChartAllLike(code, user_id));
+			} else {
+				model.addAttribute("principalDetails", principalDetails.getUser());
+				user_id = principalDetails.getUser().getUsername();
+				System.out.println(user_id);
+				model.addAttribute("chartAll", movieService.getChartAllLike(code, user_id));
+				
+			}
 			
 			return "chart/top";
 		}
@@ -101,56 +136,65 @@ public class MainChartController {
 	*/
 	@ResponseBody
 	@PostMapping("/chart/top/chart-like/plus")
-	public Object plusLikeCnt(@RequestBody MovieLikeDto movieLikeDto) {
+	public Object plusLikeCnt(@RequestBody MovieLikeDto movieLikeDto,  @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
-		movieLikeDto.setUser_id("gyu12");
+		if(principalDetails == null) {
+			
+			return "redirect:/movie/list";
+		} else {
+		movieLikeDto.setUser_id(principalDetails.getUser().getUsername());
+		
 		movieService.plusLikeCnt(movieLikeDto);
-		
-		
-		System.out.println(movieLikeDto);
-		
 		return movieLikeDto;
+		}
+		
 	}
 	
 	@ResponseBody
 	@PostMapping("/chart/top/chart-like/minus")
-	public Object minusLikeCnt(@RequestBody MovieLikeDto movieLikeDto) {
-		
-		movieLikeDto.setUser_id("gyu12");
+	public Object minusLikeCnt(@RequestBody MovieLikeDto movieLikeDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		if(principalDetails == null) {
+			ModelAndView mav = new ModelAndView("movie/list");
+			return "movie/list".toString();
+		} else {
+		movieLikeDto.setUser_id(principalDetails.getUser().getUsername());
 		movieService.minusLikeCnt(movieLikeDto);
 		
-		
-		System.out.println(movieLikeDto);
-		
+		}
 		return movieLikeDto;
+		
 	}
 	
 	@ResponseBody
 	@PostMapping("/chart/top/chart-rating/insert")
-	public Object insertRatingCnt(@RequestBody MovieRatingDto movieRatingDto) {
+	public Object insertRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
-		movieRatingDto.setUser_id("gyu12");
+		movieRatingDto.setUser_id(principalDetails.getUser().getUsername());
 		movieService.insertRatingCnt(movieRatingDto);
 		
-		
-		System.out.println(movieRatingDto);
 		
 		return movieRatingDto;
 	}
 
 	@ResponseBody
 	@PostMapping("/chart/top/chart-rating/update")
-	public Object updateRatingCnt(@RequestBody MovieRatingDto movieRatingDto) {
+	public Object updateRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
-		movieRatingDto.setUser_id("gyu12");
+		movieRatingDto.setUser_id(principalDetails.getUser().getUsername());
 		movieService.updateRatingCnt(movieRatingDto);
 		
-		if(movieRatingDto.getRating() == 0) {
-			System.out.println("된다!");
-		} else {
-			System.out.println("안된다!");
-		}
-		System.out.println(movieRatingDto);
+		
+		
+		return movieRatingDto;
+	}
+	
+	@ResponseBody
+	@PostMapping("/chart/top/chart-rating/delete")
+	public Object deleteRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		
+		movieRatingDto.setUser_id(principalDetails.getUser().getUsername());
+		movieService.deleteRatingCnt(movieRatingDto);
+		
 		
 		return movieRatingDto;
 	}

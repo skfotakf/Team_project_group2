@@ -11,9 +11,9 @@ import com.springboot.project.web.dto.movie.MovieRatingDto;
 @Mapper
 public interface MovieRepository {
 
-	public List<MainChartDto> getChartAll(int code);
-	public List<MainChartDto> getChartAllRelease(int code);
-	public List<MainChartDto> getChartAllLike(int code);
+	public List<MainChartDto> getChartAll(int code, String user_id);
+	public List<MainChartDto> getChartAllRelease(int code, String user_id);
+	public List<MainChartDto> getChartAllLike(int code, String user_id);
 	
 	// 좋아요 증감
 	public int plusLikeCnt(MovieLikeDto movieLikeDto);
@@ -22,5 +22,6 @@ public interface MovieRepository {
 	// 별점 증감
 	public int insertRatingCnt(MovieRatingDto movieRatingDto);
 	public int updateRatingCnt(MovieRatingDto movieRatingDto);
+	public int deleteRatingCnt(MovieRatingDto movieRatingDto);
 	
 }

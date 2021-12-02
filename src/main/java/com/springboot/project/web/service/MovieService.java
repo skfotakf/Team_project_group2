@@ -11,13 +11,13 @@ import com.springboot.project.web.dto.movie.MovieRatingDto;
 public interface MovieService {
 	
 	// 모든 영화 리스트 불러오기
-	public List<MainChartDto> getChartAll(int code);
+	public List<MainChartDto> getChartAll(int code, String user_id);
 	
 	// 모든 영화 리스트 개봉일순
-	public List<MainChartDto> getChartAllRelease(int code);
+	public List<MainChartDto> getChartAllRelease(int code, String user_id);
 	
 	// 모든 영화 리스트 좋아요순
-	public List<MainChartDto> getChartAllLike(int code);
+	public List<MainChartDto> getChartAllLike(int code, String user_id);
 	
 	/* 정배열 역배열 버튼(못넣음)
 	// 모든 영화 리스트 역배열
@@ -37,6 +37,7 @@ public interface MovieService {
 	// 평가 수 증감
 	public Object insertRatingCnt(MovieRatingDto movieRatingDto);
 	public Object updateRatingCnt(MovieRatingDto movieRatingDto);
+	public Object deleteRatingCnt(MovieRatingDto movieRatingDto);
 	
 
 }

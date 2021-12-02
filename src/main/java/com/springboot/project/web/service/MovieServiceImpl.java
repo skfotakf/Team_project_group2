@@ -22,20 +22,20 @@ public class MovieServiceImpl implements MovieService{
 	private List<MainChartDto> chartAll;
 	
 	@Override // 메인 list
-	public List<MainChartDto> getChartAll(int code) {
+	public List<MainChartDto> getChartAll(int code, String user_id) {
 		System.out.println("되는중");
-		return movieRepository.getChartAll(code);
+		return movieRepository.getChartAll(code, user_id);
 	}
 	@Override
-	public List<MainChartDto> getChartAllRelease(int code) {
+	public List<MainChartDto> getChartAllRelease(int code, String user_id) {
 		
-		return movieRepository.getChartAllRelease(code);
+		return movieRepository.getChartAllRelease(code, user_id);
 	}
 	@Override
-	public List<MainChartDto> getChartAllLike(int code) {
+	public List<MainChartDto> getChartAllLike(int code, String user_id) {
 		// TODO Auto-generated method stub
 		// Movie movie = chartAll.get(0).toEntity();
-		return movieRepository.getChartAllLike(code);
+		return movieRepository.getChartAllLike(code, user_id);
 	}
 	
 	/* 정배열 역배열 버튼(못넣음)
@@ -67,7 +67,7 @@ public class MovieServiceImpl implements MovieService{
 		return movieRepository.minusLikeCnt(movieLikeDto);
 	}
 	
-	// 별점 증감
+	// 별점 입력, 수정, 삭제
 	@Override
 	public Object insertRatingCnt(MovieRatingDto movieRatingDto) {
 		
@@ -77,6 +77,11 @@ public class MovieServiceImpl implements MovieService{
 	public Object updateRatingCnt(MovieRatingDto movieRatingDto) {
 		
 		return movieRepository.updateRatingCnt(movieRatingDto);
+	}
+	@Override
+	public Object deleteRatingCnt(MovieRatingDto movieRatingDto) {
+		
+		return movieRepository.deleteRatingCnt(movieRatingDto);
 	}
 
 }
