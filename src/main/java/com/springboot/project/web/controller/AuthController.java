@@ -27,7 +27,6 @@ public class AuthController {
 	private final AuthService authService;
 
 	@GetMapping("/auth/signin")
-	
 	public String signinForm() {
 		return "auth/signin";
 	}
@@ -36,6 +35,11 @@ public class AuthController {
 	public String signupForm() {
 		return "auth/signup";
 	}
+	@GetMapping("/movie/gnr")
+	public String gnrForm() {
+		return "movie/gnr";
+	}
+
 	
 	@ResponseBody
 	@PostMapping("/auth/signup")	 // JSON 형태로 반환해주기 위해 Object 객체를 사용					

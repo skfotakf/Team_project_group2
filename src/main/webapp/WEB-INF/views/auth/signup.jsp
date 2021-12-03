@@ -10,6 +10,7 @@
     <title>JMKY 회원가입</title>
     <link rel="stylesheet" href="/css/signup.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
 </head>
 <body>
     <form id="signup-form">
@@ -20,38 +21,56 @@
             <h1>Create account</h1>
             <div>
                 <label for="">ID</label>
-                <input type="text" name="username">
+                <input type="text" name="username" class="item_ip">
+            </div>
+            <div class="item_msg">
+                    <span class="errorMsg"></span>
             </div>
             <div>
                 <label for="">Password</label>
-                <input type="password" name="password">
+                <input type="password" name="password" class="item_ip">
             </div>
-            <div></div>
+            <div class="item_msg">
+                    <span class="errorMsg"></span>
+            </div>
             <div>
                 <label for="">Re-enter password</label>
-                <input type="password" name="repassword">
+                <input type="password" name="repassword" class="item_ip">
+            </div>
+            <div class="item_msg">
+                    <span class="errorMsg"></span>
             </div>
             <div>
                 <label for="">Email</label>
-                <input type="text" name="email">
+                <input type="text" name="email" class="item_ip">
+            </div>
+            <div class="item_msg">
+                    <span class="errorMsg"></span>
             </div>
             <div>
                 <label for="">Your name</label>
-                <input type="text" name="name">
+                <input type="text" name="name" class="item_ip">
+            </div>
+            <div class="item_msg">
+                    <span class="errorMsg"></span>
             </div>
             <div>
                 <label for="">Your telephone (without "-")</label>
-                <input type="tel" name="telephone">
+                <input type="tel" name="telephone" class="item_ip">
+            </div>
+            <div class="item_msg">
+                    <span class="errorMsg"></span>
             </div>
             
-            <button type="button" id="signup-btn">JMKY 계정 만들기</button>
+            <button type="button" id="signup-btn" class="btn_g">JMKY 계정 만들기</button>
             
             <div id="inner_footer">계정을 가지고 계신가요?<a href="/auth/signin">로그인</a></div>
         </div>
     </form>
-        
-        
-        <script type="text/javascript">
+
+    <jsp:include page="../include/signup_include/signup_footer.jsp"></jsp:include>
+    <script src="/js/signup.js"></script>
+    <script type="text/javascript">
         	const signupBtn = document.querySelector('#signup-btn');
         	const signupForm = document.querySelector('#signup-form');
         	signupBtn.onclick = () => {
@@ -96,7 +115,5 @@
         		}) // end ajax
         	} // end onclick
         </script>
-    </div>
-    <jsp:include page="../include/signup_include/signup_footer.jsp"></jsp:include>
 </body>
 </html>

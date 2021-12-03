@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 /*import com.springboot.project.web.model.vo.MovieVO;*/
 /*import com.springboot.project.web.service.MovieRatingService;*/

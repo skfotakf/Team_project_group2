@@ -23,6 +23,8 @@
     	
         <section id="wrap_top">
             <div id="main_top">
+            
+                  
                 <div class="title_block_container">
                     <div class="title_block">
                         <h1>${movie_dtl.mov_title }</h1>
@@ -161,6 +163,7 @@
                 <div class="ipc_page">
                     <div class="ipc_page_innerbox">
                         <div class="ipc_title_wrapper">
+                        
                             <a href="">
                                 <h3>배우 <i class="fas fa-chevron-right"></i></h3>
                                 <div>
@@ -236,9 +239,6 @@
                         <div class="ipc_title_wrapper">
                             <a href="">
                                 <h3>유저 리뷰 <i class="fas fa-chevron-right"></i></h3>
-                                <div>
-                                    <a href=""><i class="fas fa-plus"></i> Review</a>
-                                </div>
                             </a>
                         </div>
                         <div id="user_review_container">
@@ -280,17 +280,47 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div id="right_user_review">
+                        <div class="ipc_right_wrapper">
+                            <a href="">
+                                <h3>리뷰 등록</h3>
+                            </a>
+                        </div>
+                        <form action="">
+	                       <c:if test="${principal.user.username != null}">
+	                            <div id="review_ip">
+									<textarea name="review" id="" cols="30" rows="5" placeholder="감상평을 입력해주세요."></textarea>
+	                                <button>등록</button>
+	                            </div>
+	                       </c:if>
+                       </form>
 
+                       <div id="reviews">
+                       
+                       
+                            <div class="review_list">
+                                <h5>${principal.user.username }</h5>
+                                <label for="">리뷰들</label>
+                            </div>
+                            <div class="review_list">
+                                <h5>${principal.user.username }</h5>
+                                <label for="">리뷰들</label>
+                            </div>
+                            <div class="review_list">
+                                <h5>${principal.user.username }</h5>
+                                <label for="">리뷰들</label>
+                            </div>
+                       </div>
+
+                        
                     </div>
                 </div>
 
             </div>
         </section>
-
     </div>
 
-   <jsp:include page="../include/index_include/index_footer"></jsp:include>
+   <jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
 
 
 </body>
