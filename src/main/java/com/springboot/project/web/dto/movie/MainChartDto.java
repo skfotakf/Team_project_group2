@@ -17,7 +17,6 @@ public class MainChartDto {
 	private String mov_title; // 영화 제목
 	private String mov_release; // 영화 개봉 날짜
 	private int mov_viewCnt; // 영화 조회수
-	private int mov_gnr; // 영화 장르
 	private float mov_rat; // 영화 평점
 	private int mov_rat_cnt; // 영화 평점 참가수
 	private int mov_lik; // 영화 좋아요
@@ -41,7 +40,6 @@ public class MainChartDto {
 				.mov_title(mov_title)
 				.mov_release(mov_release)
 				.mov_viewCnt(mov_viewCnt)
-				.mov_gnr(mov_gnr)
 				.mov_rat(mov_rat)
 				.mov_rat_cnt(mov_rat_cnt)
 				.mov_lik(mov_lik)

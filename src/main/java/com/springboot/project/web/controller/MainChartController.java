@@ -149,14 +149,11 @@ public class MainChartController {
 	@ResponseBody
 	@PostMapping("/chart/top/chart-like/minus")
 	public Object minusLikeCnt(@RequestBody MovieLikeDto movieLikeDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-		if(principalDetails == null) {
-			ModelAndView mav = new ModelAndView("movie/list");
-			return "movie/list".toString();
-		} else {
+		
 		movieLikeDto.setUser_id(principalDetails.getUser().getUsername());
 		movieService.minusLikeCnt(movieLikeDto);
 		
-		}
+		
 		return movieLikeDto;
 		
 	}
@@ -195,29 +192,20 @@ public class MainChartController {
 		return movieRatingDto;
 	}
 	
-	/*
-	// 별 평가 처리
-	@RequestMapping("ratingCheck.do")
-	public ModelAndView ratingCheck(@ModelAttribute MovieVO vo, HttpSession session) {
-		
-		boolean result = ratingService.ratingCheck(vo, session);
-		ModelAndView mav = new ModelAndView();
-		if(result == true) { 
-			// 유저가 평가 체크 했다면
-			mav.addObject("msg", "이미 평가 하셨습니다.");
-			// 취소 할 수 있도록
-			
-		} else { 
-			// 평가를 안했다면
-			mav.addObject("msg", "평가 해주셔서 감사합니다.");
-			// 단순 클릭시 ->seem
-			
-			// 별 점수 확인후 값 넘겨주기
-		}
-		
-		return mav;
-	}
 	
-	*/
+	@GetMapping("/search/genre")
+	public String viewGenreSearch(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		String user_id="";
+		if(principalDetails == null) {
+			model.addAttribute("genreAll", movieService.getGenreAll(user_id));
+		} else {
+			
+			user_id = principalDetails.getUser().getUsername();
+			
+			model.addAttribute("genreAll", movieService.getGenreAll(user_id));
+			
+		}
+		return "search/gnr";
+	}
 	
 }

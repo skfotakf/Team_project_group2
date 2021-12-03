@@ -12,7 +12,6 @@
   			mm.mov_title,
   			mm.mov_release,
   			mm.mov_viewCnt,
-  			mm.mov_gnr,
   			mm.mov_rat,
   			mm.mov_rat_cnt,
   			mm.mov_lik,
@@ -65,7 +64,6 @@
   			mm.mov_title,
   			mm.mov_release,
   			mm.mov_viewCnt,
-  			mm.mov_gnr,
   			mm.mov_rat,
   			mm.mov_rat_cnt,
   			mm.mov_lik,
@@ -117,7 +115,6 @@
   			mm.mov_title,
   			mm.mov_release,
   			mm.mov_viewCnt,
-  			mm.mov_gnr,
   			mm.mov_rat,
   			mm.mov_rat_cnt,
   			mm.mov_lik,
@@ -207,7 +204,32 @@
 		mov_idn = #{mov_idn} AND user_id = #{user_id};
   	</delete>
   	
-  	
+  	<!-- 장르차트 -->
+  	<select id="getGenreAll" resultType="com.springboot.project.domain.user.MovieDtl"> <!-- 영화 목록 list read -->
+  		select
+  			mm.mov_idn,
+  			mm.mov_photo,
+  			mm.mov_title,
+  			mm.mov_release,
+  			mm.mov_rat,
+  			mm.mov_lik_cnt,
+  			md.mov_trailer,
+  			md.mov_age,
+  			md.mov_runtime,
+  			md.mov_story,
+  			md.mov_director,
+  			md.mov_actor,
+  			md.mov_actorchar
+  			
+  			
+  		from
+  			movie_mst mm
+			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
+			
+		order by
+			mm.mov_idn;
+  		
+  	</select>
  
 	
   </mapper>

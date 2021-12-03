@@ -3,6 +3,7 @@ package com.springboot.project.web.service;
 import java.util.List;
 
 import com.springboot.project.web.dto.movie.MainChartDto;
+import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
 
@@ -39,5 +40,8 @@ public interface MovieService {
 	public Object updateRatingCnt(MovieRatingDto movieRatingDto);
 	public Object deleteRatingCnt(MovieRatingDto movieRatingDto);
 	
+	/*-------------------장르 차트-----------------*/
+	// 장르별로 영화 리스트 불러오기
+	public List<MovieDtlRespDto> getGenreAll(String user_id);
 
 }

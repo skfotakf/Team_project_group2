@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.springboot.project.domain.user.Movie;
 import com.springboot.project.domain.user.MovieRepository;
 import com.springboot.project.web.dto.movie.MainChartDto;
+import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
 
@@ -83,5 +84,14 @@ public class MovieServiceImpl implements MovieService{
 		
 		return movieRepository.deleteRatingCnt(movieRatingDto);
 	}
+	
+	/*---------------장르 차트---------------*/
+	@Override
+	public List<MovieDtlRespDto> getGenreAll(String user_id) {
+		// TODO Auto-generated method stub
+		return movieRepository.getGenreAll(user_id);
+	}
+	
+	
 
 }
