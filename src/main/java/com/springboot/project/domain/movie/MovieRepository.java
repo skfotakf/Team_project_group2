@@ -19,5 +19,7 @@ public interface MovieRepository {
 	public int plusLikeCnt(MovieLikeDto movieLikeDto);
 	
 	public MovieDtl getMovieDtl(MovieDtl movieDtl);
+	
+	public MovieDtl getMovieGenre(MovieDtl movieDtl); 
 
 }

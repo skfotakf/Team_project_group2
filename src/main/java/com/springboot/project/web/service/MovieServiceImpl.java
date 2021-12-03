@@ -1,16 +1,19 @@
 package com.springboot.project.web.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.springboot.project.domain.movie.MovieDtl;
+import com.springboot.project.domain.movie.MovieGenre;
 import com.springboot.project.domain.movie.MovieRepository;
 import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MainChartRespDto;
 import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -66,7 +69,20 @@ public class MovieServiceImpl implements MovieService{
 		MovieDtl movieDtl = new MovieDtl();
 		movieDtl.setMov_idn(mov_idn);
 		movieDtl.setNumber(number);
+		
+		MovieDtlRespDto movieDtlRespDto = movieRepository.getMovieDtl(movieDtl).toEntity();
+		
 		return movieRepository.getMovieDtl(movieDtl).toEntity();
+	}
+	@Override
+	public MovieDtlRespDto getMovieGenre(int gen_num, String genre) {
+		MovieDtl movieDtl = new MovieDtl();
+		movieDtl.setMov_gnr1(gen_num);
+		movieDtl.setMov_gnr2(gen_num);
+		movieDtl.setMov_gnr3(gen_num);
+		movieDtl.setGen_num(gen_num);
+		movieDtl.setGenre(genre);
+		return null;
 	}
 	
 	

@@ -35,5 +35,7 @@ public interface MovieService {
 //	public List<MainChartRespDto> getWatchList(int mov_idn, int number, date mov_release);
 	
 	public MovieDtlRespDto getMovieDtl(int mov_idn, int number);
+	
+	public MovieDtlRespDto getMovieGenre(int gen_num, String genre);
 
 }

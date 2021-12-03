@@ -12,7 +12,9 @@
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			mov_gnr,
+  			mov_gnr1,
+  			mov_gnr2,
+  			mov_gnr3,
   			mov_rat,
   			'0',
   			'0',
@@ -35,7 +37,12 @@
 			mm.mov_title,
 			mm.mov_rat,
 			mm.mov_release,
-			mm.mov_gnr,
+			mm.mov_gnr1,
+			mg1.genre AS mg_genre1,
+			mm.mov_gnr2,
+			mg2.genre AS mg_genre2,
+			mm.mov_gnr3,
+			mg3.genre AS mg_genre3,
 			md.mov_trailer,
 			md.mov_age,
 			md.mov_runtime,
@@ -47,11 +54,15 @@
 			wl.number
 		FROM
 			movie_mst mm
+			LEFT OUTER JOIN movie_genre mg1 ON(mg1.gen_num = mm.mov_gnr1)
+			LEFT OUTER JOIN movie_genre mg2 ON(mg2.gen_num = mm.mov_gnr2)
+			LEFT OUTER JOIN movie_genre mg3 ON(mg3.gen_num = mm.mov_gnr3)
 			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
 			LEFT OUTER JOIN watch_list wl ON(wl.mov_idn = mm.mov_idn AND wl.number = #{number})
 		WHERE
 			mm.mov_idn = #{mov_idn};
   	</select>
+  	
   	
   	<select id="getChartAllDesc" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
   		select
@@ -60,7 +71,9 @@
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			mov_gnr,
+  			mov_gnr1,
+  			mov_gnr2,
+  			mov_gnr3,
   			mov_rat,
   			'0',
   			'0',
@@ -82,7 +95,9 @@
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			mov_gnr,
+  			mov_gnr1,
+  			mov_gnr2,
+  			mov_gnr3,
   			mov_rat,
   			'0',
   			'0',
@@ -104,7 +119,9 @@
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			mov_gnr,
+  			mov_gnr1,
+  			mov_gnr2,
+  			mov_gnr3,
   			mov_rat,
   			'0',
   			'0',
@@ -126,7 +143,9 @@
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			mov_gnr,
+  			mov_gnr1,
+  			mov_gnr2,
+  			mov_gnr3,
   			mov_rat,
   			'0',
   			'0',
@@ -148,7 +167,9 @@
   			mov_title,
   			mov_release,
   			mov_viewCnt,
-  			mov_gnr,
+  			mov_gnr1,
+  			mov_gnr2,
+  			mov_gnr3,
   			mov_rat,
   			'0',
   			'0',

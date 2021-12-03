@@ -99,7 +99,13 @@
                     <div id="content_left">
                         <div class="drama">
                             <div>
-                                <a href="">Drama</a>
+                                <a href="">${movie_dtl.mg_genre1 }</a>
+                            </div>
+                            <div>
+                                <a href="">${movie_dtl.mg_genre2 }</a>
+                            </div>
+                            <div>
+                                <a href="">${movie_dtl.mg_genre3 }</a>
                             </div>
                             <span>
                                 ${movie_dtl.mov_story }

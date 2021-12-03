@@ -37,7 +37,7 @@
                 <a href="">
                     <li>JMKYPro </li>
                 </a>
-                <a href="">
+                <a href="/movie/watchlist">
                     <li><i class="far fa-plus-square"></i> Watchlist</li>
                 </a>
                 <c:choose>
