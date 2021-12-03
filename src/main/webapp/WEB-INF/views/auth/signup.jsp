@@ -10,6 +10,7 @@
     <title>JMKY 회원가입</title>
     <link rel="stylesheet" href="/css/signup.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
 </head>
 <body>
     <form id="signup-form">
@@ -66,9 +67,10 @@
             <div id="inner_footer">계정을 가지고 계신가요?<a href="/auth/signin">로그인</a></div>
         </div>
     </form>
-        
-        
-        <script type="text/javascript">
+
+    <jsp:include page="../include/signup_include/signup_footer.jsp"></jsp:include>
+    <script src="/js/signup.js"></script>
+    <script type="text/javascript">
         	const signupBtn = document.querySelector('#signup-btn');
         	const signupForm = document.querySelector('#signup-form');
         	signupBtn.onclick = () => {
@@ -113,7 +115,5 @@
         		}) // end ajax
         	} // end onclick
         </script>
-    </div>
-    <jsp:include page="../include/signup_include/signup_footer.jsp"></jsp:include>
 </body>
 </html>

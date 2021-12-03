@@ -107,8 +107,9 @@
 
     </div>
 	<jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
+	<script src="/js/signin.js"></script>
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
-<script src="/js/signin.js"></script>
+
 
 </html>
