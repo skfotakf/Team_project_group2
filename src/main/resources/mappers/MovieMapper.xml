@@ -219,13 +219,16 @@
   			md.mov_story,
   			md.mov_director,
   			md.mov_actor,
-  			md.mov_actorchar
-  			
+  			md.mov_actorchar,
+  			md.mov_gross,
+  			mr.mov_idn as rating_mov_idn,
+  			mr.user_id as rating_user_id,
+  			mr.rating as rating_rating
   			
   		from
   			movie_mst mm
 			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
-			
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.user_id = #{user_id})
 		order by
 			mm.mov_idn;
   		

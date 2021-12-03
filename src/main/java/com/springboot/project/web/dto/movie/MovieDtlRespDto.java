@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 public class MovieDtlRespDto {
 
+	//movie_mst, movie_dtl
 	private int mov_idn;
 	private String mov_photo;
 	private String mov_title;
@@ -20,5 +21,10 @@ public class MovieDtlRespDto {
 	private String mov_director;
 	private String mov_actor;
 	private String mov_actorchar;
-	
+	public float mov_gross;
+
+	//movie_rating
+	private int rating_mov_idn;
+	private String rating_user_id;
+	private int rating_rating;
 }

@@ -77,6 +77,7 @@
                       <a
                         href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
                         ><img src="/images/${chartAll.mov_photo }"
+                      		style="width:45px; height:67px;"
                       ></a>
                     </td>
                     <td class="chart_title">
@@ -262,7 +263,7 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a>Action </a><br />
+                <a href="/search/genre">Action </a><br />
                 <a>Adventure</a><br />
                 <a>Animation</a><br />
                 <a>Biography</a><br />

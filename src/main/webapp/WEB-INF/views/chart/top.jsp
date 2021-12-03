@@ -274,7 +274,7 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a>Action </a><br />
+                <a href="/search/genre">Action </a><br />
                 <a>Adventure</a><br />
                 <a>Animation</a><br />
                 <a>Biography</a><br />

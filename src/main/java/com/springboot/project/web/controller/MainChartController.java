@@ -196,6 +196,7 @@ public class MainChartController {
 	@GetMapping("/search/genre")
 	public String viewGenreSearch(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		String user_id="";
+		
 		if(principalDetails == null) {
 			model.addAttribute("genreAll", movieService.getGenreAll(user_id));
 		} else {

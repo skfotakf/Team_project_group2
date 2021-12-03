@@ -2,6 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/> 
+</sec:authorize>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -34,7 +38,7 @@
                         <br class="clear">
                         <div id="sort">
                             <span>Sort by : </span>
-                            <a href="">Popularity</a>
+                            <a href="" style="font-weight:bold">Popularity</a>
                             <label> | </label>
                             <a href="">A-Z</a>
                             <label> | </label>
@@ -80,12 +84,29 @@
                                 <div id="rating_bar">
                                     <div class="rating_star">
                                         <i class="fas fa-star fa"></i>
-                                            <span>&nbsp;${genreAll.mov_rat }</span>
+                                            <span>${genreAll.mov_rat }</span>
                                     </div>
-                                    <div class="rating_star">
-                                        <i class="far fa-star fa"></i>
-                                        &nbsp;<a>Rate this</a>
-                                    </div>
+                                    <c:choose>
+                                    	<c:when test="${genreAll.rating_user_id eq null }">
+                                    		<div class="rating_star">
+		                                        <i class="far fa-star fa" style="color: darkgray"></i>
+		                                        <a>Rate this</a>
+                                    		</div>
+                                    	</c:when>
+                                    	<c:when test="${genreAll.rating_rating eq 0 }">
+                                    		<div class="rating_star">
+		                                        <i class="far fa-star fa" style="color: rgba(109,174,272,0.5)"></i>
+		                                        <a>seen</a>
+                                    		</div>
+                                    	</c:when>
+                                    	<c:when test="${genreAll.rating_rating > 0 }">
+                                    		<div class="rating_star">
+		                                        <i class="far fa-star fa" style="color: #5285FF"></i>
+		                                        &nbsp;<a>${genreAll.rating_rating }</a>
+                                    		</div>
+                                    	</c:when>
+                                    </c:choose>
+                                    
                                 </div>
                                 <p id="plot">${genreAll.mov_story }
                                 </p>
@@ -93,14 +114,14 @@
                                     <span>Director : </span>
                                     <a href="">${genreAll.mov_director }</a>
                                     <label> | </label>
-                                    <span>Stars : </span>
+                                    <span>Main Actors : </span>
                                     <a href="">${genreAll.mov_actor }</a>
                                     
                                 </div>
                                 <div id="sort_num">
                                     <span>Likes: ${genreAll.mov_lik_cnt }</span>
                                     <label> | </label>
-                                    <span>Gross: 수입액 나중에!</span>
+                                    <span>Gross: $${genreAll.mov_gross }M</span>
                                 </div>
                                 
                             </div>

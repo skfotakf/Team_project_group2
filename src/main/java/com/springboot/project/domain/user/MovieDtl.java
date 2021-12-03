@@ -28,6 +28,11 @@ public class MovieDtl {
 	private String mov_director;
 	private String mov_actor;
 	private String mov_actorchar;
+	private float mov_gross;
+	// movie_rating
+	private int rating_mov_idn;
+	private String rating_user_id;
+	private int rating_rating;
 	
 	
 	public MovieDtlRespDto toEntity() {
@@ -45,6 +50,10 @@ public class MovieDtl {
 						.mov_director(mov_director)
 						.mov_actor(mov_actor)
 						.mov_actorchar(mov_actorchar)
+						.rating_mov_idn(rating_mov_idn)
+						.rating_user_id(rating_user_id)
+						.rating_rating(rating_rating)
+						.mov_gross(mov_gross)
 						.build();
 	}
 }
