@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/> 
+</sec:authorize>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -55,7 +59,7 @@
                 <thead class="chart_header">
                   <tr>
                     <th class="chart_poster"></th>
-                    <th class="chart_title">Title</th>
+                    <th class="chart_title chart_date_title">Title</th>
                     <th class="chart_rating chart_rating_title">
                       IMDb <br />Rating
                     </th>
@@ -66,12 +70,14 @@
                 </thead>
                 <tbody class="chart_main">
                   <c:forEach var="chartAll" items="${chartAll }">
+                  <input class="mov_idn1" type="hidden" value=${chartAll.mov_idn }>
                   <tr>
                   
                     <td class="chart_poster">
                       <a
                         href="/title/1"
                         ><img src="/images/${chartAll.mov_photo }"
+                      		style="width:45px; height:67px;"
                       ></a>
                     </td>
                     <td class="chart_title">
@@ -163,11 +169,37 @@
                             </ul>
                           </div>
 
-                          <i
+                         <c:choose>
+						  	<c:when test="${chartAll.rating_user_id eq null }">
+						  		<i
                             class="fas fa-star seen_star"
                             style="color: darkgray"
                           ></i>
-                          <span class="seen" style="font-size: 13px"></span>
+						  	</c:when>
+                          	<c:when test="${chartAll.rating_rating eq 0 }">
+                          		<i
+                            class="fas fa-star seen_star"
+                            style="color: rgba(109,174,272,0.5)"
+                          ></i>
+                          	</c:when>
+                          	<c:when test="${chartAll.rating_rating > 0 }">
+                          		<i
+                            class="fas fa-star seen_star"
+                            style="color: #5285FF"
+                          ></i>
+                          	</c:when>
+						  
+                         
+                          </c:choose>
+                           <c:choose>
+                          	<c:when test="${empty chartAll.rating_user_id  }"><span class="seen" style="font-size: 13px"></span> </c:when>
+                          	<c:when test="${chartAll.rating_rating eq 0 }">
+                          		<span class="seen" style="font-size: 13px">seen</span>
+                          	</c:when>
+                          	<c:when test="${chartAll.rating_rating > 0 }">
+                          		<span class="seen" style="font-size: 16px;width:30px;top:1.5px;textAlign:center;">${chartAll.rating_rating }</span>
+                          	</c:when>
+                          </c:choose>
                         </div>
                       </div>
                     </td>
@@ -178,12 +210,12 @@
                         <div class="imdb_like">
                           <i
                             class="fas fa-heart like_heart"
-                            style="color: darkgray"
+                            style="color:  ${not empty chartAll.like_user_id ? '#E04386' : 'darkgray'}"
                           ></i>
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span class="like_count">5</span> likes
+                            <span class="like_count">${chartAll.mov_lik_cnt }</span> likes
                           </div>
                         </div>
                       </div>
@@ -231,7 +263,7 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a>Action </a><br />
+                <a href="/search/genre">Action </a><br />
                 <a>Adventure</a><br />
                 <a>Animation</a><br />
                 <a>Biography</a><br />

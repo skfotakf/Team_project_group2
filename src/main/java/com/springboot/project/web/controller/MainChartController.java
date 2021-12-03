@@ -1,5 +1,9 @@
 package com.springboot.project.web.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.springboot.project.config.auth.PrincipalDetails;
+import com.springboot.project.web.dto.movie.MovieLikeDto;
+import com.springboot.project.web.dto.movie.MovieRatingDto;
 /*import com.springboot.project.web.model.vo.MovieVO;*/
 /*import com.springboot.project.web.service.MovieRatingService;*/
 import com.springboot.project.web.service.MovieService;
@@ -32,8 +42,18 @@ public class MainChartController {
 	}
 	
 	@GetMapping("/chart/boxoffice/{code}")
-	public String viewMainChart(Model model, @PathVariable int code) {
-		model.addAttribute("chartAll", movieService.getChartAll(code));
+	public String viewMainChart(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		String user_id="";
+		if(principalDetails == null) {
+			model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+		} else {
+			
+			user_id = principalDetails.getUser().getUsername();
+			System.out.println(user_id);
+			model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+			
+		}
+		model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
 		if(code == 1) {
 			return "chart/boxoffice";
 		}
@@ -41,23 +61,51 @@ public class MainChartController {
 	}
 	
 	@GetMapping("/chart/top/{code}")
-	public String viewTopChart(Model model, @PathVariable int code) {
+	public String viewTopChart(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		if(code == 1) {
+			String user_id="";
 			model.addAttribute("nameSortby", 1);
 			model.addAttribute("ascDesc", 0);
-			model.addAttribute("chartAll", movieService.getChartAll(code));
+			if(principalDetails == null) {
+				model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+			} else {
+				
+				user_id = principalDetails.getUser().getUsername();
+				System.out.println(user_id);
+				model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+				
+			}
+			model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
 			
 			return "chart/top";
 		} else if(code == 2) {
+			String user_id="";
 			model.addAttribute("nameSortby", 2);
 			model.addAttribute("ascDesc", 0);
-			model.addAttribute("chartAll", movieService.getChartAllRelease(code));
-		
+			if(principalDetails == null) {
+				model.addAttribute("chartAll", movieService.getChartAllRelease(code, user_id));
+			} else {
+				
+				user_id = principalDetails.getUser().getUsername();
+				System.out.println(user_id);
+				model.addAttribute("chartAll", movieService.getChartAllRelease(code, user_id));
+				
+			}
 			return "chart/top";
 		} else if(code == 3) {
+			String user_id = "";
 			model.addAttribute("nameSortby", 3);
-			model.addAttribute("chartAll", movieService.getChartAllLike(code));
+			model.addAttribute("ascDesc", 0);
+			if(principalDetails == null) {
+				model.addAttribute("chartAll", movieService.getChartAllLike(code, user_id));
+			} else {
+				model.addAttribute("principalDetails", principalDetails.getUser());
+				user_id = principalDetails.getUser().getUsername();
+				System.out.println(user_id);
+				model.addAttribute("chartAll", movieService.getChartAllLike(code, user_id));
+				
+			}
 			
 			return "chart/top";
 		}
@@ -89,42 +137,84 @@ public class MainChartController {
 		return "movie/list";
 	}
 	*/
-	
-	@PostMapping("/chart/top/chart-like")
-	public String plusLikeCnt(Model model, @RequestBody MovieLikeDto movieLikeDto) {
-		
-		movieLikeDto.setUser_id("gyu12");
-		movieService.plusLikeCnt(movieLikeDto);
-		
-		
+	@ResponseBody
+	@PostMapping("/chart/top/chart-like/plus")
+	public Object plusLikeCnt(@RequestBody MovieLikeDto movieLikeDto,  @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		System.out.println(movieLikeDto);
+		if(principalDetails == null) {
+			Map<String, String> error = new HashMap<String, String>();
+			error.put("error", "auth");
+			return error;
+		} else {
+		movieLikeDto.setUser_id(principalDetails.getUser().getUsername());
 		
-		return "chart/top";
-	}
-	
-	/*
-	// 별 평가 처리
-	@RequestMapping("ratingCheck.do")
-	public ModelAndView ratingCheck(@ModelAttribute MovieVO vo, HttpSession session) {
-		
-		boolean result = ratingService.ratingCheck(vo, session);
-		ModelAndView mav = new ModelAndView();
-		if(result == true) { 
-			// 유저가 평가 체크 했다면
-			mav.addObject("msg", "이미 평가 하셨습니다.");
-			// 취소 할 수 있도록
-			
-		} else { 
-			// 평가를 안했다면
-			mav.addObject("msg", "평가 해주셔서 감사합니다.");
-			// 단순 클릭시 ->seem
-			
-			// 별 점수 확인후 값 넘겨주기
+		movieService.plusLikeCnt(movieLikeDto);
+		return movieLikeDto;
 		}
 		
-		return mav;
 	}
 	
-	*/
+	@ResponseBody
+	@PostMapping("/chart/top/chart-like/minus")
+	public Object minusLikeCnt(@RequestBody MovieLikeDto movieLikeDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		
+		movieLikeDto.setUser_id(principalDetails.getUser().getUsername());
+		movieService.minusLikeCnt(movieLikeDto);
+		
+		
+		return movieLikeDto;
+		
+	}
+	
+	@ResponseBody
+	@PostMapping("/chart/top/chart-rating/insert")
+	public Object insertRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		
+		movieRatingDto.setUser_id(principalDetails.getUser().getUsername());
+		movieService.insertRatingCnt(movieRatingDto);
+		
+		
+		return movieRatingDto;
+	}
+
+	@ResponseBody
+	@PostMapping("/chart/top/chart-rating/update")
+	public Object updateRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		
+		movieRatingDto.setUser_id(principalDetails.getUser().getUsername());
+		movieService.updateRatingCnt(movieRatingDto);
+		
+		
+		
+		return movieRatingDto;
+	}
+	
+	@ResponseBody
+	@PostMapping("/chart/top/chart-rating/delete")
+	public Object deleteRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		
+		movieRatingDto.setUser_id(principalDetails.getUser().getUsername());
+		movieService.deleteRatingCnt(movieRatingDto);
+		
+		
+		return movieRatingDto;
+	}
+	
+	
+	@GetMapping("/search/genre")
+	public String viewGenreSearch(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		String user_id="";
+		
+		if(principalDetails == null) {
+			model.addAttribute("genreAll", movieService.getGenreAll(user_id));
+		} else {
+			
+			user_id = principalDetails.getUser().getUsername();
+			
+			model.addAttribute("genreAll", movieService.getGenreAll(user_id));
+			
+		}
+		return "search/gnr";
+	}
 	
 }

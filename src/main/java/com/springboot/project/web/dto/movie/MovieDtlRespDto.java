@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 public class MovieDtlRespDto {
 
+	//movie_mst, movie_dtl
 	private int mov_idn;
 	private String mov_photo;
 	private String mov_title;

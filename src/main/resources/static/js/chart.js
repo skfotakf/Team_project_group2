@@ -16,10 +16,16 @@ let likeNumber = new Array(10);
 
 const mov_idn1 = document.querySelectorAll(".mov_idn1");
 
-var ratingLikeData = {
+var movieLikeData = {
 	mov_idn: 0,
 	user_id: '',
 	
+}
+
+var movieRatingData = {
+	mov_idn: 0,
+	user_id: '',
+	rating: 0
 }
 // 날짜
 let today = new Date();
@@ -30,18 +36,21 @@ let date = today.getDate(); // 날짜
 desc.innerHTML = year + "/" + month + "/" + date;
 
 
-// like 누르면 수가 1 증가
-function likeService(){
+// like 누르면 수가 db에서 1 증가
+function likePlusService(){
 	$.ajax({
 		type: "post",
-		url: "chart-like",
-		data: JSON.stringify(ratingLikeData),
+		url: "chart-like/plus",
+		data: JSON.stringify(movieLikeData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
 		success: function(data){
-			ratingLikeData = JSON.parse(data);
-			
+			movieLikeData = JSON.parse(data);
+			if(movieLikeData.error == "auth"){
+			location.href = '/auth/signin';
+			}else{
 				alert('좋아요 1 증가');
+			}
 			
 		},
 		error:function(){
@@ -50,10 +59,98 @@ function likeService(){
 	})
 
 }
+
+// like 누르면 수가 db에서 1 감소
+function likeMinusService(){
+	$.ajax({
+		type: "post",
+		url: "chart-like/minus",
+		data: JSON.stringify(movieLikeData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			movieLikeData = JSON.parse(data);
+			
+				alert('좋아요 1 감소');
+			
+		},
+		error:function(){
+			alert('좋아요 비동기 처리 실패');
+		}
+	})
+
+}
+
+// 별을 누르면 본 기록이 movie_rating에 insert
+function ratingInsertService(){
+	$.ajax({
+		type: "post",
+		url: "chart-rating/insert",
+		data: JSON.stringify(movieRatingData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			movieRatingData = JSON.parse(data);
+			
+				alert('별점 변화');
+			
+		},
+		error:function(){
+			alert('별점 비동기 처리 실패');
+		}
+	})
+
+}
+
+// 별점을 누르면 movie_rating의 rating이 update
+function ratingUpdateService(){
+	$.ajax({
+		type: "post",
+		url: "chart-rating/update",
+		data: JSON.stringify(movieRatingData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			movieRatingData = JSON.parse(data);
+			
+				alert('별점 변화');
+			
+		},
+		error:function(){
+			alert('별점 비동기 처리 실패');
+		}
+	})
+
+}
+
+// x를 누르면 movie_rating에 delete
+function ratingDeleteService(){
+	$.ajax({
+		type: "post",
+		url: "chart-rating/delete",
+		data: JSON.stringify(movieRatingData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			movieRatingData = JSON.parse(data);
+			
+				alert('별점 삭제');
+			
+		},
+		error:function(){
+			alert('별점 비동기 처리 실패');
+		}
+	})
+}
 //별 누르면 seen 나오고, sidebar 숫자 1 추가
 for (let p = 0; p < 10; p++) {
   seen_star[p].onclick = () => {
     if (seen_star[p].style.color == "darkgray") {
+       movieRatingData.mov_idn = mov_idn1[p].value;
+       movieRatingData.rating = 0;
+       alert(movieRatingData.mov_idn);  
+       ratingInsertService();
+   	  
       seen_star[p].style.color = "rgba(109,174,272,0.5)";
       seen[p].style.display = "inline-block";
       seen[p].innerHTML = "seen";
@@ -70,6 +167,10 @@ for (let q = 0; q < 10; q++) {
   ratingNumber[q] = imdb_rating_number[q].innerText;
   const firstRatingNumber1 = parseFloat(ratingNumber[q]);
   popover_delete[q].onclick = () => {
+  	movieRatingData.mov_idn = mov_idn1[q].value;
+  	movieRatingData.rating = 0;
+  	ratingDeleteService();
+  	
     popover[q].style.display = "none";
     seen_star[q].style.color = "darkgray";
     seen[q].innerHTML = "";
@@ -86,6 +187,8 @@ for (let k = 0; k < 10; k++) {
   for (let i = 10 * k + 0; i < 10 * k + 10; i++) {
     rating_stars[i].onmouseover = () => {
       for (let j = 10 * k; j < i + 1; j++) {
+      	
+      	
         rating_stars[j].style.color = "#5285FF";
         seen[k].innerHTML = j + 1 - 10 * k;
         seen[k].style.fontSize = "16px";
@@ -100,11 +203,22 @@ for (let k = 0; k < 10; k++) {
       }
     };
     rating_stars[i].onclick = () => {
+    
+      
+      	 movieRatingData.mov_idn = mov_idn1[k].value;
+      	movieRatingData.rating = i+1- 10*k;
+      	alert(movieRatingData.rating);  
+      	ratingUpdateService();
       popover[k].style.display = "none";
       seen_star[k].style.color = "#5285FF";
       ratingNumber[k] =
         (firstRatingNumber * 10 + parseInt(seen[k].innerText)) / 11;
       imdb_rating_number[k].innerHTML = ratingNumber[k].toFixed(1);
+      	
+        
+      
+      
+     
     };
   }
 }
@@ -114,15 +228,18 @@ for (let r = 0; r < 10; r++) {
 
   like_heart[r].onclick = () => {
     if (like_heart[r].style.color == "darkgray") {
-      ratingLikeData.mov_idn = mov_idn1[r].value;
-      
-      likeService();
+      movieLikeData.mov_idn = mov_idn1[r].value;    
+      likePlusService();
       	
       likeNumber[r] = parseInt(likeNumber[r]) + 1;
       like_count[r].innerHTML = likeNumber[r];
       like_heart[r].style.color = "#E04386";
      
     } else {
+    
+      movieLikeData.mov_idn = mov_idn1[r].value;
+      likeMinusService();
+      
       likeNumber[r] = parseInt(likeNumber[r]) - 1;
       like_count[r].innerHTML = likeNumber[r];
       like_heart[r].style.color = "darkgray";
