@@ -312,7 +312,7 @@ a{
     width: 425px;
     height: 48px;
 }
-#add_watchlist{
+.watchlist{
     border-radius: 5px;
     cursor: pointer;
     margin: 0;
@@ -322,14 +322,14 @@ a{
     display: flex;
     color: #fff;
 }
-#add_watchlist:hover{
+.watchlist:hover{
     background-color: #ffffff31;
 }
-#add_watchlist i{
+.watchlist i{
     margin: 0 4px 0;
 }
 
-#add_watchlist div{
+.watchlist div{
     text-align: left;
     width: 325px;
 }

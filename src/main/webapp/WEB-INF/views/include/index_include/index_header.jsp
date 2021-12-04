@@ -37,8 +37,8 @@
                 <a href="">
                     <li>JMKYPro </li>
                 </a>
-                <a href="/movie/watchlist">
-                    <li><i class="far fa-plus-square"></i> Watchlist</li>
+                <a href="/user/likelist">
+                    <li><i class="far fa-plus-square"></i> Likelist</li>
                 </a>
                 <c:choose>
                 	<c:when test="${empty principal.user }">

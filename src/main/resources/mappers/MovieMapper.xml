@@ -17,16 +17,16 @@
   			mm.mov_lik_cnt,
   			mm.number,
   			ml.mov_idn as like_mov_idn,
-  			ml.user_id as like_user_id,
+  			ml.number as like_number,
   			mr.mov_idn as rating_mov_idn,
-  			mr.user_id as rating_user_id,
+  			mr.number as rating_number,
   			mr.rating as rating_rating
   			
   			
   		from
   			movie_mst mm
-			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.user_id = #{user_id})
-			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.user_id = #{user_id})
+			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.number = #{number})
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.number = #{number})
 		order by
 			mm.mov_idn;
   		
@@ -53,15 +53,20 @@
 			md.mov_director,
 			md.mov_actor,
 			md.mov_actorchar,
-			wl.mov_idn AS wl_mov_idn,
-			wl.number
+			<!-- wl.mov_idn AS wl_mov_idn, -->
+			<!-- wl.number -->
+			ml.number AS like_number,
+			mr.number AS rating_number,
+			mr.rating AS rating_rating
 		FROM
 			movie_mst mm
 			LEFT OUTER JOIN movie_genre mg1 ON(mg1.gen_num = mm.mov_gnr1)
 			LEFT OUTER JOIN movie_genre mg2 ON(mg2.gen_num = mm.mov_gnr2)
 			LEFT OUTER JOIN movie_genre mg3 ON(mg3.gen_num = mm.mov_gnr3)
 			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
-			LEFT OUTER JOIN watch_list wl ON(wl.mov_idn = mm.mov_idn AND wl.number = #{number})
+			<!-- LEFT OUTER JOIN watch_list wl ON(wl.mov_idn = mm.mov_idn AND wl.number = #{number}) -->
+			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.number = #{number})
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.number = #{number}) 
 		WHERE
 			mm.mov_idn = #{mov_idn};
   	</select>
@@ -107,16 +112,16 @@
   			mm.mov_lik_cnt,
   			mm.number,
   			ml.mov_idn as like_mov_idn,
-  			ml.user_id as like_user_id,
+  			ml.number as like_number,
   			mr.mov_idn as rating_mov_idn,
-  			mr.user_id as rating_user_id,
+  			mr.number as rating_number,
   			mr.rating as rating_rating
   			
   			
   		from
   			movie_mst mm
-			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.user_id = #{user_id})
-			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.user_id = #{user_id})
+			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.number = #{number})
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.number = #{number})
   		order by
   			mm.mov_release;
   	</select>
@@ -160,16 +165,16 @@
   			mm.mov_lik_cnt,
   			mm.number,
   			ml.mov_idn as like_mov_idn,
-  			ml.user_id as like_user_id,
+  			ml.number as like_number,
   			mr.mov_idn as rating_mov_idn,
-  			mr.user_id as rating_user_id,
+  			mr.number as rating_number,
   			mr.rating as rating_rating
   			
   			
   		from
   			movie_mst mm
-			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.user_id = #{user_id})
-			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.user_id = #{user_id})
+			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.number = #{number})
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.number = #{number})
   		order by
   			mm.mov_lik_cnt desc;
   	</select>
@@ -203,7 +208,7 @@
 		movie_like
 	values(
 		#{mov_idn},
-		#{user_id}
+		#{number}
 	)		
   	</insert>
   	
@@ -228,7 +233,7 @@
 	from
 		movie_like
 	where
-		mov_idn = #{mov_idn} AND user_id = #{user_id};
+		mov_idn = #{mov_idn} AND number = #{number};
   	</delete>
   	
   	<insert id="insertRatingCnt" parameterType="com.springboot.project.web.dto.movie.MovieRatingDto"> 
@@ -236,7 +241,7 @@
 		movie_rating
 	values(
 		#{mov_idn},
-		#{user_id},
+		#{number},
 		#{rating}
 	);
   	</insert>
@@ -247,7 +252,7 @@
 	set
 		rating = #{rating}
 	where
-		mov_idn = #{mov_idn} AND user_id = #{user_id};
+		mov_idn = #{mov_idn} AND number = #{number};
   	</update>
   	
   	<delete id="deleteRatingCnt" parameterType="com.springboot.project.web.dto.movie.MovieRatingDto"> 
@@ -255,7 +260,7 @@
 	from
 		movie_rating
 	where
-		mov_idn = #{mov_idn} AND user_id = #{user_id};
+		mov_idn = #{mov_idn} AND number = #{number};
   	</delete>
   	
   	<!-- 장르차트 -->
@@ -276,13 +281,13 @@
   			md.mov_actorchar,
   			md.mov_gross,
   			mr.mov_idn as rating_mov_idn,
-  			mr.user_id as rating_user_id,
+  			mr.number as rating_number,
   			mr.rating as rating_rating
   			
   		from
   			movie_mst mm
 			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
-			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.user_id = #{user_id})
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.number = #{number})
 		order by
 			mm.mov_idn;
   		

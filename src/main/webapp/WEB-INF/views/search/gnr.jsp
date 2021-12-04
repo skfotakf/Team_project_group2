@@ -86,7 +86,7 @@
                                             <span>${genreAll.mov_rat }</span>
                                     </div>
                                     <c:choose>
-                                    	<c:when test="${genreAll.rating_user_id eq null }">
+                                    	<c:when test="${genreAll.rating_number eq 0 }">
                                     		<div class="rating_star">
 		                                        <i class="far fa-star fa" style="color: darkgray"></i>
 		                                        <a>Rate this</a>

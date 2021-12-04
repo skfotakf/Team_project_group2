@@ -19,9 +19,9 @@ public class MovieDtl {
 	private String mov_photo;
 	private String mov_title;
 	private String mov_release;
-	private int mov_gnr1;
-	private int mov_gnr2;
-	private int mov_gnr3;
+	private String mg_genre1;
+	private String mg_genre2;
+	private String mg_genre3;
 	private float mov_rat;
 	private int mov_lik_cnt;
 	private String mov_trailer;
@@ -33,17 +33,19 @@ public class MovieDtl {
 	private String mov_actorchar;
 	private float mov_gross;
 	
-	private int rating_mov_idn;
-	private String rating_user_id;
-	private int rating_rating;
 	
-	private String wl_mov_idn;
-	private int number;
+	
+	//private String wl_mov_idn;
+	//private int number;
 	private int gen_num;
 	private String genre;
-	private String mg_genre1;
-	private String mg_genre2;
-	private String mg_genre3;
+	
+	private int like_number;
+	private int rating_mov_idn;
+	private int rating_number;
+	private int rating_rating;
+	
+	
 	
 	/*
 	public MovieDtlRespDto toEntity() {

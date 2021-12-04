@@ -22,19 +22,19 @@ public class MovieServiceImpl implements MovieService{
 	
 	
 	@Override // 메인 chart
-	public List<MainChartRespDto> getChartAll(int code, String user_id) {
+	public List<MainChartRespDto> getChartAll(int code, int number) {
 		System.out.println("되는중");
-		return movieRepository.getChartAll(code, user_id);
+		return movieRepository.getChartAll(code, number);
 	}
 	@Override
-	public List<MainChartRespDto> getChartAllRelease(int code, String user_id) {
+	public List<MainChartRespDto> getChartAllRelease(int code, int number) {
 		
-		return movieRepository.getChartAllRelease(code, user_id);
+		return movieRepository.getChartAllRelease(code, number);
 	}
 	@Override
-	public List<MainChartRespDto> getChartAllLike(int code, String user_id) {
+	public List<MainChartRespDto> getChartAllLike(int code, int number) {
 
-		return movieRepository.getChartAllLike(code, user_id);
+		return movieRepository.getChartAllLike(code, number);
 	}
 	
 	/* 정배열 역배열 버튼(못넣음)
@@ -75,17 +75,21 @@ public class MovieServiceImpl implements MovieService{
 		return movieRepository.getMovieDtl(mov_idn, number);
 		
 	}
+	
+	/*
 	@Override
 	public MovieDtlRespDto getMovieGenre(int gen_num, String genre) {
+		
 		MovieDtl movieDtl = new MovieDtl();
 		movieDtl.setMov_gnr1(gen_num);
 		movieDtl.setMov_gnr2(gen_num);
 		movieDtl.setMov_gnr3(gen_num);
 		movieDtl.setGen_num(gen_num);
 		movieDtl.setGenre(genre);
+		
 		return null;
 	}
-	
+	*/
 	
 
 	public Object minusLikeCnt(MovieLikeDto movieLikeDto) {
@@ -112,9 +116,9 @@ public class MovieServiceImpl implements MovieService{
 	
 	/*---------------장르 차트---------------*/
 	@Override
-	public List<MovieDtlRespDto> getGenreAll(String user_id) {
+	public List<MovieDtlRespDto> getGenreAll(int number) {
 		// TODO Auto-generated method stub
-		return movieRepository.getGenreAll(user_id);
+		return movieRepository.getGenreAll(number);
 	}
 	
 	

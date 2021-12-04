@@ -52,13 +52,22 @@
                             <div class="rating_bar_header"><p>YOUR RATING</p></div>
                             <a href="">
                                 <div class="blue_star" id="rating_star">
-                                    <i class="far fa-star fa-2x"></i>
-                                    <div id="rate">&nbsp;Rate</div>
+                                <c:choose>
+                                	<c:when test="${movie_dtl.rating_number eq 0}">
+	                                	<i class="far fa-star fa-2x"></i>
+	                                    <div id="rate">&nbsp;Rate</div>
+                                	</c:when>
+                                	<c:when test="${movie_dtl.rating_number ne 0}">
+                                		<i class="fas fa-star fa-2x" ></i>
+                                		<span>&nbsp;${movie_dtl.rating_rating } /10</span>
+                                	</c:when>
+                                </c:choose>
+                                    
                                 </div>
                             </a>
                         </div>
                         <div class="rating_bar_btn">
-                            <div class="rating_bar_header"><p>POPULALITY</p></div>
+                            <div class="rating_bar_header"><p>POPULARITY</p></div>
                             <a href="">
                                 <div id="rating_star">
                                     <i id="grape" class="fas fa-chart-line fa-2x"></i>
@@ -140,13 +149,27 @@
                     </div>
                     <div id="content_right">
                         <div id="content_right_top">
-                            <button type="button" id="add_watchlist">
-                                <i class="fas fa-plus"></i>
-                                <div>Add to Watchlist</div>
-                            </button>
-                            <button type="button" id="watchlist_list">
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
+                        <c:choose>
+                        	<c:when test="${movie_dtl.like_number eq 0 }">
+                        		<button type="button" class="watchlist">
+                                	<i class="fas fa-plus"></i>
+                                	<div>Add to Likelist</div>
+                            	</button>
+                            	<button type="button" id="watchlist_list">
+                                	<i class="fas fa-chevron-down"></i>
+                            	</button>
+                        	</c:when>
+                        	<c:when test="${movie_dtl.like_number ne 0 }">
+                        		<button type="button" class="watchlist">
+                                	<i class="fas fa-check"></i>
+                                	<div>In Likelist</div>
+                            	</button>
+                            	<button type="button" id="watchlist_list">
+                                	<i class="fas fa-chevron-down"></i>
+                            	</button>                        	
+                        	</c:when>
+                        </c:choose>
+                            
                         </div>
                         <ul id="review_content">
                             <li id="user_review">
