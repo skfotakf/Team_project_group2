@@ -28,8 +28,8 @@
           <div class="content_2_wide">
             <div class="main">
               JMKY Charts
-              <h1>JMKY Top 5 Movies</h1>
-              JMKY Top 5 as rated by regular JMKY voters.
+              <h1>JMKY Top 10 Movies</h1>
+              JMKY Top 10 as rated by regular JMKY voters.
               <hr />
               <div class="lister">
                 <div class="nav">
@@ -44,6 +44,8 @@
                     </select>
                     <span class="submit_sortby">확인</span>
                     </form>
+                    
+                    <!-- 숨겨졌음 -->
                     <input type="hidden" value="${ascDesc }" class="ascDesc">
                     <span class="ascending" style="display:none"></span>
                     <span class="descending" style="display:none"></span>
@@ -75,20 +77,20 @@
                   
                     <td class="chart_poster">
                       <a
-                        href=""
+                        href="/title/${chartAll.mov_idn }"
                         ><img src="/images/${chartAll.mov_photo }"
                       style="width:45px; height:67px;"></a>
                     </td>
-                    <td class="chart_title">
+                    <td class="chart_title ">
                       <a
-                        href="https://www.imdb.com/title/tt9032400/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=0R2767XQ0FBAAFYFRSXF&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_2"
+                        href="/title/${chartAll.mov_idn }"
                         >${chartAll.mov_title }</a
                       >
                     </td>
                     <td class="chart_rating">
                       <div class="seen_widget">
                         <div class="imdb_rating">
-                          <i class="fas fa-star" style="color: orange"></i
+                          <i class="fas fa-star" style="color: rgb(245, 197, 24)"></i
                           >&nbsp;<span class="imdb_rating_number">${chartAll.mov_rat }</span>
                         </div>
                         <div class="my_rating">
@@ -250,8 +252,8 @@
                   <h5 class="title_yhs">You Have Seen</h5>
                 </div>
                 <div class="sidebar_seen">
-                  <span class="sidebar_seen_movies">0&nbsp;</span>
-                  <span>/250</span>
+                  <span class="sidebar_seen_movies">0</span>
+                  <span>/ 10</span>
                   <span>( 0% )</span><br />
                   <div>
                     <input class="seen_title" type="checkbox" />
@@ -264,7 +266,7 @@
 
                 <a href="/chart/boxoffice/1">Box Office</a><br />
                 <a>Most Popular Movies</a><br />
-                <a href="/chart/top/1">Top 250 Movies</a><br />
+                <a href="/chart/top/1">Top 10 Movies</a><br />
                 <a>Top Rated English Movies</a><br />
                 <a>Most Popular TV Shows</a><br />
                 <a>Top 250 TV Shows</a><br />

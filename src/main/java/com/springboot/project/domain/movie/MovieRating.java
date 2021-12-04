@@ -1,4 +1,4 @@
-package com.springboot.project.domain.user;
+package com.springboot.project.domain.movie;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

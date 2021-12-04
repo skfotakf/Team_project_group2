@@ -18,11 +18,12 @@ public class MovieDtl {
 	private int mov_idn;
 	private String mov_photo;
 	private String mov_title;
-	private Date mov_release;
+	private String mov_release;
 	private int mov_gnr1;
 	private int mov_gnr2;
 	private int mov_gnr3;
-	private String mov_rat;
+	private float mov_rat;
+	private int mov_lik_cnt;
 	private String mov_trailer;
 	private int mov_age;
 	private String mov_runtime;
@@ -30,6 +31,12 @@ public class MovieDtl {
 	private String mov_director;
 	private String mov_actor;
 	private String mov_actorchar;
+	private float mov_gross;
+	
+	private int rating_mov_idn;
+	private String rating_user_id;
+	private int rating_rating;
+	
 	private String wl_mov_idn;
 	private int number;
 	private int gen_num;
@@ -38,6 +45,7 @@ public class MovieDtl {
 	private String mg_genre2;
 	private String mg_genre3;
 	
+	/*
 	public MovieDtlRespDto toEntity() {
 		return MovieDtlRespDto.builder()
 						.mov_idn(mov_idn)
@@ -64,4 +72,5 @@ public class MovieDtl {
 						.mg_genre3(mg_genre3)
 						.build();
 	}
+	*/
 }

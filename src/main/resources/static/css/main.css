@@ -89,13 +89,13 @@ a{
     box-sizing: border-box;
 }
 #star{
-    color: yellow;
+    color:rgb(245, 197, 24);
 }
 .blue_star{
     color: #5799ef;
 }
 #grape{
-    color: red;
+    color:rgb(103,173,75);
 }
 
 #mini_txt{
@@ -536,7 +536,7 @@ a{
     line-height: 21px;
 }
 #review_top span i{
-    color: yellow;
+    color:rgb(245, 197, 24);
 }
 #review_top span:last-child{
     font-size: 16px;
@@ -602,7 +602,7 @@ a{
 }
 
 #master_review div i{
-    color: yellow;
+    color:rgb(245, 197, 24);
 }
 
 

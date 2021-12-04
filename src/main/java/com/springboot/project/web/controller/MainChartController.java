@@ -11,16 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.springboot.project.config.auth.PrincipalDetails;
-import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
-/*import com.springboot.project.web.model.vo.MovieVO;*/
-/*import com.springboot.project.web.service.MovieRatingService;*/
 import com.springboot.project.web.service.MovieService;
 
 import lombok.RequiredArgsConstructor;
@@ -31,10 +26,6 @@ public class MainChartController {
 	
 	private final MovieService movieService;
 	
-	/*
-	@Autowired
-	private MovieRatingService ratingService;
-	*/
 	// 메인 페이지 보여주기(chart) - 기본 페이지 R
 	@GetMapping("/")
 	public String indexRedirectHandler() {
@@ -170,11 +161,17 @@ public class MainChartController {
 	@PostMapping("/chart/top/chart-rating/insert")
 	public Object insertRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
+		if(principalDetails == null) {
+			Map<String, String> error = new HashMap<String, String>();
+			error.put("error", "auth");
+			return error;
+		} else {
 		movieRatingDto.setUser_id(principalDetails.getUser().getUsername());
 		movieService.insertRatingCnt(movieRatingDto);
 		
 		
 		return movieRatingDto;
+		}
 	}
 
 	@ResponseBody

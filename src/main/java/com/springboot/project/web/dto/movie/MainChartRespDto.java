@@ -22,9 +22,7 @@ public class MainChartRespDto {
 	private int mov_rat_cnt; // 영화 평점 참가수
 	private int mov_lik; // 영화 좋아요
 	private int mov_lik_cnt; // 영화 좋아요 수
-	private int mov_gnr_idn; // 영화 장르 아이디
-	private int mov_cht_idn; // 영화 차트 아이디
-	private int mov_viw_list_idn; // 영화 좋아요 아이디
+	
 	private int number; // 회원 넘버
 	
 	//movie_like
@@ -35,6 +33,8 @@ public class MainChartRespDto {
 	private int rating_mov_idn; // 평가받은 영화
 	private String rating_user_id; // 평가한 사람
 	private int rating_rating;  // 평가점수
+	
+	
 
 
 }

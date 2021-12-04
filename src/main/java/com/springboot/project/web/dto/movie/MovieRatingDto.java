@@ -1,6 +1,6 @@
 package com.springboot.project.web.dto.movie;
 
-import com.springboot.project.domain.user.MovieRating;
+import com.springboot.project.domain.movie.MovieRating;
 
 import lombok.Data;
 

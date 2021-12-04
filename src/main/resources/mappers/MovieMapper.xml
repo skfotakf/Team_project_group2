@@ -2,9 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-  <mapper namespace="com.springboot.project.domain.movie.MovieRepository">
-  	
+
+<mapper namespace="com.springboot.project.domain.movie.MovieRepository">	
   	<select id="getChartAll" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
   		select
   			mm.mov_idn,
@@ -16,9 +15,6 @@
   			mm.mov_rat_cnt,
   			mm.mov_lik,
   			mm.mov_lik_cnt,
-  			mm.mov_gnr_idn,
-  			mm.mov_cht_idn,
-  			mm.mov_viw_list_idn,
   			mm.number,
   			ml.mov_idn as like_mov_idn,
   			ml.user_id as like_user_id,
@@ -36,7 +32,8 @@
   		
   	</select>
   	
-  	<select id="getMovieDtl" parameterType="com.springboot.project.domain.movie.MovieDtl" resultType="com.springboot.project.domain.movie.MovieDtl"> <!-- 개별 영화 list read -->
+  	
+  	<select id="getMovieDtl" parameterType="com.springboot.project.web.dto.movie.MovieDtlRespDto" resultType="com.springboot.project.web.dto.movie.MovieDtlRespDto"> <!-- 개별 영화 list read -->
   		SELECT
 			mm.mov_idn,
 			mm.mov_photo,
@@ -68,6 +65,8 @@
 		WHERE
 			mm.mov_idn = #{mov_idn};
   	</select>
+ 
+ 	
   	
   	
   	<select id="getChartAllDesc" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
@@ -94,6 +93,7 @@
   		order by
   			mov_idn desc
   	</select>
+  	
   	<select id="getChartAllRelease" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
   		select
   			mm.mov_idn,
@@ -105,9 +105,6 @@
   			mm.mov_rat_cnt,
   			mm.mov_lik,
   			mm.mov_lik_cnt,
-  			mm.mov_gnr_idn,
-  			mm.mov_cht_idn,
-  			mm.mov_viw_list_idn,
   			mm.number,
   			ml.mov_idn as like_mov_idn,
   			ml.user_id as like_user_id,
@@ -123,6 +120,8 @@
   		order by
   			mm.mov_release;
   	</select>
+  	
+  	
   	<select id="getChartAllReleaseDesc" resultType="com.springboot.project.web.dto.movie.MainChartDto"> <!-- 영화 목록 list read -->
   		select
   			mov_idn,
@@ -147,6 +146,7 @@
   		order by
   			mov_release desc
   	</select>
+  	
   	<select id="getChartAllLike" resultType="com.springboot.project.web.dto.movie.MainChartDto"> <!-- 영화 목록 list read -->
   		select
   			mm.mov_idn,
@@ -158,9 +158,6 @@
   			mm.mov_rat_cnt,
   			mm.mov_lik,
   			mm.mov_lik_cnt,
-  			mm.mov_gnr_idn,
-  			mm.mov_cht_idn,
-  			mm.mov_viw_list_idn,
   			mm.number,
   			ml.mov_idn as like_mov_idn,
   			ml.user_id as like_user_id,
@@ -174,7 +171,7 @@
 			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.user_id = #{user_id})
 			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.user_id = #{user_id})
   		order by
-  			mm.mov_lik_cnt;
+  			mm.mov_lik_cnt desc;
   	</select>
   	<select id="getChartAllLikeDesc" resultType="com.springboot.project.web.dto.movie.MainChartDto"> <!-- 영화 목록 list read -->
   		select
@@ -208,7 +205,7 @@
 		#{mov_idn},
 		#{user_id}
 	)		
-  	</select>
+  	</insert>
   	
   	<select id="watchList" resultType="com.springboot.project.web.dto.movie.MainChartDto">
   		select
@@ -223,8 +220,8 @@
   		
   	</select>
 
-	)
-  	</insert>
+	
+  	
   	
   	<delete id="minusLikeCnt" parameterType="com.springboot.project.web.dto.movie.MovieLikeDto"> 
 	delete
@@ -262,7 +259,7 @@
   	</delete>
   	
   	<!-- 장르차트 -->
-  	<select id="getGenreAll" resultType="com.springboot.project.domain.user.MovieDtl"> <!-- 영화 목록 list read -->
+  	<select id="getGenreAll" resultType="com.springboot.project.domain.movie.MovieDtl"> <!-- 영화 목록 list read -->
   		select
   			mm.mov_idn,
   			mm.mov_photo,
@@ -292,4 +289,4 @@
   	</select>
  
 	
-  </mapper>
+</mapper>

@@ -91,9 +91,11 @@ function ratingInsertService(){
 		contentType: "application/json;charset=UTF-8",
 		success: function(data){
 			movieRatingData = JSON.parse(data);
-			
-				alert('별점 변화');
-			
+			if(movieRatingData.error == "auth"){
+			location.href = '/auth/signin';
+			}else{
+				alert('좋아요 1 증가');
+			}
 		},
 		error:function(){
 			alert('별점 비동기 처리 실패');
@@ -148,7 +150,6 @@ for (let p = 0; p < 10; p++) {
     if (seen_star[p].style.color == "darkgray") {
        movieRatingData.mov_idn = mov_idn1[p].value;
        movieRatingData.rating = 0;
-       alert(movieRatingData.mov_idn);  
        ratingInsertService();
    	  
       seen_star[p].style.color = "rgba(109,174,272,0.5)";
@@ -207,7 +208,6 @@ for (let k = 0; k < 10; k++) {
       
       	 movieRatingData.mov_idn = mov_idn1[k].value;
       	movieRatingData.rating = i+1- 10*k;
-      	alert(movieRatingData.rating);  
       	ratingUpdateService();
       popover[k].style.display = "none";
       seen_star[k].style.color = "#5285FF";

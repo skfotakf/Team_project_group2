@@ -6,20 +6,40 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MainChartRespDto;
+import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
+import com.springboot.project.web.dto.movie.MovieRatingDto;
 
 @Mapper
 public interface MovieRepository {
 
-	public List<MainChartRespDto> getChartAll(int code);
-	public List<MainChartRespDto> getChartAllRelease(int code);
-	public List<MainChartRespDto> getChartAllLike(int code);
+	/*----------박스오피스,탑 차트---------*/
+	public List<MainChartRespDto> getChartAll(int code, String user_id);
+	public List<MainChartRespDto> getChartAllRelease(int code, String user_id);
+	public List<MainChartRespDto> getChartAllLike(int code, String user_id);
 	public List<MainChartDto> getsChartAll(int code);
 
+	// 좋아요 증감
 	public int plusLikeCnt(MovieLikeDto movieLikeDto);
+	public int minusLikeCnt(MovieLikeDto movieLikeDto);
 	
-	public MovieDtl getMovieDtl(MovieDtl movieDtl);
+	// 별점 증감
+	public int insertRatingCnt(MovieRatingDto movieRatingDto);
+	public int updateRatingCnt(MovieRatingDto movieRatingDto);
+	public int deleteRatingCnt(MovieRatingDto movieRatingDto);
 	
-	public MovieDtl getMovieGenre(MovieDtl movieDtl); 
+	/*----------장르 차트------------*/
+	public List<MovieDtlRespDto> getGenreAll(String user_id);
+	
+	/*----------디테일 페이지----------*/
+	
+	
+//		public MovieDtl getMovieDtl(MovieDtl movieDtl);
+//		public MovieDtl getMovieGenre(MovieDtl movieDtl);
+	
+	public MovieDtlRespDto getMovieDtl(int mov_idn, int number);
+	public MovieDtl getMovieGenre(MovieDtl movieDtl);
+	 
+	
 
 }

@@ -100,15 +100,22 @@
                 <div id="content_container">
                     <div id="content_left">
                         <div class="drama">
-                            <div>
+                        	<c:if test="${movie_dtl.mg_genre1 ne null }">
+                        		<div>
                                 <a href="">${movie_dtl.mg_genre1 }</a>
-                            </div>
-                            <div>
+                            	</div>
+                        	</c:if>
+                            
+                           <c:if test="${movie_dtl.mg_genre2 ne null }">
+                        		<div>
                                 <a href="">${movie_dtl.mg_genre2 }</a>
-                            </div>
-                            <div>
+                            	</div>
+                        	</c:if>
+                           <c:if test="${movie_dtl.mg_genre3 ne null }">
+                        		<div>
                                 <a href="">${movie_dtl.mg_genre3 }</a>
-                            </div>
+                            	</div>
+                        	</c:if>
                             <span>
                                 ${movie_dtl.mov_story }
                             </span>

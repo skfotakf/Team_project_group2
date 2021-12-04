@@ -1,25 +1,16 @@
 package com.springboot.project.web.service;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.springboot.project.domain.movie.MovieDtl;
-import com.springboot.project.domain.movie.MovieGenre;
 import com.springboot.project.domain.movie.MovieRepository;
-import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MainChartRespDto;
-import com.springboot.project.web.dto.movie.MovieDtlRespDto;
-import com.springboot.project.web.dto.movie.MovieLikeDto;
-import com.springboot.project.domain.user.Movie;
-import com.springboot.project.domain.user.MovieRepository;
-import com.springboot.project.web.dto.movie.MainChartDto;
 import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -29,22 +20,20 @@ public class MovieServiceImpl implements MovieService{
 	private final MovieRepository movieRepository;
 
 	
-	private List<MainChartRespDto> chartAll;
 	
-	@Override // 메인 list
-	public List<MainChartDto> getChartAll(int code, String user_id) {
+	@Override // 메인 chart
+	public List<MainChartRespDto> getChartAll(int code, String user_id) {
 		System.out.println("되는중");
 		return movieRepository.getChartAll(code, user_id);
 	}
 	@Override
-	public List<MainChartDto> getChartAllRelease(int code, String user_id) {
+	public List<MainChartRespDto> getChartAllRelease(int code, String user_id) {
 		
 		return movieRepository.getChartAllRelease(code, user_id);
 	}
 	@Override
-	public List<MainChartDto> getChartAllLike(int code, String user_id) {
-		// TODO Auto-generated method stub
-		// Movie movie = chartAll.get(0).toEntity();
+	public List<MainChartRespDto> getChartAllLike(int code, String user_id) {
+
 		return movieRepository.getChartAllLike(code, user_id);
 	}
 	
@@ -73,6 +62,8 @@ public class MovieServiceImpl implements MovieService{
 	}
 	@Override
 	public MovieDtlRespDto getMovieDtl(int mov_idn, int number) {
+		
+		/*
 		MovieDtl movieDtl = new MovieDtl();
 		movieDtl.setMov_idn(mov_idn);
 		movieDtl.setNumber(number);
@@ -80,6 +71,9 @@ public class MovieServiceImpl implements MovieService{
 		MovieDtlRespDto movieDtlRespDto = movieRepository.getMovieDtl(movieDtl).toEntity();
 		
 		return movieRepository.getMovieDtl(movieDtl).toEntity();
+		*/
+		return movieRepository.getMovieDtl(mov_idn, number);
+		
 	}
 	@Override
 	public MovieDtlRespDto getMovieGenre(int gen_num, String genre) {
