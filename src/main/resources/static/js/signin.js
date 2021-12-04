@@ -15,18 +15,18 @@ function clearMsgNode(msg){
 }
 
 function messageService(msgText, msgFlag){
-	const emailErrorMsg = document.querySelector('.emailErrorMsg');
+	const idErrorMsg = document.querySelector('.idErrorMsg');
 	const passwordErrorMsg = document.querySelector('.passwordErrorMsg');
 	
-	clearMsgNode(emailErrorMsg);
+	clearMsgNode(idErrorMsg);
 	clearMsgNode(passwordErrorMsg);
 	
 	let msgTextNode = document.createTextNode(msgText);
 	
 	//msgFlag == 0 이메일 오류, 1이면 password 오류
 	if(msgFlag == 0){
-		emailErrorMsg.appendChild(msgTextNode);
-		emailErrorMsg.style.display = 'block';
+		idErrorMsg.appendChild(msgTextNode);
+		idErrorMsg.style.display = 'block';
 	}else {
 		passwordErrorMsg.appendChild(msgTextNode);
 		passwordErrorMsg.style.display = 'block';
@@ -70,7 +70,7 @@ function signInSubmit(){
 			//로그인 성공
 			else if(signInData.signInFlag == 2){
 				alert('로그인 성공!');
-				location.replace('index');
+				location.replace('/chart/boxoffice/1');
 			}
 		},
 		error: function(){
