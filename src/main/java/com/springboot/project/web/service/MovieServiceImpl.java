@@ -122,5 +122,10 @@ public class MovieServiceImpl implements MovieService{
 	}
 	
 	
+	@Override
+	public List<MovieDtlRespDto> getMovieLike(int number) {
+		return movieRepository.getMovieLike(number);
+	}
+	
 
 }

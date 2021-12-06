@@ -43,6 +43,8 @@ public interface MovieService {
 	
 	public MovieDtlRespDto getMovieDtl(int mov_idn, int number);
 	// public MovieDtlRespDto getMovieGenre(int gen_num, String genre);
+	public List<MovieDtlRespDto> getMovieLike(int number);
+	
 	
 	public List<MovieDtlRespDto> getGenreAll(int number);
 

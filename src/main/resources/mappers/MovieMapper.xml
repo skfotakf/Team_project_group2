@@ -53,8 +53,8 @@
 			md.mov_director,
 			md.mov_actor,
 			md.mov_actorchar,
-			<!-- wl.mov_idn AS wl_mov_idn, -->
-			<!-- wl.number -->
+			wl.mov_idn AS wl_mov_idn,
+			wl.number,
 			ml.number AS like_number,
 			mr.number AS rating_number,
 			mr.rating AS rating_rating
@@ -64,11 +64,45 @@
 			LEFT OUTER JOIN movie_genre mg2 ON(mg2.gen_num = mm.mov_gnr2)
 			LEFT OUTER JOIN movie_genre mg3 ON(mg3.gen_num = mm.mov_gnr3)
 			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
-			<!-- LEFT OUTER JOIN watch_list wl ON(wl.mov_idn = mm.mov_idn AND wl.number = #{number}) -->
+			LEFT OUTER JOIN watch_list wl ON(wl.mov_idn = mm.mov_idn AND wl.number = #{number})
 			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.number = #{number})
 			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.number = #{number}) 
 		WHERE
 			mm.mov_idn = #{mov_idn};
+  	</select>
+  	
+  	<select id="getMovieLike" parameterType="com.springboot.project.web.dto.movie.MovieDtlRespDto" resultType="com.springboot.project.web.dto.movie.MovieDtlRespDto"> <!-- 개별 영화 list read -->
+  		SELECT
+			mm.mov_idn,
+			mm.mov_photo,
+			mm.mov_title,
+			mm.mov_rat,
+			mm.mov_release,
+			mm.mov_gnr1,
+			mg1.genre AS mg_genre1,
+			mm.mov_gnr2,
+			mg2.genre AS mg_genre2,
+			mm.mov_gnr3,
+			mg3.genre AS mg_genre3,
+			md.mov_age,
+			md.mov_runtime,
+			md.mov_story,
+			md.mov_director,
+			md.mov_actor,
+			md.mov_actorchar,
+			ml.mov_idn AS ml_mov_idn,
+			ml.number AS like_number
+
+		FROM
+			movie_like ml
+			LEFT OUTER JOIN movie_mst mm ON(mm.mov_idn = ml.mov_idn)
+			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = ml.mov_idn)
+			LEFT OUTER JOIN movie_genre mg1 ON(mg1.gen_num = mm.mov_gnr1)
+			LEFT OUTER JOIN movie_genre mg2 ON(mg2.gen_num = mm.mov_gnr2)
+			LEFT OUTER JOIN movie_genre mg3 ON(mg3.gen_num = mm.mov_gnr3)
+
+		WHERE
+			ml.number = #{number};
   	</select>
  
  	
@@ -211,23 +245,7 @@
 		#{number}
 	)		
   	</insert>
-  	
-  	<select id="watchList" resultType="com.springboot.project.web.dto.movie.MainChartDto">
-  		select
-			mov_idn,
-			number,
-			now()
-		from
-			movie_mst mm
-			LEFT OUTER JOIN watch_list wl ON(wl.mov_idn = mm.mov_idn AND wl.number = #{number})
-		WHERE
-			mm.mov_idn = #{mov_idn};
-  		
-  	</select>
 
-	
-  	
-  	
   	<delete id="minusLikeCnt" parameterType="com.springboot.project.web.dto.movie.MovieLikeDto"> 
 	delete
 	from

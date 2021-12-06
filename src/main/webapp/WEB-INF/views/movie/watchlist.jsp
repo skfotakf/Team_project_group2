@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -10,6 +11,7 @@
     <title>WatchList</title>
     <link rel="stylesheet" href="/css/index_include.css">
     <link rel="stylesheet" href="/css/watchlist.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
@@ -38,7 +40,7 @@
                     </div>
                     <div class="nav_mid">
                         <div id="title_count">
-                            1 Titles
+                            
                         </div>
                         <div id="Sort">
                             <label for="">Sort by : </label>
@@ -58,47 +60,51 @@
                         <button class="btn"><i class="fas fa-th"></i></button>
                         <button class="btn">REFINE</button>
                     </div>
-                    <div class="item_list">
-                        <div id="movie_poster">
-                            <a href=""><img src="/images/shawshank.jsp" alt=""></a>
-                        </div>
                     
-                        <div class="item_list_content">
-                            <h3>
-                                <a href="">The Shawshank Redemption</a>
-                            </h3>
-                            <p id="movie_detail">
-                                <span>1994</span>
-                                <span>2h 22m</span>
-                                <span>15</span>
-                                <span>Drama</span>
-                            </p>
-                            <div id="rating_bar">
-                                <div class="rating_star">
-                                    <i class="fas fa-star fa"></i>
-                                        <span>&nbsp;9.3</span>
-                                </div>
-                                <div class="rating_star">
-                                    <i class="far fa-star fa"></i>
-                                    &nbsp;Rate
-                                </div>
-                            </div>
-                            <div id="credits">
-                                <a href="">Frank Darabont</a>
-                                <a href="">Tim Robbins</a>,
-                                <a href="">Morgan Freeman</a>,
-                                <a href="">Bob Gunton</a>
-                            </div>
-                            <p id="plot">Two imprisoned men bond over a number of years,finding solace and<br>
-                                eventual redemption through acts of common decency.
-                            </p>
-                        </div>
-                    </div>
-                    <div id="export_list">
-                        <a href="">Export this list</a>
-                    </div>
-                    
-                </div>
+                    <c:forEach var="likelistAll" items="${likelistAll }">
+	                    <div class="item_list">
+	                        <div id="movie_poster">
+	                            <a href="/title/${likelistAll.mov_idn }"><img src="/images/${likelistAll.mov_photo }" width="100"></a>
+	                        </div>
+	                    
+	                        <div class="item_list_content">
+	                            <h3>
+	                                <a href="/title/${likelistAll.mov_idn }">${likelistAll.mov_title }</a>
+	                            </h3>
+	                            <p id="movie_detail">
+	                                <span>${likelistAll.mov_release }</span>
+	                                <span>${likelistAll.mov_runtime }</span>
+	                                <span>${likelistAll.mov_age }</span>
+		                            <span>${likelistAll.mg_genre1 }</span>
+		                            <span>${likelistAll.mg_genre2 }</span>
+	                                <c:if test="${null ne likelistAll.mg_genre3 }">
+		                                <span>${likelistAll.mg_genre3 }</span>	                                
+	                                </c:if>
+	                            </p>
+	                            <div id="rating_bar">
+	                                <div class="rating_star">
+	                                    <i class="fas fa-star fa"></i>
+	                                        <span>&nbsp;${likelistAll.mov_rat }</span>
+	                                </div>
+	                                <div class="rating_star">
+	                                    <i class="far fa-star fa"></i>
+	                                    &nbsp;Rate
+	                                </div>
+	                            </div>
+	                            <div id="credits">
+	                                <li class="di_li">감독 : </li><a href="">${likelistAll.mov_director } / </a>
+	                                <li class="di_li">배우 : </li><a href="">${likelistAll.mov_actor } (${likelistAll.mov_actorchar })</a>
+	                            </div>
+	                            <p id="plot">${likelistAll.mov_story }
+	                            </p>
+	                        </div>
+	                    </div>
+	                    <div id="export_list">
+	                        <a href="">Export this list</a>
+	                    </div>
+                	</c:forEach>
+	                    
+	            </div>
                 <!--오른쪽 메뉴-->
                 <div id="watch_list_main2">
                     <div id="slide_bar">

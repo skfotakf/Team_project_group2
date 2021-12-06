@@ -35,8 +35,8 @@ public class MovieDtl {
 	
 	
 	
-	//private String wl_mov_idn;
-	//private int number;
+	private int ml_mov_idn;
+	private int number;
 	private int gen_num;
 	private String genre;
 	

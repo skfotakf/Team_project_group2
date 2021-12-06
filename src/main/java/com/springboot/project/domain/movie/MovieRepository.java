@@ -10,9 +10,13 @@ import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
 
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 @Mapper
 public interface MovieRepository {
 
+	
 	/*----------박스오피스,탑 차트---------*/
 	public List<MainChartRespDto> getChartAll(int code, int number);
 	public List<MainChartRespDto> getChartAllRelease(int code, int number);
@@ -38,7 +42,11 @@ public interface MovieRepository {
 //		public MovieDtl getMovieGenre(MovieDtl movieDtl);
 	
 	public MovieDtlRespDto getMovieDtl(int mov_idn, int number);
+	public List<MovieDtlRespDto> getMovieLike(int number);
 	public MovieDtl getMovieGenre(MovieDtl movieDtl);
+	
+	public MovieDtlRespDto deleteMoiveDtl(int mov_idn, int number);
+	public MovieDtlRespDto addMoiveDtl(int mov_idn, int number);
 	 
 	
 

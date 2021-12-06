@@ -14,9 +14,6 @@ public class MovieDtlRespDto {
 	private String mov_photo;
 	private String mov_title;
 	private String mov_release;
-	private String mg_genre1;
-	private String mg_genre2;
-	private String mg_genre3;
 	private float mov_rat;
 	private int mov_lik_cnt;
 	private String mov_trailer;
@@ -27,8 +24,8 @@ public class MovieDtlRespDto {
 	private String mov_actor;
 	private String mov_actorchar;
 	private float mov_gross;
-	//private String wl_mov_idn;
-	//private int number;
+	private int wl_mov_idn;
+	private int number;
 	private int like_number;
 	private int rating_number;
 	private int rating_rating;
@@ -36,6 +33,9 @@ public class MovieDtlRespDto {
 	// 장르 
 	private int gen_num;
 	private String genre;
+	private String mg_genre1;
+	private String mg_genre2;
+	private String mg_genre3;
 	
 	public MovieDtl toEntity() {
 		return MovieDtl.builder()
@@ -56,8 +56,8 @@ public class MovieDtlRespDto {
 				.mov_actor(mov_actor)
 				.mov_actorchar(mov_actorchar)
 				.mov_gross(mov_gross)
-				//.wl_mov_idn(wl_mov_idn)
-				//.number(number)
+				.ml_mov_idn(wl_mov_idn)
+				.number(number)
 				.like_number(like_number)
 				.rating_number(rating_number)
 				.rating_rating(rating_rating)

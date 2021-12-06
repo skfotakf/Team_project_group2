@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.springboot.project.config.auth.PrincipalDetails;
+import com.springboot.project.domain.movie.MovieDtl;
 import com.springboot.project.web.service.MovieService;
 
 import lombok.RequiredArgsConstructor;
@@ -32,5 +33,19 @@ public class MovieController {
 		}
 		
 		return "movie/movieDtl";
+	}
+	
+	
+	@GetMapping("/user/likelist")
+	public String viewLikelist(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		int number = 0;
+		
+		if(principalDetails == null) {
+			return "auth/signin";
+		} else {
+			number = principalDetails.getUser().getNumber();
+			model.addAttribute("likelistAll", movieService.getMovieLike(number));
+			return "movie/watchlist";
+		}
 	}
 }
