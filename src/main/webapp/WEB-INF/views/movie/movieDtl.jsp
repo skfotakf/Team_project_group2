@@ -96,10 +96,10 @@
 
                 <div id="main_img">
                     <div id="poster">
-                        <img src="/images/dtl-photo/${movie_dtl.mov_photo }">
+                        <img src="/images/dtl-photo/${movie_dtl.mov_photo }" width="300" height="420.95">
                     </div>
                     <div id="preview">
-                        <iframe width="768px" height="420.95px" src="https://www.youtube.com/embed/${movie_dtl.mov_trailer }" frameborder="no" scrolling="no" title="NaverVideo" allow="autoplay; gyroscope; accelerometer; encrypted-media" allowfullscreen></iframe>
+                        <iframe width="808px" height="420.95px" src="https://www.youtube.com/embed/${movie_dtl.mov_trailer }" frameborder="no" scrolling="no" title="NaverVideo" allow="autoplay; gyroscope; accelerometer; encrypted-media" allowfullscreen></iframe>
                         
                     </div>
                 </div>
