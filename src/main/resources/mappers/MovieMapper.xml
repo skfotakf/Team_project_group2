@@ -297,7 +297,6 @@
 	<select id="movieFind" resultType="com.springboot.project.domain.movie.MovieDtl">
 	
 	select
-  			
   			mm.mov_idn,
   			mm.mov_photo,
   			mm.mov_title,
@@ -323,7 +322,9 @@
 
 			
 		where
-			mm.mov_title like '%{findValue}%' 
+			mm.mov_title = #{findValue}
+			or md.mov_actor = #{findValue}
+			
 
 			
 			
