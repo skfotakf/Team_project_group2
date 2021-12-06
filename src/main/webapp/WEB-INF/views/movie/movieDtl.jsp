@@ -293,30 +293,23 @@
                                 <h3>리뷰 등록</h3>
                             </a>
                         </div>
-                        <form action="">
+                        
 	                       <c:if test="${principal.user.username != null}">
 	                            <div id="review_ip">
-									<textarea name="review" id="" cols="30" rows="5" placeholder="감상평을 입력해주세요."></textarea>
-	                                <button>등록</button>
+	                            	<form action="movie-review" method="post">
+										<textarea name="review" id="" cols="30" rows="5" placeholder="감상평을 입력해주세요."></textarea>
+		                                <button type="submit">등록</button>
+	                                </form>
 	                            </div>
 	                       </c:if>
-                       </form>
+                       
 
                        <div id="reviews">
-                       
-                       
-                            <div class="review_list">
-                                <h5>${principal.user.username }</h5>
-                                <label for="">리뷰들</label>
-                            </div>
-                            <div class="review_list">
-                                <h5>${principal.user.username }</h5>
-                                <label for="">리뷰들</label>
-                            </div>
-                            <div class="review_list">
-                                <h5>${principal.user.username }</h5>
-                                <label for="">리뷰들</label>
-                            </div>
+                       		
+	                            <div class="review_list">
+	                                <h5>${principal.user.username }</h5>
+	                                <label for="">리뷰들</label>
+	                            </div>
                        </div>
 
                         
