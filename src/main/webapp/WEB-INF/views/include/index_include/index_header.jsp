@@ -17,7 +17,7 @@
                     <li class="icon"><i class="fas fa-list"></i> Menu</li>
                 </a>
             </ul>
-            <div id="serach_container">
+            <form id="serach_container">
                 <select name="serach_navbar" id="serach_navbar">
                     <div>
                         <option value="all">All</option>
@@ -29,10 +29,11 @@
                         <option value="Advanced Search">Advanced Search</option>
                     </div>
                 </select>
+                
                 <input type="search" placeholder="Search JMKY" id="key-search">
                 <button type="submit"><i class="fas fa-search"></i></button>
                 
-            </div>
+            </form>
             <ul class="top_nav">
                 <a href="">
                     <li>JMKYPro </li>

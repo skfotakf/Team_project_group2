@@ -19,7 +19,7 @@ public class LikelistController {
 		} else {
 			number = principalDetails.getUser().getNumber();
 			
-			model.addAttribute("likelistAll", movieService.getLikelistAll(number));
+			// model.addAttribute("likelistAll", movieService.getLikelistAll(number));
 			return "user/likelist";
 		}
 		
