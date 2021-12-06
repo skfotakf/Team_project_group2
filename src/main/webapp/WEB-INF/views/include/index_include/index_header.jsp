@@ -7,6 +7,7 @@
 	<sec:authentication property="principal" var="principal"/> 
 </sec:authorize>
 <link rel="stylesheet" href="/css/index_include.css" />
+	<script type="text/javascript" src="/js/index.js"></script>
 <header id="header">
         <div class="JMKYheader">
 
@@ -17,8 +18,8 @@
                     <li class="icon"><i class="fas fa-list"></i> Menu</li>
                 </a>
             </ul>
-            <form id="serach_container">
-                <select name="serach_navbar" id="serach_navbar">
+            <div id="search_container1">
+                <select name="search_navbar" id="search_navbar">
                     <div>
                         <option value="all">All</option>
                         <option value="Titles">Titles</option>
@@ -29,11 +30,11 @@
                         <option value="Advanced Search">Advanced Search</option>
                     </div>
                 </select>
-                
-                <input type="search" placeholder="Search JMKY" id="key-search">
-                <button type="submit"><i class="fas fa-search"></i></button>
-                
-            </form>
+                <form id="search_container" method="get" action="/find">
+                <input type="search" placeholder="Search JMKY" id="key-search" name="findValue">
+                <button type="submit" class="find_submit"><i class="fas fa-search"></i></button>
+                </form >
+            </div>
             <ul class="top_nav">
                 <a href="">
                     <li>JMKYPro </li>

@@ -293,5 +293,39 @@
   		
   	</select>
  
+	<!-- 검색 -->
+	<select id="movieFind" resultType="com.springboot.project.domain.movie.MovieDtl">
 	
+	select
+  			
+  			mm.mov_idn,
+  			mm.mov_photo,
+  			mm.mov_title,
+  			mm.mov_release,
+  			mm.mov_rat,
+  			mm.mov_lik_cnt,
+  			md.mov_trailer,
+  			md.mov_age,
+  			md.mov_runtime,
+  			md.mov_story,
+  			md.mov_director,
+  			md.mov_actor,
+  			md.mov_actorchar,
+  			md.mov_gross,
+  			mr.mov_idn as rating_mov_idn,
+  			mr.number as rating_number,
+  			mr.rating as rating_rating
+  			
+  		from
+  			movie_mst mm
+			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn)
+
+			
+		where
+			mm.mov_title like '%{findValue}%' 
+
+			
+			
+	</select>
 </mapper>

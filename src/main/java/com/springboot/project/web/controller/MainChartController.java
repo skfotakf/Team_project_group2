@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -207,9 +208,24 @@ public class MainChartController {
 			number = principalDetails.getUser().getNumber();
 			
 			model.addAttribute("genreAll", movieService.getGenreAll(number));
-			
+			System.out.println(movieService.getGenreAll(number));
 		}
 		return "search/gnr";
 	}
+	
+	
+	@GetMapping("/find")
+	public String viewMovieFind(Model model, String findValue, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		MovieDtlRespDto movieDtlRespDto = new MovieDtlRespDto();
+		
+		
+		model.addAttribute("findMovie", movieService.movieFind(findValue));
+		System.out.println(movieService.movieFind(findValue));
+		
+		return "find/find";
+	}
+	
+	
+	
 	
 }

@@ -121,6 +121,13 @@ public class MovieServiceImpl implements MovieService{
 		return movieRepository.getGenreAll(number);
 	}
 	
+	/*--------------검색--------------*/
 	
+
+	@Override
+	public List<MovieDtlRespDto> movieFind(String findValue) {
+		
+		return movieRepository.movieFind(findValue);
+	}
 
 }

@@ -40,6 +40,8 @@ public interface MovieRepository {
 	public MovieDtlRespDto getMovieDtl(int mov_idn, int number);
 	public MovieDtl getMovieGenre(MovieDtl movieDtl);
 	 
+	/*-----------검색-------------*/
+	public  List<MovieDtlRespDto> movieFind(String findValue);
 	
 
 }

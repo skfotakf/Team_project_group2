@@ -45,5 +45,7 @@ public interface MovieService {
 	// public MovieDtlRespDto getMovieGenre(int gen_num, String genre);
 	
 	public List<MovieDtlRespDto> getGenreAll(int number);
+	
+	public List<MovieDtlRespDto> movieFind(String findValue);
 
 }
