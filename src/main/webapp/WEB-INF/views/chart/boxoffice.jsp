@@ -69,28 +69,28 @@
                   </tr>
                 </thead>
                 <tbody class="chart_main">
-                  <c:forEach var="chartAll" items="${chartAll }">
-                  <input class="mov_idn1" type="hidden" value=${chartAll.mov_idn }>
+                  <c:forEach var="chartAllTop" items="${chartAllTop }">
+                  <input class="mov_idn1" type="hidden" value=${chartAllTop.mov_idn }>
                   <tr>
                   
                     <td class="chart_poster">
                       <a
-                        href="/title/${chartAll.mov_idn }"
-                        ><img src="/images/${chartAll.mov_photo }"
+                        href="/title/${chartAllTop.mov_idn }"
+                        ><img src="/images/${chartAllTop.mov_photo }"
                       		style="width:45px; height:67px;"
                       ></a>
                     </td>
                     <td class="chart_title">
                       <a
-                        href="/title/${chartAll.mov_idn }"
-                        >${chartAll.mov_title }</a
+                        href="/title/${chartAllTop.mov_idn }"
+                        >${chartAllTop.mov_title }</a
                       >
                     </td>
                     <td class="chart_rating">
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: rgb(245, 197, 24)"></i
-                          >&nbsp;<span class="imdb_rating_number">${chartAll.mov_rat }</span>
+                          >&nbsp;<span class="imdb_rating_number">${chartAllTop.mov_rat }</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -170,19 +170,19 @@
                           </div>
 
                          <c:choose>
-						  	<c:when test="${chartAll.rating_number eq 0 }">
+						  	<c:when test="${chartAllTop.rating_number eq 0 }">
 						  		<i
                             class="fas fa-star seen_star"
                             style="color: darkgray"
                           ></i>
 						  	</c:when>
-                          	<c:when test="${chartAll.rating_rating eq 0 }">
+                          	<c:when test="${chartAllTop.rating_rating eq 0 }">
                           		<i
                             class="fas fa-star seen_star"
                             style="color: rgba(109,174,272,0.5)"
                           ></i>
                           	</c:when>
-                          	<c:when test="${chartAll.rating_rating > 0 }">
+                          	<c:when test="${chartAllTop.rating_rating > 0 }">
                           		<i
                             class="fas fa-star seen_star"
                             style="color: #5285FF"
@@ -192,30 +192,30 @@
                          
                           </c:choose>
                            <c:choose>
-                          	<c:when test="${chartAll.rating_number eq 0 }"><span class="seen" style="font-size: 13px"></span> </c:when>
-                          	<c:when test="${chartAll.rating_rating eq 0 }">
+                          	<c:when test="${chartAllTop.rating_number eq 0 }"><span class="seen" style="font-size: 13px"></span> </c:when>
+                          	<c:when test="${chartAllTop.rating_rating eq 0 }">
                           		<span class="seen" style="font-size: 13px">seen</span>
                           	</c:when>
-                          	<c:when test="${chartAll.rating_rating > 0 }">
-                          		<span class="seen" style="font-size: 16px;width:30px;top:1.5px;textAlign:center;">${chartAll.rating_rating }</span>
+                          	<c:when test="${chartAllTop.rating_rating > 0 }">
+                          		<span class="seen" style="font-size: 16px;width:30px;top:1.5px;textAlign:center;">${chartAllTop.rating_rating }</span>
                           	</c:when>
                           </c:choose>
                         </div>
                       </div>
                     </td>
-                    <td class="chart_date">${chartAll.mov_release }</td>
-                    <td class="chart_count"><span class="movie_count">${chartAll.mov_viewCnt }</span></td>
+                    <td class="chart_date">${chartAllTop.mov_release }</td>
+                    <td class="chart_count"><span class="movie_count">${chartAllTop.mov_viewCnt }</span></td>
                     <td class="chart_like">
                       <div class="like_widget">
                         <div class="imdb_like">
                           <i
                             class="fas fa-heart like_heart"
-                            style="color:  ${ chartAll.like_number ne 0 ? '#E04386' : 'darkgray'}"
+                            style="color:  ${ chartAllTop.like_number ne 0 ? '#E04386' : 'darkgray'}"
                           ></i>
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span class="like_count">${chartAll.mov_lik_cnt }</span> likes
+                            <span class="like_count">${chartAllTop.mov_lik_cnt }</span> likes
                           </div>
                         </div>
                       </div>
@@ -234,24 +234,11 @@
             </div>
             <div class="sidebar">
               <div class="sidebar_top"></div>
-              <div class="sidebar_widget">
-                <div class="sidebar_title">
-                  <h5 class="title_yhs">You Have Seen</h5>
-                </div>
-                <div class="sidebar_seen">
-                  <span class="sidebar_seen_movies">0&nbsp;</span>
-                  <span>/250</span>
-                  <span>( 0% )</span><br />
-                  <div>
-                    <input class="seen_title" type="checkbox" />
-                    <label for="seen_title">Hide titles I've seen</label>
-                  </div>
-                </div>
-              </div>
+              
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a href="/chart/boxoffice/1">Box Office</a><br />
+                <a href="/chart/boxoffice">Box Office</a><br />
                 <a>Most Popular Movies</a><br />
                 <a href="/chart/top/1">Top 10 Movies</a><br />
                 <a>Top Rated English Movies</a><br />
@@ -263,27 +250,26 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a href="/search/genre">Action </a><br />
-                <a>Adventure</a><br />
-                <a>Animation</a><br />
-                <a>Biography</a><br />
-                <a>Comedy</a><br />
-                <a>Crime</a><br />
-                <a>Drama</a><br />
-                <a>Family</a>
-                <a>Fantasy </a><br />
-                <a>Film-Noir</a><br />
-                <a>History</a><br />
-                <a>Horror</a><br />
-                <a>Music</a><br />
-                <a>Musical</a><br />
-                <a>Mystery</a>
-                <a>Romance</a><br />
-                <a>Sci-Fi</a><br />
-                <a>Sport</a><br />
-                <a>Thriller</a><br />
-                <a>War</a><br />
-                <a>Western</a>
+                <a href="/search/genre/1">Action </a><br />
+                <a href="/search/genre/2">Adventure</a><br />
+                <a href="/search/genre/3">Animation</a><br />
+                <a href="/search/genre/4">Biography</a><br />
+                <a href="/search/genre/5">Comedy</a><br />
+                <a href="/search/genre/6">Crime</a><br />
+                <a href="/search/genre/7">Drama</a><br />
+                <a href="/search/genre/8">Family</a>
+                <a href="/search/genre/9">Fantasy </a><br />
+                <a href="/search/genre/10">Film-Noir</a><br />
+                <a href="/search/genre/11">History</a><br />
+                <a href="/search/genre/12">Horror</a><br />
+                <a href="/search/genre/13">Musical</a><br />
+                <a href="/search/genre/14">Mystery</a>
+                <a href="/search/genre/15">Romance</a><br />
+                <a href="/search/genre/16">Sci-Fi</a><br />
+                <a href="/search/genre/17">Sport</a><br />
+                <a href="/search/genre/18">Thriller</a><br />
+                <a href="/search/genre/19">War</a><br />
+                <a href="/search/genre/20">Western</a>
               </div>
             </div>
           </div>

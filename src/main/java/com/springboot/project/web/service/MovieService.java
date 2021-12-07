@@ -13,6 +13,8 @@ import com.springboot.project.web.dto.movie.MovieRatingDto;
 
 
 public interface MovieService {
+	// 모든 영화 리스트 불러오기
+	public List<MainChartRespDto> getChartAllTop(int number);
 	
 	// 모든 영화 리스트 불러오기
 	public List<MainChartRespDto> getChartAll(int code, int number);
@@ -44,7 +46,9 @@ public interface MovieService {
 	public MovieDtlRespDto getMovieDtl(int mov_idn, int number);
 	// public MovieDtlRespDto getMovieGenre(int gen_num, String genre);
 	
+	
 	public List<MovieDtlRespDto> getGenreAll(int number);
+	public List<MovieDtlRespDto> getGenre(int code, int number);
 	
 	public List<MovieDtlRespDto> movieFind(String findValue);
 	public List<MovieDtlRespDto> movieActorFind(String findValue);

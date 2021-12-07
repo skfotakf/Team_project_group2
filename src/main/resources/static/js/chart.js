@@ -40,7 +40,7 @@ desc.innerHTML = year + "/" + month + "/" + date;
 function likePlusService(){
 	$.ajax({
 		type: "post",
-		url: "chart-like/plus",
+		url: "/chart-like/plus",
 		data: JSON.stringify(movieLikeData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
@@ -64,7 +64,7 @@ function likePlusService(){
 function likeMinusService(){
 	$.ajax({
 		type: "post",
-		url: "chart-like/minus",
+		url: "/chart-like/minus",
 		data: JSON.stringify(movieLikeData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
@@ -85,7 +85,7 @@ function likeMinusService(){
 function ratingInsertService(){
 	$.ajax({
 		type: "post",
-		url: "chart-rating/insert",
+		url: "/chart-rating/insert",
 		data: JSON.stringify(movieRatingData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
@@ -108,7 +108,7 @@ function ratingInsertService(){
 function ratingUpdateService(){
 	$.ajax({
 		type: "post",
-		url: "chart-rating/update",
+		url: "/chart-rating/update",
 		data: JSON.stringify(movieRatingData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
@@ -129,7 +129,7 @@ function ratingUpdateService(){
 function ratingDeleteService(){
 	$.ajax({
 		type: "post",
-		url: "chart-rating/delete",
+		url: "/chart-rating/delete",
 		data: JSON.stringify(movieRatingData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",

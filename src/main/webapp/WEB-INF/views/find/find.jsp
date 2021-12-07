@@ -24,10 +24,7 @@
                     <c:if test="${findValue ne null }">
                     	<h1>Results for "${findValue }"</h1>
                     </c:if>
-                    <!-- <c:set var="findMovie" value="${findMovie }" />
-                    	<c:if test="${findMovie[0].mov_title ne null}">
-                    		<h1>Results for "${findMovie[0].mov_title }"</h1>
-                    	</c:if> -->
+                  
                     	
                         
                         <div class="findSection">

@@ -265,7 +265,7 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a href="/chart/boxoffice/1">Box Office</a><br />
+                <a href="/chart/boxoffice">Box Office</a><br />
                 <a>Most Popular Movies</a><br />
                 <a href="/chart/top/1">Top 10 Movies</a><br />
                 <a>Top Rated English Movies</a><br />
@@ -277,7 +277,7 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a href="/search/genre">Action </a><br />
+                <a href="/search/genre/1">Action </a><br />
                 <a>Adventure</a><br />
                 <a>Animation</a><br />
                 <a>Biography</a><br />

@@ -19,7 +19,11 @@ public class MovieServiceImpl implements MovieService{
 	
 	private final MovieRepository movieRepository;
 
-	
+	@Override
+	public List<MainChartRespDto> getChartAllTop(int number) {
+		// TODO Auto-generated method stub
+		return movieRepository.getChartAllTop(number);
+	}
 	
 	@Override // 메인 chart
 	public List<MainChartRespDto> getChartAll(int code, int number) {
@@ -121,6 +125,11 @@ public class MovieServiceImpl implements MovieService{
 		return movieRepository.getGenreAll(number);
 	}
 	
+	@Override
+	public List<MovieDtlRespDto> getGenre(int code, int number) {
+		// TODO Auto-generated method stub
+		return  movieRepository.getGenre(code, number);
+	}
 	/*--------------검색--------------*/
 	
 
@@ -133,5 +142,8 @@ public class MovieServiceImpl implements MovieService{
 	public List<MovieDtlRespDto> movieActorFind(String findValue) {
 		return movieRepository.movieActorFind(findValue);
 	}
+
+	
+	
 
 }

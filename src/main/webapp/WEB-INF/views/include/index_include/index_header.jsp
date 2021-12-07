@@ -11,7 +11,7 @@
 <header id="header">
         <div class="JMKYheader">
 
-            <h1><a href="/chart/boxoffice/1" class="logo">JMKY</a></h1>
+            <h1><a href="/chart/boxoffice" class="logo">JMKY</a></h1>
 
             <ul id="menu">
                 <a href="">
