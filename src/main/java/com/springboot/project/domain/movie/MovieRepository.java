@@ -42,6 +42,7 @@ public interface MovieRepository {
 	 
 	/*-----------검색-------------*/
 	public  List<MovieDtlRespDto> movieFind(String findValue);
+	public  List<MovieDtlRespDto> movieActorFind(String findValue);
 	
 
 }

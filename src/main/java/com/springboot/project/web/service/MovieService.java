@@ -47,5 +47,6 @@ public interface MovieService {
 	public List<MovieDtlRespDto> getGenreAll(int number);
 	
 	public List<MovieDtlRespDto> movieFind(String findValue);
+	public List<MovieDtlRespDto> movieActorFind(String findValue);
 
 }

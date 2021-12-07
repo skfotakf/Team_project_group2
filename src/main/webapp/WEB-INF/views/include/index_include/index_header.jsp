@@ -19,17 +19,7 @@
                 </a>
             </ul>
             <div id="search_container1">
-                <select name="search_navbar" id="search_navbar">
-                    <div>
-                        <option value="all">All</option>
-                        <option value="Titles">Titles</option>
-                        <option value="TV Episodes">TV Episodes</option>
-                        <option value="Celebs">Celebs</option>
-                        <option value="Companies">Companies</option>
-                        <option value="Keywords">Keywords</option>
-                        <option value="Advanced Search">Advanced Search</option>
-                    </div>
-                </select>
+                
                 <form id="search_container" method="get" action="/find">
                 <input type="search" placeholder="Search JMKY" id="key-search" name="findValue">
                 <button type="submit" class="find_submit"><i class="fas fa-search"></i></button>

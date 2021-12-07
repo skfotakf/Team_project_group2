@@ -57,6 +57,7 @@
                   <span class="sortbyRanking">Sort by : JMKY Ranking</span>
                   <span class="sortbyRelease">Sort by : Release Date</span>
                   <span class="sortbyLike">Sort by : Number of Likes</span>
+                  
                   <table class="chart">
                 <thead class="chart_header">
                   <tr>

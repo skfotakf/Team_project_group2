@@ -129,5 +129,9 @@ public class MovieServiceImpl implements MovieService{
 		
 		return movieRepository.movieFind(findValue);
 	}
+	@Override
+	public List<MovieDtlRespDto> movieActorFind(String findValue) {
+		return movieRepository.movieActorFind(findValue);
+	}
 
 }

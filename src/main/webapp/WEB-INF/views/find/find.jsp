@@ -19,89 +19,78 @@
             <div class="main">
                 <div class="main_component">
                     <div id="sub_list">
-                    	<c:set var="findMovie" value="${findMovie }" />
-                    	<c:if test="${findMovie[0].mov_title eq 'Eternals' }">
+                    
+                    <c:set var="findValue" value="${findValue }"> </c:set>
+                    <c:if test="${findValue ne null }">
+                    	<h1>Results for "${findValue }"</h1>
+                    </c:if>
+                    <!-- <c:set var="findMovie" value="${findMovie }" />
+                    	<c:if test="${findMovie[0].mov_title ne null}">
                     		<h1>Results for "${findMovie[0].mov_title }"</h1>
-                    	</c:if>
+                    	</c:if> -->
+                    	
                         
                         <div class="findSection">
                             <h3 class="findSectionHeader">Titles</h3>
                             <table class="findList">
-                                <tbody>
+                            
+                            <c:forEach var="findMovie" items="${findMovie }">
+                            
+                            	<c:if test="${findMovie.mov_title ne null}">
+                            		<tbody>
                                     <tr class="findResult">
                                         <td class="primary_photo">
-                                            <a href="https://www.imdb.com/title/tt9032400/?ref_=fn_al_tt_1">
-                                                <img src="/images/find_eternals.jpg" alt="">
+                                            <a href="http://localhost:8000/title/${findMovie.mov_idn }">
+                                                <img src="/images/${findMovie.mov_photo }" style="width:32px; height: 44px;" alt="">
                                             </a>
                                         </td>
                                         <td class="result_text">
-                                            <a href="https://www.imdb.com/title/tt9032400/?ref_=fn_al_tt_1">이터널스</a>
-                                            (2021)
+                                            <a href="http://localhost:8000/title/${findMovie.mov_idn }">${findMovie.mov_title }</a>
+                                            ${findMovie.mov_release }
                                             <br>
                                             
                                         </td>
                                     </tr>
-                                    <tr class="findResult">
-                                        <td class="primary_photo">
-                                            <a href="https://www.imdb.com/title/tt4118878/?ref_=fn_al_tt_2">
-                                                <img src="/images/find_eternals1.jpg" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="result_text">
-                                            <a href="https://www.imdb.com/title/tt4118878/?ref_=fn_al_tt_2">이터널스</a>
-                                            (2014) (TV Mini Series) 
-                                            <br>
-                                            
-                                        </td>
-                                    </tr>
+                                   
                                 </tbody>
+                            	
+                            	</c:if>
+                            	
+                            	
+                            </c:forEach>
                             </table>
+                            
                         </div>
                         <div class="findSection">
                             <h3 class="findSectionHeader">Names</h3>
                             <table class="findList">
-                                <tbody>
+                                 <c:forEach var="findActorMovie" items="${findActorMovie }">
+                            
+                            	<c:if test="${findActorMovie.mov_actor ne null}">
+                            		<tbody>
                                     <tr class="findResult">
                                         <td class="primary_photo">
-                                            <a href="https://www.imdb.com/name/nm13093902/?ref_=fn_al_nm_1">
-                                                <img src="/images/makeup.png" alt="">
+                                            <a href="http://localhost:8000/title/${findActorMovie.mov_idn }">
+                                                <img src="/images/${findActorMovie.mov_photo }" style="width:32px; height: 44px;" alt="">
                                             </a>
                                         </td>
                                         <td class="result_text">
-                                            <a href="https://www.imdb.com/name/nm13093902/?ref_=fn_al_nm_1">Eternals</a>
-                                            <small>
-                                                (Make-Up Department, "
-                                                <a href="https://www.imdb.com/title/tt9032400/?ref_=fn_al_tt_1">이터널스</a>
-                                                " (2021))
-                                            </small>
+                                            <a href="http://localhost:8000/title/${findActorMovie.mov_idn }">${findActorMovie.mov_title }</a>
+                                            ${findActorMovie.mov_release }
+                                            <br>
                                             
                                         </td>
                                     </tr>
-                                    <tr class="findResult">
-                                        <td class="primary_photo">
-                                            <a href="https://www.imdb.com/name/nm0001613/?ref_=fn_al_nm_2">
-                                                <img src="/images/find_eternals1.jpg" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="result_text">
-                                            <a href="https://www.imdb.com/name/nm0001613/?ref_=fn_al_nm_2">Bernadette Peters</a>
-                                            (2014) (TV Mini Series) 
-                                            <small>
-                                                (Actress, "
-                                                <a href="https://www.imdb.com/title/tt0079367/?ref_=fn_al_nm_2a">The Jerk</a>
-                                                " (1979))
-                                            </small>
-                                        </td>
-                                    </tr>
+                                   
                                 </tbody>
+                            	
+                            	</c:if>
+                            	
+                            	
+                            </c:forEach>
                             </table>
                         </div>
-                        <div class="findSection">
-                            <h3 class="findSectionHeader">No Results</h3>
-                            <table class="findList">
-                                There are no results
-                            </table>
-                        </div>
+                        
                     </div>
                     
                 </div>

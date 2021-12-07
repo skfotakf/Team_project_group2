@@ -45,11 +45,8 @@ public class MainChartController {
 			model.addAttribute("chartAll", movieService.getChartAll(code, number));
 			
 		}
-		model.addAttribute("chartAll", movieService.getChartAll(code, number));
-		if(code == 1) {
-			return "chart/boxoffice";
-		}
-		return "movie/list";
+		
+		return "chart/boxoffice";
 	}
 	
 	@GetMapping("/chart/top/{code}")
@@ -218,8 +215,9 @@ public class MainChartController {
 	public String viewMovieFind(Model model, String findValue, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		MovieDtlRespDto movieDtlRespDto = new MovieDtlRespDto();
 		
-		
+		model.addAttribute("findValue", findValue);		
 		model.addAttribute("findMovie", movieService.movieFind(findValue));
+		model.addAttribute("findActorMovie", movieService.movieActorFind(findValue));
 		System.out.println(movieService.movieFind(findValue));
 		
 		return "find/find";
