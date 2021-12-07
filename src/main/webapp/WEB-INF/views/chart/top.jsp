@@ -71,27 +71,27 @@
                   </tr>
                 </thead>
                 <tbody class="chart_main">
-                  <c:forEach var="chartAlls" items="${chartAlls }">
-                  <input class="mov_idn1" type="hidden" value=${chartAlls.mov_idn }>
+                  <c:forEach var="chartAllTop" items="${chartAllTop }">
+                  <input class="mov_idn1" type="hidden" value=${chartAllTop.mov_idn }>
                   <tr>
                   
                     <td class="chart_poster">
                       <a
-                        href="/title/${chartAlls.mov_idn }"
-                        ><img src="/images/${chartAlls.mov_photo }"
+                        href="/title/${chartAllTop.mov_idn }"
+                        ><img src="/images/${chartAllTop.mov_photo }"
                       style="width:45px; height:67px;"></a>
                     </td>
                     <td class="chart_title ">
                       <a
-                        href="/title/${chartAlls.mov_idn }"
-                        >${chartAlls.mov_title }</a
+                        href="/title/${chartAllTop.mov_idn }"
+                        >${chartAllTop.mov_title }</a
                       >
                     </td>
                     <td class="chart_rating">
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: rgb(245, 197, 24)"></i
-                          >&nbsp;<span class="imdb_rating_number">${chartAlls.mov_rat }</span>
+                          >&nbsp;<span class="imdb_rating_number">${chartAllTop.mov_rat }</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -180,19 +180,19 @@
                             </ul>
                           </div>
 						  <c:choose>
-						  	<c:when test="${chartAlls.rating_number eq 0 }">
+						  	<c:when test="${chartAllTop.rating_number eq 0 }">
 						  		<i
                             class="fas fa-star seen_star"
                             style="color: darkgray"
                           ></i>
 						  	</c:when>
-                          	<c:when test="${chartAlls.rating_rating eq 0 }">
+                          	<c:when test="${chartAllTop.rating_rating eq 0 }">
                           		<i
                             class="fas fa-star seen_star"
                             style="color: rgba(109,174,272,0.5)"
                           ></i>
                           	</c:when>
-                          	<c:when test="${chartAlls.rating_rating > 0 }">
+                          	<c:when test="${chartAllTop.rating_rating > 0 }">
                           		<i
                             class="fas fa-star seen_star"
                             style="color: #5285FF"
@@ -203,31 +203,31 @@
                           </c:choose>
                           
                           <c:choose>
-                          	<c:when test="${chartAlls.rating_number eq 0 }"><span class="seen" style="font-size: 13px"></span> </c:when>
-                          	<c:when test="${chartAlls.rating_rating eq 0 }">
+                          	<c:when test="${chartAllTop.rating_number eq 0 }"><span class="seen" style="font-size: 13px"></span> </c:when>
+                          	<c:when test="${chartAllTop.rating_rating eq 0 }">
                           		<span class="seen" style="font-size: 13px">seen</span>
                           	</c:when>
-                          	<c:when test="${chartAlls.rating_rating > 0 }">
-                          		<span class="seen" style="font-size: 16px;width:30px;top:1.5px;textAlign:center;">${chartAlls.rating_rating }</span>
+                          	<c:when test="${chartAllTop.rating_rating > 0 }">
+                          		<span class="seen" style="font-size: 16px;width:30px;top:1.5px;textAlign:center;">${chartAllTop.rating_rating }</span>
                           	</c:when>
                           </c:choose>
                           
                         </div>
                       </div>
                     </td>
-                    <td class="chart_date">${chartAlls.mov_release }</td>
-                    <td class="chart_count"><span class="movie_count">${chartAlls.mov_viewCnt }</span></td>
+                    <td class="chart_date">${chartAllTop.mov_release }</td>
+                    <td class="chart_count"><span class="movie_count">${chartAllTop.mov_viewCnt }</span></td>
                     <td class="chart_like">
                       <div class="like_widget">
                         <div class="imdb_like">
                           <i
                             class="fas fa-heart like_heart"
-                            style="color: ${ chartAlls.like_number ne 0 ? '#E04386' : 'darkgray'}"
+                            style="color: ${ chartAllTop.like_number ne 0 ? '#E04386' : 'darkgray'}"
                           ></i>
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span class="like_count">${chartAlls.mov_lik_cnt }</span> likes
+                            <span class="like_count">${chartAllTop.mov_lik_cnt }</span> likes
                           </div>
                         </div>
                       </div>
@@ -252,8 +252,7 @@
 					
 					<a href="/chart/top/${noticeBean.totalPage eq noticeBean.pageNumber ? noticeBean.totalPage : noticeBean.pageNumber + 1 }"><li><i class="fas fa-arrow-circle-right"></i></li></a>
 				</ul>
-            </div>
-            
+            </div>            
               
                 </div>
               </div>

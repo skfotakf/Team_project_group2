@@ -64,7 +64,7 @@ function likePlusService(){
 function likeMinusService(){
 	$.ajax({
 		type: "post",
-		url: "chart-like/minus",
+		url: "/chart-like/minus",
 		data: JSON.stringify(movieLikeData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",

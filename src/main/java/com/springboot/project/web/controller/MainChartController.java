@@ -59,12 +59,12 @@ public class MainChartController {
 			model.addAttribute("nameSortby", 1);
 			model.addAttribute("ascDesc", 0);
 			if(principalDetails == null) {
-				model.addAttribute("chartAllTop", movieService.getChartAll(code, number));
+				model.addAttribute("chartAllTop", movieService.getChartAllTop(code, number));
 			} else {
 				
 				number = principalDetails.getUser().getNumber();
 				System.out.println(number);
-				model.addAttribute("chartAllTop", movieService.getChartAll(code, number));
+				model.addAttribute("chartAllTop", movieService.getChartAllTop(code, number));
 				
 			}
 			return "chart/top";
@@ -127,7 +127,7 @@ public class MainChartController {
 	}
 	*/
 	@ResponseBody
-	@PostMapping("/chart/top/chart-like/plus")
+	@PostMapping("/chart-like/plus")
 	public Object plusLikeCnt(@RequestBody MovieLikeDto movieLikeDto,  @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		System.out.println(movieLikeDto);
 		if(principalDetails == null) {
@@ -144,7 +144,7 @@ public class MainChartController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/chart/top/chart-like/minus")
+	@PostMapping("/chart-like/minus")
 	public Object minusLikeCnt(@RequestBody MovieLikeDto movieLikeDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		movieLikeDto.setNumber(principalDetails.getUser().getNumber());
@@ -156,7 +156,7 @@ public class MainChartController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/chart/top/chart-rating/insert")
+	@PostMapping("/chart-rating/insert")
 	public Object insertRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		if(principalDetails == null) {
@@ -173,7 +173,7 @@ public class MainChartController {
 	}
 
 	@ResponseBody
-	@PostMapping("/chart/top/chart-rating/update")
+	@PostMapping("/chart-rating/update")
 	public Object updateRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		movieRatingDto.setNumber(principalDetails.getUser().getNumber());
@@ -185,7 +185,7 @@ public class MainChartController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/chart/top/chart-rating/delete")
+	@PostMapping("/chart-rating/delete")
 	public Object deleteRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		movieRatingDto.setNumber(principalDetails.getUser().getNumber());

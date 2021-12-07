@@ -51,8 +51,6 @@
   			mr.mov_idn as rating_mov_idn,
   			mr.number as rating_number,
   			mr.rating as rating_rating
-  			
-  			
   		from
   			movie_mst mm
 			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.number = #{number})
