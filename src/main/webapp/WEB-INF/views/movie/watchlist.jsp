@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -40,7 +42,7 @@
                     </div>
                     <div class="nav_mid">
                         <div id="title_count">
-                            
+                            ${fn:length(likelistAll) } Titles 
                         </div>
                         <div id="Sort">
                             <label for="">Sort by : </label>
@@ -76,7 +78,9 @@
 	                                <span>${likelistAll.mov_runtime }</span>
 	                                <span>${likelistAll.mov_age }</span>
 		                            <span>${likelistAll.mg_genre1 }</span>
-		                            <span>${likelistAll.mg_genre2 }</span>
+	                                <c:if test="${null ne likelistAll.mg_genre2 }">
+		                                <span>${likelistAll.mg_genre2 }</span>                                
+	                                </c:if>
 	                                <c:if test="${null ne likelistAll.mg_genre3 }">
 		                                <span>${likelistAll.mg_genre3 }</span>	                                
 	                                </c:if>
@@ -92,8 +96,8 @@
 	                                </div>
 	                            </div>
 	                            <div id="credits">
-	                                <li class="di_li">감독 : </li><a href="">${likelistAll.mov_director } / </a>
-	                                <li class="di_li">배우 : </li><a href="">${likelistAll.mov_actor } (${likelistAll.mov_actorchar })</a>
+	                                <a href="">${likelistAll.mov_director } / </a>
+	                                <a href="">${likelistAll.mov_actor } (${likelistAll.mov_actorchar })</a>
 	                            </div>
 	                            <p id="plot">${likelistAll.mov_story }
 	                            </p>

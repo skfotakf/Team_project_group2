@@ -6,6 +6,36 @@
 <mapper namespace="com.springboot.project.domain.movie.MovieRepository">	
   	<select id="getChartAll" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
   		select
+			mm.mov_idn,
+			mm.mov_photo,
+			mm.mov_title,
+			mm.mov_release,
+			mm.mov_viewCnt,
+			mm.mov_rat,
+			mm.mov_rat_cnt,
+			mm.mov_lik,
+			mm.mov_lik_cnt,
+			mm.number,
+			ml.mov_idn as like_mov_idn,
+			ml.number as like_number,
+			mr.mov_idn as rating_mov_idn,
+			mr.number as rating_number,
+			mr.rating as rating_rating
+		from
+			movie_mst mm
+			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.number = 1)
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.number = 1)
+		WHERE
+			mm.mov_rat 
+		ORDER BY 
+			mm.mov_rat desc
+		LIMIT
+			10
+  		
+  	</select>
+  	
+  	<select id="getChartAllTop" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
+  		select
   			mm.mov_idn,
   			mm.mov_photo,
   			mm.mov_title,

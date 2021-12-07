@@ -51,7 +51,7 @@
                   </div>
                 </div>
               </span>
-              <h1 class="title_topBo">Top Box Office</h1>
+              <h1 class="title_topBo">Top 10 Box Office</h1>
 
               <hr />
               <span class="desc"></span>
@@ -253,7 +253,7 @@
 
                 <a href="/chart/boxoffice/1">Box Office</a><br />
                 <a>Most Popular Movies</a><br />
-                <a href="/chart/top/1">Top 10 Movies</a><br />
+                <a href="/chart/top/1">JMKY 20 Movies</a><br />
                 <a>Top Rated English Movies</a><br />
                 <a>Most Popular TV Shows</a><br />
                 <a>Top 250 TV Shows</a><br />

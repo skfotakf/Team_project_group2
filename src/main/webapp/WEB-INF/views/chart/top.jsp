@@ -28,8 +28,8 @@
           <div class="content_2_wide">
             <div class="main">
               JMKY Charts
-              <h1>JMKY Top 10 Movies</h1>
-              JMKY Top 10 as rated by regular JMKY voters.
+              <h1>JMKY 20 Movies</h1>
+              JMKY 20 as rated by regular JMKY voters.
               <hr />
               <div class="lister">
                 <div class="nav">
@@ -71,27 +71,27 @@
                   </tr>
                 </thead>
                 <tbody class="chart_main">
-                  <c:forEach var="chartAll" items="${chartAll }">
-                  <input class="mov_idn1" type="hidden" value=${chartAll.mov_idn }>
+                  <c:forEach var="chartAlls" items="${chartAlls }">
+                  <input class="mov_idn1" type="hidden" value=${chartAlls.mov_idn }>
                   <tr>
                   
                     <td class="chart_poster">
                       <a
-                        href="/title/${chartAll.mov_idn }"
-                        ><img src="/images/${chartAll.mov_photo }"
+                        href="/title/${chartAlls.mov_idn }"
+                        ><img src="/images/${chartAlls.mov_photo }"
                       style="width:45px; height:67px;"></a>
                     </td>
                     <td class="chart_title ">
                       <a
-                        href="/title/${chartAll.mov_idn }"
-                        >${chartAll.mov_title }</a
+                        href="/title/${chartAlls.mov_idn }"
+                        >${chartAlls.mov_title }</a
                       >
                     </td>
                     <td class="chart_rating">
                       <div class="seen_widget">
                         <div class="imdb_rating">
                           <i class="fas fa-star" style="color: rgb(245, 197, 24)"></i
-                          >&nbsp;<span class="imdb_rating_number">${chartAll.mov_rat }</span>
+                          >&nbsp;<span class="imdb_rating_number">${chartAlls.mov_rat }</span>
                         </div>
                         <div class="my_rating">
                           <div class="popover" style="display: none">
@@ -180,19 +180,19 @@
                             </ul>
                           </div>
 						  <c:choose>
-						  	<c:when test="${chartAll.rating_number eq 0 }">
+						  	<c:when test="${chartAlls.rating_number eq 0 }">
 						  		<i
                             class="fas fa-star seen_star"
                             style="color: darkgray"
                           ></i>
 						  	</c:when>
-                          	<c:when test="${chartAll.rating_rating eq 0 }">
+                          	<c:when test="${chartAlls.rating_rating eq 0 }">
                           		<i
                             class="fas fa-star seen_star"
                             style="color: rgba(109,174,272,0.5)"
                           ></i>
                           	</c:when>
-                          	<c:when test="${chartAll.rating_rating > 0 }">
+                          	<c:when test="${chartAlls.rating_rating > 0 }">
                           		<i
                             class="fas fa-star seen_star"
                             style="color: #5285FF"
@@ -203,31 +203,31 @@
                           </c:choose>
                           
                           <c:choose>
-                          	<c:when test="${chartAll.rating_number eq 0 }"><span class="seen" style="font-size: 13px"></span> </c:when>
-                          	<c:when test="${chartAll.rating_rating eq 0 }">
+                          	<c:when test="${chartAlls.rating_number eq 0 }"><span class="seen" style="font-size: 13px"></span> </c:when>
+                          	<c:when test="${chartAlls.rating_rating eq 0 }">
                           		<span class="seen" style="font-size: 13px">seen</span>
                           	</c:when>
-                          	<c:when test="${chartAll.rating_rating > 0 }">
-                          		<span class="seen" style="font-size: 16px;width:30px;top:1.5px;textAlign:center;">${chartAll.rating_rating }</span>
+                          	<c:when test="${chartAlls.rating_rating > 0 }">
+                          		<span class="seen" style="font-size: 16px;width:30px;top:1.5px;textAlign:center;">${chartAlls.rating_rating }</span>
                           	</c:when>
                           </c:choose>
                           
                         </div>
                       </div>
                     </td>
-                    <td class="chart_date">${chartAll.mov_release }</td>
-                    <td class="chart_count"><span class="movie_count">${chartAll.mov_viewCnt }</span></td>
+                    <td class="chart_date">${chartAlls.mov_release }</td>
+                    <td class="chart_count"><span class="movie_count">${chartAlls.mov_viewCnt }</span></td>
                     <td class="chart_like">
                       <div class="like_widget">
                         <div class="imdb_like">
                           <i
                             class="fas fa-heart like_heart"
-                            style="color: ${ chartAll.like_number ne 0 ? '#E04386' : 'darkgray'}"
+                            style="color: ${ chartAlls.like_number ne 0 ? '#E04386' : 'darkgray'}"
                           ></i>
                         </div>
                         <div class="people_like">
                           <div style="font-size: 13px">
-                            <span class="like_count">${chartAll.mov_lik_cnt }</span> likes
+                            <span class="like_count">${chartAlls.mov_lik_cnt }</span> likes
                           </div>
                         </div>
                       </div>
@@ -241,6 +241,19 @@
                 <a href="https://www.boxofficemojo.com/">Box Office Mojo</a> ©
                 2021
               </div>
+              
+              <div class="notice_footer">
+				<ul>
+					<a href="/chart/top/${noticeBean.startPage - 1 eq 0 ? 1 : noticeBean.pageNumber - 1 }"><li><i class="fas fa-arrow-circle-left"></i></li></a>
+					
+					<c:forEach var="i" begin="${noticeBean.startPage }" end="${noticeBean.endPage }">
+						<a href="/chart/top/${i }"><li>${i }</li></a>
+					</c:forEach>
+					
+					<a href="/chart/top/${noticeBean.totalPage eq noticeBean.pageNumber ? noticeBean.totalPage : noticeBean.pageNumber + 1 }"><li><i class="fas fa-arrow-circle-right"></i></li></a>
+				</ul>
+            </div>
+            
               
                 </div>
               </div>

@@ -106,9 +106,9 @@
 
 
                 
-                <div id="content_container">
-                    <div id="content_left">
-                        <div class="drama">
+              <div id="content_container">
+                  <div id="content_left">
+                      <div class="drama">
                         	<c:if test="${movie_dtl.mg_genre1 ne null }">
                         		<div>
                                 <a href="">${movie_dtl.mg_genre1 }</a>

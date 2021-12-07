@@ -59,12 +59,12 @@ public class MainChartController {
 			model.addAttribute("nameSortby", 1);
 			model.addAttribute("ascDesc", 0);
 			if(principalDetails == null) {
-				model.addAttribute("chartAll", movieService.getChartAll(code, number));
+				model.addAttribute("chartAllTop", movieService.getChartAll(code, number));
 			} else {
 				
 				number = principalDetails.getUser().getNumber();
 				System.out.println(number);
-				model.addAttribute("chartAll", movieService.getChartAll(code, number));
+				model.addAttribute("chartAllTop", movieService.getChartAll(code, number));
 				
 			}
 			return "chart/top";
@@ -73,12 +73,12 @@ public class MainChartController {
 			model.addAttribute("nameSortby", 2);
 			model.addAttribute("ascDesc", 0);
 			if(principalDetails == null) {
-				model.addAttribute("chartAll", movieService.getChartAllRelease(code, number));
+				model.addAttribute("chartAllTop", movieService.getChartAllRelease(code, number));
 			} else {
 				
 				number = principalDetails.getUser().getNumber();
 				System.out.println(number);
-				model.addAttribute("chartAll", movieService.getChartAllRelease(code, number));
+				model.addAttribute("chartAllTop", movieService.getChartAllRelease(code, number));
 				
 			}
 			return "chart/top";
@@ -87,12 +87,12 @@ public class MainChartController {
 			model.addAttribute("nameSortby", 3);
 			model.addAttribute("ascDesc", 0);
 			if(principalDetails == null) {
-				model.addAttribute("chartAll", movieService.getChartAllLike(code, number));
+				model.addAttribute("chartAllTop", movieService.getChartAllLike(code, number));
 			} else {
 				
 				number = principalDetails.getUser().getNumber();
 				System.out.println(number);
-				model.addAttribute("chartAll", movieService.getChartAllLike(code, number));
+				model.addAttribute("chartAllTop", movieService.getChartAllLike(code, number));
 				
 			}
 			

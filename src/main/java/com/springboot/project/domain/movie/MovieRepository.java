@@ -19,6 +19,7 @@ public interface MovieRepository {
 	
 	/*----------박스오피스,탑 차트---------*/
 	public List<MainChartRespDto> getChartAll(int code, int number);
+	public List<MainChartRespDto> getChartAllTop(int code, int number);
 	public List<MainChartRespDto> getChartAllRelease(int code, int number);
 	public List<MainChartRespDto> getChartAllLike(int code, int number);
 	public List<MainChartDto> getsChartAll(int code);
@@ -42,11 +43,9 @@ public interface MovieRepository {
 //		public MovieDtl getMovieGenre(MovieDtl movieDtl);
 	
 	public MovieDtlRespDto getMovieDtl(int mov_idn, int number);
-	public List<MovieDtlRespDto> getMovieLike(int number);
 	public MovieDtl getMovieGenre(MovieDtl movieDtl);
+	public List<MovieDtlRespDto> getMovieLike(int number);
 	
-	public MovieDtlRespDto deleteMoiveDtl(int mov_idn, int number);
-	public MovieDtlRespDto addMoiveDtl(int mov_idn, int number);
 	 
 	
 

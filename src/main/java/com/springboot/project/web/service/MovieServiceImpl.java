@@ -26,6 +26,13 @@ public class MovieServiceImpl implements MovieService{
 		System.out.println("되는중");
 		return movieRepository.getChartAll(code, number);
 	}
+	
+	@Override // top 20 chart
+	public List<MainChartRespDto> getChartAllTop(int code, int number) {
+		System.out.println("되는중");
+		return movieRepository.getChartAllTop(code, number);
+	}
+	
 	@Override
 	public List<MainChartRespDto> getChartAllRelease(int code, int number) {
 		
