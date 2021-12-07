@@ -11,6 +11,7 @@
     <title>Movie</title>
    	<link rel="stylesheet" href="/css/index_include.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/movieDtl.css">
      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
@@ -39,7 +40,7 @@
                         <div class="rating_bar_btn">
                             <div class="rating_bar_header"><p>JMKY RATING</p></div>
                             <a href="">
-                                <div id="rating_star">
+                                <div class="rating_star">
                                     <i class="fas fa-star fa-2x" id="star"></i>
                                     <div>
                                         <span>&nbsp;${movie_dtl.mov_rat } /10</span>
@@ -50,26 +51,26 @@
                         </div>
                         <div class="rating_bar_btn">
                             <div class="rating_bar_header"><p>YOUR RATING</p></div>
-                            <a href="">
-                                <div class="blue_star" id="rating_star">
+                            
+                                <div id="blue_star" class="rating_star">
                                 <c:choose>
                                 	<c:when test="${movie_dtl.rating_number eq 0}">
-	                                	<i class="far fa-star fa-2x"></i>
+	                                	<i class="far fa-star fa-2x" style="cursor:pointer"></i>
 	                                    <div id="rate">&nbsp;Rate</div>
                                 	</c:when>
                                 	<c:when test="${movie_dtl.rating_number ne 0}">
-                                		<i class="fas fa-star fa-2x" ></i>
+                                		<i class="fas fa-star fa-2x" style="cursor:pointer"></i>
                                 		<span>&nbsp;${movie_dtl.rating_rating } /10</span>
                                 	</c:when>
                                 </c:choose>
                                     
                                 </div>
-                            </a>
+                            
                         </div>
                         <div class="rating_bar_btn">
                             <div class="rating_bar_header"><p>POPULARITY</p></div>
                             <a href="">
-                                <div id="rating_star">
+                                <div class="rating_star">
                                     <i id="grape" class="fas fa-chart-line fa-2x"></i>
                                     <div id="popularity_box">
                                         <div>&nbsp;38</div>
@@ -349,10 +350,111 @@
             </div>
         </section>
     </div>
+	<div class="promptable_base">
+        <div class="promptable_base_panel">
+            <div class="promptable_base_focus">
+                <div class="promptable_base_close">
+                    
+                    <i class="fas fa-times-circle fa-2x"></i>
+                    
+                </div>
+                <div class="promptable_base_autofocus">
+                    <div class="promptable_base_content">
+                        <div class="rating_display" >
+                            <i class="fas fa-star fa-5x" style="color: #5285FF"></i>
+                        </div>
+                        <div class="rating_prompt_container">
+                            <h6 style="height: 30px;font-size: 18px;font-weight: lighter;">Rate this</h6>
+                            <div style="height: 50px; font-size: 24px;">엔칸토: 마법의 세계</div>
+                            <div class="prompt_rating_container">
+                                <ul class="starbar">
+                                    
+                                        <li class="starbar_li">
+                                            <i
+                                            class="fas fa-star rating_stars fa-2x"
+                                            id="star1"
+                                            style="color: darkgray"
+                                          ></i>
+                                        </li>
+                                        <li class="starbar_li">
+                                            <i
+                                            class="fas fa-star rating_stars fa-2x"
+                                            id="star2"
+                                            style="color: darkgray"
+                                          ></i>
+                                        </li>
+                                        <li class="starbar_li"><i
+                                            class="fas fa-star rating_stars fa-2x"
+                                            id="star3"
+                                            style="color: darkgray"
+                                          ></i>
+                                        </li>
+                                        <li class="starbar_li">
+                                            <i
+                                            class="fas fa-star rating_stars fa-2x"
+                                            id="star4"
+                                            style="color: darkgray"
+                                          ></i>
+                                        </li>
+                                        <li class="starbar_li">
+                                            <i
+                                            class="fas fa-star rating_stars fa-2x"
+                                            id="star5"
+                                            style="color: darkgray"
+                                          ></i>
+                                        </li>
+                                        <li class="starbar_li">
+                                            <i
+                                            class="fas fa-star rating_stars fa-2x"
+                                            id="star6"
+                                            style="color: darkgray"
+                                          ></i>
+                                        </li>
+                                        <li class="starbar_li">
+                                            <i
+                                            class="fas fa-star rating_stars fa-2x"
+                                            id="star7"
+                                            style="color: darkgray"
+                                          ></i>
+                                        </li>
+                                        <li class="starbar_li"><i
+                                            class="fas fa-star rating_stars fa-2x"
+                                            id="star8"
+                                            style="color: darkgray"
+                                          ></i>
+                                        </li>
+                                        <li class="starbar_li">
+                                            <i
+                                            class="fas fa-star rating_stars fa-2x"
+                                            id="star9"
+                                            style="color: darkgray"
+                                          ></i>
+                                        </li>
+                                        <li class="starbar_li">
+                                            <i
+                                            class="fas fa-star rating_stars fa-2x"
+                                            id="star10"
+                                            style="color: darkgray"
+                                          ></i>
+                                        </li>
+                                          
+                                    
+                                    </ul>
+                                
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
    <jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
+   
 
 
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/movieDtl.js"></script>
 </html>
