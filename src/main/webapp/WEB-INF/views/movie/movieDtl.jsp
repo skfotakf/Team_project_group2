@@ -25,7 +25,7 @@
         <section id="wrap_top">
             <div id="main_top">
             
-                  
+                <input type="hidden" value="${movie_dtl.mov_idn }" id="mov_idn1">  
                 <div class="title_block_container">
                     <div class="title_block">
                         <h1>${movie_dtl.mov_title }</h1>
@@ -55,12 +55,12 @@
                                 <div id="blue_star" class="rating_star">
                                 <c:choose>
                                 	<c:when test="${movie_dtl.rating_number eq 0}">
-	                                	<i class="far fa-star fa-2x" style="cursor:pointer"></i>
-	                                    <div id="rate">&nbsp;Rate</div>
+	                                	<i class="fas fa-star fa-2x dtlStar" style="cursor:pointer; color: darkgray"></i>
+	                                    <span class="rate">&nbsp;Rate</span>
                                 	</c:when>
                                 	<c:when test="${movie_dtl.rating_number ne 0}">
-                                		<i class="fas fa-star fa-2x" style="cursor:pointer"></i>
-                                		<span>&nbsp;${movie_dtl.rating_rating } /10</span>
+                                		<i class="fas fa-star fa-2x dtlStar" style="cursor:pointer"></i>
+                                		<span class="rate">&nbsp;${movie_dtl.rating_rating } /10</span>
                                 	</c:when>
                                 </c:choose>
                                     
@@ -69,7 +69,7 @@
                         </div>
                         <div class="rating_bar_btn">
                             <div class="rating_bar_header"><p>POPULARITY</p></div>
-                            <a href="">
+                            
                                 <div class="rating_star">
                                     <i id="grape" class="fas fa-chart-line fa-2x"></i>
                                     <div id="popularity_box">
@@ -77,7 +77,7 @@
                                         <div>&nbsp;<i class="fas fa-sort-up"></i> 14</div>
                                     </div>
                                 </div>
-                            </a>
+                           
                         </div>
                     </div>
                 </div>
@@ -365,7 +365,7 @@
                         </div>
                         <div class="rating_prompt_container">
                             <h6 style="height: 30px;font-size: 18px;font-weight: lighter;">Rate this</h6>
-                            <div style="height: 50px; font-size: 24px;">엔칸토: 마법의 세계</div>
+                            <div style="height: 50px; letter-spacing: 0.1em; font-size: 18px;">${ movie_dtl.mov_title}</div>
                             <div class="prompt_rating_container">
                                 <ul class="starbar">
                                     
@@ -440,7 +440,7 @@
                                           
                                     
                                     </ul>
-                                
+                                	<button type="button" class="remove_button">Remove</button>
                             </div>
 
                         </div>

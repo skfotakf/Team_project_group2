@@ -84,13 +84,13 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 400px;
+    width: 500px;
 }
 
 .prompt_rating_container {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .starbar {
@@ -139,4 +139,15 @@
     height: 36px;
     border: none;
     outline: none;
+}
+.remove_button {
+	display: none;
+	margin-left: 20px;
+	cursor: pointer;
+	background: transparent;
+	color: #5285FF;
+
+}
+.remove_div {
+	
 }
