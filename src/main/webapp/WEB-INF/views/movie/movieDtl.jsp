@@ -211,7 +211,9 @@
 						<div id="ipc_sub_grid">
 							<div class="actor_wrap">
 								<div>
-									<i class="fas fa-user-circle fa-3x"></i>
+									<img class="images_actor" src="/images/actor/${movie_dtl.mov_actor }.PNG" 
+									sizes="50vw"
+									width="70" height="70" />
 								</div>
 								<div id="actor_name">
 									<a >${movie_dtl.mov_actor }</a> <span>${movie_dtl.mov_actorchar }</span>
@@ -236,27 +238,24 @@
 							<div class="ipc_right_wrapper">
 								<a href="">
 									<h3>
-										전문가 리뷰 <i class="fas fa-chevron-right"></i>
+										평론가 한줄평 <i class="fas fa-chevron-right"></i>
 									</h3>
 								</a>
 							</div>
 							<div id="master_review">
 								<div id="master_info">
-									<span>김형석</span> <span>2016.02.25</span>
+									<span>이동진</span> <span>2021.12.09</span>
 								</div>
 								<div>
-									<span><i class="fas fa-star fa"></i>&nbsp;8.5/10</span>
+									<span><i class="fas fa-star fa"></i>&nbsp;9/10</span>
 								</div>
 								<div>
+								<!--  
 									<div class="user_review_title">
 										<span>많은 이들의 '인생 영화'</span>
-									</div>
+									</div> -->
 									<div>
-										20년 넘게 지났지만 언제나 꺼내 봐도, 이미 여러 번 본 장면들임에도 불구하고,
-										여전한 감동을 주는 몇 안 되는 영화들 중 하나. 스티븐 킹의 탄탄한 스토리를 토대로,
-										영화는 단 한 순간도 품격을 잃지 않으며 잘 조율되어 있다. 영화가 개봉되었을
-										때 프랭크 다라본트 감독은, 이 영화를 본 후 삶의 의미를 되찾았다는 내용의
-										수많은 편지를 받았다고 한다. 단순한 영화를 넘어, 용기와 희망을 북돋우는 힐링 무비.
+										${movie_dtl.mov_expertReview }
 									</div>
 								</div>
 							</div>

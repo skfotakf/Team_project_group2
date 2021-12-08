@@ -40,6 +40,10 @@ public class MovieDtlRespDto {
 	private int mov_gnr3;
 	private String mg_genre3;
 	
+	// 전문가 리뷰
+
+	private String mov_expertReview;
+	
 	public MovieDtl toEntity() {
 		return MovieDtl.builder()
 				.mov_idn(mov_idn)
@@ -69,6 +73,7 @@ public class MovieDtlRespDto {
 				.rating_rating(rating_rating)
 				.gen_num(gen_num)
 				.genre(genre)
+				.mov_expertReview(mov_expertReview)
 				.build();
 	}
 	

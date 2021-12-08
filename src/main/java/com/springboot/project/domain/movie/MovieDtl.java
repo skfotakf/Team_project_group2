@@ -48,7 +48,8 @@ public class MovieDtl {
 	private int rating_number;
 	private int rating_rating;
 	
-	
+	// 전문가 리뷰
+	private String mov_expertReview;
 	
 	/*
 	public MovieDtlRespDto toEntity() {

@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WatchList</title>
     <link rel="stylesheet" href="/css/index_include.css">
-    <link rel="stylesheet" href="/css/watchlist.css">
+    <link rel="stylesheet" href="/css/likelist.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
@@ -25,7 +25,7 @@
                 <div id="watch_list_main">
                     <div class="nav">
                         <div class="nav_left">
-                            <h1>Your Watchlist</h1>
+                            <h1>Your Likelist</h1>
                             <div id="private"><i class="fas fa-lock"></i> PRIVATE</div>
                         </div>
                         <div class="btns">
@@ -44,6 +44,7 @@
                         <div id="title_count">
                             ${fn:length(likelistAll) } Titles 
                         </div>
+                        <!-- 
                         <div id="Sort">
                             <label for="">Sort by : </label>
                             <select name="" id="">
@@ -61,6 +62,7 @@
                         <button><i class="fas fa-exchange-alt fa-rotate-90"></i></button>
                         <button class="btn"><i class="fas fa-th"></i></button>
                         <button class="btn">REFINE</button>
+                    	-->
                     </div>
                     
                     <c:forEach var="likelistAll" items="${likelistAll }">
@@ -86,14 +88,32 @@
 	                                </c:if>
 	                            </p>
 	                            <div id="rating_bar">
+	                            	
 	                                <div class="rating_star">
-	                                    <i class="fas fa-star fa"></i>
+	                                    <i class="fas fa-star fa" style="color:rgb(245, 197, 24)"></i>
 	                                        <span>&nbsp;${likelistAll.mov_rat }</span>
 	                                </div>
-	                                <div class="rating_star">
-	                                    <i class="far fa-star fa"></i>
-	                                    &nbsp;Rate
-	                                </div>
+	                                
+	                                <c:choose>
+                                    	<c:when test="${likelistAll.rating_number eq 0 }">
+                                    		<div class="rating_star">
+		                                        <i class="far fa-star fa" style="color: darkgray"></i>
+		                                        <a>Rate this</a>
+                                    		</div>
+                                    	</c:when>
+                                    	<c:when test="${likelistAll.rating_rating eq 0 }">
+                                    		<div class="rating_star">
+		                                        <i class="far fa-star fa" style="color: rgba(109,174,272,0.5)"></i>
+		                                        <a>seen</a>
+                                    		</div>
+                                    	</c:when>
+                                    	<c:when test="${likelistAll.rating_rating > 0 }">
+                                    		<div class="rating_star">
+		                                        <i class="far fa-star fa" style="color: #5285FF"></i>
+		                                        &nbsp;<a>${likelistAll.rating_rating }</a>
+                                    		</div>
+                                    	</c:when>
+                                    </c:choose>
 	                            </div>
 	                            <div id="credits">
 	                                <a href="">${likelistAll.mov_director } / </a>
@@ -103,10 +123,10 @@
 	                            </p>
 	                        </div>
 	                    </div>
-	                     
+	                     <!-- 
 	                    <div id="export_list">
-	                        <!--  <a href="">Export this list</a>
-	                    </div> 
+	                          <a href="">Export this list</a>
+	                    </div>--> 
                 	</c:forEach>
 	                    
 	            </div>
@@ -128,8 +148,8 @@
                 </div>
             </div>
 
-			<!-- 
-            <div class="recently_view">
+			 
+            <!-- <div class="recently_view">
                 <div class="rhs">
                     <a href="#" id="clear_rvi">Clear your history</a>
                 </div>

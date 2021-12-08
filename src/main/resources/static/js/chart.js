@@ -48,7 +48,7 @@ function likePlusService(){
 			if(movieLikeData.error == "auth"){
 			location.href = '/auth/signin';
 			}else{
-				alert('좋아요 1 증가');
+				alert('Likelist에 영화가 추가되었습니다.');
 			}
 			
 		},
@@ -70,7 +70,7 @@ function likeMinusService(){
 		success: function(data){
 			movieLikeData = JSON.parse(data);
 			
-				alert('좋아요 1 감소');
+				alert('Likelist에 영화가 제거되었습니다.');
 			
 		},
 		error:function(){

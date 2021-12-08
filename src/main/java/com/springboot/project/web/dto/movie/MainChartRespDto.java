@@ -35,6 +35,7 @@ public class MainChartRespDto {
 	private int rating_rating;  // 평가점수
 	
 	
+	
 
 
 }
