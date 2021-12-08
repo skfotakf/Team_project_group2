@@ -31,6 +31,8 @@ public class AuthController {
 		return "auth/signin";
 	}
 	
+
+	
 	@GetMapping("/auth/signup")
 	public String signupForm() {
 		return "auth/signup";
@@ -64,7 +66,6 @@ public class AuthController {
 				signupRespDto.setMsg("JMKY의 회원이 되신 것을 축하드립니다!");
 			} else if(signupResult == 2) {
 				signupRespDto.setCode(410);
-				signupRespDto.setMsg("이미 가입된 아이디입니다");
 			} else {
 				signupRespDto.setCode(500);
 				signupRespDto.setMsg("회원가입 실패. 다시 확인해보세요.");

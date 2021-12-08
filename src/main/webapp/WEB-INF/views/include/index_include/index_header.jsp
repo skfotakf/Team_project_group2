@@ -1,60 +1,121 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <sec:authorize access="isAuthenticated()">
-	<sec:authentication property="principal" var="principal"/> 
+	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
 <link rel="stylesheet" href="/css/index_include.css" />
+
+<div id="menu_nav">
+	<div id="menu_nav_top">
+		<h1>
+			<a href="" class="logo">JMKY</a>
+		</h1>
+		<label for="" id="exit_btn"><i class="fas fa-times-circle"></i></label>
+	</div>
+	<div id="menu_main">
+		<div class="menu_list">
+			<label for=""><i class="fas fa-film"></i>Movie</label>
+			<div class="menu_item">
+				<ul>
+					<li><a href="">Top 250 Movies</a></li>
+					<li><a href="">Top Box Office</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="menu_list">
+			<label for=""><i class="fas fa-star"></i>Awards & Events</label>
+			<div class="menu_item">
+				<ul>
+					<li><a
+						href="https://www.imdb.com/best-of/?ref_=nv_ev_best_2021">Best
+							of 2021</a></li>
+					<li><a href="https://www.imdb.com/oscars/?ref_=nv_ev_acd">Oscars</a></li>
+					<li><a
+						href="https://www.imdb.com/search/title/?count=100&groups=oscar_best_picture_winners&sort=year%2Cdesc&ref_=nv_ch_osc">Best
+							Picture Winners</a></li>
+					<li><a
+						href="https://www.imdb.com/golden-globes/?ref_=nv_ev_gg">Golden
+							Globes</a></li>
+					<li><a href="https://www.imdb.com/emmys/?ref_=nv_ev_rte">Emmys</a></li>
+					<li><a
+						href="https://www.imdb.com/starmeterawards/?ref_=nv_ev_sma">STARmeter
+							Awards</a></li>
+					<li><a href="https://www.imdb.com/comic-con/?ref_=nv_ev_comic">San
+							Diego Comic-Con</a></li>
+					<li><a href="https://www.imdb.com/nycc/?ref_=nv_ev_nycc">New
+							York Comic-Con</a></li>
+					<li><a href="https://www.imdb.com/sundance/?ref_=nv_ev_sun">Sundance
+							Film Festival</a></li>
+					<li><a href="https://www.imdb.com/toronto/?ref_=nv_ev_tor">Toronto
+							Int'l Film Festival</a></li>
+					<li><a
+						href="https://www.imdb.com/awards-central/?ref_=nv_ev_awrd">Awards
+							Central</a></li>
+					<li><a
+						href="https://www.imdb.com/festival-central/?ref_=nv_ev_fc">Festival
+							Central</a></li>
+					<li><a href="https://www.imdb.com/event/all/?ref_=nv_ev_all">All
+							Events</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
 <header id="header">
-        <div class="JMKYheader">
+	<div class="JMKYheader">
 
-            <h1><a href="/chart/boxoffice/1" class="logo">JMKY</a></h1>
+		<h1>
+			<a href="/chart/boxoffice/1" class="logo">JMKY</a>
+		</h1>
 
-            <ul id="menu">
-                <a href="">
-                    <li class="icon"><i class="fas fa-list"></i> Menu</li>
-                </a>
-            </ul>
-            <form id="serach_container">
-                <select name="serach_navbar" id="serach_navbar">
-                    <div>
-                        <option value="all">All</option>
-                        <option value="Titles">Titles</option>
-                        <option value="TV Episodes">TV Episodes</option>
-                        <option value="Celebs">Celebs</option>
-                        <option value="Companies">Companies</option>
-                        <option value="Keywords">Keywords</option>
-                        <option value="Advanced Search">Advanced Search</option>
-                    </div>
-                </select>
-                
-                <input type="search" placeholder="Search JMKY" id="key-search">
-                <button type="submit"><i class="fas fa-search"></i></button>
-                
-            </form>
-            <ul class="top_nav">
-                <a href="">
-                    <li>JMKYPro </li>
-                </a>
-                <a href="/user/likelist">
-                    <li><i class="far fa-plus-square"></i> Likelist</li>
-                </a>
-                <c:choose>
-                	<c:when test="${empty principal.user }">
-		                <a href="/auth/signin"><li>Sign In </li></a>
-                	</c:when>
-                	
-                	<c:otherwise>
-                		
-	               			<a href="/auth/mypage"><li class="ellipsis">${principal.user.username } 님</li></a>
-                			<div>
-                				<a href="/logout"><li><i class="fas fa-sign-out-alt"></i></li></a>
-                			</div>
-                	</c:otherwise>
-                
-                </c:choose>
-            </ul>
-        </div>
+		<ul class="menu">
+			<a>
+				<li class="icon"><i class="fas fa-list"></i> Menu</li>
+			</a>
+		</ul>
+		<div id="serach_container">
+			<select name="serach_navbar" id="serach_navbar">
+				<div>
+					<option value="all">All</option>
+					<option value="Titles">Titles</option>
+					<option value="TV Episodes">TV Episodes</option>
+					<option value="Celebs">Celebs</option>
+					<option value="Companies">Companies</option>
+					<option value="Keywords">Keywords</option>
+					<option value="Advanced Search">Advanced Search</option>
+				</div>
+			</select> <input type="search" placeholder="Search JMKY" id="key-search">
+			<button type="submit">
+				<i class="fas fa-search"></i>
+			</button>
+
+		</div>
+		<ul class="top_nav">
+			<a href="">
+				<li>JMKYPro</li>
+			</a>
+			<a href="/movie/watchlist">
+				<li><i class="far fa-plus-square"></i> Watchlist</li>
+			</a>
+			<c:choose>
+				<c:when test="${empty principal.user }">
+					<a href="/auth/signin"><li>Sign In</li></a>
+				</c:when>
+
+				<c:otherwise>
+
+					<a href="/auth/mypage"><li class="ellipsis">${principal.user.username }
+							님</li></a>
+					<div>
+						<a href="/logout"><li><i class="fas fa-sign-out-alt"></i></li></a>
+					</div>
+				</c:otherwise>
+
+			</c:choose>
+		</ul>
+	</div>
 </header>

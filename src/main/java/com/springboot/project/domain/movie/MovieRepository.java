@@ -9,6 +9,7 @@ import com.springboot.project.web.dto.movie.MainChartRespDto;
 import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
+import com.springboot.project.web.dto.movie.MovieReviewDto;
 
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -47,6 +48,16 @@ public interface MovieRepository {
 	public List<MovieDtlRespDto> getMovieLike(int number);
 	
 	 
+	
+	
+	//댓글
+	//public List<MovieReviewDto> insertReview(MovieReviewDto movieReviewDto);
+	
+	public List<MovieReviewDto> listReview(int mov_idn);
+	
+	public int insertReview(MovieReviewDto movieReviewDto);
+	
+	
 	
 
 }

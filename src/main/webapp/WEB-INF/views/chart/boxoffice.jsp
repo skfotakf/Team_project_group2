@@ -296,11 +296,12 @@
         
     </div>
     <script type="text/javascript" src="/js/chart.js"></script>
-
+	<script src="/js/header.js"></script>
     <script
       src="https://kit.fontawesome.com/a04df2c0ca.js"
       crossorigin="anonymous"
     ></script>
   </body>
+  
 </html>
     

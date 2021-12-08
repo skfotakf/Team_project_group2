@@ -95,7 +95,6 @@
                           >&nbsp;<span class="imdb_rating_number">${chartAllTop.mov_rat }</span>
                         </div>
                         <div class="my_rating">
-                          <div class="popover" style="display: none">
                             <span class="popover_delete"></span>
                             <ul class="popover_rating">
                               <li>
@@ -319,6 +318,7 @@
     </div>
 	<script type="text/javascript" src="/js/chart.js"></script>
 	<script type="text/javascript" src="/js/top.js"></script>
+	<script src="/js/header.js"></script>
     <script
       src="https://kit.fontawesome.com/a04df2c0ca.js"
       crossorigin="anonymous"

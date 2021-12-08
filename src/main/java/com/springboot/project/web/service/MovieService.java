@@ -2,10 +2,13 @@ package com.springboot.project.web.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.springboot.project.web.dto.movie.MainChartRespDto;
 import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
+import com.springboot.project.web.dto.movie.MovieReviewDto;
 
 
 
@@ -50,4 +53,14 @@ public interface MovieService {
 	// 게시판 페이징
 	public int parseIntPageNumber(String pageNumber);
 	public List<MainChartRespDto> getMovieList(int pageNumber);
+	public List<MovieDtlRespDto> getGenreAll(int number);
+	
+	
+	//댓글 등록
+
+	public List<MovieReviewDto> listReview(int mov_idn);
+
+	
+	public int insertReview(MovieReviewDto movieReviewDto);
+	
 }

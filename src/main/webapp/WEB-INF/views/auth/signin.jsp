@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in with JMKY</title>
     <link rel="stylesheet" href="/css/signin.css">
-
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="/css/index_include.css">
 </head>
@@ -28,7 +27,7 @@
                             <input type="text" class="item_ip" name="username"  placeholder="ID">
                         </div>
                         <div class="item_msg">
-                            <span class="emailErrorMsg"></span>
+                            <span class="idErrorMsg"></span>
                         </div>
                         <div>
                             <input type="password" class="item_ip" name="password" placeholder="Password">
@@ -99,9 +98,9 @@
 
     </div>
 	<jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
-	<script src="/js/signin.js"></script>
+	
 </body>
-<script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
-
-
+<script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>4
+<script src="/js/signin.js"></script>
+<script src="/js/header.js"></script>
 </html>

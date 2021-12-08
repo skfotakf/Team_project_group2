@@ -136,9 +136,7 @@ public class MainChartController {
 		
 		movieRatingDto.setNumber(principalDetails.getUser().getNumber());
 		movieService.updateRatingCnt(movieRatingDto);
-		
-		
-		
+
 		return movieRatingDto;
 	}
 	

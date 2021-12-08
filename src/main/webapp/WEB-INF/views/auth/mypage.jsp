@@ -89,4 +89,5 @@
     <jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
+<script src="/js/header.js"></script>
 </html>

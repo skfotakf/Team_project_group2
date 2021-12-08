@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-@charset "UTF-8";
 
-=======
->>>>>>> login_front
+
 
 .content1{
     background-color: #fff;
@@ -40,12 +37,11 @@
     width: 100%;
     height: 80px;
 }
-<<<<<<< HEAD
-=======
+
 .input_container:first-child{
     height: 60px;
 }
->>>>>>> login_front
+
 
 .input_title{
     font-weight: 900;

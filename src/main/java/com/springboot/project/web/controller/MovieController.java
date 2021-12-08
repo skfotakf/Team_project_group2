@@ -1,13 +1,25 @@
 package com.springboot.project.web.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.springboot.project.config.auth.PrincipalDetails;
 import com.springboot.project.domain.movie.MovieDtl;
+import com.springboot.project.web.dto.movie.MovieRatingDto;
+import com.springboot.project.web.dto.movie.MovieReviewDto;
 import com.springboot.project.web.service.MovieService;
 
 import lombok.RequiredArgsConstructor;
@@ -27,10 +39,12 @@ public class MovieController {
 		
 		if(principalDetails == null) {
 			model.addAttribute("movie_dtl", movieService.getMovieDtl(mov_idn, number));
+			
 		} else {
 			number=principalDetails.getUser().getNumber();
 			model.addAttribute("movie_dtl", movieService.getMovieDtl(mov_idn, number));
 		}
+		model.addAttribute("movie_review",movieService.listReview(mov_idn));
 		
 		return "movie/movieDtl";
 	}
@@ -48,4 +62,25 @@ public class MovieController {
 			return "movie/watchlist";
 		}
 	}
+	
+	//댓글
+	@ResponseBody
+	@PostMapping("/title/{mov_idn}")
+	public Object InsertForm(@RequestBody MovieReviewDto movieReviewDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		
+		if(principalDetails == null) {
+			Map<String, String> error = new HashMap<String, String>();
+			error.put("error", "auth");
+			return error;
+		}
+		else {
+		movieReviewDto.setNumber(principalDetails.getUser().getNumber());
+		movieService.insertReview(movieReviewDto);
+		
+		
+		return movieReviewDto;
+		}
+	}
+	
+	
 }

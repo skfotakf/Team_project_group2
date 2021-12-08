@@ -67,53 +67,7 @@
             <div id="inner_footer">계정을 가지고 계신가요?<a href="/auth/signin">로그인</a></div>
         </div>
     </form>
-
     <jsp:include page="../include/signup_include/signup_footer.jsp"></jsp:include>
-    <script src="/js/signup.js"></script>
-    <script type="text/javascript">
-        	const signupBtn = document.querySelector('#signup-btn');
-        	const signupForm = document.querySelector('#signup-form');
-        	signupBtn.onclick = () => {
-        		let formData = new FormData(signupForm);
-        		let signupObj = {
-        				username : formData.get('username'),
-        				password: formData.get('password'),
-        				email: formData.get('email'),
-        				name: formData.get('name'),
-        				telephone: formData.get('telephone'),
-        				role: 'ROLE_USER'
-        		}
-        		$.ajax({
-        			type: "post",
-        			url: "/auth/signup",
-        			data : signupObj,
-        			dataType : "text",
-        			success: function(data) {
-        				let respObj = JSON.parse(data);
-        				if(respObj.code == 400) {
-        					alert('오류코드' + respObj.code +
-									'\n오류메세지' + 
-									'\nusername: ' + respObj.msg.username +
-									'\npassword: ' + respObj.msg.password +
-									'\nrepassword: ' + respObj.msg.repassword +
-									'\nemail: ' + respObj.msg.email +
-									'\nname: ' + respObj.msg.name +
-									'\ntelephone: ' + respObj.msg.telephone);
-									
-        				}else if(respObj.code == 410 || respObj.code == 500){
-        					alert("오류코드 : " + respObj.code +
-									'\n오류메세지' +
-									'\n' + respObj.msg);
-        				} else {
-        					alert(respObj.msg);
-        					location.href = '/auth/signin';
-        				}
-        			},
-        			error: function() {
-        				alert("전송 오류");
-        			}
-        		}) // end ajax
-        	} // end onclick
-        </script>
 </body>
+<script src="/js/signup.js"></script>
 </html>

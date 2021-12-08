@@ -3,6 +3,8 @@ package com.springboot.project.web.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Service;
 
 import com.springboot.project.domain.movie.Movie;
@@ -12,6 +14,7 @@ import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
 import com.springboot.project.web.model.MovieBean;
+import com.springboot.project.web.dto.movie.MovieReviewDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -189,5 +192,20 @@ public class MovieServiceImpl implements MovieService{
 		*/
 		return null;
 	}
+	
+	@Override
+	public List<MovieReviewDto> listReview(int mov_idn) {
+		return movieRepository.listReview(mov_idn);
+	}
+	
+	
+	
+	/*댓글 기능*/
+	@Override
+	public int insertReview(MovieReviewDto movieReviewDto) {
+		
+		return movieRepository.insertReview(movieReviewDto);
+	}
+	
 
 }

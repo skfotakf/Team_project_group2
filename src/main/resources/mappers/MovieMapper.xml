@@ -349,5 +349,37 @@
   		
   	</select>
  
+	<!-- 댓글 -->
+	<select id="listReview" resultType="com.springboot.project.web.dto.movie.MovieReviewDto">
+		SELECT 
+			mm.mov_idn,
+			mr.number,
+			mr.content,
+			mr.createdate,
+			um.username
+			
+			
+		FROM 
+			movie_mst mm 
+			LEFT OUTER JOIN movie_review mr ON (mm.mov_idn = mr.mov_idn )
+			LEFT OUTER JOIN user_mst um ON(mr.number = um.number)
+		WHERE
+			mm.mov_idn=#{mov_idn}
+		ORDER BY
+			mr.number DESC;
+	</select>
+	
+	
+	<insert id="insertReview" parameterType="com.springboot.project.web.dto.movie.MovieReviewDto">
+		insert into
+			movie_review
+		values(
+			#{mov_idn},
+			#{number},
+			#{content},
+			now(),
+			now()
+		);
+	</insert>
 	
 </mapper>
