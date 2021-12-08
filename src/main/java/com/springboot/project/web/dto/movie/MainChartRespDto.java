@@ -1,13 +1,13 @@
 package com.springboot.project.web.dto.movie;
 
-import java.util.Date;
-
-import com.springboot.project.domain.movie.Movie;
-
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class MainChartRespDto {
 	

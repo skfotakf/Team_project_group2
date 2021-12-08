@@ -71,6 +71,7 @@
                   </tr>
                 </thead>
                 <tbody class="chart_main">
+                  
                   <c:forEach var="chartAllTop" items="${chartAllTop }">
                   <input class="mov_idn1" type="hidden" value=${chartAllTop.mov_idn }>
                   <tr>
@@ -242,15 +243,15 @@
                 2021
               </div>
               
-              <div class="notice_footer">
+              <div class="movie_footer">
 				<ul>
-					<a href="/chart/top/${noticeBean.startPage - 1 eq 0 ? 1 : noticeBean.pageNumber - 1 }"><li><i class="fas fa-arrow-circle-left"></i></li></a>
+					<a href="/chart/top/${movieBean.startPage - 1 eq 0 ? 1 : movieBean.pageNumber - 1 }"><li><i class="fas fa-arrow-circle-left"></i></li></a>
 					
-					<c:forEach var="i" begin="${noticeBean.startPage }" end="${noticeBean.endPage }">
+					<c:forEach var="i" begin="${movieBean.startPage }" end="${movieBean.endPage }">
 						<a href="/chart/top/${i }"><li>${i }</li></a>
 					</c:forEach>
 					
-					<a href="/chart/top/${noticeBean.totalPage eq noticeBean.pageNumber ? noticeBean.totalPage : noticeBean.pageNumber + 1 }"><li><i class="fas fa-arrow-circle-right"></i></li></a>
+					<a href="/chart/top/${movieBean.totalPage eq movieBean.pageNumber ? movieBean.totalPage : movieBean.pageNumber + 1 }"><li><i class="fas fa-arrow-circle-right"></i></li></a>
 				</ul>
             </div>            
               
@@ -278,7 +279,7 @@
 
                 <a href="/chart/boxoffice/1">Box Office</a><br />
                 <a>Most Popular Movies</a><br />
-                <a href="/chart/top/1">Top 10 Movies</a><br />
+                <a href="/chart/top/1">Top 20 Movies</a><br />
                 <a>Top Rated English Movies</a><br />
                 <a>Most Popular TV Shows</a><br />
                 <a>Top 250 TV Shows</a><br />

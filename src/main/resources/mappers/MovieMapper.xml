@@ -34,7 +34,7 @@
   		
   	</select>
   	
-  	<select id="getChartAllTop" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
+  	<select id="getChartAllTop" resultType="com.springboot.project.web.dto.movie.MainChartRespDto" parameterType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
   		select
   			mm.mov_idn,
   			mm.mov_photo,
@@ -56,8 +56,18 @@
 			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.number = #{number})
 			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.number = #{number})
 		order by
-			mm.mov_idn;
-  		
+		<choose>
+			<when test="sortCode == 3">
+				mm.mov_lik_cnt desc
+			</when>
+			<when test="sortCode == 2">
+				mm.mov_release
+			</when>
+			<otherwise>
+				mm.mov_idn
+			</otherwise>
+		</choose>
+  		;
   	</select>
   	
   	

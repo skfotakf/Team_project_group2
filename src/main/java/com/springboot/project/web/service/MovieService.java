@@ -5,9 +5,6 @@ import java.util.List;
 import com.springboot.project.web.dto.movie.MainChartRespDto;
 import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
-import com.springboot.project.web.dto.movie.MainChartDto;
-import com.springboot.project.web.dto.movie.MovieDtlRespDto;
-import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
 
 
@@ -17,7 +14,7 @@ public interface MovieService {
 	// 모든 영화 리스트 불러오기
 	public List<MainChartRespDto> getChartAll(int code, int number);
 	
-	public List<MainChartRespDto> getChartAllTop(int code, int number);
+	public List<MainChartRespDto> getChartAllTop(int code, int page, int number);
 	
 	// 모든 영화 리스트 개봉일순
 	public List<MainChartRespDto> getChartAllRelease(int code, int number);
@@ -49,5 +46,8 @@ public interface MovieService {
 	
 	
 	public List<MovieDtlRespDto> getGenreAll(int number);
-
+	
+	// 게시판 페이징
+	public int parseIntPageNumber(String pageNumber);
+	public List<MainChartRespDto> getMovieList(int pageNumber);
 }

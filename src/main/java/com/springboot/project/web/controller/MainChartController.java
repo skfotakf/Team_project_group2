@@ -51,55 +51,13 @@ public class MainChartController {
 		return "movie/list";
 	}
 	
-	@GetMapping("/chart/top/{code}")
-	public String viewTopChart(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+	@GetMapping("/chart/top/{code}/{page}")
+	public String viewTopChart(Model model, @PathVariable int code, @PathVariable int page, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
-		if(code == 1) {
-			int number = 0;
-			model.addAttribute("nameSortby", 1);
-			model.addAttribute("ascDesc", 0);
-			if(principalDetails == null) {
-				model.addAttribute("chartAllTop", movieService.getChartAllTop(code, number));
-			} else {
-				
-				number = principalDetails.getUser().getNumber();
-				System.out.println(number);
-				model.addAttribute("chartAllTop", movieService.getChartAllTop(code, number));
-				
-			}
-			return "chart/top";
-		} else if(code == 2) {
-			int number= 0;
-			model.addAttribute("nameSortby", 2);
-			model.addAttribute("ascDesc", 0);
-			if(principalDetails == null) {
-				model.addAttribute("chartAllTop", movieService.getChartAllRelease(code, number));
-			} else {
-				
-				number = principalDetails.getUser().getNumber();
-				System.out.println(number);
-				model.addAttribute("chartAllTop", movieService.getChartAllRelease(code, number));
-				
-			}
-			return "chart/top";
-		} else if(code == 3) {
-			int number = 0;
-			model.addAttribute("nameSortby", 3);
-			model.addAttribute("ascDesc", 0);
-			if(principalDetails == null) {
-				model.addAttribute("chartAllTop", movieService.getChartAllLike(code, number));
-			} else {
-				
-				number = principalDetails.getUser().getNumber();
-				System.out.println(number);
-				model.addAttribute("chartAllTop", movieService.getChartAllLike(code, number));
-				
-			}
-			
-			return "chart/top";
-		}
+		model.addAttribute("nameSortby", code);
+		model.addAttribute("chartAllTop", movieService.getChartAllTop(code, page, principalDetails == null ? 0 : principalDetails.getUser().getNumber()));
 		
-		return "movie/list";
+		return "chart/top";
 		
 	}
 	/* 정배열 역배열 버튼(못넣음)

@@ -1,15 +1,17 @@
 package com.springboot.project.web.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.springboot.project.domain.movie.MovieDtl;
+import com.springboot.project.domain.movie.Movie;
 import com.springboot.project.domain.movie.MovieRepository;
 import com.springboot.project.web.dto.movie.MainChartRespDto;
 import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
+import com.springboot.project.web.model.MovieBean;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,8 +20,8 @@ import lombok.RequiredArgsConstructor;
 public class MovieServiceImpl implements MovieService{
 	
 	private final MovieRepository movieRepository;
-
 	
+	private MovieBean movieBean;
 	
 	@Override // 메인 chart
 	public List<MainChartRespDto> getChartAll(int code, int number) {
@@ -28,9 +30,30 @@ public class MovieServiceImpl implements MovieService{
 	}
 	
 	@Override // top 20 chart
-	public List<MainChartRespDto> getChartAllTop(int code, int number) {
-		System.out.println("되는중");
-		return movieRepository.getChartAllTop(code, number);
+	public List<MainChartRespDto> getChartAllTop(int code, int page, int number) {
+		movieBean = new MovieBean();
+		
+		Movie movieEntity = new Movie();
+		movieEntity.setNumber(number);
+		movieEntity.setSortCode(code);
+		
+		List<MainChartRespDto> topListAll = movieRepository.getChartAllTop(movieEntity);
+		
+		movieBean.setPageNumber(page);
+		movieBean.setmovieTotalCount(topListAll.size());
+		movieBean.setStartIndex();
+		movieBean.setEndIndex();
+		movieBean.setTotalPage();
+		movieBean.setStartPage();
+		movieBean.setEndPage();
+		
+		List<MainChartRespDto> topList = new ArrayList<MainChartRespDto>();
+		
+		for(int i = movieBean.getStartIndex(); i < movieBean.getEndIndex() && i < movieBean.getmovieTotalCount(); i++) {
+			topList.add(topListAll.get(i));
+		}
+		
+		return topList;
 	}
 	
 	@Override
@@ -134,5 +157,37 @@ public class MovieServiceImpl implements MovieService{
 		return movieRepository.getMovieLike(number);
 	}
 	
+	/* ----------------- 페이징 ---------------*/
+	
+	public void setMovieBean(int pageNumber) {
+		MovieBean movieBean = new MovieBean();
+		//movieBean.setmovieTotalCount(movieListAll.size());
+		movieBean.setPageNumber(pageNumber);
+		movieBean.setStartIndex();
+		movieBean.setEndIndex();
+		movieBean.setTotalPage();
+		movieBean.setStartPage();
+		movieBean.setEndPage();
+	}
+	
+	@Override
+	public int parseIntPageNumber(String pageNumber) {
+		return Integer.parseInt(pageNumber);
+	}
+	
+	@Override
+	public List<MainChartRespDto> getMovieList(int pageNumber) {
+		/*
+		movieListAll = getMovieListAll();
+		List<MainChartRespDto> movieList = new ArrayList<MainChartRespDto>();
+		
+		setMovieBean(pageNumber);
+		
+		for(int i = movieBean.getStartIndex(); i < movieBean.getEndIndex() && i < movieBean.getMovieTotalCount(); i++) {
+			movieList.add(movieListAll.get(i));
+		}
+		*/
+		return null;
+	}
 
 }

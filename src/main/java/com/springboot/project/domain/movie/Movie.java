@@ -32,6 +32,8 @@ public class Movie {
 	private int rating_mov_idn; // 평가받은 영화
 	private int rating_number; // 평가한 사람
 	private int rating_rating; // 평가 점수
+	//정렬기준
+	private int sortCode;
 	
 	/*
 	public MainChartRespDto toEntity() {
