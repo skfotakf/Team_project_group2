@@ -69,6 +69,7 @@ hr {
 .chart {
   border-collapse: collapse;
   position: relative;
+
 }
 .alert {
   margin: 20px 0 20px;

@@ -1,10 +1,29 @@
 const item_ip = document.querySelectorAll('.item_ip');
 const btn_login = document.querySelector('.btn_login');
 
+
+
 var signInData = {
 	username: '',
 	password: '',
 	signInFlag: 0
+}
+
+item_ip[0].onkeypress = () => {
+	if(window.event.keyCode == 13){
+		window.event.preventDefault();
+		item_ip[1].focus();
+	}
+}
+
+item_ip[1].onkeypress = () => {
+	if(window.event.keyCode == 13){
+		window.event.preventDefault();
+		const form = document.querySelector("form");
+		
+		signInService();
+		form.submit();
+	}
 }
 
 function clearMsgNode(msg){
@@ -21,13 +40,15 @@ function messageService(msgText, msgFlag){
 	clearMsgNode(idErrorMsg);
 	clearMsgNode(passwordErrorMsg);
 	
+	
 	let msgTextNode = document.createTextNode(msgText);
 	
 	//msgFlag == 0 이메일 오류, 1이면 password 오류
 	if(msgFlag == 0){
 		idErrorMsg.appendChild(msgTextNode);
 		idErrorMsg.style.display = 'block';
-	}else {
+	}
+	if(msgFlag==1) {
 		passwordErrorMsg.appendChild(msgTextNode);
 		passwordErrorMsg.style.display = 'block';
 	}
@@ -35,20 +56,28 @@ function messageService(msgText, msgFlag){
 
 
 function emptyCheck(){
-	if(item_ip[0].value.length == 0){
+	if(item_ip[0].value.length == 0 && item_ip[1].value.length == 0){
+		let msgText = '! 아이디를 입력해 주세요.';
+		let msgText1 = '! 비밀번호를 입력해 주세요.';
+		messageService(msgText, 0);
+		messageService(msgText1, 1);
+		return false;
+	}else if(item_ip[0].value.length == 0){
 		let msgText = '! 아이디를 입력해 주세요.';
 		messageService(msgText, 0);
 		return false;
-	} else if(item_ip[1].value.length == 0){
+	}else if(item_ip[1].value.length == 0){
 		let msgText = '! 비밀번호를 입력해 주세요.';
 		messageService(msgText, 1);
 		return false;
-	} else {
+	}else{
 		return true;
 	}
+	
+	
 }
 
-function signInSubmit(){
+/*function signInSubmit(){
 	$.ajax({
 		type: "post",
 		url: "/auth/signin",
@@ -77,31 +106,19 @@ function signInSubmit(){
 			alert('로그인 실패 다시 확인하세요');
 		}
 	})
-}
+}*/
 
 function signInService(){
 	//ajax호출
+	
 	if(emptyCheck() == true){
-		signInData.user_id = item_ip[0].value;
-		signInData.user_password = item_ip[1].value;
-		signInSubmit();
+		signInData.username = item_ip[0].value;
+		signInData.password = item_ip[1].value;
+		//signInSubmit();
 	}
 }
 
-item_ip[0].onkeypress = () => {
-	if(window.event.keyCode == 13){
-		window.event.preventDefault();
-		item_ip[1].focus();
-	}
-}
 
-item_ip[1].onkeypress = () => {
-	if(window.event.keyCode == 13){
-		window.event.preventDefault();
-		const form = document.querySelector("form");
-		form.submit();
-	}
-}
 
 btn_login.onclick = () => {
 	signInService();

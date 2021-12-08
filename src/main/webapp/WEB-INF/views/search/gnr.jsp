@@ -86,7 +86,7 @@
                                             <span>${genreAll.mov_rat }</span>
                                     </div>
                                     <c:choose>
-                                    	<c:when test="${genreAll.rating_user_id eq null }">
+                                    	<c:when test="${genreAll.rating_number eq null }">
                                     		<div class="rating_star">
 		                                        <i class="far fa-star fa" style="color: darkgray"></i>
 		                                        <a>Rate this</a>
@@ -149,6 +149,7 @@
         <jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
     </div>
     <script src="https://kit.fontawesome.com/a04df2c0ca.js" crossorigin="anonymous"></script>
+    <script src="/js/header.js"></script>
 </body>
 
 </html>

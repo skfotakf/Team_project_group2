@@ -170,7 +170,7 @@
                           </div>
 
                          <c:choose>
-						  	<c:when test="${chartAll.rating_user_id eq null }">
+						  	<c:when test="${chartAll.rating_number eq null }">
 						  		<i
                             class="fas fa-star seen_star"
                             style="color: darkgray"
@@ -192,7 +192,7 @@
                          
                           </c:choose>
                            <c:choose>
-                          	<c:when test="${empty chartAll.rating_user_id  }"><span class="seen" style="font-size: 13px"></span> </c:when>
+                          	<c:when test="${empty chartAll.rating_number  }"><span class="seen" style="font-size: 13px"></span> </c:when>
                           	<c:when test="${chartAll.rating_rating eq 0 }">
                           		<span class="seen" style="font-size: 13px">seen</span>
                           	</c:when>
@@ -210,7 +210,7 @@
                         <div class="imdb_like">
                           <i
                             class="fas fa-heart like_heart"
-                            style="color:  ${not empty chartAll.like_user_id ? '#E04386' : 'darkgray'}"
+                            style="color:  ${not empty chartAll.like_number ? '#E04386' : 'darkgray'}"
                           ></i>
                         </div>
                         <div class="people_like">
@@ -296,11 +296,12 @@
         
     </div>
     <script type="text/javascript" src="/js/chart.js"></script>
-
+	<script src="/js/header.js"></script>
     <script
       src="https://kit.fontawesome.com/a04df2c0ca.js"
       crossorigin="anonymous"
     ></script>
   </body>
+  
 </html>
     

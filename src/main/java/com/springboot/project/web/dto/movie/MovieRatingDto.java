@@ -8,13 +8,13 @@ import lombok.Data;
 public class MovieRatingDto {
 
 	private int mov_idn;
-	private String user_id;
+	private int number;
 	private int rating;
 	
 	public MovieRating toEntity() {
 		return MovieRating.builder()
 				.mov_idn(mov_idn)
-				.user_id(user_id)
+				.number(number)
 				.rating(rating)
 				.build();
 	}

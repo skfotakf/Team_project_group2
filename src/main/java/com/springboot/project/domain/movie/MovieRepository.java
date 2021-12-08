@@ -9,14 +9,15 @@ import com.springboot.project.web.dto.movie.MainChartRespDto;
 import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
+import com.springboot.project.web.dto.movie.MovieReviewDto;
 
 @Mapper
 public interface MovieRepository {
 
 	/*----------박스오피스,탑 차트---------*/
-	public List<MainChartRespDto> getChartAll(int code, String user_id);
-	public List<MainChartRespDto> getChartAllRelease(int code, String user_id);
-	public List<MainChartRespDto> getChartAllLike(int code, String user_id);
+	public List<MainChartRespDto> getChartAll(int code, int number);
+	public List<MainChartRespDto> getChartAllRelease(int code, int number);
+	public List<MainChartRespDto> getChartAllLike(int code, int number);
 	public List<MainChartDto> getsChartAll(int code);
 
 	// 좋아요 증감
@@ -29,7 +30,7 @@ public interface MovieRepository {
 	public int deleteRatingCnt(MovieRatingDto movieRatingDto);
 	
 	/*----------장르 차트------------*/
-	public List<MovieDtlRespDto> getGenreAll(String user_id);
+	public List<MovieDtlRespDto> getGenreAll(int number);
 	
 	/*----------디테일 페이지----------*/
 	
@@ -40,6 +41,16 @@ public interface MovieRepository {
 	public MovieDtlRespDto getMovieDtl(int mov_idn, int number);
 	public MovieDtl getMovieGenre(MovieDtl movieDtl);
 	 
+	
+	
+	//댓글
+	//public List<MovieReviewDto> insertReview(MovieReviewDto movieReviewDto);
+	
+	public List<MovieReviewDto> listReview(int mov_idn);
+	
+	public int insertReview(MovieReviewDto movieReviewDto);
+	
+	
 	
 
 }

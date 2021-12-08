@@ -41,10 +41,91 @@ body{
     font-weight: 700;
 }
 
-#menu{
+#menu_nav{
+    position: fixed;
+    padding: 32px 0;
+    width: 100%;
+    height: 100%;
+    background: #1f1f1f;
+    display: none;
+    z-index: 9999;
+}
+#menu_nav a{
+	color:#fff;
+}
+#menu_nav label{
+	color:#fff;
+}
+
+#menu_nav_top{
+    width: 1024px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+}
+#menu_nav_top h1{
+    margin: 0;
+}
+#menu_nav_top label{
+    line-height: 48px;
+    box-sizing: border-box;
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    cursor: pointer;
+}
+#menu_main{
+    width: 1024px;
+    display: flex;
+}
+.menu_list{
+    box-sizing: border-box;
+    width: 512px;
+    margin: 24px 0 0;
+    padding: 8px 16px;
+}
+.menu_list label{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu_list{
+    padding: 0;
+}
+.menu_list label{
+    font-size: 20px;
+    font-weight: 800;
+}
+.menu_list i{
+    padding: 8px 16px;
+    color: #f5c518;
+    margin: 0;
+}
+.menu_item ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+.menu_item ul li{
+    width: 100%;
+    margin: 0;
+    padding: 8px 16px 8px 52px;
+    box-sizing: border-box;
+}
+.menu_item ul li a{
+    font-weight: 600;
+    margin: 0;
+}
+.menu_item ul a:hover{
+    border-bottom: 1px solid #fff;
+}
+
+.menu{
     min-width: 90px;
     margin: 0;
     padding: 0;
+    cursor:pointer;
 }
 #serach_container{
     display: flex;

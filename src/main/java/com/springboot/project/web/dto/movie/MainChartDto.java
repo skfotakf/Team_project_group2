@@ -25,10 +25,10 @@ public class MainChartDto {
 	private int number; // 회원 넘버
 	//movie_like
 	private int like_mov_idn; // 좋아요 눌린 영화
-	private String like_user_id; // 좋아요 누른 사람
+	private int like_number; // 좋아요 누른 사람
 	//movie_rating
 	private int rating_mov_idn; // 평가받은 영화
-	private String rating_user_id; // 평가한 사람
+	private int rating_number; // 평가한 사람
 	private int rating_rating; // 평가 점수
 	
 	public Movie toEntity() {
@@ -44,9 +44,9 @@ public class MainChartDto {
 				.mov_lik_cnt(mov_lik_cnt)
 				.number(number)
 				.like_mov_idn(like_mov_idn)
-				.like_user_id(like_user_id)
+				.like_number(like_number)
 				.rating_mov_idn(rating_mov_idn)
-				.rating_user_id(rating_user_id)
+				.rating_number(rating_number)
 				.rating_rating(rating_rating)
 				.build();
 	}

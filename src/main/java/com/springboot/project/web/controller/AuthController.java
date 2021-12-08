@@ -31,6 +31,8 @@ public class AuthController {
 		return "auth/signin";
 	}
 	
+
+	
 	@GetMapping("/auth/signup")
 	public String signupForm() {
 		return "auth/signup";

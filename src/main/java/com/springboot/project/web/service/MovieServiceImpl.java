@@ -2,6 +2,8 @@ package com.springboot.project.web.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Service;
 
 import com.springboot.project.domain.movie.MovieDtl;
@@ -10,6 +12,7 @@ import com.springboot.project.web.dto.movie.MainChartRespDto;
 import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import com.springboot.project.web.dto.movie.MovieRatingDto;
+import com.springboot.project.web.dto.movie.MovieReviewDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,19 +25,19 @@ public class MovieServiceImpl implements MovieService{
 	
 	
 	@Override // 메인 chart
-	public List<MainChartRespDto> getChartAll(int code, String user_id) {
+	public List<MainChartRespDto> getChartAll(int code, int number) {
 		System.out.println("되는중");
-		return movieRepository.getChartAll(code, user_id);
+		return movieRepository.getChartAll(code, number);
 	}
 	@Override
-	public List<MainChartRespDto> getChartAllRelease(int code, String user_id) {
+	public List<MainChartRespDto> getChartAllRelease(int code, int number) {
 		
-		return movieRepository.getChartAllRelease(code, user_id);
+		return movieRepository.getChartAllRelease(code, number);
 	}
 	@Override
-	public List<MainChartRespDto> getChartAllLike(int code, String user_id) {
+	public List<MainChartRespDto> getChartAllLike(int code, int number) {
 
-		return movieRepository.getChartAllLike(code, user_id);
+		return movieRepository.getChartAllLike(code, number);
 	}
 	
 	/* 정배열 역배열 버튼(못넣음)
@@ -86,7 +89,7 @@ public class MovieServiceImpl implements MovieService{
 		return null;
 	}
 	
-	
+
 
 	public Object minusLikeCnt(MovieLikeDto movieLikeDto) {
 		
@@ -112,11 +115,26 @@ public class MovieServiceImpl implements MovieService{
 	
 	/*---------------장르 차트---------------*/
 	@Override
-	public List<MovieDtlRespDto> getGenreAll(String user_id) {
+	public List<MovieDtlRespDto> getGenreAll(int number) {
 		// TODO Auto-generated method stub
-		return movieRepository.getGenreAll(user_id);
+		return movieRepository.getGenreAll(number);
 	}
 	
+	
+	
+	@Override
+	public List<MovieReviewDto> listReview(int mov_idn) {
+		return movieRepository.listReview(mov_idn);
+	}
+	
+	
+	
+	/*댓글 기능*/
+	@Override
+	public int insertReview(MovieReviewDto movieReviewDto) {
+		
+		return movieRepository.insertReview(movieReviewDto);
+	}
 	
 
 }

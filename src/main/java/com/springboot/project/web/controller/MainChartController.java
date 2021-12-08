@@ -34,17 +34,17 @@ public class MainChartController {
 	
 	@GetMapping("/chart/boxoffice/{code}")
 	public String viewMainChart(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-		String user_id="";
+		int number=0;
 		if(principalDetails == null) {
-			model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+			model.addAttribute("chartAll", movieService.getChartAll(code, number));
 		} else {
 			
-			user_id = principalDetails.getUser().getUsername();
-			System.out.println(user_id);
-			model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+			number = principalDetails.getUser().getNumber();
+			System.out.println(number);
+			model.addAttribute("chartAll", movieService.getChartAll(code, number));
 			
 		}
-		model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+		model.addAttribute("chartAll", movieService.getChartAll(code, number));
 		if(code == 1) {
 			return "chart/boxoffice";
 		}
@@ -55,46 +55,46 @@ public class MainChartController {
 	public String viewTopChart(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		if(code == 1) {
-			String user_id="";
+			int number=0;
 			model.addAttribute("nameSortby", 1);
 			model.addAttribute("ascDesc", 0);
 			if(principalDetails == null) {
-				model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+				model.addAttribute("chartAll", movieService.getChartAll(code, number));
 			} else {
 				
-				user_id = principalDetails.getUser().getUsername();
-				System.out.println(user_id);
-				model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+				number = principalDetails.getUser().getNumber();
+				System.out.println(number);
+				model.addAttribute("chartAll", movieService.getChartAll(code, number));
 				
 			}
-			model.addAttribute("chartAll", movieService.getChartAll(code, user_id));
+			model.addAttribute("chartAll", movieService.getChartAll(code, number));
 			
 			return "chart/top";
 		} else if(code == 2) {
-			String user_id="";
+			int number=0;
 			model.addAttribute("nameSortby", 2);
 			model.addAttribute("ascDesc", 0);
 			if(principalDetails == null) {
-				model.addAttribute("chartAll", movieService.getChartAllRelease(code, user_id));
+				model.addAttribute("chartAll", movieService.getChartAllRelease(code, number));
 			} else {
 				
-				user_id = principalDetails.getUser().getUsername();
-				System.out.println(user_id);
-				model.addAttribute("chartAll", movieService.getChartAllRelease(code, user_id));
+				number = principalDetails.getUser().getNumber();
+				System.out.println(number);
+				model.addAttribute("chartAll", movieService.getChartAllRelease(code, number));
 				
 			}
 			return "chart/top";
 		} else if(code == 3) {
-			String user_id = "";
+			int number = 0;
 			model.addAttribute("nameSortby", 3);
 			model.addAttribute("ascDesc", 0);
 			if(principalDetails == null) {
-				model.addAttribute("chartAll", movieService.getChartAllLike(code, user_id));
+				model.addAttribute("chartAll", movieService.getChartAllLike(code, number));
 			} else {
 				model.addAttribute("principalDetails", principalDetails.getUser());
-				user_id = principalDetails.getUser().getUsername();
-				System.out.println(user_id);
-				model.addAttribute("chartAll", movieService.getChartAllLike(code, user_id));
+				number = principalDetails.getUser().getNumber();
+				System.out.println(number);
+				model.addAttribute("chartAll", movieService.getChartAllLike(code, number));
 				
 			}
 			
@@ -137,7 +137,7 @@ public class MainChartController {
 			error.put("error", "auth");
 			return error;
 		} else {
-		movieLikeDto.setUser_id(principalDetails.getUser().getUsername());
+		movieLikeDto.setNumber(principalDetails.getUser().getNumber());
 		
 		movieService.plusLikeCnt(movieLikeDto);
 		return movieLikeDto;
@@ -149,7 +149,7 @@ public class MainChartController {
 	@PostMapping("/chart/top/chart-like/minus")
 	public Object minusLikeCnt(@RequestBody MovieLikeDto movieLikeDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
-		movieLikeDto.setUser_id(principalDetails.getUser().getUsername());
+		movieLikeDto.setNumber(principalDetails.getUser().getNumber());
 		movieService.minusLikeCnt(movieLikeDto);
 		
 		
@@ -166,7 +166,7 @@ public class MainChartController {
 			error.put("error", "auth");
 			return error;
 		} else {
-		movieRatingDto.setUser_id(principalDetails.getUser().getUsername());
+		movieRatingDto.setNumber(principalDetails.getUser().getNumber());
 		movieService.insertRatingCnt(movieRatingDto);
 		
 		
@@ -178,11 +178,9 @@ public class MainChartController {
 	@PostMapping("/chart/top/chart-rating/update")
 	public Object updateRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
-		movieRatingDto.setUser_id(principalDetails.getUser().getUsername());
+		movieRatingDto.setNumber(principalDetails.getUser().getNumber());
 		movieService.updateRatingCnt(movieRatingDto);
-		
-		
-		
+
 		return movieRatingDto;
 	}
 	
@@ -190,7 +188,7 @@ public class MainChartController {
 	@PostMapping("/chart/top/chart-rating/delete")
 	public Object deleteRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
-		movieRatingDto.setUser_id(principalDetails.getUser().getUsername());
+		movieRatingDto.setNumber(principalDetails.getUser().getNumber());
 		movieService.deleteRatingCnt(movieRatingDto);
 		
 		
@@ -200,15 +198,15 @@ public class MainChartController {
 	
 	@GetMapping("/search/genre")
 	public String viewGenreSearch(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-		String user_id="";
+		int number=0;
 		
 		if(principalDetails == null) {
-			model.addAttribute("genreAll", movieService.getGenreAll(user_id));
+			model.addAttribute("genreAll", movieService.getGenreAll(number));
 		} else {
 			
-			user_id = principalDetails.getUser().getUsername();
+			number = principalDetails.getUser().getNumber();
 			
-			model.addAttribute("genreAll", movieService.getGenreAll(user_id));
+			model.addAttribute("genreAll", movieService.getGenreAll(number));
 			
 		}
 		return "search/gnr";

@@ -102,4 +102,5 @@
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>4
 <script src="/js/signin.js"></script>
+<script src="/js/header.js"></script>
 </html>

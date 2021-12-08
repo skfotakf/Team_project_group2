@@ -34,7 +34,7 @@ public class MovieDtl {
 	private float mov_gross;
 	
 	private int rating_mov_idn;
-	private String rating_user_id;
+	private int rating_number;
 	private int rating_rating;
 	
 	private String wl_mov_idn;

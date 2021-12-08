@@ -131,4 +131,5 @@
 
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
+<script src="/js/header.js"></script>
 </html>

@@ -18,13 +18,13 @@ const mov_idn1 = document.querySelectorAll(".mov_idn1");
 
 var movieLikeData = {
 	mov_idn: 0,
-	user_id: '',
+	number: 0
 	
 }
 
 var movieRatingData = {
 	mov_idn: 0,
-	user_id: '',
+	number: 0,
 	rating: 0
 }
 // 날짜
