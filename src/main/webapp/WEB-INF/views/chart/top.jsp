@@ -245,13 +245,10 @@
               
               <div class="movie_footer">
 				<ul>
-					<a href="/chart/top/${movieBean.startPage - 1 eq 0 ? 1 : movieBean.pageNumber - 1 }"><li><i class="fas fa-arrow-circle-left"></i></li></a>
+					<a href="/chart/top/${movieBean.pageNumber -1 }"><li><i class="fas fa-arrow-circle-left"></i></li></a>
+				
 					
-					<c:forEach var="i" begin="${movieBean.startPage }" end="${movieBean.endPage }">
-						<a href="/chart/top/${i }"><li>${i }</li></a>
-					</c:forEach>
-					
-					<a href="/chart/top/${movieBean.totalPage eq movieBean.pageNumber ? movieBean.totalPage : movieBean.pageNumber + 1 }"><li><i class="fas fa-arrow-circle-right"></i></li></a>
+					<a href="/chart/top/${movieBean.pageNumber +1 }"><li><i class="fas fa-arrow-circle-right"></i></li></a>
 				</ul>
             </div>            
               
