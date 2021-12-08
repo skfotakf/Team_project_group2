@@ -19,10 +19,13 @@ item_ip[0].onkeypress = () => {
 item_ip[1].onkeypress = () => {
 	if(window.event.keyCode == 13){
 		window.event.preventDefault();
+		location.href = '/auth/signin';
+		/*
 		const form = document.querySelector("form");
 		
 		signInService();
 		form.submit();
+		*/
 	}
 }
 

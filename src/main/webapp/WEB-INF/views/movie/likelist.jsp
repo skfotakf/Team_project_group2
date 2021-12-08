@@ -135,10 +135,10 @@
                     <div id="slide_bar">
                         <div id="ab_ninja">
                             <span>
-                                <a href=""><h3>Create a new list</h3></a>
+                                <h3>Create a new list</h3>
                             </span>
                             <p>List your movie, TV & celebrity picks.</p>
-                            <a href="">Create a new list</a>
+                            <span class="createlist" style="color: #136cb2; cursor:pointer">Create a new list</span>
                         </div>
                         <div id="aux">
                             <b>Facebook? </b><a href="https://help.imdb.com/article/imdb/general-information/sprinklr-community-access-you-re-about-to-leave-imdb-com/GP4FF3REXES9AR3P?recentlyAuthenticated=false#">Tell us what your think about this feature</a>
@@ -163,4 +163,5 @@
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
 <script src="/js/header.js"></script>
+<script src="/js/likelist.js"></script>
 </html>

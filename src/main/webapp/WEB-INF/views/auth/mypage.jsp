@@ -47,23 +47,26 @@
                             <input type="text" placeholder="닉네임 입력">
                         </div>
                     </div>
-                    <button type="button">회원 정보 수정</button>
+                    <button type="button" id="edit-info">회원 정보 수정</button>
                 </div>
             </div>
         </div>
+        <!-- 
         <div class="recently_view">
             <div class="rhs">
                 <a href="#" id="clear_rvi">Clear your history</a>
             </div>
             <h3>Recently View</h3>
         </div>
-
+		-->
     </form>
     
 	<script type="text/javascript">
 			const editInfo = document.querySelector('#edit-info');
 			
 			editInfo.onclick = () => {
+				alert('코드를 수정 중입니다!');
+				/*
 				 let data ={
 				            password:$("#password").val(),
 				            email:$("#email").val()
@@ -81,7 +84,8 @@
 					error: function(){
 						alert("전송 오류!");
 					}
-				})
+				})*/
+				
 			}
 		</script>
     </div>
