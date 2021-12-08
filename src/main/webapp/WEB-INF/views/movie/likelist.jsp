@@ -103,9 +103,10 @@
 	                            </p>
 	                        </div>
 	                    </div>
+	                     
 	                    <div id="export_list">
-	                        <a href="">Export this list</a>
-	                    </div>
+	                        <!--  <a href="">Export this list</a>
+	                    </div> 
                 	</c:forEach>
 	                    
 	            </div>
@@ -120,20 +121,20 @@
                             <a href="">Create a new list</a>
                         </div>
                         <div id="aux">
-                            <b>Facebook? </b><a href="">Tell us what your think about this feature</a>
+                            <b>Facebook? </b><a href="https://help.imdb.com/article/imdb/general-information/sprinklr-community-access-you-re-about-to-leave-imdb-com/GP4FF3REXES9AR3P?recentlyAuthenticated=false#">Tell us what your think about this feature</a>
 
                         </div>
                     </div>
                 </div>
             </div>
 
-
+			<!-- 
             <div class="recently_view">
                 <div class="rhs">
                     <a href="#" id="clear_rvi">Clear your history</a>
                 </div>
                 <h3>Recently View</h3>
-            </div>
+            </div> -->
         </div>
     </div>
 

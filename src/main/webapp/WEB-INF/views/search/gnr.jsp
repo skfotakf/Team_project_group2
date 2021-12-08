@@ -27,35 +27,31 @@
             <div class="main">
                 <div class="main_component">
                     <div id="sub_list">
-                        <h1>Feature Film, Rating Count at least 25,000, Action <br>
+                        <h1>Feature Film, Rating Count at least 30 <br>
                         (Sorted by JMKY Rating Descending)</h1>
-                        <div class="nav">
-                            <span>1-50 of 1,591 titles. </span>
-                            <label> | </label>
-                            <a href="">Next >></a>
-                        </div>
+                        
                         <br class="clear">
                         <div id="sort">
                             <span>Sort by : </span>
-                            <a href="" style="font-weight:bold">Popularity</a>
+                            <a href="" style="font-weight:bold;color:#136cb2">Popularity</a>
                             <label> | </label>
-                            <a href="">A-Z</a>
+                            <a>A-Z</a>
                             <label> | </label>
-                            <a href="">User Rating</a>
+                            <a>User Rating</a>
                             <label> | </label>
-                            <a href="">Number of Votes</a>
+                            <a >Number of Votes</a>
                             <label> | </label>
-                            <a href="">US Box Office</a>
+                            <a>US Box Office</a>
                             <label> | </label>
-                            <a href="">Runtime</a>
+                            <a>Runtime</a>
                             <label> | </label>
-                            <a href="">Year</a>
+                            <a>Year</a>
                             <label> | </label>
-                            <a href="">Release Date</a>
+                            <a>Release Date</a>
                             <label> | </label>
-                            <a href="">Date of Your Rating</a>
+                            <a>Date of Your Rating</a>
                             <label> | </label>
-                            <a href="">Your Rating</a>
+                            <a>Your Rating</a>
                         </div>
                         <br class="clear">
 
@@ -63,14 +59,14 @@
                         <div class="item_list">
                         	
                             <div id="movie_poster">
-                                <a href=""><img src="/images/${genreAll.mov_photo }" alt=""
+                                <a href="/title/${genreAll.mov_idn }"><img src="/images/${genreAll.mov_photo }" alt=""
                                 style="width:67px; height:98px"></a>
                             </div>
                         
                             <div class="item_list_content">
                                 <h3>
                                     <span>${genreAll.mov_idn }. </span>
-                                    <a href="">${genreAll.mov_title }</a>
+                                    <a href="/title/${genreAll.mov_idn }">${genreAll.mov_title }</a>
                                     <span> (${genreAll.mov_release })</span>
                                 </h3>
                                 <p id="movie_detail">
@@ -78,7 +74,7 @@
                                     <label> | </label>
                                     <span>${genreAll.mov_runtime }</span>
                                     <label> | </label>
-                                    <span>장르는 나중에!</span>
+                                    
                                 </p>
                                 <div id="rating_bar">
                                     <div class="rating_star">
@@ -131,11 +127,7 @@
                         
 
                     </div>
-                    <div class="nav">
-                        <span>1-50 of 1,591 titles. </span>
-                        <label> | </label>
-                        <a href="">Next >></a>
-                    </div>
+                    
                 </div>
             </div>
             <div class="recently_view">

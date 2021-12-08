@@ -37,12 +37,12 @@ public class MainChartController {
 	public String viewMainChart(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		int number= 0;
 		if(principalDetails == null) {
-			model.addAttribute("chartAllTop", movieService.getChartAllTop(number));
+			model.addAttribute("chartAllTop", movieService.getChartAll(number));
 		} else {
 			
 			number = principalDetails.getUser().getNumber();
 			System.out.println(number);
-			model.addAttribute("chartAllTop", movieService.getChartAllTop(number));
+			model.addAttribute("chartAllTop", movieService.getChartAll(number));
 			
 		}
 		
@@ -53,6 +53,7 @@ public class MainChartController {
 	public String viewTopChart(Model model, @PathVariable int code, @PathVariable int page, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		model.addAttribute("nameSortby", code);
+		model.addAttribute("page",page);
 		model.addAttribute("chartAllTop", movieService.getChartAllTop(code, page, principalDetails == null ? 0 : principalDetails.getUser().getNumber()));
 		
 		return "chart/top";

@@ -28,8 +28,8 @@
           <div class="content_2_wide">
             <div class="main">
               JMKY Charts
-              <h1>JMKY 20 Movies</h1>
-              JMKY 20 as rated by regular JMKY voters.
+              <h1>JMKY Top Movies</h1>
+              JMKY Top as rated by regular JMKY voters.
               <hr />
               <div class="lister">
                 <div class="nav">
@@ -50,7 +50,19 @@
                     <span class="ascending" style="display:none"></span>
                     <span class="descending" style="display:none"></span>
                   </div>
-                  <div class="desc">Showing 250 titles</div>
+                  <div class="desc">
+                  	  <div class="div_date"></div>
+                      <span>Showing 10 titles</span>
+                      
+                     <c:if test="${page ne 1 }">
+                      	<a href="/chart/top/${nameSortby }/${page -1 }">previous</a>
+                     </c:if>
+                      
+				
+					
+					<a href="/chart/top/${nameSortby }/${page + 1}">next</a>
+                      
+                  </div>
                 
                   <br>
                   <input type="hidden" value="${nameSortby }" class="nameSortby" >
@@ -96,6 +108,7 @@
                           >&nbsp;<span class="imdb_rating_number">${chartAllTop.mov_rat }</span>
                         </div>
                         <div class="my_rating">
+                        <div class="popover" style="display: none">
                             <span class="popover_delete"></span>
                             <ul class="popover_rating">
                               <li>
@@ -244,12 +257,7 @@
               </div>
               
               <div class="movie_footer">
-				<ul>
-					<a href="/chart/top/${movieBean.pageNumber -1 }"><li><i class="fas fa-arrow-circle-left"></i></li></a>
 				
-					
-					<a href="/chart/top/${movieBean.pageNumber +1 }"><li><i class="fas fa-arrow-circle-right"></i></li></a>
-				</ul>
             </div>            
               
                 </div>
@@ -257,6 +265,7 @@
             </div>
             <div class="sidebar">
               <div class="sidebar_top"></div>
+              <!-- 
               <div class="sidebar_widget">
                 <div class="sidebar_title">
                   <h5 class="title_yhs">You Have Seen</h5>
@@ -270,43 +279,42 @@
                     <label for="seen_title">Hide titles I've seen</label>
                   </div>
                 </div>
-              </div>
+              </div>-->
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
                 <a href="/chart/boxoffice">Box Office</a><br />
-                <a>Most Popular Movies</a><br />
-                <a href="/chart/top/1">Top 20 Movies</a><br />
-                <a>Top Rated English Movies</a><br />
-                <a>Most Popular TV Shows</a><br />
-                <a>Top 250 TV Shows</a><br />
-                <a>Top Rated Indian Movies</a><br />
-                <a>Lowest Rated Movies</a>
+                <div>Most Popular Movies</div>
+                <a href="/chart/top/1/1">JMKY Top Movies</a><br />
+                <div>Top Rated English Movies</div>
+                <div>Most Popular TV Shows</div>
+                <div>Top 250 TV Shows</div>
+                <div>Top Rated Indian Movies</div>
+                <div>Lowest Rated Movies</div>
               </div>
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
                 <a href="/search/genre/1">Action </a><br />
-                <a>Adventure</a><br />
-                <a>Animation</a><br />
-                <a>Biography</a><br />
-                <a>Comedy</a><br />
-                <a>Crime</a><br />
-                <a>Drama</a><br />
-                <a>Family</a>
-                <a>Fantasy </a><br />
-                <a>Film-Noir</a><br />
-                <a>History</a><br />
-                <a>Horror</a><br />
-                <a>Music</a><br />
-                <a>Musical</a><br />
-                <a>Mystery</a>
-                <a>Romance</a><br />
-                <a>Sci-Fi</a><br />
-                <a>Sport</a><br />
-                <a>Thriller</a><br />
-                <a>War</a><br />
-                <a>Western</a>
+                <a href="/search/genre/2">Adventure</a><br />
+                <a href="/search/genre/3">Animation</a><br />
+                <a href="/search/genre/4">Biography</a><br />
+                <a href="/search/genre/5">Comedy</a><br />
+                <a href="/search/genre/6">Crime</a><br />
+                <a href="/search/genre/7">Drama</a><br />
+                <a href="/search/genre/8">Family</a>
+                <a href="/search/genre/9">Fantasy </a><br />
+                <a href="/search/genre/10">Film-Noir</a><br />
+                <a href="/search/genre/11">History</a><br />
+                <a href="/search/genre/12">Horror</a><br />
+                <a href="/search/genre/13">Musical</a><br />
+                <a href="/search/genre/14">Mystery</a>
+                <a href="/search/genre/15">Romance</a><br />
+                <a href="/search/genre/16">Sci-Fi</a><br />
+                <a href="/search/genre/17">Sport</a><br />
+                <a href="/search/genre/18">Thriller</a><br />
+                <a href="/search/genre/19">War</a><br />
+                <a href="/search/genre/20">Western</a>
               </div>
             </div>
           </div>

@@ -102,5 +102,6 @@
       src="https://kit.fontawesome.com/a04df2c0ca.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/header.js"></script>
 </body>
 </html>

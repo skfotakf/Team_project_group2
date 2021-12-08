@@ -12,16 +12,10 @@
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal"/> 
 </sec:authorize>
-<link rel="stylesheet" href="/css/index_include.css">
-<link rel="stylesheet" href="/css/main.css">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie</title>
    	<link rel="stylesheet" href="/css/index_include.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/movieDtl.css">
+        <link rel="stylesheet" href="/css/signin.css" />
      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
@@ -49,7 +43,7 @@
                     <div class="rating_bar_container">
                         <div class="rating_bar_btn">
                             <div class="rating_bar_header"><p>JMKY RATING</p></div>
-                            <a href="">
+                            <a >
                                 <div class="rating_star">
                                     <i class="fas fa-star fa-2x" id="star"></i>
                                     <div>
@@ -94,10 +88,10 @@
                 <div id="sub_nav">
                     <div>
                         <ul>
-                            <li><a href="">cast & crew</a></li>
-                            <li>ㆍ<a href=""> User reviews</a></li>
-                            <li>ㆍ<a href=""> Trivia</a></li>
-                            <li>ㆍ<a href=""> JMKYPro</a></li>
+                            <li><a>cast & crew</a></li>
+                            <li>ㆍ<a> User reviews</a></li>
+                            <li>ㆍ<a> Trivia</a></li>
+                            <li>ㆍ<a href="https://pro.imdb.com/title/tt2953050/?rf=cons_tt_contact&ref_=cons_tt_contact"> JMKYPro</a></li>
                             <button type="button"><i class="fas fa-th-large"></i>&nbsp;All topics</button>
                             <label> | </label>
                             <button type="button"><i class="fas fa-code-branch"></i></button>
@@ -107,7 +101,7 @@
 
                 <div id="main_img">
                     <div id="poster">
-                        <img src="/images/dtl-photo/${movie_dtl.mov_photo }" width="300" height="420.95">
+                        <img src="/images/dtl-photo/${movie_dtl.mov_photo }" style="width:284px;height:420.95px">
                     </div>
                     <div id="preview">
                         <iframe width="808px" height="420.95px" src="https://www.youtube.com/embed/${movie_dtl.mov_trailer }" frameborder="no" scrolling="no" title="NaverVideo" allow="autoplay; gyroscope; accelerometer; encrypted-media" allowfullscreen></iframe>
@@ -122,18 +116,18 @@
                       <div class="drama">
                         	<c:if test="${movie_dtl.mg_genre1 ne null }">
                         		<div>
-                                <a href="">${movie_dtl.mg_genre1 }</a>
+                                <a href="/search/genre/${movie_dtl.mov_gnr1 }">${movie_dtl.mg_genre1 }</a>
                             	</div>
                         	</c:if>
                             
                            <c:if test="${movie_dtl.mg_genre2 ne null }">
                         		<div>
-                                <a href="">${movie_dtl.mg_genre2 }</a>
+                                <a href="/search/genre/${movie_dtl.mov_gnr2 }">${movie_dtl.mg_genre2 }</a>
                             	</div>
                         	</c:if>
                            <c:if test="${movie_dtl.mg_genre3 ne null }">
                         		<div>
-                                <a href="">${movie_dtl.mg_genre3 }</a>
+                                <a href="/search/genre/${movie_dtl.mov_gnr3 }">${movie_dtl.mg_genre3 }</a>
                             	</div>
                         	</c:if>
                             <span>
@@ -141,16 +135,16 @@
                             </span>
                         </div>
                         <ul class="metadata">
-                            <li class="director"><span>Director</span>&nbsp;&nbsp;<a href="">${movie_dtl.mov_director }</a></li>
+                            <li class="director"><span>Director</span>&nbsp;&nbsp;<a>${movie_dtl.mov_director }</a></li>
                             
                             <li id="stars">
                                 <span>Stars</span>&nbsp;
-                                <a href="">${movie_dtl.mov_actor }</a>
+                                <a>${movie_dtl.mov_actor }</a>
                                 
                             </li>
                             <li id="jmkypro">
                                 <div>
-                                    <a href="">
+                                    <a href="https://pro.imdb.com/title/tt2953050/?rf=cons_tt_atf&ref_=cons_tt_atf">
                                         JMKYPro
                                         <span>See production, box office & company info&nbsp;<i class="fas fa-external-link-alt"></i></span>
                                     </a>
@@ -162,35 +156,31 @@
                         <div id="content_right_top">
                         <c:choose>
                         	<c:when test="${movie_dtl.like_number eq 0 }">
-                        		<button type="button" class="watchlist">
-                                	<i class="fas fa-plus"></i>
-                                	<div>Add to Likelist</div>
+                        		<button type="button" class="likelist" style="background-color: darkgray">
+                                	<i class="fas fa-plus" style="color:black"></i>
+                                	<div style="color:black">Add to Likelist</div>
                             	</button>
-                            	<button type="button" id="watchlist_list">
-                                	<i class="fas fa-chevron-down"></i>
-                            	</button>
+                            	
                         	</c:when>
                         	<c:when test="${movie_dtl.like_number ne 0 }">
-                        		<button type="button" class="watchlist">
+                        		<button type="button" class="likelist" style="background-color:#E04386">
                                 	<i class="fas fa-check"></i>
                                 	<div>In Likelist</div>
                             	</button>
-                            	<button type="button" id="watchlist_list">
-                                	<i class="fas fa-chevron-down"></i>
-                            	</button>                        	
+                            	                 	
                         	</c:when>
                         </c:choose>
                             
                         </div>
                         <ul id="review_content">
                             <li id="user_review">
-                                <a href=""><span>9.6K </span><span>User reviews</span></a>
+                                <a><span>9.6K </span><span>User reviews</span></a>
                             </li>
                             <li id="critic_review">
-                                <a href=""><span>193 </span><span>Critic reviews</span></a>
+                                <a><span>193 </span><span>Critic reviews</span></a>
                             </li>
                             <li id="metascore">
-                                <a href=""><span>80 </span><span>Metascore</span></a>
+                                <a><span>80 </span><span>Metascore</span></a>
                             </li>
                         </ul>
                     </div>
@@ -198,83 +188,9 @@
             </div>
         </section>
 
-				<div id="main_img">
-					<div id="poster">
-						<img src="/images/dtl-photo/${movie_dtl.mov_photo }">
-					</div>
-					<div id="preview">
-						<iframe width="768px" height="420.95px"
-							src="https://www.youtube.com/embed/${movie_dtl.mov_trailer }"
-							frameborder="no" scrolling="no" title="NaverVideo"
-							allow="autoplay; gyroscope; accelerometer; encrypted-media"
-							allowfullscreen></iframe>
+			
 
-					</div>
-				</div>
-
-
-
-				<div id="content_container">
-					<div id="content_left">
-						<div class="drama">
-							<c:if test="${movie_dtl.mg_genre1 ne null }">
-								<div>
-									<a href="">${movie_dtl.mg_genre1 }</a>
-								</div>
-							</c:if>
-
-							<c:if test="${movie_dtl.mg_genre2 ne null }">
-								<div>
-									<a href="">${movie_dtl.mg_genre2 }</a>
-								</div>
-							</c:if>
-							<c:if test="${movie_dtl.mg_genre3 ne null }">
-								<div>
-									<a href="">${movie_dtl.mg_genre3 }</a>
-								</div>
-							</c:if>
-							
-						</div>
-						<span> ${movie_dtl.mov_story } </span>
-						<ul class="metadata">
-							<li class="director"><span>Director</span>&nbsp;&nbsp;<a
-								href="">${movie_dtl.mov_director }</a></li>
-
-							<li id="stars"><span>Stars</span>&nbsp; <a href="">${movie_dtl.mov_actor }</a>
-
-							</li>
-							<li id="jmkypro">
-								<div>
-									<a href=""> JMKYPro <span>See production, box office
-											& company info&nbsp;<i class="fas fa-external-link-alt"></i>
-									</span>
-									</a>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div id="content_right">
-						<div id="content_right_top">
-							<button type="button" id="add_watchlist">
-								<i class="fas fa-plus"></i>
-								<div>Add to Watchlist</div>
-							</button>
-							<button type="button" id="watchlist_list">
-								<i class="fas fa-chevron-down"></i>
-							</button>
-						</div>
-						<ul id="review_content">
-							<li id="user_review"><a href=""><span>9.6K </span><span>User
-										reviews</span></a></li>
-							<li id="critic_review"><a href=""><span>193 </span><span>Critic
-										reviews</span></a></li>
-							<li id="metascore"><a href=""><span>80 </span><span>Metascore</span></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
+			
 
 		<!--메인 아랫부분-->
 		<section id="wrap_bottom">
@@ -283,12 +199,12 @@
 					<div class="ipc_page_innerbox">
 						<div class="ipc_title_wrapper">
 
-							<a href="">
+							<a >
 								<h3>
 									배우 <i class="fas fa-chevron-right"></i>
 								</h3>
 								<div>
-									<a href=""><i class="fas fa-pen"></i> Edit</a>
+									<a ><i class="fas fa-pen"></i> Edit</a>
 								</div>
 							</a>
 						</div>
@@ -298,19 +214,19 @@
 									<i class="fas fa-user-circle fa-3x"></i>
 								</div>
 								<div id="actor_name">
-									<a href="">${movie_dtl.mov_actor }</a> <span>${movie_dtl.mov_actorchar }</span>
+									<a >${movie_dtl.mov_actor }</a> <span>${movie_dtl.mov_actorchar }</span>
 								</div>
 							</div>
 
 						</div>
 						<ul class="metadata">
 							<li class="director"><span>Director</span>&nbsp;&nbsp;<a
-								href="">${movie_dtl.mov_director }</a></li>
+								>${movie_dtl.mov_director }</a></li>
 
-							<li class="metadata_list_item"><a href="">All cast &
-									crew</a> <a href=""><i class="fas fa-chevron-right"></i></a></li>
-							<li class="metadata_list_item"><a href="">See more cast
-									details at JKMYPro</a> <a href=""><i
+							<li class="metadata_list_item"><a>All cast &
+									crew</a> <a><i class="fas fa-chevron-right"></i></a></li>
+							<li class="metadata_list_item"><a href="https://pro.imdb.com/title/tt2953050/?rf=cons_tt_btf_cc&ref_=cons_tt_btf_cc">See more cast
+									details at JKMYPro</a> <a href="https://pro.imdb.com/title/tt2953050/?rf=cons_tt_btf_cc&ref_=cons_tt_btf_cc"><i
 									class="fas fa-external-link-alt"></i></a></li>
 						</ul>
 					</div>
@@ -336,11 +252,11 @@
 										<span>많은 이들의 '인생 영화'</span>
 									</div>
 									<div>
-										20년 넘게 지났지만 언제나 꺼내 봐도,<br> 이미 여러 번 본 장면들임에도 불구하고,<br>
-										여전한 감동을 주는 몇 안 되는 영화들 중 하나.<br> 스티븐 킹의 탄탄한 스토리를 토대로,<br>
-										영화는 단 한 순간도 품격을 잃지 않으며<br> 잘 조율되어 있다.<br> 영화가 개봉되었을
-										때 프랭크 다라본트 감독은,<br> 이 영화를 본 후 삶의 의미를 되찾았다는<br> 내용의
-										수많은 편지를 받았다고 한다.<br> 단순한 영화를 넘어, 용기와 희망을 북돋우는 힐링 무비.
+										20년 넘게 지났지만 언제나 꺼내 봐도, 이미 여러 번 본 장면들임에도 불구하고,
+										여전한 감동을 주는 몇 안 되는 영화들 중 하나. 스티븐 킹의 탄탄한 스토리를 토대로,
+										영화는 단 한 순간도 품격을 잃지 않으며 잘 조율되어 있다. 영화가 개봉되었을
+										때 프랭크 다라본트 감독은, 이 영화를 본 후 삶의 의미를 되찾았다는 내용의
+										수많은 편지를 받았다고 한다. 단순한 영화를 넘어, 용기와 희망을 북돋우는 힐링 무비.
 									</div>
 								</div>
 							</div>
@@ -373,6 +289,7 @@
 								Vendetta, Captain Fantastic and<br> perhaps Watchmen..) so
 								grab this one if you have not watched it.
 							</div>
+							<!--
 							<div id="user_review_bottom">
 								<div>
 									<button>
@@ -390,7 +307,7 @@
 										<i class="fas fa-ellipsis-v"></i>
 									</button>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<div id="right_user_review">
@@ -428,16 +345,7 @@
 		</section>
 	</div>
 
-	<jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
 
-
-</body>
-<script src="https://kit.fontawesome.com/b3187be5e2.js"crossorigin="anonymous"></script>
-<script src="/js/movieDtl.js"></script>
-<script src="/js/header.js"></script>
-            </div>
-        </section>
-    </div>
 	<div class="promptable_base">
         <div class="promptable_base_panel">
             <div class="promptable_base_focus">
@@ -545,4 +453,5 @@
 </body>
 <script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/js/movieDtl.js"></script>
+<script type="text/javascript" src="/js/header.js"></script>
 </html>

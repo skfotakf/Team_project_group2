@@ -234,18 +234,31 @@
             </div>
             <div class="sidebar">
               <div class="sidebar_top"></div>
-              
+              <div class="sidebar_widget" style="display:none">
+                <div class="sidebar_title">
+                  <h5 class="title_yhs">You Have Seen</h5>
+                </div>
+                <div class="sidebar_seen">
+                  <span class="sidebar_seen_movies">0</span>
+                  <span>/ 10</span>
+                  <span>( 0% )</span><br />
+                  <div>
+                    <input class="seen_title" type="checkbox" />
+                    <label for="seen_title">Hide titles I've seen</label>
+                  </div>
+                </div>
+              </div>
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a href="/chart/boxoffice">Box Office</a><br />
-                <a>Most Popular Movies</a><br />
-                <a href="/chart/top/1">JMKY 20 Movies</a><br />
-                <a>Top Rated English Movies</a><br />
-                <a>Most Popular TV Shows</a><br />
-                <a>Top 250 TV Shows</a><br />
-                <a>Top Rated Indian Movies</a><br />
-                <a>Lowest Rated Movies</a>
+                <a href="/chart/boxoffice">Top 10 Box Office</a><br />
+                <div>Most Popular Movies</div>
+                <a href="/chart/top/1/1">JMKY Top Movies</a><br />
+                <div>Top Rated English Movies</div>
+                <div>Most Popular TV Shows</div>
+                <div>Top 250 TV Shows</div>
+                <div>Top Rated Indian Movies</div>
+                <div>Lowest Rated Movies</div>
               </div>
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>

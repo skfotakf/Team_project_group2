@@ -12,6 +12,10 @@ const sortbyRelease = document.querySelector('.sortbyRelease');
 const sortbyLike = document.querySelector('.sortbyLike');
 const nameSortby = document.querySelector('.nameSortby');
 
+const div_date = document.querySelector(".div_date");
+div_date.innerHTML = year + "/" + month + "/" + date;
+
+
 if(nameSortby.value == 1){
 	sortbyRanking.style.display = 'inline-block';
 	sortbyRelease.style.display = 'none';
@@ -29,14 +33,14 @@ if(nameSortby.value == 1){
 }
 submit_sortby.onclick = () =>{
 	if(lister_sortby.value == "jr:descending"){
-	  location.href = '/chart/top/1';
+	  location.href = '/chart/top/1/1';
 	  
 	  
 	} else if(lister_sortby.value == "rd:descending"){
-	  location.href = '/chart/top/2';
+	  location.href = '/chart/top/2/1';
 	  
 	} else{
-	  location.href = '/chart/top/3';
+	  location.href = '/chart/top/3/1';
 	  
 	}
 
@@ -70,3 +74,6 @@ ascending.onclick = () =>{
 	
 }
 */
+
+
+/*-------------------------------------------*/

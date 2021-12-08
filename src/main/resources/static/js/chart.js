@@ -1,4 +1,4 @@
-const desc = document.querySelector(".desc");
+
 const imdb_rating_number = document.querySelectorAll(".imdb_rating_number");
 const seen_star = document.querySelectorAll(".seen_star");
 const seen = document.querySelectorAll(".seen");
@@ -11,8 +11,8 @@ const sidebar_seen_movies = document.querySelector(".sidebar_seen_movies");
 const descend = document.querySelector(".descend");
 
 let seen_movies_number = sidebar_seen_movies.innerText;
-let ratingNumber = new Array(10);
-let likeNumber = new Array(10);
+let ratingNumber = new Array(20);
+let likeNumber = new Array(20);
 
 const mov_idn1 = document.querySelectorAll(".mov_idn1");
 
@@ -33,7 +33,6 @@ let year = today.getFullYear(); // 년도
 let month = today.getMonth() + 1; // 월
 let date = today.getDate(); // 날짜
 
-desc.innerHTML = year + "/" + month + "/" + date;
 
 
 // like 누르면 수가 db에서 1 증가
@@ -94,7 +93,7 @@ function ratingInsertService(){
 			if(movieRatingData.error == "auth"){
 			location.href = '/auth/signin';
 			}else{
-				alert('좋아요 1 증가');
+				alert('평점이 반영되었습니다');
 			}
 		},
 		error:function(){
@@ -145,8 +144,9 @@ function ratingDeleteService(){
 	})
 }
 //별 누르면 seen 나오고, sidebar 숫자 1 추가
-for (let p = 0; p < 20; p++) {
-  seen_star[p].onclick = () => {
+for (let p = 0; p < 10; p++) {
+
+	 seen_star[p].onclick = () => {
     if (seen_star[p].style.color == "darkgray") {
        movieRatingData.mov_idn = mov_idn1[p].value;
        movieRatingData.rating = 0;
@@ -161,10 +161,13 @@ for (let p = 0; p < 20; p++) {
       popover[p].style.display = "block";
     }
   };
+
+
+ 
 }
 
 // x 아이콘 누르면 popover 사라지고 평점 원래대로 돌아옴
-for (let q = 0; q < 20; q++) {
+for (let q = 0; q < 10; q++) {
   ratingNumber[q] = imdb_rating_number[q].innerText;
   const firstRatingNumber1 = parseFloat(ratingNumber[q]);
   popover_delete[q].onclick = () => {
@@ -182,7 +185,7 @@ for (let q = 0; q < 20; q++) {
 }
 
 // 별점 생성, 별점의 숫자 반영
-for (let k = 0; k < 20; k++) {
+for (let k = 0; k < 10; k++) {
   ratingNumber[k] = imdb_rating_number[k].innerText;
   const firstRatingNumber = parseFloat(ratingNumber[k]);
   for (let i = 10 * k + 0; i < 10 * k + 10; i++) {
@@ -223,7 +226,7 @@ for (let k = 0; k < 20; k++) {
   }
 }
 // 하트 생성, 하트수 증감
-for (let r = 0; r < 20; r++) {
+for (let r = 0; r < 10; r++) {
   likeNumber[r] = like_count[r].innerText;
 
   like_heart[r].onclick = () => {

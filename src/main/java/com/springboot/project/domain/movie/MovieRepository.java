@@ -19,8 +19,8 @@ public interface MovieRepository {
 
 	
 	/*----------박스오피스,탑 차트---------*/
-	public List<MainChartRespDto> getChartAllTop(int number);
-	public List<MainChartRespDto> getChartAll(int code, int number);
+	// public List<MainChartRespDto> getChartAllTop(int number);
+	public List<MainChartRespDto> getChartAll(int number);
 	public List<MainChartRespDto> getChartAllTop(Movie movie);
 	public List<MainChartRespDto> getChartAllRelease(int code, int number);
 	public List<MainChartRespDto> getChartAllLike(int code, int number);

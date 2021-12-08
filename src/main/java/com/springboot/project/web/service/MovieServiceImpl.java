@@ -27,9 +27,9 @@ public class MovieServiceImpl implements MovieService{
 	private MovieBean movieBean;
 	
 	@Override // 메인 chart
-	public List<MainChartRespDto> getChartAll(int code, int number) {
+	public List<MainChartRespDto> getChartAll(int number) {
 		System.out.println("되는중");
-		return movieRepository.getChartAll(code, number);
+		return movieRepository.getChartAll(number);
 	}
 	
 	@Override // top 20 chart
@@ -225,6 +225,7 @@ public class MovieServiceImpl implements MovieService{
 		
 		return movieRepository.insertReview(movieReviewDto);
 	}
+
 	
 
 }

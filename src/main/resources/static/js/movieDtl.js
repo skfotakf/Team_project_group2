@@ -1,6 +1,5 @@
 const btn=document.querySelector("#review_btn");
 const review=document.querySelector("#review");
-const mov_idn1=document.querySelector(".mov_idn1");
 const mov_idn=document.querySelector(".mov_idn");
 
 let today = new Date();
@@ -8,7 +7,11 @@ let year = today.getFullYear(); // 년도
 let month = today.getMonth() + 1; // 월
 let date = today.getDate(); // 날짜
 
-
+var movieLikeData = {
+	mov_idn: 0,
+	number: 0,
+	
+}
 
 var movieReviewData={
 	mov_idn:0,
@@ -21,7 +24,7 @@ var movieReviewData={
 
 
 btn.onclick=()=>{
-	movieReviewData.mov_idn = mov_idn.value;
+	movieReviewData.mov_idn = mov_idn1.value;
 	movieReviewData.content=review.value;
 	if(movieReviewData.content==""){
 		alert('댓글등록 실패!')
@@ -47,6 +50,7 @@ function insertReview(){
 			}else{
 				alert('댓글등록 완료!');
 				clearReview();
+				location.href = "/title/"+movieReviewData.mov_idn;
 			}
 		},
 		error:function(){
@@ -68,6 +72,7 @@ const mov_idn1 = document.querySelector("#mov_idn1");
 const rate = document.querySelector(".rate");
 const dtlStar = document.querySelector(".dtlStar");
 const remove_button = document.querySelector(".remove_button");
+const likelist = document.querySelector(".likelist");
 
 var movieRatingData = {
 	mov_idn: 0,
@@ -88,7 +93,6 @@ function ratingInsertService(){
 			if(movieRatingData.error == "auth"){
 			location.href = '/auth/signin';
 			}else{
-				alert('별점 증가');
 			}
 		},
 		error:function(){
@@ -110,8 +114,6 @@ function ratingUpdateService(){
 		success: function(data){
 			movieRatingData = JSON.parse(data);
 			
-				alert('별점 변화');
-			
 		},
 		error:function(){
 			alert('별점 비동기 처리 실패');
@@ -132,7 +134,6 @@ function ratingDeleteService(){
 		success: function(data){
 			movieRatingData = JSON.parse(data);
 			
-				alert('별점 삭제');
 			
 		},
 		error:function(){
@@ -200,7 +201,7 @@ if(dtlStar.style.color == "darkgray"){
 		      	promptable_base.style.display = "none";
 		      	dtlStar.style.color = "#5285FF";
 		      	rate.innerHTML = "";
-		      	rate.innerHTML = "&nbsp;"+i+1 +"/ 10";
+		      	rate.innerHTML = (i+1) +"/ 10";
 		    }
 		    remove_button.onclick = () => {
 		    	movieRatingData.mov_idn = mov_idn1.value;
@@ -212,4 +213,62 @@ if(dtlStar.style.color == "darkgray"){
 		      	rate.innerHTML = "&nbsp;Rate";
 		    }
 		}
+}
+
+// like 누르면 수가 db에서 1 증가
+function likePlusService(){
+	$.ajax({
+		type: "post",
+		url: "/chart-like/plus",
+		data: JSON.stringify(movieLikeData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			movieLikeData = JSON.parse(data);
+			if(movieLikeData.error == "auth"){
+			location.href = '/auth/signin';
+			}else{
+			}
+			
+		},
+		error:function(){
+			alert('좋아요 비동기 처리 실패');
+		}
+	})
+
+}
+
+
+// like 누르면 수가 db에서 1 감소
+function likeMinusService(){
+	$.ajax({
+		type: "post",
+		url: "/chart-like/minus",
+		data: JSON.stringify(movieLikeData),
+		dataType: "text",
+		contentType: "application/json;charset=UTF-8",
+		success: function(data){
+			movieLikeData = JSON.parse(data);
+			
+			
+			
+		},
+		error:function(){
+			alert('좋아요 비동기 처리 실패');
+		}
+	})
+
+}
+
+likelist.onclick = () => {
+	if(likelist.style.backgroundColor == 'darkgray'){
+		movieLikeData.mov_idn = mov_idn1.value;
+	 likePlusService();
+	 location.href = "/title/"+mov_idn1.value;
+	} else {
+		 movieLikeData.mov_idn = mov_idn1.value;
+		  likeMinusService();
+	 location.href = "/title/"+mov_idn1.value;
+	}
+	 
 }

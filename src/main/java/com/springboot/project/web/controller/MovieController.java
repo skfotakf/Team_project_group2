@@ -59,7 +59,7 @@ public class MovieController {
 		} else {
 			number = principalDetails.getUser().getNumber();
 			model.addAttribute("likelistAll", movieService.getMovieLike(number));
-			return "movie/watchlist";
+			return "movie/likelist";
 		}
 	}
 	

@@ -8,7 +8,6 @@
 	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
 <link rel="stylesheet" href="/css/index_include.css" />
-
 <div id="menu_nav">
 	<div id="menu_nav_top">
 		<h1>
@@ -69,7 +68,7 @@
 	<div class="JMKYheader">
 
 		<h1>
-			<a href="/chart/boxoffice/1" class="logo">JMKY</a>
+			<a href="/chart/boxoffice" class="logo">JMKY</a>
 		</h1>
 
 		<ul class="menu">
@@ -78,28 +77,19 @@
 			</a>
 		</ul>
 		<div id="serach_container">
-			<select name="serach_navbar" id="serach_navbar">
-				<div>
-					<option value="all">All</option>
-					<option value="Titles">Titles</option>
-					<option value="TV Episodes">TV Episodes</option>
-					<option value="Celebs">Celebs</option>
-					<option value="Companies">Companies</option>
-					<option value="Keywords">Keywords</option>
-					<option value="Advanced Search">Advanced Search</option>
-				</div>
-			</select> <input type="search" placeholder="Search JMKY" id="key-search">
-			<button type="submit">
+			<form id="search_container" method="get" action="/find">
+			<input type="search" placeholder="Search JMKY" id="key-search" name="findValue">
+			<button type="submit" class="find_submit">
 				<i class="fas fa-search"></i>
 			</button>
-
+			</form>
 		</div>
 		<ul class="top_nav">
-			<a href="">
+			<a>
 				<li>JMKYPro</li>
 			</a>
-			<a href="/movie/watchlist">
-				<li><i class="far fa-plus-square"></i> Watchlist</li>
+			<a href="/user/likelist">
+				<li><i class="far fa-plus-square"></i> Likelist</li>
 			</a>
 			<c:choose>
 				<c:when test="${empty principal.user }">

@@ -163,8 +163,7 @@ a{
     box-sizing: border-box;
 }
 #poster{
-    margin: 0;
-    width: 40%;
+    margin: 0 75px;
     height: 100%;
 }
 #poster img{
@@ -202,7 +201,7 @@ a{
 
 .drama{
     padding: 16px 0;
-    display:flex;
+   
     
 }
 
@@ -298,33 +297,33 @@ a{
 
 #content_right_top{
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     width: 425px;
     height: 48px;
 }
-.watchlist{
+.likelist{
     border-radius: 5px;
     cursor: pointer;
     margin: 0;
     padding: 6px 16px 6px 12px;
-    background-color:#ffffff14 ;
+    
     align-items: center;
     display: flex;
     color: #fff;
 }
-.watchlist:hover{
-    background-color: #ffffff31;
+.likelist:hover{
+   
 }
-.watchlist i{
+.likelist i{
     margin: 0 4px 0;
 }
 
-.watchlist div{
+.likelist div{
     text-align: left;
     width: 325px;
 }
 
-#watchlist_list{
+#likelist_list{
     border-radius: 5px;
     cursor: pointer;
     width: 48px;
@@ -334,7 +333,7 @@ a{
     background-color: #ffffff14 ;
     color: #fff;
 }
-#watchlist_list:hover{
+#likelist_list:hover{
     background-color: #ffffff31;
 }
 

@@ -33,8 +33,11 @@ public class MovieDtlRespDto {
 	// 장르 
 	private int gen_num;
 	private String genre;
+	private int mov_gnr1;
 	private String mg_genre1;
+	private int mov_gnr2;
 	private String mg_genre2;
+	private int mov_gnr3;
 	private String mg_genre3;
 	
 	public MovieDtl toEntity() {
@@ -43,8 +46,11 @@ public class MovieDtlRespDto {
 				.mov_photo(mov_photo)
 				.mov_title(mov_title)
 				.mov_release(mov_release.toString().substring(0,4))
+				.mov_gnr1(mov_gnr1)
 				.mg_genre1(mg_genre1)
+				.mov_gnr2(mov_gnr2)
 				.mg_genre2(mg_genre2)
+				.mov_gnr3(mov_gnr3)
 				.mg_genre3(mg_genre3)
 				.mov_rat(mov_rat)
 				.mov_lik_cnt(mov_lik_cnt)

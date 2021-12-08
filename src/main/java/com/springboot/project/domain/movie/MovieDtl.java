@@ -19,8 +19,11 @@ public class MovieDtl {
 	private String mov_photo;
 	private String mov_title;
 	private String mov_release;
+	private int mov_gnr1;
 	private String mg_genre1;
+	private int mov_gnr2;
 	private String mg_genre2;
+	private int mov_gnr3;
 	private String mg_genre3;
 	private float mov_rat;
 	private int mov_lik_cnt;
