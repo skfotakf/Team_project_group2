@@ -89,13 +89,14 @@
 
             </div>
         </div>
+        <!--  
         <div class="recently_view">
             <div class="rhs">
                 <a href="#" id="clear_rvi">Clear your history</a>
             </div>
             <h3>Recently View</h3>
         </div>
-
+		-->
     </div>
 	<jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
 	

@@ -51,7 +51,7 @@
                   </div>
                 </div>
               </span>
-              <h1 class="title_topBo">Top 10 Box Office</h1>
+              <h1 class="title_topBo">Top 10 Rated Movies</h1>
 
               <hr />
               <span class="desc"></span>
@@ -251,10 +251,10 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a href="/chart/boxoffice">Top 10 Box Office</a><br />
+                <a href="/chart/boxoffice">Top 10 Rated Movies</a><br />
                 <div>Most Popular Movies</div>
-                <a href="/chart/top/1/1">JMKY Top Movies</a><br />
-                <div>Top Rated English Movies</div>
+                <a href="/chart/top/1/1">JMKY Movies</a><br />
+                
                 <div>Most Popular TV Shows</div>
                 <div>Top 250 TV Shows</div>
                 <div>Top Rated Indian Movies</div>
@@ -270,13 +270,13 @@
                 <a href="/search/genre/5">Comedy</a><br />
                 <a href="/search/genre/6">Crime</a><br />
                 <a href="/search/genre/7">Drama</a><br />
-                <a href="/search/genre/8">Family</a>
+                <a href="/search/genre/8">Family</a><br/>
                 <a href="/search/genre/9">Fantasy </a><br />
                 <a href="/search/genre/10">Film-Noir</a><br />
                 <a href="/search/genre/11">History</a><br />
                 <a href="/search/genre/12">Horror</a><br />
                 <a href="/search/genre/13">Musical</a><br />
-                <a href="/search/genre/14">Mystery</a>
+                <a href="/search/genre/14">Mystery</a><br/>
                 <a href="/search/genre/15">Romance</a><br />
                 <a href="/search/genre/16">Sci-Fi</a><br />
                 <a href="/search/genre/17">Sport</a><br />

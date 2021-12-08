@@ -10,7 +10,7 @@ const like_count = document.querySelectorAll(".like_count");
 const sidebar_seen_movies = document.querySelector(".sidebar_seen_movies");
 const descend = document.querySelector(".descend");
 
-let seen_movies_number = sidebar_seen_movies.innerText;
+// let seen_movies_number = sidebar_seen_movies.innerText;
 let ratingNumber = new Array(20);
 let likeNumber = new Array(20);
 
@@ -27,11 +27,7 @@ var movieRatingData = {
 	number: 0,
 	rating: 0
 }
-// 날짜
-let today = new Date();
-let year = today.getFullYear(); // 년도
-let month = today.getMonth() + 1; // 월
-let date = today.getDate(); // 날짜
+
 
 
 

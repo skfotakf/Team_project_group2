@@ -15,7 +15,7 @@
 <body>
     <form id="signup-form">
         <div id="logo_box">
-            <h1 class="logo">JMKY</h1>
+            <h1 class="logo"><a href="/chart/boxoffice" style="color:black">JMKY</a></h1>
         </div>
         <div id="inner_box">
             <h1>Create account</h1>

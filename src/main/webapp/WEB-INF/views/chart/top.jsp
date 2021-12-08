@@ -28,8 +28,8 @@
           <div class="content_2_wide">
             <div class="main">
               JMKY Charts
-              <h1>JMKY Top Movies</h1>
-              JMKY Top as rated by regular JMKY voters.
+              <h1>JMKY Movies</h1>
+              JMKY Movies as sorted by regular JMKY voters.
               <hr />
               <div class="lister">
                 <div class="nav">
@@ -37,7 +37,7 @@
                     <form>
                     <select class="lister_sortby">
                       
-                      <option value="jr:descending">JMKY Ranking</option>
+                      <option value="jr:descending">Popularity</option>
                       <option value="rd:descending">Release Date</option>
                       <option value="nl:descending">Number of Likes</option>
                       
@@ -66,7 +66,7 @@
                 
                   <br>
                   <input type="hidden" value="${nameSortby }" class="nameSortby" >
-                  <span class="sortbyRanking">Sort by : JMKY Ranking</span>
+                  <span class="sortbyRanking">Sort by : Popularity</span>
                   <span class="sortbyRelease">Sort by : Release Date</span>
                   <span class="sortbyLike">Sort by : Number of Likes</span>
                   
@@ -283,10 +283,10 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a href="/chart/boxoffice">Box Office</a><br />
+                <a href="/chart/boxoffice">Top 10 Rated Movies</a><br />
                 <div>Most Popular Movies</div>
-                <a href="/chart/top/1/1">JMKY Top Movies</a><br />
-                <div>Top Rated English Movies</div>
+                <a href="/chart/top/1/1">JMKY Movies</a><br />
+                
                 <div>Most Popular TV Shows</div>
                 <div>Top 250 TV Shows</div>
                 <div>Top Rated Indian Movies</div>

@@ -11,7 +11,7 @@
 <div id="menu_nav">
 	<div id="menu_nav_top">
 		<h1>
-			<a href="" class="logo">JMKY</a>
+			<a href="/chart/boxoffice" class="logo">JMKY</a>
 		</h1>
 		<label for="" id="exit_btn"><i class="fas fa-times-circle"></i></label>
 	</div>
