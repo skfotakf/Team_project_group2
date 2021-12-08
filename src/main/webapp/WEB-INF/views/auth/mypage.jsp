@@ -75,7 +75,7 @@
 					dataType: "text",
 					contentType: "application/json; charset=UTF-8",
 					success: function(data){
-						location.href = '/list/list';
+						location.href = '/chart/boxoffice/1';
 						alert("성공적으로 변경되었습니다!");
 					},
 					error: function(){
