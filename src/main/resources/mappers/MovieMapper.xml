@@ -70,6 +70,33 @@
   		;
   	</select>
   	
+  	<select id="getChartAllTop" resultType="com.springboot.project.domain.movie.Movie"> <!-- 영화 목록 list read -->
+  		select
+  			mm.mov_idn,
+  			mm.mov_photo,
+  			mm.mov_title,
+  			mm.mov_release,
+  			mm.mov_viewCnt,
+  			mm.mov_rat,
+  			mm.mov_rat_cnt,
+  			mm.mov_lik,
+  			mm.mov_lik_cnt,
+  			mm.number,
+  			ml.mov_idn as like_mov_idn,
+  			ml.number as like_number,
+  			mr.mov_idn as rating_mov_idn,
+  			mr.number as rating_number,
+  			mr.rating as rating_rating
+  			
+  			
+  		from
+  			movie_mst mm
+			LEFT OUTER JOIN movie_like ml ON(ml.mov_idn = mm.mov_idn AND ml.number = #{number})
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.number = #{number})
+		order by
+			mm.mov_idn;
+  		
+  	</select>
   	
   	<select id="getMovieDtl" parameterType="com.springboot.project.web.dto.movie.MovieDtlRespDto" resultType="com.springboot.project.web.dto.movie.MovieDtlRespDto"> <!-- 개별 영화 list read -->
   		SELECT
@@ -348,6 +375,38 @@
 			mm.mov_idn;
   		
   	</select>
+  	
+  	<select id="getGenre" resultType="com.springboot.project.domain.movie.MovieDtl"> <!-- 영화 목록 list read -->
+  		select
+  			mm.mov_idn,
+  			mm.mov_photo,
+  			mm.mov_title,
+  			mm.mov_release,
+  			mm.mov_rat,
+  			mm.mov_lik_cnt,
+  			md.mov_trailer,
+  			md.mov_age,
+  			md.mov_runtime,
+  			md.mov_story,
+  			md.mov_director,
+  			md.mov_actor,
+  			md.mov_actorchar,
+  			md.mov_gross,
+  			mr.mov_idn as rating_mov_idn,
+  			mr.number as rating_number,
+  			mr.rating as rating_rating
+  			
+  		from
+  			movie_genre mg
+  			LEFT OUTER JOIN movie_mst mm ON(mm.mov_gnr1 = mg.gen_num or mm.mov_gnr2 = mg.gen_num or mm.mov_gnr3 = mg.gen_num)
+			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
+			LEFT OUTER JOIN movie_rating mr ON(mr.mov_idn = mm.mov_idn AND mr.number = #{number})
+		where
+			mg.gen_num = #{code}
+		order by
+			mm.mov_idn;
+  		
+  	</select>
  
 	<!-- 댓글 -->
 	<select id="listReview" resultType="com.springboot.project.web.dto.movie.MovieReviewDto">
@@ -381,5 +440,59 @@
 			now()
 		);
 	</insert>
+	<!-- 검색 -->
+	<select id="movieFind" resultType="com.springboot.project.domain.movie.MovieDtl">
 	
+	select
+  			mm.mov_idn,
+  			mm.mov_photo,
+  			mm.mov_title,
+  			mm.mov_release,
+  			mm.mov_rat,
+  			mm.mov_lik_cnt,
+  			md.mov_trailer,
+  			md.mov_age,
+  			md.mov_runtime,
+  			md.mov_story,
+  			md.mov_director,
+  			md.mov_actor,
+  			md.mov_actorchar,
+  			md.mov_gross
+  			
+  		from
+  			movie_mst mm
+			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
+
+			
+		where
+			mm.mov_title like CONCAT('%',#{findValue},'%');
+			
+	</select>
+	
+	<select id="movieActorFind" resultType="com.springboot.project.domain.movie.MovieDtl">
+	
+	select
+  			mm.mov_idn,
+  			mm.mov_photo,
+  			mm.mov_title,
+  			mm.mov_release,
+  			mm.mov_rat,
+  			mm.mov_lik_cnt,
+  			md.mov_trailer,
+  			md.mov_age,
+  			md.mov_runtime,
+  			md.mov_story,
+  			md.mov_director,
+  			md.mov_actor,
+  			md.mov_actorchar,
+  			md.mov_gross
+  		from
+  			movie_mst mm
+			LEFT OUTER JOIN movie_dtl md ON(md.mov_idn = mm.mov_idn)
+
+			
+		where
+			md.mov_actor like CONCAT('%',#{findValue},'%');
+			
+	</select>
 </mapper>

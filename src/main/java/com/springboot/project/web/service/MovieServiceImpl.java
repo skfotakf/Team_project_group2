@@ -154,6 +154,25 @@ public class MovieServiceImpl implements MovieService{
 		return movieRepository.getGenreAll(number);
 	}
 	
+	@Override
+	public List<MovieDtlRespDto> getGenre(int code, int number) {
+		// TODO Auto-generated method stub
+		return  movieRepository.getGenre(code, number);
+	}
+	/*--------------검색--------------*/
+	
+
+	@Override
+	public List<MovieDtlRespDto> movieFind(String findValue) {
+		
+		return movieRepository.movieFind(findValue);
+	}
+	@Override
+	public List<MovieDtlRespDto> movieActorFind(String findValue) {
+		return movieRepository.movieActorFind(findValue);
+	}
+
+	
 	
 	@Override
 	public List<MovieDtlRespDto> getMovieLike(int number) {

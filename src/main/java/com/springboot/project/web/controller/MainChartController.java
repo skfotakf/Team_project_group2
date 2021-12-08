@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -32,23 +33,20 @@ public class MainChartController {
 		return "redirect:/chart/boxoffice/1";
 	}
 	
-	@GetMapping("/chart/boxoffice/{code}")
-	public String viewMainChart(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+	@GetMapping("/chart/boxoffice")
+	public String viewMainChart(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		int number= 0;
 		if(principalDetails == null) {
-			model.addAttribute("chartAll", movieService.getChartAll(code, number));
+			model.addAttribute("chartAllTop", movieService.getChartAllTop(number));
 		} else {
 			
 			number = principalDetails.getUser().getNumber();
 			System.out.println(number);
-			model.addAttribute("chartAll", movieService.getChartAll(code, number));
+			model.addAttribute("chartAllTop", movieService.getChartAllTop(number));
 			
 		}
-		model.addAttribute("chartAll", movieService.getChartAll(code, number));
-		if(code == 1) {
-			return "chart/boxoffice";
-		}
-		return "movie/list";
+		
+		return "chart/boxoffice";
 	}
 	
 	@GetMapping("/chart/top/{code}/{page}")
@@ -152,20 +150,39 @@ public class MainChartController {
 	}
 	
 	
-	@GetMapping("/search/genre")
-	public String viewGenreSearch(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+	@GetMapping("/search/genre/{code}")
+	public String viewGenreSearch(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		int number= 0;
 		
 		if(principalDetails == null) {
-			model.addAttribute("genreAll", movieService.getGenreAll(number));
+			model.addAttribute("genreAll", movieService.getGenre(code, number));
 		} else {
 			
 			number = principalDetails.getUser().getNumber();
 			
-			model.addAttribute("genreAll", movieService.getGenreAll(number));
-			
+			model.addAttribute("genreAll", movieService.getGenre(code, number));
+			System.out.println(movieService.getGenre(code, number));
 		}
 		return "search/gnr";
 	}
+	
+	
+	@GetMapping("/find")
+	public String viewMovieFind(Model model, String findValue, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		MovieDtlRespDto movieDtlRespDto = new MovieDtlRespDto();
+		
+		model.addAttribute("findValue", findValue);		
+		if(findValue == "") {
+			return "find/findNo";
+		}
+		model.addAttribute("findMovie", movieService.movieFind(findValue));
+		model.addAttribute("findActorMovie", movieService.movieActorFind(findValue));
+		System.out.println(movieService.movieFind(findValue));
+		
+		return "find/find";
+	}
+	
+	
+	
 	
 }

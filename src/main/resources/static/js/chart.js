@@ -40,7 +40,7 @@ desc.innerHTML = year + "/" + month + "/" + date;
 function likePlusService(){
 	$.ajax({
 		type: "post",
-		url: "chart-like/plus",
+		url: "/chart-like/plus",
 		data: JSON.stringify(movieLikeData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
@@ -85,7 +85,7 @@ function likeMinusService(){
 function ratingInsertService(){
 	$.ajax({
 		type: "post",
-		url: "chart-rating/insert",
+		url: "/chart-rating/insert",
 		data: JSON.stringify(movieRatingData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
@@ -108,7 +108,7 @@ function ratingInsertService(){
 function ratingUpdateService(){
 	$.ajax({
 		type: "post",
-		url: "chart-rating/update",
+		url: "/chart-rating/update",
 		data: JSON.stringify(movieRatingData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
@@ -129,7 +129,7 @@ function ratingUpdateService(){
 function ratingDeleteService(){
 	$.ajax({
 		type: "post",
-		url: "chart-rating/delete",
+		url: "/chart-rating/delete",
 		data: JSON.stringify(movieRatingData),
 		dataType: "text",
 		contentType: "application/json;charset=UTF-8",
@@ -145,7 +145,7 @@ function ratingDeleteService(){
 	})
 }
 //별 누르면 seen 나오고, sidebar 숫자 1 추가
-for (let p = 0; p < 10; p++) {
+for (let p = 0; p < 20; p++) {
   seen_star[p].onclick = () => {
     if (seen_star[p].style.color == "darkgray") {
        movieRatingData.mov_idn = mov_idn1[p].value;
@@ -164,7 +164,7 @@ for (let p = 0; p < 10; p++) {
 }
 
 // x 아이콘 누르면 popover 사라지고 평점 원래대로 돌아옴
-for (let q = 0; q < 10; q++) {
+for (let q = 0; q < 20; q++) {
   ratingNumber[q] = imdb_rating_number[q].innerText;
   const firstRatingNumber1 = parseFloat(ratingNumber[q]);
   popover_delete[q].onclick = () => {
@@ -182,7 +182,7 @@ for (let q = 0; q < 10; q++) {
 }
 
 // 별점 생성, 별점의 숫자 반영
-for (let k = 0; k < 10; k++) {
+for (let k = 0; k < 20; k++) {
   ratingNumber[k] = imdb_rating_number[k].innerText;
   const firstRatingNumber = parseFloat(ratingNumber[k]);
   for (let i = 10 * k + 0; i < 10 * k + 10; i++) {
@@ -223,7 +223,7 @@ for (let k = 0; k < 10; k++) {
   }
 }
 // 하트 생성, 하트수 증감
-for (let r = 0; r < 10; r++) {
+for (let r = 0; r < 20; r++) {
   likeNumber[r] = like_count[r].innerText;
 
   like_heart[r].onclick = () => {
