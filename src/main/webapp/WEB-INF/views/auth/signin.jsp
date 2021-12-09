@@ -21,7 +21,7 @@
             <div id="sign_in_option">
                 <div id="sign_in_box">
                     <h1>Sign in</h1>
-                    <form action="/auth/signin" method="post">
+                    <form action="/auth/signin" method="post" id="signinForm">
                     	<input type="hidden" id="flag" value="${empty flag ? 3 : flag }">
                         <div>
                             <input type="text" class="item_ip" name="username"  placeholder="ID">
@@ -101,7 +101,7 @@
 	<jsp:include page="../include/index_include/index_footer.jsp"></jsp:include>
 	
 </body>
-<script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>4
+<script src="https://kit.fontawesome.com/b3187be5e2.js" crossorigin="anonymous"></script>
 <script src="/js/signin.js"></script>
 <script src="/js/header.js"></script>
 </html>

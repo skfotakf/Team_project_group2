@@ -20,8 +20,8 @@
 			<label for=""><i class="fas fa-film"></i>Movie</label>
 			<div class="menu_item">
 				<ul>
-					<li><a href="">Top 250 Movies</a></li>
-					<li><a href="">Top Box Office</a></li>
+					<li><a href="/chart/boxoffice">Top 10 Rated Movies</a></li>
+					<li><a href="/chart/top/1/1">JMKY Movies</a></li>
 				</ul>
 			</div>
 		</div>
