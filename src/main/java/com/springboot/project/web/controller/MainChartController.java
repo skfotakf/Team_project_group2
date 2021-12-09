@@ -30,7 +30,7 @@ public class MainChartController {
 	// 메인 페이지 보여주기(chart) - 기본 페이지 R
 	@GetMapping("/")
 	public String indexRedirectHandler() {
-		return "redirect:/chart/boxoffice/1";
+		return "redirect:/chart/boxoffice";
 	}
 	
 	@GetMapping("/chart/boxoffice")
