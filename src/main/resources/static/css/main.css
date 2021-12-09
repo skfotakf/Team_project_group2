@@ -200,14 +200,16 @@ a{
 
 
 .drama{
+	width:100%;
     padding: 16px 0;
-   
+
     
 }
 
 .drama div{
 	margin:0;
     height: 40px;
+    display:inline-block;
 }
 .drama div a{
     border-radius: 20px;

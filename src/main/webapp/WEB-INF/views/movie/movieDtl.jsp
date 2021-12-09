@@ -130,9 +130,11 @@
                                 <a href="/search/genre/${movie_dtl.mov_gnr3 }">${movie_dtl.mg_genre3 }</a>
                             	</div>
                         	</c:if>
-                            <span>
-                                ${movie_dtl.mov_story }
-                            </span>
+                        	<div>
+	                            <span>
+	                                ${movie_dtl.mov_story }
+	                            </span>
+                            </div>
                         </div>
                         <ul class="metadata">
                             <li class="director"><span>Director</span>&nbsp;&nbsp;<a>${movie_dtl.mov_director }</a></li>
