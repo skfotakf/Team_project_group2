@@ -79,7 +79,7 @@
                       IMDb <br />Rating
                     </th>
                     <th class="chart_date chart_date_title">Date</th>
-                    <th class="chart_count">Count</th>
+                    <th class="chart_myrating chart_myrating_title">My<br/>Rating</th>
                     <th class="chart_like">Like</th>
                   </tr>
                 </thead>
@@ -107,7 +107,12 @@
                           <i class="fas fa-star" style="color: rgb(245, 197, 24)"></i
                           >&nbsp;<span class="imdb_rating_number">${chartAllTop.mov_rat }</span>
                         </div>
-                        <div class="my_rating">
+                        
+                      </div>
+                    </td>
+                    <td class="chart_date">${chartAllTop.mov_release }</td>
+                    <td class="chart_myrating">
+                    	<div class="my_rating">
                         <div class="popover" style="display: none">
                             <span class="popover_delete"></span>
                             <ul class="popover_rating">
@@ -197,7 +202,7 @@
 						  	<c:when test="${chartAllTop.rating_number eq 0 }">
 						  		<i
                             class="fas fa-star seen_star"
-                            style="color: darkgray"
+                            style="color: darkgray; margin-left: 13px;"
                           ></i>
 						  	</c:when>
                           	<c:when test="${chartAllTop.rating_rating eq 0 }">
@@ -227,10 +232,7 @@
                           </c:choose>
                           
                         </div>
-                      </div>
                     </td>
-                    <td class="chart_date">${chartAllTop.mov_release }</td>
-                    <td class="chart_count"><span class="movie_count">${chartAllTop.mov_viewCnt }</span></td>
                     <td class="chart_like">
                       <div class="like_widget">
                         <div class="imdb_like">

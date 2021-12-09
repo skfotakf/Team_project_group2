@@ -139,6 +139,10 @@ hr {
   font-size: 10px;
   text-align: center;
 }
+.chart_myrating_title {
+  font-size: 10px;
+  text-align: center;
+}
 /*=======seen-widget===========================================================*/
 .seen_widget {
   display: flex;
@@ -155,7 +159,7 @@ hr {
   margin: 0;
 }
 .my_rating {
-  width: 200px;
+  width: 60px;
   height: 30px;
   
   position: absolute;
@@ -229,7 +233,7 @@ hr {
   font-size: 12px;	
 }
 
-.chart_count {
+.chart_myrating {
   width: 55px;
   padding-right: 0px;
 }

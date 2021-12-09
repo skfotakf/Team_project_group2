@@ -85,7 +85,7 @@
 			</form>
 		</div>
 		<ul class="top_nav">
-			<a>
+			<a href="https://pro.imdb.com/login/ap?u=/login/lwa&imdbPageAction=signUp&rf=cons_nb_hm&ref_=cons_nb_hm">
 				<li>JMKYPro</li>
 			</a>
 			<a href="/user/likelist">

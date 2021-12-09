@@ -89,7 +89,7 @@ function ratingInsertService(){
 			if(movieRatingData.error == "auth"){
 			location.href = '/auth/signin';
 			}else{
-				alert('평점이 반영되었습니다');
+				location.reload(true);
 			}
 		},
 		error:function(){
@@ -110,7 +110,7 @@ function ratingUpdateService(){
 		success: function(data){
 			movieRatingData = JSON.parse(data);
 			
-				alert('별점 변화');
+				location.reload(true);
 			
 		},
 		error:function(){
@@ -131,7 +131,7 @@ function ratingDeleteService(){
 		success: function(data){
 			movieRatingData = JSON.parse(data);
 			
-				alert('별점 삭제');
+				location.reload(true);
 			
 		},
 		error:function(){
@@ -150,7 +150,7 @@ for (let p = 0; p < 10; p++) {
    	  
       seen_star[p].style.color = "rgba(109,174,272,0.5)";
       seen[p].style.display = "inline-block";
-      seen[p].innerHTML = "seen";
+      
       seen_movies_number = parseInt(seen_movies_number) + 1;
       sidebar_seen_movies.innerHTML = seen_movies_number;
     } else {
@@ -173,10 +173,7 @@ for (let q = 0; q < 10; q++) {
   	
     popover[q].style.display = "none";
     seen_star[q].style.color = "darkgray";
-    seen[q].innerHTML = "";
-    seen_movies_number = parseInt(seen_movies_number) - 1;
-    sidebar_seen_movies.innerHTML = seen_movies_number;
-    imdb_rating_number[q].innerHTML = firstRatingNumber1;
+    
   };
 }
 
@@ -211,7 +208,7 @@ for (let k = 0; k < 10; k++) {
       popover[k].style.display = "none";
       seen_star[k].style.color = "#5285FF";
       ratingNumber[k] =
-        (firstRatingNumber * 10 + parseInt(seen[k].innerText)) / 11;
+        (firstRatingNumber * 9 + parseInt(seen[k].innerText)) / 10;
       imdb_rating_number[k].innerHTML = ratingNumber[k].toFixed(1);
       	
         
