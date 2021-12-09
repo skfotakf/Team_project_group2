@@ -34,7 +34,8 @@ public class MainChartController {
 	}
 	
 	@GetMapping("/chart/boxoffice")
-	public String viewMainChart(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+	public String viewMainChart(Model model, 
+			@AuthenticationPrincipal PrincipalDetails principalDetails) {
 		int number= 0;
 		if(principalDetails == null) {
 			model.addAttribute("chartAllTop", movieService.getChartAll(number));
@@ -50,11 +51,14 @@ public class MainChartController {
 	}
 	
 	@GetMapping("/chart/top/{code}/{page}")
-	public String viewTopChart(Model model, @PathVariable int code, @PathVariable int page, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+	public String viewTopChart(Model model, @PathVariable int code,
+			@PathVariable int page, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		model.addAttribute("nameSortby", code);
 		model.addAttribute("page",page);
-		model.addAttribute("chartAllTop", movieService.getChartAllTop(code, page, principalDetails == null ? 0 : principalDetails.getUser().getNumber()));
+		model.addAttribute("chartAllTop", 
+				movieService.getChartAllTop(code, page, principalDetails == null ? 
+						0 : principalDetails.getUser().getNumber()));
 		
 		return "chart/top";
 		
