@@ -59,9 +59,9 @@
                      </c:if>
                       
 				
-					
+					<c:if test="${page ne 4 }">
 					<a href="/chart/top/${nameSortby }/${page + 1}">next</a>
-                      
+                      </c:if>
                   </div>
                 
                   <br>
