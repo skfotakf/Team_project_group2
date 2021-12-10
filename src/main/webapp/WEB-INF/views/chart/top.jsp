@@ -304,13 +304,13 @@
                 <a href="/search/genre/5">Comedy</a><br />
                 <a href="/search/genre/6">Crime</a><br />
                 <a href="/search/genre/7">Drama</a><br />
-                <a href="/search/genre/8">Family</a>
+                <a href="/search/genre/8">Family</a><br />
                 <a href="/search/genre/9">Fantasy </a><br />
                 <a href="/search/genre/10">Film-Noir</a><br />
                 <a href="/search/genre/11">History</a><br />
                 <a href="/search/genre/12">Horror</a><br />
                 <a href="/search/genre/13">Musical</a><br />
-                <a href="/search/genre/14">Mystery</a>
+                <a href="/search/genre/14">Mystery</a><br />
                 <a href="/search/genre/15">Romance</a><br />
                 <a href="/search/genre/16">Sci-Fi</a><br />
                 <a href="/search/genre/17">Sport</a><br />
