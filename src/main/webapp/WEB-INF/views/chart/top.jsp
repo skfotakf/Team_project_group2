@@ -11,7 +11,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JMKY Top</title>
+    <title>JMKY Movies</title>
     <link rel="stylesheet" href="/css/signin.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/mainNav.css" />
@@ -53,11 +53,11 @@
                   <div class="desc">
                   	  <div class="div_date"></div>
                       <span>Showing 10 titles</span>
-                      
+                      &nbsp;
                      <c:if test="${page ne 1 }">
                       	<a href="/chart/top/${nameSortby }/${page -1 }">previous</a>
                      </c:if>
-                      
+                      &nbsp;
 				
 					<c:if test="${page ne 4 }">
 					<a href="/chart/top/${nameSortby }/${page + 1}">next</a>
