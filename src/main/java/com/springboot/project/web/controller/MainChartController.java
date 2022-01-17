@@ -25,6 +25,9 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class MainChartController {
 	
+	// 업그레이드 시작!!!!!!!!!
+	
+	
 	private final MovieService movieService;
 	
 	// 메인 페이지 보여주기(chart) - 기본 페이지 R
