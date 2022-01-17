@@ -19,20 +19,11 @@
             <div class="main">
                 <div class="main_component">
                     <div id="sub_list">
-                    
-                    
                     	<h1>Results for ""</h1>
-                    
-                  
-                    	
-                        
                         <div class="findSection">
                             <h3 class="findSectionHeader">Titles</h3>
                             <table class="findList">
-                            
-                            
                             </table>
-                            
                         </div>
                         <div class="findSection">
                             <h3 class="findSectionHeader">Names</h3>

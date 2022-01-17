@@ -213,7 +213,7 @@
                         <div class="imdb_like">
                           <i
                             class="fas fa-heart like_heart"
-                            style="color:  ${ chartAllTop.like_number ne 0 ? '#E04386' : 'darkgray'}"
+                            style="color: ${ chartAllTop.like_number ne 0 ? '#E04386' : 'darkgray'}"
                           ></i>
                         </div>
                         <div class="people_like">

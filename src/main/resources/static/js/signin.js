@@ -19,10 +19,9 @@ item_ip[0].onkeypress = () => {
 item_ip[1].onkeypress = () => {
 	if(window.event.keyCode == 13){
 		window.event.preventDefault();
-		const form = document.querySelector("form");
+
 		
-		signInService();
-		form.submit();
+
 		
 	}
 }
@@ -120,7 +119,3 @@ function signInService(){
 }
 
 
-
-btn_login.onclick = () => {
-	signInService();
-}

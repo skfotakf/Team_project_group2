@@ -52,7 +52,6 @@ function likePlusService(){
 			alert('좋아요 비동기 처리 실패');
 		}
 	})
-
 }
 
 // like 누르면 수가 db에서 1 감소

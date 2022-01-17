@@ -24,9 +24,6 @@
                     <c:if test="${findValue ne null }">
                     	<h1>Results for "${findValue }"</h1>
                     </c:if>
-                  
-                    	
-                        
                         <div class="findSection">
                             <h3 class="findSectionHeader">Titles</h3>
                             <table class="findList">
