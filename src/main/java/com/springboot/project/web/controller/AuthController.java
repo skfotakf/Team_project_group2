@@ -8,10 +8,12 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.springboot.project.web.dto.auth.SignupDto;
@@ -27,10 +29,17 @@ public class AuthController {
 	private final AuthService authService;
 
 	@GetMapping("/auth/signin")
-	public String signinForm() {
+	public String signinForm(@RequestParam(value="error", required=false)String error,
+								@RequestParam(value="msg", required = false) String msg,Model model) {
+		model.addAttribute("error",error);
+		model.addAttribute("msg", msg);
 		return "auth/signin";
 	}
 	
+	@GetMapping("/auth/signinFailure")
+	public String signinFailure() {
+		return "auth/signinFailure";
+	}
 
 	
 	@GetMapping("/auth/signup")

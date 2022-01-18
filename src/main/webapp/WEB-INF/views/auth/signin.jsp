@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -26,15 +27,25 @@
                         <div>
                             <input type="text" class="item_ip" name="username"  placeholder="ID">
                         </div>
-                        <div class="item_msg">
-                            <span class="idErrorMsg"></span>
-                        </div>
+                        
                         <div>
                             <input type="password" class="item_ip" name="password" placeholder="Password">
                         </div>
-                        <div class="item_msg">
-                            <span class="passwordErrorMsg"></span>
+                        <c:if test="${msg =='wrongIdPassword'}">
+                        <div class="item_message">
+                            <span>
+                            아이디 또는 비밀번호가 일치하지 않습니다.
+                            </span>
                         </div>
+                        </c:if>
+                        <c:if test="${msg =='loginError'}">
+                        <div class="item_message">
+                            <span>
+                            로그인에 실패했습니다. 다시 확인하세요.
+                            </span>
+                        </div>
+                        </c:if>
+                        
                         <div id="login_btns">
                             <div>
                                 <button type="submit" class="item_btn btn_login">로그인</button>
