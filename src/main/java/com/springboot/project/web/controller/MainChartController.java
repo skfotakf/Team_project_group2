@@ -3,6 +3,7 @@ package com.springboot.project.web.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,6 +54,7 @@ public class MainChartController {
 		return "chart/boxoffice";
 	}
 	
+
 	@GetMapping("/chart/top/{code}/{page}")
 	public String viewTopChart(Model model, @PathVariable int code,
 			@PathVariable int page, @AuthenticationPrincipal PrincipalDetails principalDetails) {

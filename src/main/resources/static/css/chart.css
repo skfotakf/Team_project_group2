@@ -163,13 +163,22 @@ hr {
   height: 30px;
   
   position: absolute;
-  left: -250px;
+  left: -55px;
+}
+
+.boundary {
+	position: relative;
+	width: 270px;
+	left: -270px;
+	height: 20px;
+	top: 0px;
+	padding: 10px;
 }
 .popover {
   position: absolute;
 
-  width: 220px;
-  left: 0px;
+  width: 250px;
+  
   height: 4px;
 
   top: 0px;
@@ -178,48 +187,68 @@ hr {
   border: 1px solid #ddd;
   border-radius: 10px;
 }
-.popover_delete {
-  position: absolute;
-  background: url("https://m.media-amazon.com/images/S/sash/Lghmahow7r9CQqO.png") -120px
-    0;
-  margin: -1 5px;
-  top: 4px;
-  height: 22px;
-  left: 10px;
-  cursor: pointer;
-  width: 20px;
-}
-
 .popover_rating {
   position: absolute;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 35px;
-  list-style-type: none;
-  display: flex;
+ 	list-style-type: none;
+ 	padding: 0;
+  top: 0px;
+  right: 50px;	
+  margin-right: 5px;
+}
+
+.remove {
+  position: absolute;
+  display: inline-block;
+  bottom: 4px;
+  right: 10px;
+  font-size: 12px;
+  cursor: pointer
+}
+
+.popover_li {
+	float: left;
 }
 .rating_stars {
-  display: inline-block;
+  
   cursor: pointer;
   width: 20px;
   height: 20px;
   margin: 0;
+  top: 30px;
+}
+.no_rating {
+	
+	position: absolute;
+	display: inline-block;
+	right: 10px;
+	bottom: 5px;
+	font-size:8px;
+	cursor:pointer;
 }
 .seen_star {
   position: absolute;
   cursor: pointer;
   top: 6px;
-  left: 258px;
+  left: 62px;
 }
 .my_rating {
   position: relative;
 }
 .seen {
   position: absolute;
-  left: 277px;
+  left: 80px;
   top: 3px;
-  
+  font-size: 13px; 
+
+}
+
+.seen_rating {
+	 position: absolute;
+  left: 80px;
+  top: 1.5px;
+  font-size:16px;
+  width: 30px;
+  text-align:center;
 }
 /*===========================================*/
 

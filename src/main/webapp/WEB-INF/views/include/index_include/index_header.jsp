@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
@@ -12,6 +15,7 @@
 	<div id="menu_nav_top">
 		<h1>
 			<a href="/chart/boxoffice" class="logo">JMKY</a>
+			
 		</h1>
 		<label for="" id="exit_btn"><i class="fas fa-times-circle"></i></label>
 	</div>
@@ -69,8 +73,9 @@
 
 		<h1>
 			<a href="/chart/boxoffice" class="logo">JMKY</a>
+			<p style="color:white" id="sentence"></p>
 		</h1>
-
+		
 		<ul class="menu">
 			<a>
 				<li class="icon"><i class="fas fa-list"></i> Menu</li>
@@ -78,7 +83,9 @@
 		</ul>
 		<div id="serach_container">
 			<form id="search_container" method="get" action="/find">
-			<input type="search" placeholder="Search JMKY" id="key-search" name="findValue">
+			<label> </label>
+			
+			<input id="findValue" name="findValue" type="text" placeholder="Search JMKY" id="key-search" >
 			<button type="submit" class="find_submit">
 				<i class="fas fa-search"></i>
 			</button>
@@ -109,3 +116,209 @@
 		</ul>
 	</div>
 </header>
+<script>
+  $( function() {
+    var availableTags = {
+    	'movie': [
+    		   {
+   			      "value":"이터널스",
+   			      "id":"1"
+   			   },
+   			   {
+   			      "value":"듄",
+   			      "id":"2"
+   			   },
+   			   {
+   			      "value":"007 노 타임 노 다이",
+   			      "id":"3"
+   			   },
+   			   {
+   			      "value":"다크나이트",
+   			      "id":"4"
+   			   },
+   			   {
+   			      "value":"12인의 성난 사람들",
+   			      "id":"5"
+   			   },
+   			   {
+   			      "value":"쉰들러 리스트",
+   			      "id":"6"
+   			   },
+   			   {
+   			      "value":"반지의 제왕: 왕의 귀환",
+   			      "id":"7"
+   			   },
+   			   {
+   			      "value":"펄프 픽션",
+   			      "id":"8"
+   			   },
+   			   {
+   			      "value":"석양의 무법자",
+   			      "id":"9"
+   			   },
+   			   {
+   			      "value":"반지의 제왕: 반지 원정대",
+   			      "id":"10"
+   			   },
+   			   {
+   			      "value":"해리 포터와 마법사의 돌",
+   			      "id":"11"
+   			   },
+   			   {
+   			      "value":"글래디에이터",
+   			      "id":"12"
+   			   },
+   			   {
+   			      "value":"해리 포터와 아즈카반의 죄수",
+   			      "id":"13"
+   			   },
+   			   {
+   			      "value":"쇼생크 탈출",
+   			      "id":"14"
+   			   },
+   			   {
+   			      "value":"토이 스토리",
+   			      "id":"15"
+   			   },
+   			   {
+   			      "value":"시네마 천국",
+   			      "id":"16"
+   			   },
+   			   {
+   			      "value":"지옥의 묵시록",
+   			      "id":"17"
+   			   },
+   			   {
+   			      "value":"미스터 빈의 홀리데이",
+   			      "id":"18"
+   			   },
+   			   {
+   			      "value":"센과 치히로의 행방불명",
+   			      "id":"19"
+   			   },
+   			   {
+   			      "value":"라푼젤",
+   			      "id":"20"
+   			   },
+   			   {
+   			      "value":"아메리칸 히스토리 X",
+   			      "id":"21"
+   			   },
+   			   {
+   			      "value":"반딧불이의 묘",
+   			      "id":"22"
+   			   },
+   			   {
+   			      "value":"위플래시",
+   			      "id":"23"
+   			   },
+   			   {
+   			      "value":"시티 라이트",
+   			      "id":"24"
+   			   },
+   			   {
+   			      "value":"해리 포터와 비밀의 방",
+   			      "id":"25"
+   			   },
+   			   {
+   			      "value":"디파티드",
+   			      "id":"26"
+   			   },
+   			   {
+   			      "value":"언터처블: 1%의 우정",
+   			      "id":"27"
+   			   },
+   			   {
+   			      "value":"프레스티지",
+   			      "id":"28"
+   			   },
+   			   {
+   			      "value":"카사블랑카",
+   			      "id":"29"
+   			   },
+   			   {
+   			      "value":"옛날 옛적 서부에서",
+   			      "id":"30"
+   			   },
+   			   {
+   			      "value":"이창",
+   			      "id":"31"
+   			   },
+   			   {
+   			      "value":"토이 스토리 2",
+   			      "id":"32"
+   			   },
+   			   {
+   			      "value":"에일리언",
+   			      "id":"33"
+   			   },
+   			   {
+   			      "value":"토이 스토리 3",
+   			      "id":"34"
+   			   },
+   			   {
+   			      "value":"메멘토",
+   			      "id":"35"
+   			   },
+   			   {
+   			      "value":"레이더스",
+   			      "id":"36"
+   			   },
+   			   {
+   			      "value":"위대한 독재자",
+   			      "id":"37"
+   			   },
+   			   {
+   			      "value":"장고: 분노의 추적자",
+   			      "id":"38"
+   			   },
+   			   {
+   			      "value":"타인의 삶",
+   			      "id":"39"
+   			   },
+   			   {
+   			      "value":"영광의 길",
+   			      "id":"40"
+   			   }
+   			]
+    };
+    
+	    $( '#findValue' ).autocomplete({
+	      source: function(request, response) {
+	    	
+	    	  
+	    	  var term = request.term;
+	    	  var filteredData = availableTags.movie.filter(x => (x.value.indexOf(term) >= 0));
+	      	  response($.map(filteredData, function(item) {
+	      		  return {
+	      			  value: item.value,
+	      			  id: item.id
+	      		  }
+	      	  }))
+	      	  
+	      }, 
+	      
+	      
+	      /*
+	   	  open: function(event, ui) {
+	            $(this).autocomplete("widget").css({
+	                "background": "black",
+	                "color": "white",
+	                
+	                
+	            });
+	      },*/
+	      
+          select: function(event, ui) {
+				
+        	  location.href="/title/"+ui.item.id
+
+          }
+	      
+  		});
+	    
+	   
+    
+  });
+ 	
+  </script>

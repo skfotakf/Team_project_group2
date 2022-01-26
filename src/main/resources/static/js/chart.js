@@ -1,16 +1,16 @@
-
 const imdb_rating_number = document.querySelectorAll(".imdb_rating_number");
 const seen_star = document.querySelectorAll(".seen_star");
 const seen = document.querySelectorAll(".seen");
 const popover = document.querySelectorAll(".popover");
 const rating_stars = document.querySelectorAll(".rating_stars");
-const popover_delete = document.querySelectorAll(".popover_delete");
+const remove = document.querySelectorAll(".remove");
+const rating_status = document.querySelectorAll(".rating_status");
 const like_heart = document.querySelectorAll(".like_heart");
 const like_count = document.querySelectorAll(".like_count");
 const sidebar_seen_movies = document.querySelector(".sidebar_seen_movies");
 const descend = document.querySelector(".descend");
-
-// let seen_movies_number = sidebar_seen_movies.innerText;
+const no_rating = document.querySelectorAll(".no_rating");
+const seen_rating = document.querySelectorAll(".seen_rating");
 let ratingNumber = new Array(20);
 let likeNumber = new Array(20);
 
@@ -139,85 +139,92 @@ function ratingDeleteService(){
 		}
 	})
 }
-//별 누르면 seen 나오고, sidebar 숫자 1 추가
+
+//별을 누르면 회색별이냐 아니야에 따라 별점창 다르게 나타내기
 for (let p = 0; p < 10; p++) {
 
-	 seen_star[p].onclick = () => {
-    if (seen_star[p].style.color == "darkgray") {
-       movieRatingData.mov_idn = mov_idn1[p].value;
-       movieRatingData.rating = 0;
-       ratingInsertService();
-   	  
-      seen_star[p].style.color = "rgba(109,174,272,0.5)";
-      seen[p].style.display = "inline-block";
-      
-      seen_movies_number = parseInt(seen_movies_number) + 1;
-      sidebar_seen_movies.innerHTML = seen_movies_number;
-    } else {
-      popover[p].style.display = "block";
+	seen_star[p].onclick = () => { 
+	    if (seen_star[p].style.color == "darkgray") {
+	    	
+		   $(popover[p]).attr("style","display:block");
+		   $(seen_star[p]).attr("style","color:rgb(179, 210, 245);pointer-events:none");
+		   
+		   $(seen[p]).attr("style","display:inline-block");
+		   $(remove[p]).attr("style","display:none");
+		   $(no_rating[p]).attr("style","display:inline-block");
+		   
+	    } else {
+	    		
+	        $(popover[p]).attr("style","display:block");
+		    $(seen_star[p]).attr("style","color:rgb(179, 210, 245);pointer-events:none");
+		    $(seen_rating[p]).attr("style","display:inline-block");
+		    $(remove[p]).attr("style","display:inline-block");
+		    $(no_rating[p]).attr("style","display:none");
+			    
+	    }
+	}
+};
+
+//별점 별에 갖다대면 파란색, 떼면 회색
+for (let p = 0; p < 10; p++) {
+	for (let i = 10 * p + 0; i < 10 * p + 10; i++) {
+   		rating_stars[i].onmouseover = () => {
+		      for (let j = 10 * p; j < i + 1; j++) {
+			      	seen[p].style.display = "none";
+			        rating_stars[j].style.color = "rgb(82, 133, 255)";
+			        seen_rating[p].innerHTML = j + 1 - 10 * p;
+			        seen_rating[p].style.fontSize = "16px";
+			        seen_rating[p].style.width = "30px";
+			        seen_rating[p].style.top = "1.5px";
+			        seen_rating[p].style.textAlign = "center";
+		      }
+	    };
+	    rating_stars[i].onmouseout = () => {
+		      for (let j = 0; j < i + 1; j++) {
+		        	rating_stars[j].style.color = "darkgray";
+		       }
+	    };
+	} 
+}
+
+
+//별점 별을 클릭하면 insert 혹은 update
+for (let p = 0; p < 10; p++) {
+	for (let i = 10 * p + 0; i < 10 * p + 10; i++){
+ 		rating_stars[i].onclick = () => {
+ 			if(rating_status[p].value == 1) {
+		    	movieRatingData.mov_idn = mov_idn1[p].value;
+		      	movieRatingData.rating = i+1- 10*p;
+		    	ratingInsertService();  // 사람 수 증가
+			} else {
+				movieRatingData.mov_idn = mov_idn1[p].value;
+		      	movieRatingData.rating = i+1- 10*p;
+		    	ratingUpdateService();  // 사람 수 한명 증가 or 그대로
+			}    	
+	    } 
+	}
+}			  
+	
+//no rating 클릭하면 insert
+for (let p = 0; p < 10; p++) {		
+	no_rating[p].onclick = () => {
+		movieRatingData.mov_idn = mov_idn1[p].value;
+      	movieRatingData.rating = 0;					      	
+      	ratingInsertService();  // 사람 수 증가 x
     }
-  };
+}		   
+	
+// x표 누르면 delete	
+for (let p = 0; p < 10; p++){
+	remove[p].onclick = () => {
+		movieRatingData.mov_idn = mov_idn1[p].value;
+	  	movieRatingData.rating = 0;				  	
+	  	ratingDeleteService();    // 사람 수 한명 감소 or 그대로
+	}   
 
-
- 
 }
 
-// x 아이콘 누르면 popover 사라지고 평점 원래대로 돌아옴
-for (let q = 0; q < 10; q++) {
-  ratingNumber[q] = imdb_rating_number[q].innerText;
-  const firstRatingNumber1 = parseFloat(ratingNumber[q]);
-  popover_delete[q].onclick = () => {
-  	movieRatingData.mov_idn = mov_idn1[q].value;
-  	movieRatingData.rating = 0;
-  	ratingDeleteService();
-  	
-    popover[q].style.display = "none";
-    seen_star[q].style.color = "darkgray";
-    
-  };
-}
-
-// 별점 생성, 별점의 숫자 반영
-for (let k = 0; k < 10; k++) {
-  ratingNumber[k] = imdb_rating_number[k].innerText;
-  const firstRatingNumber = parseFloat(ratingNumber[k]);
-  for (let i = 10 * k + 0; i < 10 * k + 10; i++) {
-    rating_stars[i].onmouseover = () => {
-      for (let j = 10 * k; j < i + 1; j++) {
-      	
-      	
-        rating_stars[j].style.color = "#5285FF";
-        seen[k].innerHTML = j + 1 - 10 * k;
-        seen[k].style.fontSize = "16px";
-        seen[k].style.width = "30px";
-        seen[k].style.top = "1.5px";
-        seen[k].style.textAlign = "center";
-      }
-    };
-    rating_stars[i].onmouseout = () => {
-      for (let j = 0; j < i + 1; j++) {
-        rating_stars[j].style.color = "darkgray";
-      }
-    };
-    rating_stars[i].onclick = () => {
-    
-      
-      	 movieRatingData.mov_idn = mov_idn1[k].value;
-      	movieRatingData.rating = i+1- 10*k;
-      	ratingUpdateService();
-      popover[k].style.display = "none";
-      seen_star[k].style.color = "#5285FF";
-      ratingNumber[k] =
-        (firstRatingNumber * 9 + parseInt(seen[k].innerText)) / 10;
-      imdb_rating_number[k].innerHTML = ratingNumber[k].toFixed(1);
-      	
-        
-      
-      
-     
-    };
-  }
-}
+ 		  
 // 하트 생성, 하트수 증감
 for (let r = 0; r < 10; r++) {
   likeNumber[r] = like_count[r].innerText;
@@ -242,23 +249,3 @@ for (let r = 0; r < 10; r++) {
     }
   };
 }
-
-/* 별점 매기는 일반 for문
-
-for (let i = 10; i < 20; i++) {
-  rating_stars[i].onmouseover = () => {
-    for (let j = 10; j < i + 1; j++) {
-      rating_stars[j].style.color = "blue";
-      seen[1].innerHTML = j + 1 - 10;
-    }
-  };
-  rating_stars[i].onmouseout = () => {
-    for (let j = 10; j < i + 1; j++) {
-      rating_stars[j].style.color = "darkgray";
-    }
-  };
-  rating_stars[i].onclick = () => {
-    popover[1].style.display = "none";
-  };
-}
-*/

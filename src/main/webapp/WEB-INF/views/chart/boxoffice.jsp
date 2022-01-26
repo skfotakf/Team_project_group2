@@ -99,73 +99,75 @@
                     <td class="chart_myrating">
                     
                     <div class="my_rating">
-                          <div class="popover" style="display: none">
-                            <span class="popover_delete"></span>
+                    	<div class="boundary">
+                    	
+                    	<div class="popover" style="display: none">
+                            
                             <ul class="popover_rating">
-                              <li>
+                              <li class="popover_li">
                                 <i
                                   class="fas fa-star rating_stars"
                                   id="star1"
                                   style="color: darkgray"
                                 ></i>
                               </li>
-                              <li>
+                              <li class="popover_li">
                                 <i
                                   class="fas fa-star rating_stars"
                                   id="star2"
                                   style="color: darkgray"
                                 ></i>
                               </li>
-                              <li>
+                              <li class="popover_li">
                                 <i
                                   class="fas fa-star rating_stars"
                                   id="star3"
                                   style="color: darkgray"
                                 ></i>
-                              </li>
-                              <li>
+                              </li >
+                              <li class="popover_li">
                                 <i
                                   class="fas fa-star rating_stars"
                                   id="star4"
                                   style="color: darkgray"
                                 ></i>
                               </li>
-                              <li>
+                              <li class="popover_li">
                                 <i
                                   class="fas fa-star rating_stars"
                                   id="star5"
                                   style="color: darkgray"
                                 ></i>
                               </li>
-                              <li>
+                              <li class="popover_li">
                                 <i
                                   class="fas fa-star rating_stars"
                                   id="star6"
                                   style="color: darkgray"
                                 ></i>
                               </li>
-                              <li>
+                              <li class="popover_li">
                                 <i
                                   class="fas fa-star rating_stars"
                                   id="star7"
                                   style="color: darkgray"
                                 ></i>
                               </li>
-                              <li>
+                              <li class="popover_li">
                                 <i
                                   class="fas fa-star rating_stars"
                                   id="star8"
                                   style="color: darkgray"
                                 ></i>
                               </li>
-                              <li>
+                              <li class="popover_li">
                                 <i
                                   class="fas fa-star rating_stars"
                                   id="star9"
                                   style="color: darkgray"
                                 ></i>
                               </li>
-                              <li>
+                              <li class="popover_li">
                                 <i
                                   class="fas fa-star rating_stars"
                                   id="star10"
@@ -173,39 +175,45 @@
                                 ></i>
                               </li>
                             </ul>
+                         	<span class="no_rating" > no rating</span>
+                         	<span class="remove">remove</span>
                           </div>
+                    	</div>
+                          
 
                          <c:choose>
 						  	<c:when test="${chartAllTop.rating_number eq 0 }">
+						  	<input class="rating_status" type="hidden" value=1>
 						  		<i
                             class="fas fa-star seen_star"
                             style="color: darkgray; margin-left: 13px;"
                           ></i>
+                          <span class="seen" style="display:none">seen</span>
+                          <span class="seen_rating" ></span>
 						  	</c:when>
+						  	
                           	<c:when test="${chartAllTop.rating_rating eq 0 }">
+                          	<input class="rating_status" type="hidden" value=2>
                           		<i
                             class="fas fa-star seen_star"
-                            style="color: rgba(109,174,272,0.5)"
+                            style="color: rgb(179, 210, 245)"
                           ></i>
+                          <span class="seen" style="display:inline-block">seen</span>
+                          <span class="seen_rating" style="display:none"></span>
                           	</c:when>
                           	<c:when test="${chartAllTop.rating_rating > 0 }">
+                          	<input class="rating_status" type="hidden" value=3>
                           		<i
                             class="fas fa-star seen_star"
-                            style="color: #5285FF"
+                            style="color: rgb(82, 133, 255)"
                           ></i>
+                          <span class="seen" style="display:none">seen</span>
+                          <span class="seen_rating" style="display:inline-block">${chartAllTop.rating_rating }</span>
                           	</c:when>
 						  
                          
                           </c:choose>
-                           <c:choose>
-                          	<c:when test="${chartAllTop.rating_number eq 0 }"><span class="seen" style="font-size: 13px"></span> </c:when>
-                          	<c:when test="${chartAllTop.rating_rating eq 0 }">
-                          		<span class="seen" style="font-size: 13px">seen</span>
-                          	</c:when>
-                          	<c:when test="${chartAllTop.rating_rating > 0 }">
-                          		<span class="seen" style="font-size: 16px;width:30px;top:1.5px;textAlign:center;">${chartAllTop.rating_rating }</span>
-                          	</c:when>
-                          </c:choose>
+                           
                         </div>
                     </td>
                     <td class="chart_like">
@@ -266,27 +274,27 @@
               <div class="sidebar_widget">
                 <h3>JMKY Charts</h3>
 
-                <a href="/search/genre/1">Action </a><br />
-                <a href="/search/genre/2">Adventure</a><br />
-                <a href="/search/genre/3">Animation</a><br />
-                <a href="/search/genre/4">Biography</a><br />
-                <a href="/search/genre/5">Comedy</a><br />
-                <a href="/search/genre/6">Crime</a><br />
-                <a href="/search/genre/7">Drama</a><br />
-                <a href="/search/genre/8">Family</a><br/>
-                <a href="/search/genre/9">Fantasy </a><br />
-                <a href="/search/genre/10">Film-Noir</a><br />
-                <a href="/search/genre/11">History</a><br />
-                <a href="/search/genre/12">Horror</a><br />
-                <a href="/search/genre/13">Music</a><br />
-                <a href="/search/genre/14">Musical</a><br />
-                <a href="/search/genre/15">Mystery</a><br/>
-                <a href="/search/genre/16">Romance</a><br />
-                <a href="/search/genre/17">Sci-Fi</a><br />
-                <a href="/search/genre/18">Sport</a><br />
-                <a href="/search/genre/19">Thriller</a><br />
-                <a href="/search/genre/20">War</a><br />
-                <a href="/search/genre/21">Western</a>
+                <a href="/search/genre/1">액션 </a><br />
+                <a href="/search/genre/2">어드벤처</a><br />
+                <a href="/search/genre/3">애니메이션</a><br />
+                <a href="/search/genre/4">전기</a><br />
+                <a href="/search/genre/5">코미디</a><br />
+                <a href="/search/genre/6">범죄</a><br />
+                <a href="/search/genre/7">드라마</a><br />
+                <a href="/search/genre/8">가족</a><br/>
+                <a href="/search/genre/9">판타지</a><br />
+                <a href="/search/genre/10">느와르</a><br />
+                <a href="/search/genre/11">역사</a><br />
+                <a href="/search/genre/12">호러</a><br />
+                <a href="/search/genre/13">음악</a><br />
+                <a href="/search/genre/14">뮤지컬</a><br />
+                <a href="/search/genre/15">미스테리</a><br/>
+                <a href="/search/genre/16">로맨스</a><br />
+                <a href="/search/genre/17">SF</a><br />
+                <a href="/search/genre/18">스포츠</a><br />
+                <a href="/search/genre/19">스릴러</a><br />
+                <a href="/search/genre/20">전쟁</a><br />
+                <a href="/search/genre/21">서부</a>
               </div>
             </div>
           </div>

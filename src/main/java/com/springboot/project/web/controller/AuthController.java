@@ -3,8 +3,6 @@ package com.springboot.project.web.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -36,10 +34,12 @@ public class AuthController {
 		return "auth/signin";
 	}
 	
-	@GetMapping("/auth/signinFailure")
+	@GetMapping("/header2")
 	public String signinFailure() {
-		return "auth/signinFailure";
+		return "include/index_include/index_header2";
 	}
+	
+	
 
 	
 	@GetMapping("/auth/signup")

@@ -160,6 +160,34 @@ body{
     background: #fff;
 }
 
+
+/* autocomplete */
+
+.ui-autocomplete
+{
+   width: 400px;
+   
+}
+
+
+.ui-menu-item {
+	background: #222222;
+	color: white;
+    
+}
+
+/*
+.ui-menu-item-wrapper {
+	font-size: 20px;
+	
+	height: 100px;
+	 background-image :url('https://mdn.mozillademos.org/files/7693/catfront.png');
+	 background-repeat: no-repeat;  
+	background-size: 80px;
+	background-position: 3% 10px;
+}
+
+*/
 .top_nav{
     display: flex;
     margin: 0;

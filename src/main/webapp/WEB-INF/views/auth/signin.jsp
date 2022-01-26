@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in with JMKY</title>
+    <title>JMKY 로그인</title>
     <link rel="stylesheet" href="/css/signin.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="/css/index_include.css">
@@ -21,7 +21,7 @@
         <div class="content1">
             <div id="sign_in_option">
                 <div id="sign_in_box">
-                    <h1>Sign in</h1>
+                    <h1>로그인</h1>
                     <form action="/auth/signin" method="post" id="signinForm">
                     	<input type="hidden" id="flag" value="${empty flag ? 3 : flag }">
                         <div>
@@ -69,18 +69,19 @@
                         <button type="button" id="sign_up_btn" onclick="location.href = '/auth/signup'">회원가입</button>
                     </div>
                     <p class="text-center">
-                        <small>By signing in, you agree to IMDb's
-                            <a href="">Conditions of Use</a>
-                             and 
-                            <a href="">Privacy Policy</a> 
+                        <small>로그인할 경우, 이용자는 JMKY의
+                            <a href="https://www.imdb.com/conditions">이용조건</a>
+                             과 
+                            <a href="https://www.imdb.com/privacy">개인정보 처리방침</a>
+                            에 동의합니다 
                         </small>
                     </p>
                 </div>
             </div>
             <div id="sign_in_perks">
-                <h1>Benefits of your free IMDb account</h1>
+                <h1>JMKY에 가입하면...</h1>
                 <p>
-                    <strong>Personalized Recommendations</strong><br>
+                    <strong>개인화된 추천</strong><br>
                     Discover shows you'll love.
                 </p>
                 <p>
