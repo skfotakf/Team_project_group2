@@ -44,6 +44,13 @@ public class MovieController {
 		return "movie/movieDtl";
 	}
 	
+	@GetMapping("/actor")
+	public String ActorDtlForm(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		
+		
+		return "movie/actorDtl";
+	}
+	
 	
 	@GetMapping("/user/likelist")
 	public String viewLikelist(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {

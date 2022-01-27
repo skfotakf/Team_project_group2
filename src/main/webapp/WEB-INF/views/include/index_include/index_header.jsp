@@ -21,48 +21,33 @@
 	</div>
 	<div id="menu_main">
 		<div class="menu_list">
-			<label for=""><i class="fas fa-film"></i>Movie</label>
+			<label for=""><i class="fas fa-film"></i>영화</label>
 			<div class="menu_item">
 				<ul>
-					<li><a href="/chart/boxoffice">Top 10 Rated Movies</a></li>
-					<li><a href="/chart/top/1/1">JMKY Movies</a></li>
+					<li><a href="/chart/boxoffice">Top 10 차트</a></li>
+					<li><a href="/chart/top/1/1">JMKY 전체 차트</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="menu_list">
-			<label for=""><i class="fas fa-star"></i>Awards & Events</label>
+			<label for=""><i class="fas fa-star"></i>시상식 & 이벤트</label>
 			<div class="menu_item">
 				<ul>
 					<li><a
-						href="https://www.imdb.com/best-of/?ref_=nv_ev_best_2021">Best
-							of 2021</a></li>
-					<li><a href="https://www.imdb.com/oscars/?ref_=nv_ev_acd">Oscars</a></li>
+						href="https://www.imdb.com/best-of/?ref_=nv_ev_best_2021">2021년 최고의 작품은?</a></li>
+					<li><a href="https://www.imdb.com/oscars/?ref_=nv_ev_acd">오스카</a></li>
 					<li><a
-						href="https://www.imdb.com/search/title/?count=100&groups=oscar_best_picture_winners&sort=year%2Cdesc&ref_=nv_ch_osc">Best
-							Picture Winners</a></li>
+						href="https://www.imdb.com/search/title/?count=100&groups=oscar_best_picture_winners&sort=year%2Cdesc&ref_=nv_ch_osc">최우수 수상작들</a></li>
 					<li><a
-						href="https://www.imdb.com/golden-globes/?ref_=nv_ev_gg">Golden
-							Globes</a></li>
-					<li><a href="https://www.imdb.com/emmys/?ref_=nv_ev_rte">Emmys</a></li>
-					<li><a
-						href="https://www.imdb.com/starmeterawards/?ref_=nv_ev_sma">STARmeter
-							Awards</a></li>
-					<li><a href="https://www.imdb.com/comic-con/?ref_=nv_ev_comic">San
-							Diego Comic-Con</a></li>
-					<li><a href="https://www.imdb.com/nycc/?ref_=nv_ev_nycc">New
-							York Comic-Con</a></li>
-					<li><a href="https://www.imdb.com/sundance/?ref_=nv_ev_sun">Sundance
-							Film Festival</a></li>
-					<li><a href="https://www.imdb.com/toronto/?ref_=nv_ev_tor">Toronto
-							Int'l Film Festival</a></li>
-					<li><a
-						href="https://www.imdb.com/awards-central/?ref_=nv_ev_awrd">Awards
-							Central</a></li>
-					<li><a
-						href="https://www.imdb.com/festival-central/?ref_=nv_ev_fc">Festival
-							Central</a></li>
-					<li><a href="https://www.imdb.com/event/all/?ref_=nv_ev_all">All
-							Events</a></li>
+						href="https://www.imdb.com/golden-globes/?ref_=nv_ev_gg">골든 글로브</a></li>
+					<li><a href="https://www.imdb.com/emmys/?ref_=nv_ev_rte">에미상</a></li>
+					<li><a href="https://www.imdb.com/comic-con/?ref_=nv_ev_comic">산디에고 코믹콘</a></li>
+					<li><a href="https://www.imdb.com/nycc/?ref_=nv_ev_nycc">뉴욕 코믹콘</a></li>
+					<li><a href="https://www.imdb.com/sundance/?ref_=nv_ev_sun">선댄스 영화제</a></li>
+					<li><a href="https://www.imdb.com/toronto/?ref_=nv_ev_tor">토론토 국제 영화제</a></li>
+					
+					
+					<li><a href="https://www.imdb.com/event/all/?ref_=nv_ev_all">이벤트</a></li>
 				</ul>
 			</div>
 		</div>
@@ -78,7 +63,7 @@
 		
 		<ul class="menu">
 			<a>
-				<li class="icon"><i class="fas fa-list"></i> Menu</li>
+				<li class="icon"><i class="fas fa-list"></i> &nbsp;메뉴</li>
 			</a>
 		</ul>
 		<div id="serach_container">
@@ -100,7 +85,7 @@
 			</a>
 			<c:choose>
 				<c:when test="${empty principal.user }">
-					<a href="/auth/signin"><li>Sign In</li></a>
+					<a href="/auth/signin"><li>로그인</li></a>
 				</c:when>
 
 				<c:otherwise>

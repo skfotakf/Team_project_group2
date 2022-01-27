@@ -82,21 +82,19 @@
                 <h1>JMKY에 가입하면...</h1>
                 <p>
                     <strong>개인화된 추천</strong><br>
-                    Discover shows you'll love.
+                    좋아하게 될 작품을 만날 수 있습니다
                 </p>
                 <p>
-                    <strong>Your Watchlist</strong><br>
-                    Track everything you want to watch and receive e-mail when<br>
-                    movies open in theaters.
+                    <strong>좋아하는 영화</strong><br>
+                    보고싶은 영화를 상영할 때마다 이메일을 받아보세요
                 </p>
                 <p>
-                    <strong>Your Ratings</strong><br>
-                    Rate and remember everything you've seen.
+                    <strong>별점</strong><br>
+                    이미 본 작품을 별점으로 평가하세요
                 </p>
                 <p>
-                    <strong>Contribute to IMDb</strong><br>
-                    Add data that will be seen by millons of people and get cool<br>
-                    badges.
+                    <strong>JMKY에게</strong><br>
+                    당신의 기록은 큰 도움이 됩니다
                 </p>
 
             </div>
