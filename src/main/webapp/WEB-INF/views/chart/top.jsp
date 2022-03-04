@@ -309,14 +309,15 @@
                 <a href="/search/genre/10">Film-Noir</a><br />
                 <a href="/search/genre/11">History</a><br />
                 <a href="/search/genre/12">Horror</a><br />
-                <a href="/search/genre/13">Musical</a><br />
-                <a href="/search/genre/14">Mystery</a>
-                <a href="/search/genre/15">Romance</a><br />
-                <a href="/search/genre/16">Sci-Fi</a><br />
-                <a href="/search/genre/17">Sport</a><br />
-                <a href="/search/genre/18">Thriller</a><br />
-                <a href="/search/genre/19">War</a><br />
-                <a href="/search/genre/20">Western</a>
+                <a href="/search/genre/13">Music</a><br />
+                <a href="/search/genre/14">Musical</a><br />
+                <a href="/search/genre/15">Mystery</a>
+                <a href="/search/genre/16">Romance</a><br />
+                <a href="/search/genre/17">Sci-Fi</a><br />
+                <a href="/search/genre/18">Sport</a><br />
+                <a href="/search/genre/19">Thriller</a><br />
+                <a href="/search/genre/20">War</a><br />
+                <a href="/search/genre/21">Western</a>
               </div>
             </div>
           </div>

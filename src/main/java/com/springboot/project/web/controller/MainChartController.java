@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.springboot.project.web.dto.movie.MovieDtlRespDto;
 import com.springboot.project.web.dto.movie.MovieLikeDto;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -30,37 +29,78 @@ public class MainChartController {
 	// 메인 페이지 보여주기(chart) - 기본 페이지 R
 	@GetMapping("/")
 	public String indexRedirectHandler() {
-		return "redirect:/chart/boxoffice";
+		return "redirect:/chart/boxoffice/1";
 	}
 	
-	@GetMapping("/chart/boxoffice")
-	public String viewMainChart(Model model, 
-			@AuthenticationPrincipal PrincipalDetails principalDetails) {
+	@GetMapping("/chart/boxoffice/{code}")
+	public String viewMainChart(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		int number= 0;
 		if(principalDetails == null) {
-			model.addAttribute("chartAllTop", movieService.getChartAll(number));
+			model.addAttribute("chartAll", movieService.getChartAll(code));
 		} else {
 			
 			number = principalDetails.getUser().getNumber();
 			System.out.println(number);
-			model.addAttribute("chartAllTop", movieService.getChartAll(number));
 			
 		}
-		
-		return "chart/boxoffice";
+		model.addAttribute("chartAll", movieService.getChartAll(code));
+		if(code == 1) {
+			return "chart/boxoffice";
+		}
+		return "movie/list";
 	}
 	
-	@GetMapping("/chart/top/{code}/{page}")
-	public String viewTopChart(Model model, @PathVariable int code,
-			@PathVariable int page, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+	@GetMapping("/chart/top/{code}")
+	public String viewTopChart(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
-		model.addAttribute("nameSortby", code);
-		model.addAttribute("page",page);
-		model.addAttribute("chartAllTop", 
-				movieService.getChartAllTop(code, page, principalDetails == null ? 
-						0 : principalDetails.getUser().getNumber()));
+		if(code == 1) {
+			int number = 0;
+			model.addAttribute("nameSortby", 1);
+			model.addAttribute("ascDesc", 0);
+			if(principalDetails == null) {
+				model.addAttribute("chartAll", movieService.getChartAll(code));
+			} else {
+				
+				number = principalDetails.getUser().getNumber();
+				System.out.println(number);
+				model.addAttribute("chartAll", movieService.getChartAll(code));
+				
+			}
+			model.addAttribute("chartAll", movieService.getChartAll(code));
+			
+			return "chart/top";
+		} else if(code == 2) {
+			int number=0;
+			model.addAttribute("nameSortby", 2);
+			model.addAttribute("ascDesc", 0);
+			if(principalDetails == null) {
+				model.addAttribute("chartAll", movieService.getChartAllRelease(code, number));
+			} else {
+				
+				number = principalDetails.getUser().getNumber();
+				System.out.println(number);
+				model.addAttribute("chartAll", movieService.getChartAllRelease(code, number));
+				
+			}
+			return "chart/top";
+		} else if(code == 3) {
+			int number = 0;
+			model.addAttribute("nameSortby", 3);
+			model.addAttribute("ascDesc", 0);
+			if(principalDetails == null) {
+				model.addAttribute("chartAll", movieService.getChartAllLike(code, number));
+			} else {
+				model.addAttribute("principalDetails", principalDetails.getUser());
+				number = principalDetails.getUser().getNumber();
+				System.out.println(number);
+				model.addAttribute("chartAll", movieService.getChartAllLike(code, number));
+				
+			}
+			
+			return "chart/top";
+		}
 		
-		return "chart/top";
+		return "movie/list";
 		
 	}
 	/* 정배열 역배열 버튼(못넣음)
@@ -88,7 +128,7 @@ public class MainChartController {
 	}
 	*/
 	@ResponseBody
-	@PostMapping("/chart-like/plus")
+	@PostMapping("/chart/top/chart-like/plus")
 	public Object plusLikeCnt(@RequestBody MovieLikeDto movieLikeDto,  @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		System.out.println(movieLikeDto);
 		if(principalDetails == null) {
@@ -105,7 +145,7 @@ public class MainChartController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/chart-like/minus")
+	@PostMapping("/chart/top/chart-like/minus")
 	public Object minusLikeCnt(@RequestBody MovieLikeDto movieLikeDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		movieLikeDto.setNumber(principalDetails.getUser().getNumber());
@@ -117,7 +157,7 @@ public class MainChartController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/chart-rating/insert")
+	@PostMapping("/chart/top/chart-rating/insert")
 	public Object insertRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		if(principalDetails == null) {
@@ -134,7 +174,7 @@ public class MainChartController {
 	}
 
 	@ResponseBody
-	@PostMapping("/chart-rating/update")
+	@PostMapping("/chart/top/chart-rating/update")
 	public Object updateRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		movieRatingDto.setNumber(principalDetails.getUser().getNumber());
@@ -144,7 +184,7 @@ public class MainChartController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/chart-rating/delete")
+	@PostMapping("/chart/top/chart-rating/delete")
 	public Object deleteRatingCnt(@RequestBody MovieRatingDto movieRatingDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
 		movieRatingDto.setNumber(principalDetails.getUser().getNumber());
@@ -155,39 +195,20 @@ public class MainChartController {
 	}
 	
 	
-	@GetMapping("/search/genre/{code}")
-	public String viewGenreSearch(Model model, @PathVariable int code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+	@GetMapping("/search/genre")
+	public String viewGenreSearch(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		int number= 0;
 		
 		if(principalDetails == null) {
-			model.addAttribute("genreAll", movieService.getGenre(code, number));
+			model.addAttribute("genreAll", movieService.getGenreAll(number));
 		} else {
 			
 			number = principalDetails.getUser().getNumber();
 			
-			model.addAttribute("genreAll", movieService.getGenre(code, number));
-			System.out.println(movieService.getGenre(code, number));
+			model.addAttribute("genreAll", movieService.getGenreAll(number));
+			
 		}
 		return "search/gnr";
 	}
-	
-	
-	@GetMapping("/find")
-	public String viewMovieFind(Model model, String findValue, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-		MovieDtlRespDto movieDtlRespDto = new MovieDtlRespDto();
-		
-		model.addAttribute("findValue", findValue);		
-		if(findValue == "") {
-			return "find/findNo";
-		}
-		model.addAttribute("findMovie", movieService.movieFind(findValue));
-		model.addAttribute("findActorMovie", movieService.movieActorFind(findValue));
-		System.out.println(movieService.movieFind(findValue));
-		
-		return "find/find";
-	}
-	
-	
-	
 	
 }

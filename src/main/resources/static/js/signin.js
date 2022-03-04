@@ -1,13 +1,11 @@
 const item_ip = document.querySelectorAll('.item_ip');
 const btn_login = document.querySelector('.btn_login');
+const form = document.querySelector("#signinForm");
+const username=document.querySelector("#username");
+const password=document.querySelector("#password");
 
 
 
-var signInData = {
-	username: '',
-	password: '',
-	signInFlag: 0
-}
 
 item_ip[0].onkeypress = () => {
 	if(window.event.keyCode == 13){
@@ -19,7 +17,7 @@ item_ip[0].onkeypress = () => {
 item_ip[1].onkeypress = () => {
 	if(window.event.keyCode == 13){
 		window.event.preventDefault();
-		const form = document.querySelector("#signinForm");
+		
 		
 		signInService();
 		form.submit();
@@ -78,7 +76,14 @@ function emptyCheck(){
 	
 }
 
-/*function signInSubmit(){
+function signInSubmit(){
+	let signInData={
+		username: formData.get('username'),
+		password: formData.get('password'),
+		signInFlag: 0
+	}
+	
+	
 	$.ajax({
 		type: "post",
 		url: "/auth/signin",
@@ -107,7 +112,7 @@ function emptyCheck(){
 			alert('로그인 실패 다시 확인하세요');
 		}
 	})
-}*/
+}
 
 function signInService(){
 	//ajax호출

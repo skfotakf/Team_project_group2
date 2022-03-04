@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.springboot.project.web.dto.auth.SigninDto;
+import com.springboot.project.web.dto.auth.SigninRespDto;
 import com.springboot.project.web.dto.auth.SignupDto;
 import com.springboot.project.web.dto.auth.SignupRespDto;
 import com.springboot.project.web.service.AuthService;
@@ -30,6 +32,12 @@ public class AuthController {
 	public String signinForm() {
 		return "auth/signin";
 	}
+	//로그인 
+//	@PostMapping("/auth/signin")
+//	public Object signInCheckForm(@Valid SigninDto signinDto, BindingResult bindingResult) {
+//		
+//		return "signinRespDto";//""없앨것
+//	}
 	
 
 	

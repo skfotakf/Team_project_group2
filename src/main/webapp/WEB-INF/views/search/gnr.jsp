@@ -54,7 +54,7 @@
                             <a>Your Rating</a>
                         </div>
                         <br class="clear">
-
+						
 						<c:forEach var="genreAll" items="${genreAll }"> 
                         <div class="item_list">
                         	

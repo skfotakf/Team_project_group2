@@ -92,7 +92,7 @@ signupBtn.onclick = () => {
 					clearMsgNode(errorMsg[i]);
 				}
 				alert(respObj.msg);
-				msgText = '이미 가입된 아이디 입니다.'
+				msgText = '이미 가입된 아이디 입니다.';
 				messageService(0,msgText,0);
 			} else {
 				alert(respObj.msg);
